@@ -23,12 +23,16 @@ Rutina en la nube (Claude Code, claude.ai/code/routines)  ── mié y vie, cro
 | Imagen pública para Buffer | OK | URL raw por SHA aceptada por Buffer y LinkedIn (1080×1350) |
 | Primera publicación | OK | 2026-10-28 10:08 CET, https://www.linkedin.com/feed/update/urn:li:share:7521135820360146947 |
 | Conector Buffer en claude.ai | OK | `connector_uuid e6f83204-f84f-4e43-86a3-ec272a29e783` (adjuntado por el servidor al crear la rutina) |
-| Rutina semanal | Creada, **DESACTIVADA** | `trig_01Np3DtdUEyuYobQKkbePAox`, sólo conector Buffer (mínimo privilegio) |
+| Rutina semanal | **ACTIVA** desde 2026-10-28 10:28 CET | `trig_01Np3DtdUEyuYobQKkbePAox` · cron `0 6 * * 3,5` UTC · Sonnet · sólo conector Buffer · primera ejecución 2026-10-30 07:05 CET · https://claude.ai/code/routines/trig_01Np3DtdUEyuYobQKkbePAox |
 | Prueba en la nube (borrador) | **Parcial** (2026-10-28 10:14 CET) | Python 3.11 OK · render 1080×1350 OK (tras reinstalar Pillow) · Buffer get_channel OK · **git push 403: falta la app Claude de GitHub en DVhProjects** · borrador Buffer no ejecutado. `trig_0126GEUFSjqZUAHgDYq9YZCT` |
-| **App Claude en GitHub (DVhProjects)** | **FALTA** | Instalar en https://github.com/apps/claude/installations/select_target con la cuenta DVhProjects, sólo para `diegoval-academy-editorial` |
+| App Claude en GitHub (DVhProjects) | OK | Instalada 2026-10-28; push desde la nube verificado |
+| Prueba en la nube, 2.ª ejecución | **OK** (2026-10-28 10:25 CET) | Python 3.11 + Pillow OK · render 1080×1350 · push a `claude/prueba-nube` · URL raw 200 image/png · Buffer: borrador con imagen creado, verificado y borrado. Única incidencia: la nube no puede borrar ramas remotas (se borró desde local) |
 
 ## Modo autónomo
-Se activa (enabled=true en la rutina semanal) sólo si la prueba en la nube completa: instalación de dependencias, render, push, URL pública y borrador en Buffer creado y borrado.
+**ACTIVO** desde 2026-10-28: rutina persistente confirmada (`enabled=true`, `next_run_at` 2026-10-30T06:05Z) y prueba en la nube superada.
+Si una ejecución falla una comprobación, omite la publicación y lo registra en `data/publication_history.csv` (status `skipped`).
+Revisión: https://claude.ai/code/routines/trig_01Np3DtdUEyuYobQKkbePAox (historial de ejecuciones). Para pausar: desactivar la rutina allí.
+Nota: si la nube no puede hacer push a `main`, usa `claude/publicaciones`; la sesión local debe fusionar esa rama antes de trabajar.
 
 ## Por qué no se usa otra cosa
 - Cowork / tareas programadas de escritorio: dependen de que el ordenador esté encendido.
