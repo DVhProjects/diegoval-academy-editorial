@@ -1,6 +1,6 @@
 # Validación — 2026-10-30_viernes_robot-autismo-csic_PRUEBA
 
-Ejecutado: 2026-10-28T15:23:48+01:00
+Ejecutado: 2026-10-28T15:24:18+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
@@ -24,4 +24,4 @@ Decisión: **APROBADA para publicar**
 | PASS | Vídeo en vivo | coincide con lo declarado (no_verificado) |
 | PASS | Duplicados | sin coincidencias en 5 filas (URL canónica y topic_key) |
 | PASS | Enlace accesible | 200 https://www.csic.es/sites/default/files/noticia/2026-06-29/Nd_02julio2026_robot%20autismo_DEF.pdf |
-| PASS | Enlace accesible | 204 https://www.youtube.com/watch?v=-AYRssjyzOw |
+| PASS | Enlace accesible | 200 https://www.youtube.com/watch?v=-AYRssjyzOw |
