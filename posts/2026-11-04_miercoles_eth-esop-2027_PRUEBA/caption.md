@@ -6,7 +6,7 @@ En corto:
 • Cuánto: 13 500 CHF por semestre más matrícula exenta (3 o 4 semestres). Unas 60 becas.
 • Plazo: aún no está abierta; abre el 1 de noviembre y cierra el 30 de noviembre de 2026, 11:59 (CET; la web escribe "11:59AM").
 
-Por qué es conocida: ETH Zurich es la universidad pública federal suiza de ciencia e ingeniería y su web incluye la beca en la admisión de máster.
+Por qué es conocida: ETH Zurich es la universidad pública federal suiza de ciencia e ingeniería y su web incluye la beca en la admisión.
 
 Lo que pocos explican: no hay formulario aparte. Se pide dentro de la solicitud de admisión y exige subir un borrador de tu tesis, escrito por ti.
 
