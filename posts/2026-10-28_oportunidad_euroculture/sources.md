@@ -48,5 +48,4 @@ Nota para el verificador: la frase "ya debes tener el título... para la beca" e
 9. Eiffel (Francia): dominio no resoluble desde WebFetch → no verificable.
 10. Fundación Carolina: URL probada devolvió 404 → no verificable.
 11. Swiss Government Excellence Scholarships: URL probada redirigió a página de error → no verificable.
-12. Chalmers: URL probada 404 → no verificable.
 Además, ETH Zurich ESOP (nota de la sesión anterior): ventana de noviembre, no abierta hoy.

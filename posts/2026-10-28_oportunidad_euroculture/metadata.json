@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-29",
-  "weekday": "jueves",
+  "date": "2026-10-28",
+  "weekday": "miercoles",
   "type": "oportunidad",
   "category": "beca_master",
   "topic": "Euroculture (Erasmus Mundus Joint Master) 2027-2029: beca Erasmus Mundus",
@@ -16,5 +16,6 @@
     "edicion_render": "claude-opus-5-5 (sesión principal)"
   },
   "style_version": 2,
-  "status": "draft"
+  "status": "draft",
+  "publish_note": "Publicada el mismo día que MSCA a petición del propietario (muestra de ambos tipos)."
 }

@@ -1,6 +1,6 @@
-# Validación — 2026-10-29_oportunidad_euroculture
+# Validación — 2026-10-28_oportunidad_euroculture
 
-Ejecutado: 2026-10-28T11:05:10+01:00
+Ejecutado: 2026-10-28T11:09:16+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |

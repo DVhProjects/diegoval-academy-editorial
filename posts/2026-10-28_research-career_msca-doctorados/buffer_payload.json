@@ -1,0 +1,17 @@
+{
+  "channelId": "6ae0bdf22f1f5ed648eb92f9",
+  "schedulingType": "automatic",
+  "text": "En Europa, un doctorado financiado por la UE puede ser un trabajo. Así funcionan las plazas de las Marie Skłodowska-Curie Actions (MSCA), el programa europeo de formación de investigadores.\n\nEn corto:\n• Doctoral Networks: redes de universidades, centros y empresas con programas de doctorado.\n• Quien entra es contratado/a (\"employed\") de 3 a 36 meses (48 en doctorados conjuntos); el tipo de contrato depende de cada plaza.\n• Requisito: no tener ya un doctorado al ser contratado/a.\n• Hay subsidio de vida y de movilidad. Importes: mira cada oferta.\n\nLo que pocos explican: la regla de movilidad. No puedes haber vivido ni tenido tu actividad principal (trabajo, estudios) en el país que te contrata más de 12 meses en los 36 meses previos a la contratación.\n\nCómo empezar:\n1. No hay formulario central: postulas a cada plaza concreta.\n2. En EURAXESS (portal oficial de empleo para investigadores) filtra Academic Level = PhD Positions y Funding Programme = Horizon Europe - MSCA.\n3. Filtra por país, ordena por Deadline y lee cada anuncio.\n\nFuentes oficiales:\nhttps://marie-sklodowska-curie-actions.ec.europa.eu/actions/doctoral-networks\nhttps://euraxess.ec.europa.eu/jobs/search\n\nVerificado el: 2026-10-28.\n\n#Doctorado #PhD #InvestigarEnEuropa",
+  "assets": [
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/c11e7dcc76c5016ce450f0fbe731b4c898198c35/posts/2026-10-28_research-career_msca-doctorados/post.png",
+        "metadata": {
+          "altText": "Ficha editorial de DiegoVal Academy, serie Research & Career. En Europa, un doctorado puede ser un empleo: las plazas Marie Skłodowska-Curie (MSCA) se pagan con fondos de la UE y se solicitan una a una. Idea clave: si te eligen, te contratan, de 3 a 36 meses (48 en doctorados conjuntos). Requisito: no tener ya un doctorado. Pago: subsidio de vida y de movilidad. Cómo: postulas a cada plaza, no a un fondo central. Lo que pocos explican: si en los 3 años previos pasaste más de 12 meses en el país que te contrata (viviendo, trabajando o estudiando), quedas fuera de esa plaza. Fuente: marie-sklodowska-curie-actions.ec.europa.eu, verificado el 2026-10-28."
+        }
+      }
+    }
+  ],
+  "mode": "customScheduled",
+  "dueAt": "2026-10-28T16:30:00+01:00"
+}
