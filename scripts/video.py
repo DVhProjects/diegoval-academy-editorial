@@ -8,6 +8,10 @@ Uso:
 título, canal, miniatura, duración, fecha de publicación, estado de subtítulos y si cumple los
 criterios de calidad. `feed` lista los últimos vídeos de un canal con su RSS público.
 
+Desde la nube de Claude, YouTube bloquea la página del vídeo (HTTP 429) pero sirven el oEmbed y el RSS del
+canal. En ese caso `inspect` devuelve source="feed": título, canal, miniatura, fecha y descripción verificados,
+pero duración desconocida y subtítulos "no_verificado" (nunca se inventan).
+
 Estados de subtítulos (nunca se promete más de lo que se detecta):
   es_oficial      pista de subtítulos en español subida por el canal
   es_automatico   subtítulos automáticos en español (ASR)
@@ -28,7 +32,8 @@ from datetime import date, datetime
 UA = {"User-Agent": "Mozilla/5.0 (compatible; DiegoValAcademy-VideoCheck/1.0)", "Accept-Language": "en"}
 MIN_SECONDS, MAX_SECONDS, MAX_AGE_DAYS = 90, 1200, 730
 SUBTITLE_STATES = ("es_oficial", "es_automatico", "traducible", "no_verificado")
-ATOM = {"a": "http://www.w3.org/2005/Atom", "y": "http://www.youtube.com/xml/schemas/2015"}
+ATOM = {"a": "http://www.w3.org/2005/Atom", "y": "http://www.youtube.com/xml/schemas/2015",
+        "m": "http://search.yahoo.com/mrss/"}
 
 
 def http_get(url: str, timeout: int = 25) -> str:
@@ -93,12 +98,13 @@ def classify_subtitles(tracks: list[dict], translatable: bool) -> tuple[str, str
     return "no_verificado", "no se detectan subtítulos en español ni traducción"
 
 
-def quality(info: dict, today: date) -> list[str]:
+def quality(info: dict, today: date, allow_unknown_duration: bool = False) -> list[str]:
     """Motivos por los que el vídeo NO cumple los criterios de calidad (lista vacía = cumple)."""
     why = []
     d = info.get("duration_s")
     if d is None:
-        why.append("duración desconocida")
+        if not allow_unknown_duration:
+            why.append("duración desconocida")
     elif not MIN_SECONDS <= d <= MAX_SECONDS:
         why.append(f"duración {d}s fuera de {MIN_SECONDS}-{MAX_SECONDS}s")
     pub = info.get("published")
@@ -112,6 +118,8 @@ def quality(info: dict, today: date) -> list[str]:
             why.append("fecha de publicación futura")
     if not info.get("title"):
         why.append("sin título")
+    elif re.search(r"#shorts?\b", info["title"], re.I):
+        why.append("es un Short")
     if not info.get("channel_id"):
         why.append("canal no identificado")
     return why
@@ -130,15 +138,28 @@ def inspect(url: str, today: date | None = None, fetch=http_get) -> dict:
     except Exception as e:  # vídeo privado/eliminado/no incrustable, red
         out["errors"].append(f"oEmbed: {type(e).__name__}: {e}")
         return out
+    out["source"] = "page"
     try:
         page = parse_watch_page(fetch(canon))
         status, why = classify_subtitles(page["tracks"], page["translatable"])
         out.update(duration_s=page["duration_s"], channel_id=page["channel_id"], published=page["published"],
                    subtitles=status, subtitles_detail=why, caption_languages=sorted({t["languageCode"] for t in page["tracks"]}))
     except Exception as e:
-        out["errors"].append(f"página: {type(e).__name__}: {e}")
-        out.update(subtitles="no_verificado", subtitles_detail="no se pudo leer la página del vídeo")
-    out["quality_problems"] = quality(out, today)
+        # Página no disponible (típico en la nube: 429). Alternativa: RSS del canal (fecha y descripción reales).
+        out["notes"] = [f"página: {type(e).__name__}: {e}"]
+        out.update(source="feed", duration_s=None, subtitles="no_verificado",
+                   subtitles_detail="página del vídeo no disponible desde este entorno: duración y subtítulos sin comprobar")
+        try:
+            handle = (oe.get("author_url") or "").rstrip("/").rsplit("/", 1)[-1]
+            cid = channel_id_of(handle, fetch)
+            entry = next((r for r in feed(cid, 50, fetch) if r["id"] == canon.rsplit("=", 1)[-1]), None)
+            if entry:
+                out.update(channel_id=cid, published=entry["published"], description=entry.get("description", ""))
+            else:
+                out["errors"].append("el vídeo no figura en el RSS reciente del canal: no se puede comprobar su fecha")
+        except Exception as e2:
+            out["errors"].append(f"RSS: {type(e2).__name__}: {e2}")
+    out["quality_problems"] = quality(out, today, allow_unknown_duration=out["source"] == "feed")
     out["ok"] = not out["errors"] and not out["quality_problems"]
     return out
 
@@ -160,8 +181,10 @@ def feed(channel: str, limit: int = 15, fetch=http_get) -> list[dict]:
     rows = []
     for e in root.findall("a:entry", ATOM)[:limit]:
         vid = e.find("y:videoId", ATOM).text
+        desc = e.find("m:group/m:description", ATOM)
         rows.append({"channel": chan, "published": e.find("a:published", ATOM).text[:10], "id": vid,
-                     "title": e.find("a:title", ATOM).text, "url": f"https://www.youtube.com/watch?v={vid}"})
+                     "title": e.find("a:title", ATOM).text, "url": f"https://www.youtube.com/watch?v={vid}",
+                     "description": (desc.text or "")[:400] if desc is not None else ""})
     return rows
 
 

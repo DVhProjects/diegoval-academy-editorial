@@ -28,7 +28,7 @@ import video as videomod  # noqa: E402
 
 REQUIRED_FILES = ["post.json", "post.png", "caption.md", "sources.md", "metadata.json"]
 REQUIRED_FILES_VIDEO = ["caption.md", "sources.md", "metadata.json"]
-VIDEO_KEYS = ["url", "title", "channel", "channel_id", "published", "duration_s", "subtitles", "official_evidence_url"]
+VIDEO_KEYS = ["url", "title", "channel", "channel_id", "published", "subtitles", "official_evidence_url"]
 REQUIRED_META = ["date", "type", "topic", "topic_key", "primary_url", "verified_date",
                  "buffer_channel_id", "alt_text", "status"]
 URL_RE = re.compile(r"https?://[^\s)>\]]+")
@@ -88,10 +88,13 @@ def _validate_video(meta, caption, sources, now, skip_network, ok, fail, warn):
     else:
         fail("Procedencia oficial documentada",
              "official_evidence_url debe figurar en sources.md (página oficial que enlaza o incrusta el vídeo o su canal)")
-    info = {"duration_s": v["duration_s"], "published": v["published"], "title": v["title"], "channel_id": v["channel_id"]}
-    why = videomod.quality(info, now.date())
+    info = {"duration_s": v.get("duration_s"), "published": v["published"], "title": v["title"], "channel_id": v["channel_id"]}
+    unknown_ok = v.get("duration_s") is None and v.get("language") == "es"
+    why = videomod.quality(info, now.date(), allow_unknown_duration=unknown_ok)
     if why:
         fail("Calidad del vídeo", "; ".join(why))
+    elif v.get("duration_s") is None:
+        warn("Calidad del vídeo", f"duración no verificada (modo limitado de la nube; sólo se admite en vídeos en español); publicado {v['published']}")
     else:
         ok("Calidad del vídeo", f"{v['duration_s']} s, publicado {v['published']}")
     state = v["subtitles"]
@@ -131,10 +134,21 @@ def _validate_video(meta, caption, sources, now, skip_network, ok, fail, warn):
         problems.append(f"canal {live['channel_id']} distinto de {v['channel_id']}")
     if (live.get("title") or "").strip() != v["title"].strip():
         problems.append("el título publicado ha cambiado")
-    if live.get("subtitles") != state:
-        problems.append(f"subtítulos en vivo '{live.get('subtitles')}' distintos de los declarados '{state}'")
-    if live.get("quality_problems"):
-        problems.append("; ".join(live["quality_problems"]))
+    if live.get("published") and live["published"] != v["published"]:
+        problems.append(f"fecha publicada {live['published']} distinta de {v['published']}")
+    if live.get("source") == "feed":
+        # Modo limitado: no se puede comprobar duración ni subtítulos; no se admite prometer nada.
+        if state != "no_verificado":
+            problems.append(f"subtítulos '{state}' no comprobables desde este entorno (sólo RSS/oEmbed)")
+        if v.get("duration_s") is not None:
+            problems.append("duración declarada pero no comprobable desde este entorno")
+        if v.get("language") != "es":
+            problems.append("sin acceso a la página del vídeo sólo se admiten vídeos en español")
+    else:
+        if live.get("subtitles") != state:
+            problems.append(f"subtítulos en vivo '{live.get('subtitles')}' distintos de los declarados '{state}'")
+        if live.get("quality_problems"):
+            problems.append("; ".join(live["quality_problems"]))
     if problems:
         fail("Vídeo en vivo", " | ".join(problems))
     else:

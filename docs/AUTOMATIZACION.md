@@ -52,3 +52,10 @@ Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwz
 - Bloqueados (proxy: `Tunnel connection failed: 403 Forbidden`; WebFetch: `ENOTFOUND`): mundusmapp.org, euroculturemaster.eu, todo `*.europa.eu` (MSCA, EURAXESS, research-and-innovation, REA, erasmus-plus), epfl.ch, daad.de, studyinnl.org, chevening.org y hasta example.com.
 - Conclusión: el entorno `Default` tiene acceso de red restringido y no incluye las fuentes oficiales. Las rutinas no pueden cambiarlo (la API de rutinas no expone la configuración del entorno): lo cambia el propietario en claude.ai/code. Mientras tanto la rutina termina en `skipped` ("red de la nube sin acceso a <dominio>") sin publicar.
 - Tras cambiarlo hay que repetir la prueba integral en borrador (`claude/prueba-*`) antes de dar por validado el sistema.
+
+## Formato vídeo: pruebas y límites (2026-10-28)
+- Buffer: un borrador con `metadata.linkedin.linkAttachment` (enlace de YouTube, sin imágenes) devolvió `linkAttachment` con título, descripción y miniatura. Es la vista previa que Buffer genera; el aspecto final en LinkedIn sólo se confirma con la primera publicación real (el enlace también va en el texto como respaldo).
+- Nube (diagnóstico `cse_01HRCw39jqtMGQJSrzT7Y3Nf`): `watch?v=` y `m.youtube.com` → HTTP 429; `/embed/` y `youtube-nocookie` → 200 pero sin duración/subtítulos/fecha; `oembed` → 200 (título, canal, miniatura); RSS del canal → 200 (fecha y descripción); `timedtext` → vacío; Data API sin clave → 403. Consecuencia: desde la nube no se pueden verificar duración ni subtítulos; modo limitado = sólo vídeos en español (ver `CLAUDE.md`).
+- Local (Windows) la inspección completa funciona (duración, fecha, subtítulos, traducción automática).
+- El aviso "MCP buffer requires authentication" de las sesiones en la nube se refiere al servidor `buffer` de `.mcp.json` (sólo local); el conector `Buffer` de claude.ai funciona (comprobado con `get_channel` y `list_posts`).
+- Opcional (no aplicado, requiere acción del propietario): una clave gratuita de la YouTube Data API v3 como variable del entorno permitiría leer la duración y si hay subtítulos (no su idioma).

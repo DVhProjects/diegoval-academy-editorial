@@ -179,5 +179,66 @@ class TestValidadorVideo(unittest.TestCase):
         self.assertTrue(history.check(f"https://youtu.be/{VID}", None))
 
 
+class TestModoLimitadoNube(unittest.TestCase):
+    """En la nube la página del vídeo da 429: sólo sirven oEmbed y RSS."""
+
+    FEED = ('<feed xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://www.youtube.com/xml/schemas/2015" '
+            'xmlns:media="http://search.yahoo.com/mrss/"><title>CSIC</title><entry><yt:videoId>%s</yt:videoId>'
+            '<title>El CSIC explica</title><published>2026-09-09T10:00:00+00:00</published>'
+            '<media:group><media:description>Descripción real</media:description></media:group></entry></feed>' % VID)
+
+    def fake_fetch(self, url):
+        import urllib.error
+        if "oembed" in url:
+            return json.dumps({"title": "El CSIC explica", "author_name": "CSIC", "author_url": "https://www.youtube.com/@canal",
+                               "thumbnail_url": "https://i.ytimg.com/x.jpg"})
+        if url.startswith("https://www.youtube.com/watch"):
+            raise urllib.error.HTTPError(url, 429, "Too Many Requests", {}, None)
+        if url.endswith("/@canal"):
+            return '..."channelId":"UC' + "a" * 22 + '"...'
+        if "feeds/videos.xml" in url:
+            return self.FEED
+        raise AssertionError(url)
+
+    def test_inspect_cae_al_rss(self):
+        r = video.inspect(URL, date(2026, 10, 30), fetch=self.fake_fetch)
+        self.assertEqual(r["source"], "feed")
+        self.assertTrue(r["ok"], r)
+        self.assertIsNone(r["duration_s"])
+        self.assertEqual((r["published"], r["subtitles"]), ("2026-09-09", "no_verificado"))
+        self.assertEqual(r["channel_id"], "UC" + "a" * 22)
+
+    def test_video_fuera_del_rss_no_es_comprobable(self):
+        def fetch(url):
+            return self.FEED.replace(VID, "OTROvideo11") if "feeds/videos.xml" in url else self.fake_fetch(url)
+        r = video.inspect(URL, date(2026, 10, 30), fetch=fetch)
+        self.assertFalse(r["ok"])
+
+    def test_short_no_pasa(self):
+        base = {"duration_s": None, "published": "2026-10-19", "title": "Mira esto #shorts", "channel_id": "UC" + "a" * 22}
+        self.assertIn("es un Short", video.quality(base, date(2026, 10, 30), allow_unknown_duration=True))
+
+    def test_duracion_desconocida_exige_espanol(self):
+        base = {"duration_s": None, "published": "2026-10-19", "title": "t", "channel_id": "UC" + "a" * 22}
+        self.assertTrue(video.quality(base, date(2026, 10, 30)))
+        self.assertEqual(video.quality(base, date(2026, 10, 30), allow_unknown_duration=True), [])
+
+
+class TestValidadorModoLimitado(TestValidadorVideo):
+    def test_cuatro_estados_validos(self):  # heredado: no repetir
+        pass
+
+    def test_espanol_sin_duracion_es_valido_con_aviso(self):
+        m = meta("no_verificado"); m["video"]["duration_s"] = None  # language 'es' ya puesto por meta()
+        f = self.folder("no_verificado", m=m)
+        res, _ = validate_post.validate(f, NOW, skip_network=True)
+        self.assertEqual([n for s, n, _ in res if s == "FAIL"], [])
+        self.assertTrue(any(s == "WARN" and n == "Calidad del vídeo" for s, n, _ in res))
+
+    def test_ingles_sin_duracion_bloquea(self):
+        m = meta("traducible"); m["video"]["duration_s"] = None
+        self.assertIn("Calidad del vídeo", self.fails(self.folder("traducible", m=m)))
+
+
 if __name__ == "__main__":
     unittest.main()

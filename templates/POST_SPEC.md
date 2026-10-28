@@ -42,7 +42,7 @@ Carpeta `posts/AAAA-MM-DD_<miercoles|viernes>_<slug>/` con `caption.md`, `source
     "url": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
     "title": "título tal cual lo publica el canal (oEmbed)",
     "channel": "nombre del canal", "channel_id": "UC...",
-    "published": "AAAA-MM-DD", "duration_s": 240,
+    "published": "AAAA-MM-DD", "duration_s": 240,   // null sólo si language = "es" y la nube no pudo leer la página del vídeo
     "subtitles": "es_oficial | es_automatico | traducible | no_verificado",
     "language": "es (opcional; sólo si el audio está en español)",
     "official_evidence_url": "página oficial que enlaza/incrusta el vídeo o su canal (también en sources.md)"
