@@ -59,3 +59,16 @@ Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwz
 - Local (Windows) la inspección completa funciona (duración, fecha, subtítulos, traducción automática).
 - El aviso "MCP buffer requires authentication" de las sesiones en la nube se refiere al servidor `buffer` de `.mcp.json` (sólo local); el conector `Buffer` de claude.ai funciona (comprobado con `get_channel` y `list_posts`).
 - Opcional (no aplicado, requiere acción del propietario): una clave gratuita de la YouTube Data API v3 como variable del entorno permitiría leer la duración y si hay subtítulos (no su idioma).
+
+## Estado de validación (2026-10-28 16:40 CET)
+| Comprobación | Resultado |
+|---|---|
+| Red de la nube (entorno Default en acceso completo) | OK (EURAXESS da 403 antirrobots; YouTube bloquea la página del vídeo) |
+| Prueba integral miércoles, imagen, borrador | OK (ETH ESOP; verificador aprobó; borrador creado/borrado) |
+| Prueba integral viernes, imagen, borrador | OK (COST; el verificador rechazó la 1.ª versión, corregida) |
+| Prueba integral vídeo, nube, borrador (E2E 5) | OK con 2 fallos hallados y corregidos (canal erróneo, página 200 sin datos); vista previa con título y miniatura; `assets` vacío; historial con `format`/`video_url`; prueba negativa (vídeo en inglés) bloqueada |
+| `video.py inspect` en la nube, 5 repeticiones | Estable (modo `feed`) |
+| Pruebas automáticas | 58 OK en local (Windows) y en la nube |
+| Buffer en la nube | OK con el conector `mcp__Buffer__*` |
+| Rutina semanal | Activa; primera ejecución programada 2026-10-30 06:05 UTC |
+| **No verificado** | Ejecución real programada por el planificador con publicación real; elección autónoma entre vídeo e imagen sin vídeo sugerido; push a `main` desde la nube; aspecto final de la tarjeta de vídeo en LinkedIn |

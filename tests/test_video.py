@@ -229,6 +229,14 @@ class TestModoLimitadoNube(unittest.TestCase):
         canon = html + '<link rel="canonical" href="https://www.youtube.com/channel/UC' + "c" * 22 + '">'
         self.assertEqual(video.channel_id_of("@canal", fetch=lambda u: canon), "UC" + "c" * 22)
 
+    def test_handle_con_tilde_se_codifica(self):
+        vistos = []
+        def fetch(url):
+            vistos.append(url)
+            return '<link rel="canonical" href="https://www.youtube.com/channel/UC' + "d" * 22 + '">'
+        video.channel_id_of("@CSICComunicación", fetch=fetch)
+        self.assertTrue(vistos[0].isascii(), vistos[0])
+
     def test_pagina_200_sin_datos_cae_al_rss(self):
         def fetch(url):
             if url.startswith("https://www.youtube.com/watch"):

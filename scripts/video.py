@@ -174,7 +174,7 @@ def channel_id_of(channel: str, fetch=http_get) -> str:
     if re.fullmatch(r"UC[\w-]{22}", channel):
         return channel
     handle = channel if channel.startswith("@") else "@" + channel
-    html = fetch(f"https://www.youtube.com/{handle}")
+    html = fetch("https://www.youtube.com/" + urllib.parse.quote(handle, safe="@%"))  # handles con tilde (ó, ñ)
     # Orden de fiabilidad: enlace canónico y RSS del propio canal; el primer "channelId" de la página puede ser de otro
     # canal (barras laterales, vídeos recomendados) y sólo se usa como último recurso.
     for pattern in (r'rel="canonical" href="https://www\.youtube\.com/channel/(UC[\w-]{22})"',
@@ -213,7 +213,10 @@ def main() -> int:
             info = inspect(a.url, datetime.now().date())
             print(json.dumps(info, ensure_ascii=False, indent=2))
             return 0 if info["ok"] else 1
-        for r in feed(a.channel, a.limit):
+        rows = feed(a.channel, a.limit)
+        if rows:
+            print(f"# canal: {rows[0]['channel']}")
+        for r in rows:
             print(f"{r['published']} {r['url']} {r['title']}")
         return 0
     except Exception as e:
