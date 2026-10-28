@@ -141,6 +141,9 @@ def inspect(url: str, today: date | None = None, fetch=http_get) -> dict:
     out["source"] = "page"
     try:
         page = parse_watch_page(fetch(canon))
+        if page["duration_s"] is None:
+            # A veces YouTube responde 200 con una página de consentimiento o sin datos del reproductor.
+            raise ValueError("la página no trae datos del reproductor (consentimiento o bloqueo)")
         status, why = classify_subtitles(page["tracks"], page["translatable"])
         out.update(duration_s=page["duration_s"], channel_id=page["channel_id"], published=page["published"],
                    subtitles=status, subtitles_detail=why, caption_languages=sorted({t["languageCode"] for t in page["tracks"]}))
@@ -152,7 +155,10 @@ def inspect(url: str, today: date | None = None, fetch=http_get) -> dict:
         try:
             handle = (oe.get("author_url") or "").rstrip("/").rsplit("/", 1)[-1]
             cid = channel_id_of(handle, fetch)
-            entry = next((r for r in feed(cid, 50, fetch) if r["id"] == canon.rsplit("=", 1)[-1]), None)
+            rows = feed(cid, 50, fetch)
+            if rows and out.get("channel") and rows[0]["channel"].strip() != out["channel"].strip():
+                raise ValueError(f"el RSS es del canal '{rows[0]['channel']}', no de '{out['channel']}'")
+            entry = next((r for r in rows if r["id"] == canon.rsplit("=", 1)[-1]), None)
             if entry:
                 out.update(channel_id=cid, published=entry["published"], description=entry.get("description", ""))
             else:
@@ -169,10 +175,14 @@ def channel_id_of(channel: str, fetch=http_get) -> str:
         return channel
     handle = channel if channel.startswith("@") else "@" + channel
     html = fetch(f"https://www.youtube.com/{handle}")
-    m = re.search(r'"channelId":"(UC[\w-]{22})"', html) or re.search(r"channel_id=(UC[\w-]{22})", html)
-    if not m:
-        raise ValueError(f"no se pudo resolver el canal {channel}")
-    return m.group(1)
+    # Orden de fiabilidad: enlace canónico y RSS del propio canal; el primer "channelId" de la página puede ser de otro
+    # canal (barras laterales, vídeos recomendados) y sólo se usa como último recurso.
+    for pattern in (r'rel="canonical" href="https://www\.youtube\.com/channel/(UC[\w-]{22})"',
+                    r"channel_id=(UC[\w-]{22})", r'"externalId":"(UC[\w-]{22})"', r'"channelId":"(UC[\w-]{22})"'):
+        m = re.search(pattern, html)
+        if m:
+            return m.group(1)
+    raise ValueError(f"no se pudo resolver el canal {channel}")
 
 
 def feed(channel: str, limit: int = 15, fetch=http_get) -> list[dict]:

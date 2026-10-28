@@ -223,6 +223,28 @@ class TestModoLimitadoNube(unittest.TestCase):
         self.assertTrue(video.quality(base, date(2026, 10, 30)))
         self.assertEqual(video.quality(base, date(2026, 10, 30), allow_unknown_duration=True), [])
 
+    def test_canal_ignora_channelid_de_otro_canal(self):
+        html = '..."channelId":"UC' + "n" * 22 + '"... <link rel="alternate" href="https://www.youtube.com/feeds/videos.xml?channel_id=UC' + "a" * 22 + '">'
+        self.assertEqual(video.channel_id_of("@canal", fetch=lambda u: html), "UC" + "a" * 22)
+        canon = html + '<link rel="canonical" href="https://www.youtube.com/channel/UC' + "c" * 22 + '">'
+        self.assertEqual(video.channel_id_of("@canal", fetch=lambda u: canon), "UC" + "c" * 22)
+
+    def test_pagina_200_sin_datos_cae_al_rss(self):
+        def fetch(url):
+            if url.startswith("https://www.youtube.com/watch"):
+                return "<html>consentimiento</html>"  # 200 sin reproductor
+            return self.fake_fetch(url)
+        r = video.inspect(URL, date(2026, 10, 30), fetch=fetch)
+        self.assertEqual(r["source"], "feed")
+        self.assertTrue(r["ok"], r)
+
+    def test_rss_de_otro_canal_se_rechaza(self):
+        def fetch(url):
+            return self.FEED.replace("<title>CSIC</title>", "<title>NASA</title>") if "feeds/videos.xml" in url else self.fake_fetch(url)
+        r = video.inspect(URL, date(2026, 10, 30), fetch=fetch)
+        self.assertFalse(r["ok"])
+        self.assertTrue(any("NASA" in e for e in r["errors"]))
+
 
 class TestValidadorModoLimitado(TestValidadorVideo):
     def test_cuatro_estados_validos(self):  # heredado: no repetir
