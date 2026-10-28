@@ -46,3 +46,9 @@ Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwz
 - **BLOQUEO**: la red del entorno `Default` no resuelve dominios oficiales (`marie-sklodowska-curie-actions.ec.europa.eu`, `rea.ec.europa.eu`, `euraxess.ec.europa.eu`: ENOTFOUND). Sin acceso a fuentes primarias la rutina termina en `skipped` (comportamiento correcto, pero no publica). Requiere que el propietario amplíe el acceso de red del entorno en claude.ai/code.
 - El servidor `buffer` de `.mcp.json` falla en la nube (403 del proxy); se usa el conector `Buffer` de claude.ai.
 - No verificado aún: push a `main` desde la nube (hay alternativa `claude/publicaciones`).
+
+## Diagnóstico de red en la nube (2026-10-28 12:25 UTC, rutina `trig_01BX4twh16osgvWibzw8Uajk`, sesión `cse_01HRCw36irGZd3j8dYxEvFaJ`)
+- Accesible: sólo `raw.githubusercontent.com` (HTTP 200).
+- Bloqueados (proxy: `Tunnel connection failed: 403 Forbidden`; WebFetch: `ENOTFOUND`): mundusmapp.org, euroculturemaster.eu, todo `*.europa.eu` (MSCA, EURAXESS, research-and-innovation, REA, erasmus-plus), epfl.ch, daad.de, studyinnl.org, chevening.org y hasta example.com.
+- Conclusión: el entorno `Default` tiene acceso de red restringido y no incluye las fuentes oficiales. Las rutinas no pueden cambiarlo (la API de rutinas no expone la configuración del entorno): lo cambia el propietario en claude.ai/code. Mientras tanto la rutina termina en `skipped` ("red de la nube sin acceso a <dominio>") sin publicar.
+- Tras cambiarlo hay que repetir la prueba integral en borrador (`claude/prueba-*`) antes de dar por validado el sistema.
