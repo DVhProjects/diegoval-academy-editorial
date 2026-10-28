@@ -16,6 +16,10 @@
     "verificacion": "verificador-convocatorias (Sonnet)"
   },
   "style_version": 2,
-  "status": "draft",
-  "publish_note": "Publicación extra a petición del propietario (muestra adicional de research & career)."
+  "status": "published",
+  "publish_note": "Publicación extra a petición del propietario (muestra adicional de research & career).",
+  "buffer_post_id": "6ae1ddafdee6d1a87abf9d3e",
+  "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7521172532419301379",
+  "published_at": "2026-10-28T12:34:28+01:00",
+  "image_url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/e10a26442c2721f7e734b60790196bd2b984fb3d/posts/2026-10-28_research-career_suelos-tesis/post.png"
 }
