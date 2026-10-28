@@ -20,10 +20,12 @@ Primera petición de Claude: abre `prompts/PRIMERA_TAREA.md` y sigue sus instruc
 ```
 python scripts/render_post.py posts/<carpeta>/post.json      # imagen 1080×1350
 python scripts/validate_post.py posts/<carpeta>              # APROBADA / BLOQUEADA
-python scripts/prepare_publish.py posts/<carpeta> --image-url <URL pública> --mode customScheduled --due <ISO>
+python scripts/prepare_publish.py posts/<carpeta> --image-url <URL pública> --slot
 python scripts/history.py add posts/<carpeta> --status scheduled --buffer-post-id <id>
 ```
 Procedimiento completo de la rutina: `prompts/RUTINA_SEMANAL.md`. Estado de la nube: `docs/AUTOMATIZACION.md`. Modelos: `docs/MODELOS.md`.
+
+Pruebas: `python3 -m unittest discover -s tests -v`. Radar de becas: `python3 scripts/radar.py due`.
 
 ## Estructura
 - `AGENTS.md` / `.codex/config.toml`: instrucciones y esfuerzo por defecto para Codex (remiten a `CLAUDE.md`).

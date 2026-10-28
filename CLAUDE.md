@@ -43,7 +43,7 @@ Seleccionar autónomamente UN tema de cuatro familias (`metadata.category`): `te
 1. Nunca inventar convocatoria, beneficiarios, sueldo, cifras, financiación, fecha, deadline, elegibilidad ni URL.
 2. Si falta un dato crítico usar `No verificable` o no publicar. No inferir de convocatorias de años anteriores (p. ej., una página que dice "December 15" sin año no acredita el ciclo actual).
 3. Abrir/encontrar la convocatoria primaria y registrar la fuente con citas literales en `sources.md`. No confiar en un resumen generado por IA ni en agregadores como evidencia.
-4. Revisar que la convocatoria esté abierta AL MOMENTO DE PUBLICAR; `verified_date` debe ser el día de publicación.
+4. Revisar que la convocatoria esté abierta AL MOMENTO DE PUBLICAR; `verified_date` debe ser el día de publicación. Nada cuenta como publicado/programado sin confirmación de Buffer (`get_post`).
 5. Antes de registrar la publicación, buscar duplicados en `data/publication_history.csv` por URL canónica y `topic_key`, y en Buffer (`list_posts` del canal, enviados y programados).
 6. `scripts/validate_post.py` debe devolver **APROBADA**. Revisar además la imagen visualmente (leer el PNG): nada cortado ni texto diminuto.
 7. No usar técnicas de automatización de navegador que contravengan términos de LinkedIn; el canal de publicación es el MCP oficial de Buffer.
@@ -53,7 +53,7 @@ Seleccionar autónomamente UN tema de cuatro familias (`metadata.category`): `te
 
 ## Sistema (archivos)
 - `config/buffer_channel.json`: organización y canal autorizados. `config/publishing.json`: calendario, reglas y alojamiento de imágenes.
-- `scripts/render_post.py` → `post.png` · `scripts/validate_post.py` → `validation.md` · `scripts/prepare_publish.py` → `buffer_payload.json` · `scripts/history.py` → historial/duplicados.
+- `scripts/render_post.py` → `post.png` · `scripts/validate_post.py` → `validation.md` · `scripts/prepare_publish.py --slot` → `buffer_payload.json` (12:30 Europe/Stockholm, CET/CEST) · `scripts/history.py` → historial, duplicados y reconciliación con Buffer · `scripts/radar.py` → radar de becas · `tests/test_sistema.py` → pruebas (`python3 -m unittest discover -s tests`).
 - `posts/AAAA-MM-DD_<miercoles|viernes|lanzamiento>_<slug>/`: `post.json`, `post.png`, `caption.md`, `sources.md`, `metadata.json`, `validation.md`, `buffer_payload.json` (ver `templates/POST_SPEC.md`).
 - `prompts/RUTINA_SEMANAL.md`: procedimiento completo que ejecuta la rutina en la nube.
 - `docs/AUTOMATIZACION.md`: estado de la nube, alojamiento de imágenes y bloqueos.

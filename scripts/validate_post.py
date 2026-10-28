@@ -211,6 +211,9 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
                 ok("Enlace accesible", f"{code} {u}")
             elif code in (401, 403, 429):
                 warn("Enlace accesible", f"{code} {u}: bloqueo anti-bots; confirmar con WebFetch y anotar en sources.md")
+            elif code is None:
+                # Sin respuesta HTTP (proxy, DNS o red del entorno): no prueba que el enlace esté roto.
+                warn("Enlace accesible", f"sin respuesta desde este entorno ({info}) {u}: confirmar con WebFetch y anotar en sources.md")
             else:
                 fail("Enlace accesible", f"{code} {u} {info}")
 

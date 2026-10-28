@@ -18,6 +18,6 @@
 
 ## Integración
 - [ ] El canal destino corresponde a la página LinkedIn autorizada.
-- [ ] Modo pruebas: sólo borrador; no tocar la cola ni publicar.
-- [ ] Modo autónomo: sólo publicar cuando se apruebe activarlo y todas las casillas anteriores pasen.
+- [ ] MODO PRODUCCIÓN (activo desde 2026-10-28, autorizado por el propietario): la rutina semanal publica si todas las comprobaciones pasan; no hace falta ninguna aprobación adicional.
+- [ ] Las pruebas son otra cosa: rutinas separadas con `--draft`, rama `claude/prueba-*` y status `draft-test`. Nunca afectan a la rutina de producción.
 - [ ] Si algo falla, registrar error y omitir publicación, sin inventar contenido.
