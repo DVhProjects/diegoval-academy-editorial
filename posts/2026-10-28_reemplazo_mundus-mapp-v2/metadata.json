@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-28",
+  "weekday": "miercoles",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Mundus MAPP (Erasmus Mundus, políticas públicas) cohorte 2027-2029: beca EMJM",
+  "topic_key": "mundus-mapp-2027-2029",
+  "primary_url": "https://www.mundusmapp.org/admissions-calendar/",
+  "deadline": "2026-12-01T23:59:00+01:00",
+  "verified_date": "2026-10-28",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy. Estudia políticas públicas en 2 países, con beca: máster Erasmus Mundus de 2 años (Mundus MAPP), abierto a candidatos de dentro y fuera de la UE. Plazo para pedir la beca: 1 de diciembre de 2026, 23:59 hora de Europa central. Cubre matrícula y 1400 euros al mes. Pide grado de 3 años e inglés, por ejemplo IELTS 7. Solicitud sin tasa. Lo que pocos explican: debes vivir fuera de los 2 países del máster; si resides en España, no puedes elegir los itinerarios con Barcelona. Fuente: mundusmapp.org, verificado el 2026-10-28.",
+  "models_used": {
+    "orquestacion_investigacion_redaccion": "claude-opus-5-5 (sesión de configuración)",
+    "extraccion_prueba": "claude-haiku-5-5 (subagente)",
+    "verificacion_independiente": "claude-sonnet-5-5 (subagente)",
+    "reverificacion_2026-10-28": "verificador-convocatorias (Sonnet)"
+  },
+  "status": "draft",
+  "style_version": 2,
+  "replaces": "6ae1bb52deb69b3963bde796"
+}
