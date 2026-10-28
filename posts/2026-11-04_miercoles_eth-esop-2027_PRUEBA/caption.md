@@ -13,7 +13,7 @@ Lo que pocos explican: no hay formulario aparte. Se pide dentro de la solicitud 
 Cómo empezar:
 1. Elige tu máster en ETH; tu grado debe ser de fuera de Suiza.
 2. Redacta ya el borrador de tesis (hay guía en PDF).
-3. Avisa a 2 profesores y prepara tu certificado de inglés.
+3. Si tu programa no pide referencias, avisa a 2 profesores; prepara tu certificado de inglés.
 
 https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html
 https://ethz.ch/en/studies/master/application/dates.html

@@ -1,7 +1,7 @@
 # Validación — 2026-11-04_miercoles_eth-esop-2027_PRUEBA
 
-Ejecutado: 2026-10-28T13:56:11+01:00
-Decisión: **APROBADA para publicar**
+Ejecutado: 2026-10-28T13:56:41+01:00
+Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |
 |---|---|---|
@@ -10,7 +10,7 @@ Decisión: **APROBADA para publicar**
 | PASS | Imagen | 1080x1350 PNG, 1 archivo |
 | PASS | Canal Buffer | DiegoVal Academy (6ae0bdf22f1f5ed648eb92f9) |
 | PASS | Verificación del día | 2026-10-28 |
-| PASS | Longitud del texto | 1272/1300 caracteres |
+| FAIL | Longitud del texto | 1307 > 1300 |
 | PASS | Fecha visible en el texto | Verificado el: 2026-10-28 |
 | PASS | Marcadores pendientes | ninguno |
 | PASS | Enlaces documentados en sources.md | 2 enlaces |
