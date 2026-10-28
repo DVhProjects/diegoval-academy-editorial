@@ -142,6 +142,10 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
         fail("Enlace principal en el texto", meta.get("primary_url", ""))
     else:
         ok("Enlace principal en el texto", meta["primary_url"])
+    if "tip" in spec and "Lo que pocos explican" in caption:
+        ok("Estilo compacto (v2)", "imagen con bloque 'Lo que pocos explican' y dato práctico en el texto")
+    else:
+        fail("Estilo compacto (v2)", "falta 'tip' en post.json o la línea 'Lo que pocos explican' en caption.md")
     if URL_RE.search(json.dumps(spec, ensure_ascii=False)):
         fail("Sin URLs en la imagen", "post.json contiene una URL completa")
     else:

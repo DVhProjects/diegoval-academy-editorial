@@ -1,0 +1,32 @@
+{
+  "series": "miercoles",
+  "kicker": "Oportunidad verificada · Máster con beca",
+  "issue": "N.º 003 · 29 de octubre de 2026",
+  "headline": "Máster europeo con beca: Euroculture 2027-2029",
+  "dek": "Máster conjunto de 24 meses con beca Erasmus Mundus. Abierto a casi todas las nacionalidades.",
+  "highlight": {
+    "label": "Plazo para optar a la beca",
+    "value": "15 ene 2027",
+    "note": "La web no da hora: envía con días de margen"
+  },
+  "facts": [
+    {
+      "label": "Beca",
+      "value": "1400 €/mes durante 24 meses + matrícula"
+    },
+    {
+      "label": "Quién",
+      "value": "Grado afín; casi todas las nacionalidades"
+    },
+    {
+      "label": "Tasa",
+      "value": "Sin tasa de solicitud"
+    }
+  ],
+  "tip": {
+    "label": "Lo que pocos explican",
+    "text": "Para la beca, tu grado debe estar terminado el 15 ene. Solo quien se autofinancia puede postular sin haberlo terminado."
+  },
+  "source": "euroculturemaster.eu",
+  "verified": "2026-10-28"
+}

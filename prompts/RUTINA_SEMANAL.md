@@ -13,6 +13,7 @@ Procedimiento que ejecuta la rutina en la nube (o una sesión local equivalente)
 1. `get_channel` con `channel_id` de `config/buffer_channel.json`. Debe coincidir: nombre `diegovalacademy`, servicio `linkedin`, `isDisconnected=false`, `isLocked=false`. Si no: OMITIR (motivo: canal no disponible).
 2. `list_posts` (organizationId de la config, channelIds=[canal], status `scheduled` y `sent`, últimos 60 días).
    - Si ya hay una publicación de este sistema programada o enviada hoy: terminar (idempotencia).
+   - Anti-ruido: si en las últimas 72 h ya se publicó o programó una publicación del MISMO tipo que toca hoy (`oportunidad` el miércoles, `research_career` el viernes; ver `data/publication_history.csv` y Buffer), terminar y registrarlo en el resumen (no es un fallo).
    - Para filas del historial con `status=scheduled` cuyo `buffer_post_id` ya figure como `sent`: `get_post` y actualizar con `python scripts/history.py add <carpeta> --status published --buffer-post-id … --linkedin-url <externalLink> --image-url …`.
 3. Nunca tocar otros canales. Nunca `addToQueue`.
 
@@ -26,10 +27,10 @@ Abre cada URL oficial y confirma literalmente: abierta ahora, ciclo/año, plazo 
 
 ## 4. Producción
 Carpeta `posts/AAAA-MM-DD_<miercoles|viernes>_<slug>/`:
-1. `post.json` (ver `templates/POST_SPEC.md`; usa espacios duros U+00A0 entre cifras y unidades).
+1. `post.json` con el esquema v2 compacto de `templates/POST_SPEC.md` (2-3 datos + bloque `tip` "Lo que pocos explican"; lenguaje para principiantes; espacios duros U+00A0 entre cifras y unidades).
 2. `python scripts/render_post.py posts/<carpeta>/post.json`. Si los tamaños de fuente caen al mínimo, acorta los textos y repite.
 3. Lee `post.png` (revisión visual): nada cortado, jerarquía clara, sin texto diminuto.
-4. `caption.md`, `sources.md`, `metadata.json` (incluye `models_used`, `alt_text`, `deadline` en ISO con zona si aplica).
+4. `caption.md` (≤ 1300 caracteres, estructura de `templates/POST_SPEC.md`), `sources.md`, `metadata.json` (incluye `models_used`, `alt_text`, `deadline` en ISO con zona si aplica).
 5. `python scripts/validate_post.py posts/<carpeta>` → debe decir **APROBADA**. Los WARN de enlaces (403/429) exigen confirmar la página con WebFetch y anotarlo en `sources.md`.
 
 ## 5. Publicación

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-28",
+  "weekday": "miercoles",
+  "type": "research_career",
+  "category": "carrera_phd",
+  "topic": "Doctorados MSCA (Doctoral Networks): empleo, requisito y regla de movilidad",
+  "topic_key": "msca-doctoral-networks-explicador",
+  "primary_url": "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/doctoral-networks",
+  "deadline": null,
+  "verified_date": "2026-10-28",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. En Europa, un doctorado puede ser un empleo: las plazas Marie Skłodowska-Curie (MSCA) se pagan con fondos de la UE y se solicitan una a una. Idea clave: si te eligen, te contratan, de 3 a 36 meses (48 en doctorados conjuntos). Requisito: no tener ya un doctorado. Pago: subsidio de vida y de movilidad. Cómo: postulas a cada plaza, no a un fondo central. Lo que pocos explican: si en los 3 años previos pasaste más de 12 meses en el país que te contrata (viviendo, trabajando o estudiando), quedas fuera de esa plaza. Fuente: marie-sklodowska-curie-actions.ec.europa.eu, verificado el 2026-10-28.",
+  "models_used": {
+    "investigacion_redaccion": "investigador-editorial (claude-sonnet-5-5)",
+    "edicion_render": "claude-opus-5-5 (sesión principal)"
+  },
+  "style_version": 2,
+  "status": "draft"
+}

@@ -46,6 +46,17 @@ SIZES = {
     "fact_value": (31, 27),
     "action_text": (29, 26),
 }
+# Plantilla v2 (compacta, desde 2026-10-28): se activa cuando post.json trae "tip".
+# Menos elementos y letra más grande: titular, entradilla corta, plazo/dato clave,
+# 2-3 datos y el bloque "Lo que pocos explican".
+SIZES_V2 = {
+    "headline": (84, 62),
+    "dek": (35, 30),
+    "highlight_value": (58, 44),
+    "fact_value": (34, 29),
+    "action_text": (32, 28),  # texto del bloque "tip"
+}
+MAX_GAP_EXTRA = 34  # espacio sobrante que se reparte entre secciones (px por hueco)
 LABEL_SIZE = 21
 MIN_ANY = 21  # ningún texto por debajo de este tamaño
 
@@ -120,8 +131,8 @@ class Fonts:
     sizes: dict
 
 
-def make_fonts(scale: float) -> Fonts:
-    s = {k: max(lo, round(hi * scale)) for k, (hi, lo) in SIZES.items()}
+def make_fonts(scale: float, sizes: dict = SIZES) -> Fonts:
+    s = {k: max(lo, round(hi * scale)) for k, (hi, lo) in sizes.items()}
     return Fonts(
         headline=font(SERIF, s["headline"], 640, opsz=60),
         dek=font(SANS, s["dek"], 400),
@@ -262,6 +273,133 @@ def layout(spec: dict, F: Fonts, accent, draw: ImageDraw.ImageDraw | None):
     return y
 
 
+def tint(color, amount: float):
+    """Mezcla el color de acento con el papel (amount = proporción de acento)."""
+    return tuple(round(p + (c - p) * amount) for c, p in zip(color, PALETTE["paper"]))
+
+
+def layout_v2(spec: dict, F: Fonts, accent, draw: ImageDraw.ImageDraw | None, gap_extra: int = 0):
+    """Plantilla compacta. Devuelve (y final del contenido, número de huecos ampliables)."""
+    inner = W - 2 * MARGIN
+    ink, soft, muted, rule = PALETTE["ink"], PALETTE["ink_soft"], PALETTE["muted"], PALETTE["rule"]
+    gaps = 0
+
+    # Cabecera: categoría + marca + filete + número/fecha
+    y = 70
+    if draw:
+        tracked(draw, (MARGIN, y + 4), spec["kicker"].upper(), F.label, accent)
+        brand = "DiegoVal Academy"
+        draw.text((W - MARGIN - F.brand.getlength(brand), y - 2), brand, font=F.brand, fill=ink)
+    if tracked_len(spec["kicker"].upper(), F.label) > inner - F.brand.getlength("DiegoVal Academy") - 30:
+        raise LayoutError("Antetítulo demasiado largo")
+    y += 50
+    if draw:
+        draw.rectangle([MARGIN, y, W - MARGIN, y + 2], fill=ink)
+    if spec.get("issue"):
+        y += 16
+        if draw:
+            tracked(draw, (MARGIN, y), spec["issue"].upper(), F.small, muted, tracking=1.0)
+    y += 56
+
+    # Titular (ideal 2 líneas)
+    hl = F.headline
+    lh = round(hl.size * 1.08)
+    lines = wrap(spec["headline"], hl, inner)
+    if len(lines) > 3:
+        raise LayoutError("Titular de más de 3 líneas")
+    for ln in lines:
+        if draw:
+            draw.text((MARGIN, y), ln, font=hl, fill=ink)
+        y += lh
+    y += 30 + gap_extra
+    gaps += 1
+
+    # Entradilla (máx. 2 líneas)
+    dk = F.dek
+    lh = round(dk.size * 1.36)
+    lines = wrap(spec["dek"], dk, inner)
+    if len(lines) > 2:
+        raise LayoutError("Entradilla de más de 2 líneas")
+    for ln in lines:
+        if draw:
+            draw.text((MARGIN, y), ln, font=dk, fill=soft)
+        y += lh
+    y += 34 + gap_extra
+    gaps += 1
+
+    # Bloque destacado (plazo o idea clave)
+    hlg = spec["highlight"]
+    pad = 30
+    hv = F.highlight_value
+    vlines = wrap(hlg["value"], hv, inner - 2 * pad)
+    if len(vlines) > 2:
+        raise LayoutError("Valor destacado de más de 2 líneas")
+    vlh = round(hv.size * 1.12)
+    note_h = 40 if hlg.get("note") else 0
+    box_h = pad + 34 + len(vlines) * vlh + note_h + pad - 4
+    if hlg.get("note") and F.small.getlength(hlg["note"]) > inner - 2 * pad:
+        raise LayoutError("Nota del bloque destacado demasiado larga")
+    if draw:
+        draw.rectangle([MARGIN, y, W - MARGIN, y + box_h], fill=accent)
+        tracked(draw, (MARGIN + pad, y + pad - 2), hlg["label"].upper(), F.label, PALETTE["white"])
+        yy = y + pad + 36
+        for ln in vlines:
+            draw.text((MARGIN + pad, yy), ln, font=hv, fill=PALETTE["white"])
+            yy += vlh
+        if hlg.get("note"):
+            draw.text((MARGIN + pad, yy + 8), hlg["note"], font=F.small, fill=PALETTE["white"])
+    y += box_h + 30 + gap_extra
+    gaps += 1
+
+    # 2-3 datos esenciales
+    facts = spec.get("facts", [])
+    if not 2 <= len(facts) <= 3:
+        raise LayoutError("La plantilla compacta admite 2 o 3 datos")
+    label_w = 210
+    val_w = inner - label_w
+    fv = F.fact_value
+    vlh = round(fv.size * 1.28)
+    for i, fact in enumerate(facts):
+        vlines = wrap(fact["value"], fv, val_w)
+        if len(vlines) > 2:
+            raise LayoutError(f"Dato demasiado largo (máx. 2 líneas): {fact['label']}")
+        if tracked_len(fact["label"].upper(), F.label) > label_w - 16:
+            raise LayoutError(f"Etiqueta demasiado larga: {fact['label']}")
+        row_h = len(vlines) * vlh + 34
+        if draw:
+            if i == 0:
+                draw.rectangle([MARGIN, y, W - MARGIN, y + 1], fill=rule)
+            tracked(draw, (MARGIN, y + 23), fact["label"].upper(), F.label, muted)
+            yy = y + 16
+            for ln in vlines:
+                draw.text((MARGIN + label_w, yy), ln, font=fv, fill=ink)
+                yy += vlh
+            draw.rectangle([MARGIN, y + row_h, W - MARGIN, y + row_h + 1], fill=rule)
+        y += row_h
+    y += 34 + gap_extra
+    gaps += 1
+
+    # Lo que pocos explican: el dato práctico diferencial
+    tip = spec["tip"]
+    tt = F.action_text
+    tlh = round(tt.size * 1.34)
+    pad = 28
+    tlines = wrap(tip["text"], tt, inner - 2 * pad - 8)
+    if len(tlines) > 3:
+        raise LayoutError("Texto de 'Lo que pocos explican' de más de 3 líneas")
+    block_h = pad + 34 + len(tlines) * tlh + pad - 8
+    if draw:
+        draw.rectangle([MARGIN, y, W - MARGIN, y + block_h], fill=tint(accent, 0.10))
+        draw.rectangle([MARGIN, y, MARGIN + 6, y + block_h], fill=accent)
+        tracked(draw, (MARGIN + pad + 8, y + pad - 4), tip["label"].upper(), F.label, accent)
+        yy = y + pad + 32
+        for ln in tlines:
+            draw.text((MARGIN + pad + 8, yy), ln, font=tt, fill=ink)
+            yy += tlh
+    y += block_h
+    return y, gaps
+
+
 FOOTER_TOP = H - 112
 
 
@@ -282,11 +420,19 @@ def draw_footer(draw, spec, F):
 def render(spec: dict, out: Path) -> dict:
     accent = ACCENTS[spec["series"]]
     check_glyphs(spec)
+    v2 = "tip" in spec
+    sizes = SIZES_V2 if v2 else SIZES
+
+    def measure(F, extra=0, draw=None):
+        if v2:
+            return layout_v2(spec, F, accent, draw, extra)
+        return layout(spec, F, accent, draw), 0
+
     scale, last_err = 1.0, None
     while scale >= 0.6:
-        F = make_fonts(scale)
+        F = make_fonts(scale, sizes)
         try:
-            end_y = layout(spec, F, accent, None)
+            end_y, gaps = measure(F)
         except LayoutError as e:
             last_err = e
             scale -= 0.04
@@ -294,7 +440,7 @@ def render(spec: dict, out: Path) -> dict:
         if end_y <= FOOTER_TOP - 28:
             break
         last_err = LayoutError(f"Contenido demasiado largo: termina en y={end_y}, límite {FOOTER_TOP - 28}")
-        if all(F.sizes[k] == lo for k, (_, lo) in SIZES.items()):
+        if all(F.sizes[k] == lo for k, (_, lo) in sizes.items()):
             break
         scale -= 0.04
     else:
@@ -302,9 +448,11 @@ def render(spec: dict, out: Path) -> dict:
     if end_y > FOOTER_TOP - 28:
         raise last_err or LayoutError("No se pudo maquetar")
 
+    # v2: el espacio sobrante se reparte entre secciones en lugar de quedar vacío abajo
+    extra = min(MAX_GAP_EXTRA, (FOOTER_TOP - 28 - end_y) // gaps) if gaps else 0
     img = Image.new("RGB", (W, H), PALETTE["paper"])
     d = ImageDraw.Draw(img)
-    layout(spec, F, accent, d)
+    end_y, _ = measure(F, extra, d)
     draw_footer(d, spec, F)
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, "PNG", optimize=True)

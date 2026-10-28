@@ -1,0 +1,32 @@
+{
+  "series": "miercoles",
+  "kicker": "Oportunidad verificada · Máster con beca",
+  "issue": "N.º 001 · Versión compacta",
+  "headline": "Estudia políticas públicas en 2 países, con beca",
+  "dek": "Máster Erasmus Mundus de 2 años (Mundus MAPP). Abierto a candidatos de dentro y fuera de la UE.",
+  "highlight": {
+    "label": "Plazo para pedir la beca",
+    "value": "1 dic 2026",
+    "note": "23:59, hora de Europa central (CET)"
+  },
+  "facts": [
+    {
+      "label": "Cubre",
+      "value": "Matrícula + 1400 € al mes"
+    },
+    {
+      "label": "Pide",
+      "value": "Grado de 3 años e inglés (ej. IELTS 7)"
+    },
+    {
+      "label": "Coste",
+      "value": "Solicitud sin tasa"
+    }
+  ],
+  "tip": {
+    "label": "Lo que pocos explican",
+    "text": "Debes vivir fuera de los 2 países del máster: si resides en España, no puedes elegir los itinerarios con Barcelona."
+  },
+  "source": "mundusmapp.org",
+  "verified": "2026-10-28"
+}

@@ -1,0 +1,32 @@
+{
+  "series": "viernes",
+  "kicker": "Research & Career · Carrera de doctorado",
+  "issue": "N.º 002 · 28 de octubre de 2026",
+  "headline": "En Europa, un doctorado puede ser un empleo",
+  "dek": "Las plazas Marie Skłodowska-Curie (MSCA) se pagan con fondos de la UE y se solicitan una a una.",
+  "highlight": {
+    "label": "La idea clave",
+    "value": "Si te eligen, te contratan",
+    "note": "De 3 a 36 meses (48 en doctorados conjuntos)"
+  },
+  "facts": [
+    {
+      "label": "Requisito",
+      "value": "No tener ya un doctorado"
+    },
+    {
+      "label": "Pago",
+      "value": "Subsidio de vida y de movilidad"
+    },
+    {
+      "label": "Cómo",
+      "value": "Postulas a cada plaza, no a un fondo central"
+    }
+  ],
+  "tip": {
+    "label": "Lo que pocos explican",
+    "text": "Si en los 3 años previos pasaste más de 12 meses en el país que te contrata (vivir, trabajar, estudiar), quedas fuera."
+  },
+  "source": "marie-sklodowska-curie-actions.ec.europa.eu",
+  "verified": "2026-10-28"
+}

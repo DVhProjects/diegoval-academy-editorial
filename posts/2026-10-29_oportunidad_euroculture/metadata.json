@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-29",
+  "weekday": "jueves",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Euroculture (Erasmus Mundus Joint Master) 2027-2029: beca Erasmus Mundus",
+  "topic_key": "euroculture-2027-2029",
+  "primary_url": "https://www.euroculturemaster.eu/erasmus-mundus-scholarship",
+  "deadline": "2027-01-15T00:00:00+01:00",
+  "deadline_note": "La web oficial no publica hora ni zona; se usa el inicio del día como referencia conservadora.",
+  "verified_date": "2026-10-28",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy. Máster europeo con beca: Euroculture 2027-2029, máster conjunto de 24 meses con beca Erasmus Mundus, abierto a casi todas las nacionalidades. Plazo para optar a la beca: 15 de enero de 2027; la web no da hora, envía con días de margen. Beca: 1400 euros al mes durante 24 meses más matrícula. Quién: grado afín. Sin tasa de solicitud. Lo que pocos explican: para la beca, tu grado debe estar terminado el 15 de enero; solo quien se autofinancia puede postular sin haberlo terminado. Fuente: euroculturemaster.eu.",
+  "models_used": {
+    "investigacion_redaccion": "investigador-editorial (claude-sonnet-5-5)",
+    "edicion_render": "claude-opus-5-5 (sesión principal)"
+  },
+  "style_version": 2,
+  "status": "draft"
+}

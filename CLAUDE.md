@@ -32,9 +32,11 @@ Seleccionar autónomamente UN tema de cuatro familias (`metadata.category`): `te
 ## Formato editorial obligatorio
 - EXACTAMENTE UNA imagen por publicación, 1080 x 1350 px (relación 4:5), formato PNG. No carruseles.
 - La imagen se genera SIEMPRE con `scripts/render_post.py` a partir de `post.json` (plantilla editorial con texto real, fuentes OFL de `assets/fonts/`). Nunca usar IA generativa de imágenes, retratos, fotos decorativas ni logotipos oficiales.
-- Jerarquía de `post.json`: `kicker`, `headline` (≤ 4 líneas, ideal 2), `dek`, `highlight` (plazo o dato clave), 3-5 `facts`, `action` (primer paso), `source` (sólo dominio), `verified`. Una sola imagen NO significa meter todo el texto: el detalle y las URLs van en el caption. Si el renderizador tiene que bajar a tamaños mínimos, acortar el texto.
+- **Estilo compacto (v2, desde 2026-10-28)**: más corto, para principiantes, sin jerga (o explicada entre paréntesis). La imagen muestra sólo lo esencial y el caption la complementa sin repetirla.
+- Jerarquía de `post.json` (v2): `kicker`, `issue`, `headline` (≤ 55 caracteres, ideal 2 líneas), `dek` (≤ 110 caracteres), `highlight` (plazo o idea clave), **2-3** `facts` (≤ 48 caracteres cada uno), `tip` ("Lo que pocos explican": un dato práctico verificado que otras cuentas no suelen explicar), `source` (sólo dominio), `verified`. Si el renderizador reduce la letra, acortar el texto.
 - `series`: `miercoles` (acento terracota) o `viernes` (acento azul petróleo).
-- Caption (`caption.md`, texto plano para LinkedIn, ≤ 3000 caracteres): frase clara para principiantes, qué ofrece / qué no incluye, requisitos, fechas, pasos, consejo práctico, enlaces oficiales exactos y la línea `Verificado el: AAAA-MM-DD`.
+- Caption (`caption.md`, texto plano, **≤ 1300 caracteres**, ideal ~1000): 1 frase gancho · "En corto:" 3-4 viñetas (qué, quién, cuánto, plazo) · "Lo que pocos explican:" 1-2 frases · "Cómo empezar:" 2-3 pasos concretos · 1-2 enlaces oficiales exactos · `Verificado el: AAAA-MM-DD` · 2-3 hashtags.
+- Anti-ruido: no más de una publicación por día salvo petición del propietario, y no dos del mismo tipo en menos de 72 h.
 
 ## Verificación y seguridad
 1. Nunca inventar convocatoria, beneficiarios, sueldo, cifras, financiación, fecha, deadline, elegibilidad ni URL.

@@ -13,7 +13,7 @@
   },
   "rules": {
     "min_days_before_deadline": 7,
-    "caption_max_chars": 3000,
+    "caption_max_chars": 1300,
     "image_size": [
       1080,
       1350
@@ -23,7 +23,9 @@
       "idea_tesis",
       "carrera_phd",
       "programa_red"
-    ]
+    ],
+    "style_version": 2,
+    "min_hours_between_same_type": 72
   },
   "media": {
     "_nota": "Buffer exige una URL pública y permanente para la imagen. Se usa un repositorio GitHub público; la URL se fija al SHA del commit (inmutable).",
