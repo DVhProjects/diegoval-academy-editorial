@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-30",
+  "weekday": "viernes",
+  "type": "research_career",
+  "category": "programa_red",
+  "theme": "redes de investigación",
+  "topic": "COST Actions: cómo unirse a una red europea de investigación en marcha",
+  "topic_key": "cost-actions-unirse-red",
+  "primary_url": "https://www.cost.eu/cost-actions/participate-in-an-ongoing-action/",
+  "deadline": null,
+  "verified_date": "2026-10-28",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Únete a una red COST: las redes de investigación COST aceptan gente nueva durante sus 4 años, sin haber participado en la propuesta. Idea clave: entra en cualquier momento. Qué es: red de investigación de todas las áreas. Cómo: botón de solicitud en la página de la red. Quién: personas de 41 países miembros y de otros. Lo que pocos explican: antes de sumarte, escribe a la persona que preside la red y cuéntale qué puedes aportar. Fuente: cost.eu, verificado el 2026-10-28.",
+  "models_used": {
+    "investigacion_redaccion": "Sonnet 5.5 (sesión principal)",
+    "verificacion": "verificador-convocatorias"
+  },
+  "style_version": 2,
+  "status": "draft"
+}

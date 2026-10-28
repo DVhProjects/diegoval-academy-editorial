@@ -1,0 +1,32 @@
+{
+  "series": "viernes",
+  "kicker": "Research & Career · Programa y red",
+  "issue": "N.º 005 · 30 de octubre de 2026",
+  "headline": "Únete a una red COST",
+  "dek": "Las redes COST aceptan gente nueva durante sus 4 años. No hay que estar en la propuesta.",
+  "highlight": {
+    "label": "La idea clave",
+    "value": "Entra en cualquier momento",
+    "note": "Las redes COST duran 4 años"
+  },
+  "facts": [
+    {
+      "label": "Qué es",
+      "value": "Red de investigación, todas las áreas"
+    },
+    {
+      "label": "Cómo",
+      "value": "Botón de solicitud en la página de la red"
+    },
+    {
+      "label": "Quién",
+      "value": "Personas de 41 países miembros y de otros"
+    }
+  ],
+  "tip": {
+    "label": "Lo que pocos explican",
+    "text": "Para sumarte, escribe antes a la persona que preside la red y cuéntale qué puedes aportar."
+  },
+  "source": "cost.eu",
+  "verified": "2026-10-28"
+}
