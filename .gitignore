@@ -1,0 +1,13 @@
+# Archivos que pueden contener secretos o datos locales
+.env
+.env.*
+*.log
+*.tmp
+__pycache__/
+.venv/
+node_modules/
+.claude/settings.local.json
+# Mantener manualmente recursos gráficos de fuentes/licencias autorizadas
+
+# Instrucciones privadas locales
+CLAUDE.local.md

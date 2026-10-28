@@ -1,0 +1,4 @@
+# Configuración de Codex limitada a este proyecto (no toca ~/.codex).
+# Nivel por defecto para el trabajo típico aquí (Python, plantillas, validaciones).
+# Subir/bajar por tarea con: codex -c model_reasoning_effort="low|high"
+model_reasoning_effort = "medium"

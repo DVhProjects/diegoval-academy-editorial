@@ -1,0 +1,34 @@
+{
+  "timezone": "Europe/Stockholm",
+  "language": "es",
+  "calendar": {
+    "miercoles": {
+      "type": "oportunidad",
+      "publish_time": "12:30"
+    },
+    "viernes": {
+      "type": "research_career",
+      "publish_time": "12:30"
+    }
+  },
+  "rules": {
+    "min_days_before_deadline": 7,
+    "caption_max_chars": 3000,
+    "image_size": [
+      1080,
+      1350
+    ],
+    "friday_categories": [
+      "tendencia_europea",
+      "idea_tesis",
+      "carrera_phd",
+      "programa_red"
+    ]
+  },
+  "media": {
+    "_nota": "Buffer exige una URL pública y permanente para la imagen. Se usa un repositorio GitHub público; la URL se fija al SHA del commit (inmutable).",
+    "github_owner": "DVhProjects",
+    "github_repo": "diegoval-academy-editorial",
+    "raw_url_template": "https://raw.githubusercontent.com/{owner}/{repo}/{sha}/{path}"
+  }
+}

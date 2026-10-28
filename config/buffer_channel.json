@@ -1,0 +1,16 @@
+{
+  "_nota": "Único canal autorizado. Verificado en modo lectura con get_account/list_channels/get_channel. No contiene secretos (OAuth gestionado por Buffer).",
+  "organization_id": "6ae0bcca4506237963927a1f",
+  "organization_name": "My organization",
+  "channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "channel_name": "diegovalacademy",
+  "display_name": "DiegoVal Academy",
+  "service": "linkedin",
+  "type": "page",
+  "external_link": "https://www.linkedin.com/company/143939425",
+  "timezone": "Europe/Stockholm",
+  "plan_limits": {"channels": 3, "scheduled_posts": 10},
+  "verified_at": "2026-10-27T16:21:18+01:00",
+  "verified_status": {"isDisconnected": false, "isLocked": false},
+  "buffer_queue_note": "La cola de Buffer tiene huecos mié 17:26, jue 15:14, vie 14:55. El sistema NO usa addToQueue: siempre customScheduled con hora explícita o shareNow."
+}
