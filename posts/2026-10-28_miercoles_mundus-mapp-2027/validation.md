@@ -1,6 +1,6 @@
 # Validación — 2026-10-28_miercoles_mundus-mapp-2027
 
-Ejecutado: 2026-10-28T08:05:44+01:00
+Ejecutado: 2026-10-28T10:07:06+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
