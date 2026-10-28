@@ -7,7 +7,7 @@ Procedimiento que ejecuta la rutina en la nube (o una sesión local equivalente)
 2. Obtén fecha y hora en Europe/Stockholm: `python -c "from datetime import datetime; from zoneinfo import ZoneInfo; print(datetime.now(ZoneInfo('Europe/Stockholm')).isoformat())"`.
    - Si no es miércoles ni viernes: terminar sin hacer nada.
 3. Sincroniza el historial: `git fetch origin` y, si existe `origin/claude/publicaciones`, fusiónalo (`git merge --no-edit origin/claude/publicaciones`).
-4. Dependencias: `python -m pip install -q -r requirements.txt` (Pillow, fontTools; gratuitas).
+4. Dependencias: `python3 -m pip install -q --ignore-installed -r requirements.txt` (Pillow, fontTools; gratuitas). `--ignore-installed` es obligatorio: el Pillow del sistema en la nube está roto (`ImportError: _imaging`, prueba 2026-10-28). Comprueba con `python3 -c "from PIL import Image"`.
 
 ## 1. Buffer (sólo lectura)
 1. `get_channel` con `channel_id` de `config/buffer_channel.json`. Debe coincidir: nombre `diegovalacademy`, servicio `linkedin`, `isDisconnected=false`, `isLocked=false`. Si no: OMITIR (motivo: canal no disponible).
