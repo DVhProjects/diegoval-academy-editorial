@@ -1,0 +1,32 @@
+{
+  "series": "viernes",
+  "kicker": "Research & Career · Idea de tesis",
+  "issue": "N.º 004 · 28 de octubre de 2026",
+  "headline": "Una idea de tesis: la salud del suelo en Europa",
+  "dek": "La UE estima que más de la mitad de sus suelos no está sana. Hay datos oficiales para estudiarlo.",
+  "highlight": {
+    "label": "La idea clave",
+    "value": "Más del 60 % no está sano",
+    "note": "Estimación de la Comisión Europea sobre suelos de la UE"
+  },
+  "facts": [
+    {
+      "label": "Misión UE",
+      "value": "100 laboratorios vivos y faros, meta 2030"
+    },
+    {
+      "label": "Datos",
+      "value": "LUCAS: muestras de suelo del JRC"
+    },
+    {
+      "label": "Idea",
+      "value": "¿Cómo varía el carbono orgánico por región?"
+    }
+  ],
+  "tip": {
+    "label": "Lo que pocos explican",
+    "text": "Los datos LUCAS 2022 probablemente serán públicos en el primer trimestre de 2027; antes hay que registrarse."
+  },
+  "source": "research-and-innovation.ec.europa.eu",
+  "verified": "2026-10-28"
+}
