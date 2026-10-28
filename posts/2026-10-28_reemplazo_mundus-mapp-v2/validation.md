@@ -1,7 +1,7 @@
 # Validación — 2026-10-28_reemplazo_mundus-mapp-v2
 
-Ejecutado: 2026-10-28T11:34:19+01:00
-Decisión: **BLOQUEADA: no publicar**
+Ejecutado: 2026-10-28T11:35:21+01:00
+Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
 |---|---|---|
@@ -18,5 +18,5 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Estilo compacto (v2) | imagen con bloque 'Lo que pocos explican' y dato práctico en el texto |
 | PASS | Sin URLs en la imagen | sólo dominio de la fuente |
 | PASS | Plazo | 2026-12-01T23:59:00+01:00 (quedan 34 días) |
-| FAIL | Duplicados | ya publicado: [('2026-10-28', 'Mundus MAPP (Erasmus Mundus, políticas públicas) cohorte 2027-2029: beca EMJM')] |
+| PASS | Duplicados | sin coincidencias en 2 filas (URL canónica y topic_key) |
 | PASS | Enlace accesible | 200 https://www.mundusmapp.org/admissions-calendar/ |

@@ -16,10 +16,11 @@
     "verificacion_independiente": "claude-sonnet-5-5 (subagente)",
     "reverificacion_2026-10-28": "verificador-convocatorias (Sonnet)"
   },
-  "status": "published",
+  "status": "deleted",
   "buffer_post_id": "6ae1bb52deb69b3963bde796",
   "image_url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/691df8e2c636819ea2ba8324a95d2577e8163dd4/posts/2026-10-28_miercoles_mundus-mapp-2027/post.png",
   "published_at": "2026-10-28T10:08:36+01:00",
   "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7521135820360146947",
-  "publish_note": "Programada para 12:30 y adelantada a publicación inmediata (shareNow) a petición del propietario."
+  "publish_note": "Programada para 12:30 y adelantada a publicación inmediata (shareNow) a petición del propietario.",
+  "replaced_by": "2026-10-28_reemplazo_mundus-mapp-v2"
 }
