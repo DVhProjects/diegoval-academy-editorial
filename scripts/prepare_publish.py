@@ -1,7 +1,8 @@
 """Prepara el payload exacto para la herramienta create_post de Buffer MCP.
 
 Uso:
-    python3 scripts/prepare_publish.py posts/<carpeta> --image-url URL --slot
+    python3 scripts/prepare_publish.py posts/<carpeta> --image-url URL --slot        (formato imagen)
+    python3 scripts/prepare_publish.py posts/<carpeta> --slot                        (formato vídeo: sin --image-url)
     python3 scripts/prepare_publish.py posts/<carpeta> --image-url URL \
         [--mode customScheduled --due 2026-10-28T12:30:00+01:00 | --mode shareNow | --draft]
 
@@ -29,6 +30,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from history import read_history  # noqa: E402
+import video as videomod  # noqa: E402
 
 
 def fetch_bytes(url: str, intentos: int = 3, espera: float = 10.0) -> tuple[int | None, str, bytes, str]:
@@ -62,13 +64,14 @@ def slot_payload(now: datetime, pub: dict) -> dict:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("folder", type=Path)
-    ap.add_argument("--image-url", required=True)
+    ap.add_argument("--image-url", help="URL pública de post.png (obligatoria en formato imagen)")
     ap.add_argument("--slot", action="store_true", help="hora de publicación del calendario (recomendado)")
     ap.add_argument("--mode", choices=["customScheduled", "shareNow"])
     ap.add_argument("--due", help="ISO 8601 con zona (con --mode customScheduled)")
     ap.add_argument("--draft", action="store_true", help="guardar como borrador en Buffer (pruebas)")
     ap.add_argument("--now", help="ISO 8601 con zona; sólo para pruebas")
     ap.add_argument("--retries", type=int, default=3)
+    ap.add_argument("--skip-video-check", action="store_true", help="sólo para pruebas sin red")
     a = ap.parse_args(argv)
     sys.stdout.reconfigure(encoding="utf-8")
     folder = a.folder.resolve()
@@ -94,21 +97,41 @@ def main(argv: list[str] | None = None) -> int:
     tz = ZoneInfo(pub["timezone"])
     now = datetime.fromisoformat(a.now) if a.now else datetime.now(tz)
 
-    status, ctype, body, detalle = fetch_bytes(a.image_url, intentos=max(1, a.retries))
-    if status != 200:
-        return error(f"imagen pública no accesible ({detalle or status}): {a.image_url}")
-    if not (ctype.startswith("image/png") or ctype.startswith("application/octet-stream")):
-        return error(f"la URL no sirve un PNG (Content-Type {ctype}).")
-    local = (folder / "post.png").read_bytes()
-    if hashlib.sha256(body).hexdigest() != hashlib.sha256(local).hexdigest():
-        return error("la imagen pública no coincide byte a byte con post.png.")
-
-    payload = {
-        "channelId": chan["channel_id"],
-        "schedulingType": "automatic",
-        "text": text,
-        "assets": [{"image": {"url": a.image_url, "metadata": {"altText": meta["alt_text"]}}}],
-    }
+    is_video = meta.get("format") == "video"
+    if is_video:
+        # Formato vídeo: el enlace con vista previa es el contenido principal; nunca se sube un archivo de vídeo.
+        canon = videomod.canonical_video_url((meta.get("video") or {}).get("url", ""))
+        if not canon:
+            return error("metadata.video.url no es un enlace de YouTube válido.")
+        info = {}
+        if not a.skip_video_check:
+            info = videomod.inspect(canon, now.date())
+            if info["errors"] or not info.get("title"):
+                return error(f"el vídeo no es accesible ({info['errors']}).")
+        payload = {
+            "channelId": chan["channel_id"],
+            "schedulingType": "automatic",
+            "text": text,
+            "metadata": {"linkedin": {"linkAttachment": {"url": canon}}},
+        }
+        local = b""
+    else:
+        if not a.image_url:
+            return error("--image-url es obligatorio en el formato imagen.")
+        status, ctype, body, detalle = fetch_bytes(a.image_url, intentos=max(1, a.retries))
+        if status != 200:
+            return error(f"imagen pública no accesible ({detalle or status}): {a.image_url}")
+        if not (ctype.startswith("image/png") or ctype.startswith("application/octet-stream")):
+            return error(f"la URL no sirve un PNG (Content-Type {ctype}).")
+        local = (folder / "post.png").read_bytes()
+        if hashlib.sha256(body).hexdigest() != hashlib.sha256(local).hexdigest():
+            return error("la imagen pública no coincide byte a byte con post.png.")
+        payload = {
+            "channelId": chan["channel_id"],
+            "schedulingType": "automatic",
+            "text": text,
+            "assets": [{"image": {"url": a.image_url, "metadata": {"altText": meta["alt_text"]}}}],
+        }
     if a.draft:
         payload["saveToDraft"] = True
     elif a.slot:
@@ -124,8 +147,8 @@ def main(argv: list[str] | None = None) -> int:
             payload["dueAt"] = due.isoformat(timespec="seconds")
     (folder / "buffer_payload.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     cuando = payload.get("dueAt", "borrador" if a.draft else "ahora (shareNow)")
-    print(f"OK: imagen pública verificada (sha256 {hashlib.sha256(local).hexdigest()[:12]}…), "
-          f"texto {len(text)} caracteres, publicación: {cuando}. Payload en {folder / 'buffer_payload.json'}")
+    what = "vídeo verificado (enlace con vista previa)" if is_video else f"imagen pública verificada (sha256 {hashlib.sha256(local).hexdigest()[:12]}…)"
+    print(f"OK: {what}, texto {len(text)} caracteres, publicación: {cuando}. Payload en {folder / 'buffer_payload.json'}")
     return 0
 
 

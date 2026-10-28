@@ -33,7 +33,12 @@ Abre cada URL oficial y confirma literalmente: abierta ahora (o fecha de apertur
 Si WebFetch responde `ENOTFOUND` o "outside the session's allowed network domains" para fuentes oficiales, es un bloqueo de RED DEL ENTORNO, no de la fuente: no verifiques con memoria ni sólo con extractos de WebSearch; registra `skipped` con el motivo "red de la nube sin acceso a <dominio>" y termina.
 **Si la candidata no se puede verificar** (página caída, datos sin año, contradicciones): descártala, anótalo en `sources.md` y pasa a la SIGUIENTE de la lista. Máximo 3 candidatas. Si ninguna pasa: registrar `skipped` ("ninguna candidata verificable: …") y terminar. Nunca publicar información dudosa.
 
+## 3b. Elección de formato (automática: vídeo o imagen)
+Con el tema ya elegido y verificado, busca un vídeo según el apartado "Formato vídeo" de `CLAUDE.md`: web oficial del tema (WebFetch), canales oficiales (`python3 scripts/video.py feed <@canal>`; lista en `docs/FUENTES.md`) y WebSearch (entrevistas, testimonios, webinars). Inspecciona cada candidato con `python3 scripts/video.py inspect <url>` (máx. 5 candidatos). Usa el vídeo SÓLO si cumple todos los criterios (procedencia oficial verificada, calidad, relevancia, subtítulos según estado); si no, usa la imagen v2. Anota en `sources.md` los vídeos evaluados y el motivo de cada descarte. No descargues ni subas vídeos: sólo el enlace.
+
 ## 4. Producción
+**Formato vídeo:** crea `caption.md` (estructura de `templates/POST_SPEC.md`, con la línea `Subtítulos:` fiel al estado detectado) y `metadata.json` con `format: "video"` y el bloque `video` (salida de `video.py inspect` + `official_evidence_url`); NO generes post.json ni PNG. Valida con `python3 scripts/validate_post.py posts/<carpeta>` (comprueba el vídeo en vivo) y salta el paso 5.2 y 5.3 de imagen: en el paso 5 usa `prepare_publish.py posts/<carpeta> --slot` SIN `--image-url`; en `create_post` envía `text` y `metadata` (linkAttachment) del payload y ningún `assets`; en la confirmación `get_post` debe mostrar `metadata.linkAttachment.title` y `thumbnail` (si falta la vista previa, anótalo en el resumen y mantén el enlace en el texto).
+**Formato imagen:**
 Carpeta `posts/AAAA-MM-DD_<miercoles|viernes>_<slug>/`:
 1. `post.json` (esquema v2 de `templates/POST_SPEC.md`; 2-3 datos + `tip` "Lo que pocos explican"; espacios duros U+00A0 entre cifras y unidades).
 2. `python3 scripts/render_post.py posts/<carpeta>/post.json`. Si reduce la letra (titular < 84 px), acorta textos y repite.

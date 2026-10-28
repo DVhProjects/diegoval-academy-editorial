@@ -16,3 +16,11 @@ Una página general NO acredita una convocatoria particular. Navegar hasta la p�
 - European Research Council: https://erc.europa.eu/
 
 Cada URL publicada debe comprobarse en tiempo de ejecución. Nunca interpretar estas páginas generales como convocatorias individuales vigentes.
+
+## Canales de vídeo para explorar (formato vídeo)
+Un canal sólo cuenta como oficial si la web oficial de la institución lo enlaza o incrusta sus vídeos (registrar esa página en `sources.md`). Descubrimiento: `python3 scripts/video.py feed <@canal>` (RSS público).
+- `@EURAXESS` (EURAXESS)
+- `@DAADWorldwide` ("Study in Germany", DAAD)
+- `@ErasmusPlusProgramme` (Erasmus+; contenido antiguo: la comprobación de antigüedad lo descarta)
+- Canal de la Comisión Europea: https://www.youtube.com/user/eutube (enlazado desde erasmus-plus.ec.europa.eu y marie-sklodowska-curie-actions.ec.europa.eu)
+No hay canales de MSCA, ERC ni Erasmus Mundus confirmados todavía.

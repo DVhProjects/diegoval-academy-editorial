@@ -24,8 +24,11 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from history import canonical_url, read_history  # noqa: E402
+import video as videomod  # noqa: E402
 
 REQUIRED_FILES = ["post.json", "post.png", "caption.md", "sources.md", "metadata.json"]
+REQUIRED_FILES_VIDEO = ["caption.md", "sources.md", "metadata.json"]
+VIDEO_KEYS = ["url", "title", "channel", "channel_id", "published", "duration_s", "subtitles", "official_evidence_url"]
 REQUIRED_META = ["date", "type", "topic", "topic_key", "primary_url", "verified_date",
                  "buffer_channel_id", "alt_text", "status"]
 URL_RE = re.compile(r"https?://[^\s)>\]]+")
@@ -54,6 +57,90 @@ def http_status(url: str) -> tuple[int | None, str]:
     return None, "sin respuesta"
 
 
+SUBTITLE_PHRASES = {
+    "es_oficial": ["subtítulos en español"],
+    "es_automatico": ["automáticos en español"],
+    "traducible": ["traducción automática", "no está garantizada"],
+    "no_verificado": ["no verificados"],
+}
+FORBIDDEN_PROMISES = ["tiene subtítulos en español", "con subtítulos en español", "subtitulado al español",
+                      "subtitulado en español"]
+
+
+def _validate_video(meta, caption, sources, now, skip_network, ok, fail, warn):
+    v = meta.get("video") or {}
+    miss = [k for k in VIDEO_KEYS if v.get(k) in (None, "")]
+    if miss:
+        fail("Datos del vídeo", f"faltan en metadata.video: {miss}")
+        return
+    vid = videomod.video_id(v["url"])
+    if not vid:
+        fail("Vídeo", f"URL no reconocida como vídeo de YouTube: {v['url']}")
+        return
+    ok("Vídeo", f"{v['channel']} · {v['title']} ({vid})")
+    low = caption.lower()
+    if vid in caption:
+        ok("Enlace del vídeo en el texto", "respaldo si la tarjeta no se muestra")
+    else:
+        fail("Enlace del vídeo en el texto", "el caption debe incluir el enlace del vídeo")
+    if v["official_evidence_url"] in sources:
+        ok("Procedencia oficial documentada", v["official_evidence_url"])
+    else:
+        fail("Procedencia oficial documentada",
+             "official_evidence_url debe figurar en sources.md (página oficial que enlaza o incrusta el vídeo o su canal)")
+    info = {"duration_s": v["duration_s"], "published": v["published"], "title": v["title"], "channel_id": v["channel_id"]}
+    why = videomod.quality(info, now.date())
+    if why:
+        fail("Calidad del vídeo", "; ".join(why))
+    else:
+        ok("Calidad del vídeo", f"{v['duration_s']} s, publicado {v['published']}")
+    state = v["subtitles"]
+    if state not in videomod.SUBTITLE_STATES:
+        fail("Subtítulos", f"estado inválido: {state!r}")
+    elif state == "no_verificado" and v.get("language") != "es":
+        fail("Utilidad para la audiencia",
+             "vídeo sin subtítulos verificables y sin declarar language 'es': para hispanohablantes aporta más la imagen v2")
+    else:
+        missing = [p for p in SUBTITLE_PHRASES[state] if p not in low]
+        promised = [p for p in FORBIDDEN_PROMISES if p in low] if state in ("traducible", "no_verificado") else []
+        if "subtítulos:" not in low:
+            fail("Subtítulos en el texto", "falta la línea 'Subtítulos:'")
+        elif missing or promised:
+            fail("Subtítulos en el texto",
+                 f"el texto no coincide con el estado {state}: faltan {missing}, promesas indebidas {promised}")
+        else:
+            ok("Subtítulos en el texto", f"coherente con el estado {state}")
+    for section in ("qué aprenderás", "por qué es útil", "cómo aprovecharlo"):
+        if section not in low:
+            fail("Estructura del texto (vídeo)", f"falta la sección '{section}'")
+            break
+    else:
+        ok("Estructura del texto (vídeo)", "qué aprenderás · por qué es útil · cómo aprovecharlo")
+    if skip_network:
+        warn("Vídeo en vivo", "omitido (--skip-network)")
+        return
+    live = videomod.inspect(v["url"], now.date())
+    if live["errors"] or not live.get("title"):
+        if state != "no_verificado":
+            fail("Vídeo en vivo", f"no se pudo comprobar ({live['errors']}); no se promete ningún subtítulo sin comprobarlo")
+        else:
+            warn("Vídeo en vivo", f"no se pudo comprobar: {live['errors']}")
+        return
+    problems = []
+    if live.get("channel_id") and live["channel_id"] != v["channel_id"]:
+        problems.append(f"canal {live['channel_id']} distinto de {v['channel_id']}")
+    if (live.get("title") or "").strip() != v["title"].strip():
+        problems.append("el título publicado ha cambiado")
+    if live.get("subtitles") != state:
+        problems.append(f"subtítulos en vivo '{live.get('subtitles')}' distintos de los declarados '{state}'")
+    if live.get("quality_problems"):
+        problems.append("; ".join(live["quality_problems"]))
+    if problems:
+        fail("Vídeo en vivo", " | ".join(problems))
+    else:
+        ok("Vídeo en vivo", f"coincide con lo declarado ({live['subtitles']})")
+
+
 def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, bool]:
     pub = load_json(ROOT / "config" / "publishing.json")
     chan = load_json(ROOT / "config" / "buffer_channel.json")
@@ -69,17 +156,22 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
     def warn(name, detail):
         results.append(("WARN", name, detail))
 
-    # 1. Archivos
-    missing = [f for f in REQUIRED_FILES if not (folder / f).exists()]
+    # 1. Archivos (el formato lo decide metadata.json: "image" por defecto o "video")
+    if not (folder / "metadata.json").exists():
+        fail("Archivos obligatorios", "falta metadata.json")
+        return results, False
+    meta = load_json(folder / "metadata.json")
+    is_video = meta.get("format") == "video"
+    required = REQUIRED_FILES_VIDEO if is_video else REQUIRED_FILES
+    missing = [f for f in required if not (folder / f).exists()]
     if missing:
         fail("Archivos obligatorios", f"faltan: {missing}")
         return results, False
-    ok("Archivos obligatorios", ", ".join(REQUIRED_FILES))
+    ok("Archivos obligatorios", f"{'vídeo' if is_video else 'imagen'}: " + ", ".join(required))
 
-    meta = load_json(folder / "metadata.json")
     caption = (folder / "caption.md").read_text(encoding="utf-8")
     sources = (folder / "sources.md").read_text(encoding="utf-8")
-    spec = load_json(folder / "post.json")
+    spec = {} if is_video else load_json(folder / "post.json")
 
     # 2. Metadatos
     miss_meta = [k for k in REQUIRED_META if not meta.get(k)]
@@ -88,15 +180,21 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
     else:
         ok("Metadatos", "campos obligatorios presentes")
 
-    # 3. Imagen: exactamente una, 1080x1350 PNG
-    pngs = list(folder.glob("*.png"))
-    with Image.open(folder / "post.png") as im:
-        size, fmt = im.size, im.format
-    exp = tuple(pub["rules"]["image_size"])
-    if size == exp and fmt == "PNG" and len(pngs) == 1:
-        ok("Imagen", f"{size[0]}x{size[1]} {fmt}, 1 archivo")
+    # 3. Imagen: exactamente una, 1080x1350 PNG (el formato vídeo no lleva imagen propia)
+    if is_video:
+        if list(folder.glob("*.png")):
+            fail("Sin imagen propia", "el formato vídeo no debe incluir PNG (la miniatura la pone el enlace)")
+        else:
+            ok("Sin imagen propia", "formato vídeo: la vista previa la genera el enlace")
     else:
-        fail("Imagen", f"tamaño={size} formato={fmt} pngs={len(pngs)} (se espera 1 PNG {exp})")
+        pngs = list(folder.glob("*.png"))
+        with Image.open(folder / "post.png") as im:
+            size, fmt = im.size, im.format
+        exp = tuple(pub["rules"]["image_size"])
+        if size == exp and fmt == "PNG" and len(pngs) == 1:
+            ok("Imagen", f"{size[0]}x{size[1]} {fmt}, 1 archivo")
+        else:
+            fail("Imagen", f"tamaño={size} formato={fmt} pngs={len(pngs)} (se espera 1 PNG {exp})")
 
     # 4. Canal autorizado
     if meta.get("buffer_channel_id") == chan["channel_id"]:
@@ -106,7 +204,7 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
 
     # 5. Fecha de verificación = hoy (zona del proyecto)
     today = now.astimezone(tz).date().isoformat()
-    if meta.get("verified_date") == today and spec.get("verified") == today:
+    if meta.get("verified_date") == today and (is_video or spec.get("verified") == today):
         ok("Verificación del día", today)
     else:
         fail("Verificación del día", f"metadata={meta.get('verified_date')} imagen={spec.get('verified')} hoy={today}")
@@ -142,14 +240,17 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
         fail("Enlace principal en el texto", meta.get("primary_url", ""))
     else:
         ok("Enlace principal en el texto", meta["primary_url"])
-    if "tip" in spec and "Lo que pocos explican" in caption:
-        ok("Estilo compacto (v2)", "imagen con bloque 'Lo que pocos explican' y dato práctico en el texto")
+    if is_video:
+        _validate_video(meta, caption, sources, now, skip_network, ok, fail, warn)
     else:
-        fail("Estilo compacto (v2)", "falta 'tip' en post.json o la línea 'Lo que pocos explican' en caption.md")
-    if URL_RE.search(json.dumps(spec, ensure_ascii=False)):
-        fail("Sin URLs en la imagen", "post.json contiene una URL completa")
-    else:
-        ok("Sin URLs en la imagen", "sólo dominio de la fuente")
+        if "tip" in spec and "Lo que pocos explican" in caption:
+            ok("Estilo compacto (v2)", "imagen con bloque 'Lo que pocos explican' y dato práctico en el texto")
+        else:
+            fail("Estilo compacto (v2)", "falta 'tip' en post.json o la línea 'Lo que pocos explican' en caption.md")
+        if URL_RE.search(json.dumps(spec, ensure_ascii=False)):
+            fail("Sin URLs en la imagen", "post.json contiene una URL completa")
+        else:
+            ok("Sin URLs en la imagen", "sólo dominio de la fuente")
 
     # 7. Política de selección (oportunidades publicadas desde 2026-10-29)
     status = meta.get("call_status", "abierta")
@@ -193,9 +294,11 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
     # 9. Duplicados
     hist = read_history()
     cu, tk = canonical_url(meta.get("primary_url", "")), meta.get("topic_key")
+    vid = videomod.video_id((meta.get("video") or {}).get("url", "")) if is_video else None
     dups = [r for r in hist if r.get("status") in ("published", "scheduled")
             and r.get("folder") != folder.name
-            and (canonical_url(r.get("official_url", "")) == cu or r.get("topic_key") == tk)]
+            and (canonical_url(r.get("official_url", "")) == cu or r.get("topic_key") == tk
+                 or (vid and videomod.video_id(r.get("video_url", "")) == vid))]
     if dups:
         fail("Duplicados", f"ya publicado: {[(r['publication_date'], r['topic']) for r in dups]}")
     else:

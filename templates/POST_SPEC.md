@@ -30,3 +30,33 @@ No escribir fechas de cierre si el programa no publica un plazo único. Ninguna 
 - 2-3 `facts` (no más). Viernes: `highlight` = idea clave (p. ej. `{"label": "La idea clave", "value": "…"}`).
 - Caption ≤ 1300 caracteres: gancho · "En corto:" · "Lo que pocos explican:" · "Cómo empezar:" · enlace(s) oficial(es) · `Verificado el:` · 2-3 hashtags.
 - `validate_post.py` bloquea si falta `tip` o la línea "Lo que pocos explican" en el caption.
+
+## Formato vídeo (`metadata.format = "video"`)
+Carpeta `posts/AAAA-MM-DD_<miercoles|viernes>_<slug>/` con `caption.md`, `sources.md`, `metadata.json`, `validation.md`, `buffer_payload.json`. **Sin `post.json` ni PNG.**
+
+`metadata.json` (además de los campos comunes):
+```json
+{
+  "format": "video",
+  "video": {
+    "url": "https://www.youtube.com/watch?v=XXXXXXXXXXX",
+    "title": "título tal cual lo publica el canal (oEmbed)",
+    "channel": "nombre del canal", "channel_id": "UC...",
+    "published": "AAAA-MM-DD", "duration_s": 240,
+    "subtitles": "es_oficial | es_automatico | traducible | no_verificado",
+    "language": "es (opcional; sólo si el audio está en español)",
+    "official_evidence_url": "página oficial que enlaza/incrusta el vídeo o su canal (también en sources.md)"
+  }
+}
+```
+Se rellena con la salida de `python3 scripts/video.py inspect <url>` (campos `title`, `channel`, `channel_id`, `published`, `duration_s`, `subtitles`).
+
+`caption.md` (≤ 1300 caracteres): gancho · `Qué aprenderás:` · `Por qué es útil:` · `Cómo aprovecharlo:` · línea `Subtítulos:` · `Vídeo: <url>` · `Fuente oficial: <url>` (y plazo/financiación verificados si es una oportunidad) · `Verificado el:` · 2-3 hashtags.
+
+Líneas `Subtítulos:` permitidas (según `video.subtitles`):
+- `es_oficial`: "Subtítulos: el vídeo tiene subtítulos en español; actívalos con el icono CC."
+- `es_automatico`: "Subtítulos: YouTube ofrece subtítulos automáticos en español (pueden tener errores); actívalos con el icono CC."
+- `traducible`: "Subtítulos: el vídeo está en <idioma>; YouTube puede ofrecer traducción automática al español (Ajustes > Subtítulos), pero no está garantizada."
+- `no_verificado`: "Subtítulos: no verificados; comprueba con el icono CC si hay subtítulos en español."
+
+Publicación: `python3 scripts/prepare_publish.py posts/<carpeta> --slot` (sin `--image-url`) genera un payload con `metadata.linkedin.linkAttachment` y sin `assets`. Tras `create_post`, `get_post` debe devolver `metadata.linkAttachment` con `title` y `thumbnail`.

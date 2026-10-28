@@ -23,6 +23,9 @@ Examinar documentos/regulaciones recientes, programas de financiación y recurso
 - El caption complementa la imagen: gancho, lo esencial, el dato práctico que otras cuentas no explican, cómo empezar y 1-2 enlaces oficiales.
 - Cada publicación incluye un dato práctico verificado que otras cuentas normalmente no explican.
 
+## Formato vídeo (desde 2026-10-28)
+Cuando exista un vídeo oficial o de procedencia verificable (entrevista a becados, investigadores, responsables, explicación de una institución europea) que aporte más que una infografía, el vídeo es el contenido principal (enlace con vista previa). La elección es automática por calidad, utilidad y relevancia; si no hay vídeo adecuado se usa la ficha v2. Reglas completas en `CLAUDE.md`.
+
 ## Evitar
 - Novedad no verificada: no llamar una tendencia "hot" sólo por intuición.
 - Marketing exagerado: "beca garantizada", "estudia gratis" cuando no sea exacto.

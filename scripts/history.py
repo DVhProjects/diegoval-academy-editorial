@@ -22,11 +22,13 @@ import sys
 from pathlib import Path
 from urllib.parse import urlsplit
 
+import video as videomod
+
 ROOT = Path(__file__).resolve().parents[1]
 HISTORY = ROOT / "data" / "publication_history.csv"
 FIELDS = ["publication_date", "weekday", "type", "category", "topic", "topic_key", "official_url",
           "deadline", "buffer_channel_id", "buffer_post_id", "linkedin_url", "image_url",
-          "status", "verified_date", "folder", "reason"]
+          "status", "verified_date", "folder", "reason", "format", "video_url"]
 STATUSES = ["published", "scheduled", "skipped", "draft-test", "deleted"]
 
 
@@ -59,8 +61,10 @@ def write_history(rows: list[dict]) -> None:
 
 def check(url: str, topic_key: str | None) -> list[dict]:
     cu = canonical_url(url)
+    vid = videomod.video_id(url)
     return [r for r in read_history() if r.get("status") in ("published", "scheduled")
-            and (canonical_url(r.get("official_url", "")) == cu or (topic_key and r.get("topic_key") == topic_key))]
+            and (canonical_url(r.get("official_url", "")) == cu or (topic_key and r.get("topic_key") == topic_key)
+                 or (vid and videomod.video_id(r.get("video_url", "")) == vid))]
 
 
 def require_confirmation(status: str, buffer_post_id: str | None, linkedin_url: str | None) -> None:
@@ -82,6 +86,7 @@ def add(folder: Path, status: str, **extra) -> dict:
         "topic_key": meta.get("topic_key", ""), "official_url": meta.get("primary_url", ""),
         "deadline": meta.get("deadline") or "", "buffer_channel_id": meta.get("buffer_channel_id", ""),
         "status": status, "verified_date": meta.get("verified_date", ""), "folder": folder.name,
+        "format": meta.get("format", "image"), "video_url": (meta.get("video") or {}).get("url", ""),
     }
     row.update({k: v for k, v in extra.items() if v})
     rows = [r for r in read_history() if r.get("folder") != folder.name]  # una fila por carpeta
