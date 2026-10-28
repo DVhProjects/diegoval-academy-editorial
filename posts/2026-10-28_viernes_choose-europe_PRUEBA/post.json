@@ -1,0 +1,32 @@
+{
+  "series": "viernes",
+  "kicker": "Research & Career · Tendencia europea",
+  "issue": "N.º 005 · 28 de octubre de 2026",
+  "headline": "Choose Europe: llega su 2.ª convocatoria",
+  "dek": "La UE lanzará una nueva convocatoria MSCA para atraer investigación a Europa.",
+  "highlight": {
+    "label": "Fechas previstas",
+    "value": "8 dic 2026 → 6 abr 2027",
+    "note": "Apertura y plazo, según la agencia REA"
+  },
+  "facts": [
+    {
+      "label": "Presupuesto",
+      "value": "51,25 M€ (indicativo)"
+    },
+    {
+      "label": "Código",
+      "value": "HORIZON-MSCA-2027-COFUND-02"
+    },
+    {
+      "label": "Antes",
+      "value": "Piloto 2025 cerró el 3 dic 2025"
+    }
+  ],
+  "tip": {
+    "label": "Lo que pocos explican",
+    "text": "Aún no hay formulario: abre el 8 dic 2026 y las jornadas informativas están por confirmar."
+  },
+  "source": "rea.ec.europa.eu",
+  "verified": "2026-10-28"
+}

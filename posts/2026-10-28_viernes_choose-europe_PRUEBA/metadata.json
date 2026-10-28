@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-28",
+  "weekday": "viernes",
+  "type": "research_career",
+  "category": "tendencia_europea",
+  "theme": "politica_investigacion",
+  "topic": "MSCA Choose Europe for Science: segunda convocatoria (abre 8 dic 2026, plazo 6 abr 2027)",
+  "topic_key": "msca-choose-europe-segunda-convocatoria",
+  "primary_url": "https://rea.ec.europa.eu/funding-and-grants/horizon-europe-marie-sklodowska-curie-actions/msca-choose-europe-science_en",
+  "deadline": "2027-04-06T00:00:00+02:00",
+  "verified_date": "2026-10-28",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career, tendencia europea. Choose Europe: llega su segunda convocatoria MSCA. Fechas previstas: apertura el 8 de diciembre de 2026 y plazo el 6 de abril de 2027, según la agencia REA. Presupuesto indicativo de 51,25 millones de euros. Código HORIZON-MSCA-2027-COFUND-02. El piloto de 2025 cerró el 3 de diciembre de 2025. Lo que pocos explican: aún no hay formulario; las jornadas informativas están por confirmar. Fuente: rea.ec.europa.eu, verificado el 2026-10-28.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (sesión principal; subagentes no usados)",
+    "verificacion": "claude-sonnet-5-5 (sesión principal, sin acceso a fuentes primarias)"
+  },
+  "style_version": 2,
+  "status": "draft"
+}
