@@ -1,0 +1,23 @@
+{
+  "series": "miercoles",
+  "kicker": "Oportunidad verificada · Máster con beca",
+  "issue": "N.º 004 · 4 de noviembre de 2026",
+  "headline": "Máster en ETH Zurich con beca: abre el 1 de nov",
+  "dek": "Beca de excelencia para el máster de ETH (Suiza). Se pide dentro de la solicitud de admisión.",
+  "highlight": {
+    "label": "Se solicita del",
+    "value": "1 al 30 nov 2026",
+    "note": "Aún no abre. Cierra el 30 nov, 11:59 (CET)"
+  },
+  "facts": [
+    {"label": "Cubre", "value": "13 500 CHF/semestre + matrícula"},
+    {"label": "Pide", "value": "Estar en el 10 % mejor (nota A)"},
+    {"label": "Cupos", "value": "Unas 60 becas, según fondos"}
+  ],
+  "tip": {
+    "label": "Lo que pocos explican",
+    "text": "Debes subir un borrador de tu tesis de máster, escrito por ti, junto con la solicitud de admisión."
+  },
+  "source": "ethz.ch",
+  "verified": "2026-10-28"
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-04",
+  "weekday": "miercoles",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "ETH Zurich Excellence Scholarship & Opportunity Programme (ESOP) máster HS27",
+  "topic_key": "eth-esop-hs27",
+  "primary_url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html",
+  "deadline": "2026-11-30T11:59:00+01:00",
+  "deadline_note": "La web escribe '11.59h MEZ' y '11:59AM CET'; ambigua.",
+  "call_status": "proxima_confirmada",
+  "opens_on": "2026-11-01",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo institucional",
+      "evidencia": "ETH Zurich lista ESOP entre sus becas de excelencia para máster",
+      "url": "https://ethz.ch/students/en/studies/financial/scholarships.html"
+    },
+    {
+      "criterio": "ediciones previas/programa recurrente",
+      "evidencia": "ESOP planificado para HS27 con ~60 becas; ventana integrada en la admisión internacional",
+      "url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html"
+    }
+  ],
+  "audience_fit": "Grados extranjeros (incl. latinoamericanos) aplican en la ventana 1-30 nov 2026; la web no limita por nacionalidad; exige top 10 % e inglés.",
+  "verified_date": "2026-10-28",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy. Máster en ETH Zurich con beca: la solicitud abre el 1 de noviembre de 2026 y cierra el 30 de noviembre, 11:59 hora de Europa central. Cubre 13 500 francos suizos por semestre más matrícula; unas 60 becas. Pide estar en el 10 por ciento mejor de tu grado. Lo que pocos explican: debes subir un borrador de tu tesis de máster junto con la solicitud de admisión. Fuente: ethz.ch.",
+  "models_used": {
+    "rutina": "claude-sonnet-5-5"
+  },
+  "style_version": 2,
+  "status": "draft"
+}
