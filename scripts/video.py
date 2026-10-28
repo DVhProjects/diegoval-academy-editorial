@@ -169,7 +169,8 @@ def channel_id_of(channel: str, fetch=http_get) -> str:
         return channel
     handle = channel if channel.startswith("@") else "@" + channel
     html = fetch(f"https://www.youtube.com/{handle}")
-    m = re.search(r'"channelId":"(UC[\w-]{22})"', html) or re.search(r"channel_id=(UC[\w-]{22})", html)
+    # El enlace RSS del propio canal va primero: el primer "channelId" de la página puede ser de otro canal (barra lateral).
+    m = re.search(r"channel_id=(UC[\w-]{22})", html) or re.search(r'"channelId":"(UC[\w-]{22})"', html)
     if not m:
         raise ValueError(f"no se pudo resolver el canal {channel}")
     return m.group(1)

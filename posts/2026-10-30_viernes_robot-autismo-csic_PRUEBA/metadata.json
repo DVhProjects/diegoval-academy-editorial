@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-30",
+  "weekday": "viernes",
+  "type": "research_career",
+  "category": "tendencia_europea",
+  "format": "video",
+  "theme": "inteligencia_artificial",
+  "topic": "Robot social del CSIC (Emorobcare) para apoyar terapias de niños con autismo",
+  "topic_key": "csic-emorobcare-robot-autismo",
+  "primary_url": "https://www.csic.es/sites/default/files/noticia/2026-06-29/Nd_02julio2026_robot%20autismo_DEF.pdf",
+  "deadline": null,
+  "verified_date": "2026-10-28",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Vídeo del canal CSIC Comunicación: El CSIC desarrolla un robot para ayudar en terapias de niños con autismo.",
+  "models_used": {
+    "investigacion_redaccion": "Claude Sonnet (prueba E2E 5)",
+    "verificacion": "verificador-convocatorias (Sonnet)"
+  },
+  "style_version": 2,
+  "status": "draft",
+  "buffer_post_id": null,
+  "video": {
+    "url": "https://www.youtube.com/watch?v=-AYRssjyzOw",
+    "title": "El CSIC desarrolla un robot para ayudar en terapias de niños con autismo",
+    "channel": "CSIC Comunicación",
+    "channel_id": "UCCzO-Rkos3KuKOfssqcjaqw",
+    "published": "2026-07-02",
+    "duration_s": null,
+    "subtitles": "no_verificado",
+    "language": "es",
+    "official_evidence_url": "https://www.csic.es/es"
+  }
+}
