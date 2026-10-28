@@ -39,3 +39,10 @@ Nota: si la nube no puede hacer push a `main`, usa `claude/publicaciones`; la se
 - Google Drive: el conector sólo comparte con personas concretas; no da enlaces públicos permanentes.
 - Alojadores de imágenes anónimos: sin garantías de permanencia ni de términos de uso.
 - El repositorio de la web (`diegoval-academy`, Vercel) no se usa para no provocar despliegues.
+
+## Auditoría 2026-10-28 (prueba integral en la nube, modo borrador)
+Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwzBhhGYwq`, rama `claude/prueba-e2e` (no toca `main`).
+- OK en la nube: Python 3.11.17 + dependencias; 19/19 pruebas (`tests/test_sistema.py`); subagentes del repositorio disponibles; Buffer (`get_channel`, `list_posts`, reconciliación, borrador creado/confirmado/borrado); render 1080×1350; push a rama `claude/*`; URL raw 200; `--slot`; imagen inaccesible bloquea; verificación caducada bloquea; `published` sin ids da error; idempotencia habría detenido la publicación del día.
+- **BLOQUEO**: la red del entorno `Default` no resuelve dominios oficiales (`marie-sklodowska-curie-actions.ec.europa.eu`, `rea.ec.europa.eu`, `euraxess.ec.europa.eu`: ENOTFOUND). Sin acceso a fuentes primarias la rutina termina en `skipped` (comportamiento correcto, pero no publica). Requiere que el propietario amplíe el acceso de red del entorno en claude.ai/code.
+- El servidor `buffer` de `.mcp.json` falla en la nube (403 del proxy); se usa el conector `Buffer` de claude.ai.
+- No verificado aún: push a `main` desde la nube (hay alternativa `claude/publicaciones`).

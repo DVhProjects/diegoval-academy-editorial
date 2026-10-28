@@ -12,6 +12,7 @@ Regla general: si una comprobación bloqueante falla, no publicar, registrar el 
 4. Git: `git config user.name "DVhProjects"`, `git config user.email "332783668+DVhProjects@users.noreply.github.com"`, `git fetch origin`. Si existe `origin/claude/publicaciones`, `git merge --no-edit origin/claude/publicaciones` (si hay conflicto en `data/*.csv`, conserva la unión de filas y no borres ninguna).
 
 ## 1. Buffer y recuperación de estado (sólo lectura + historial)
+Usa las herramientas `mcp__Buffer__*` (conector de claude.ai). El servidor `buffer` de `.mcp.json` es sólo para sesiones locales: en la nube falla con 403 del proxy y debe ignorarse.
 1. `get_channel` con `channel_id` de `config/buffer_channel.json`: nombre `diegovalacademy`, servicio `linkedin`, `isDisconnected=false`, `isLocked=false`. Si falla o no coincide: registrar `skipped` ("canal no disponible") y terminar.
 2. `list_posts` (organizationId de la config, channelIds=[canal], status `scheduled`, `sending` y `sent`, ordenado por `createdAt` desc, 30 resultados).
 3. **Reconciliación**: para cada post de Buffer cuyo texto contiene "Verificado el:" (formato de este sistema):
@@ -29,6 +30,7 @@ Regla general: si una comprobación bloqueante falla, no publicar, registrar el 
 
 ## 3. Verificación (subagente `verificador-convocatorias`; si no está disponible, hazla tú con WebFetch)
 Abre cada URL oficial y confirma literalmente: abierta ahora (o fecha de apertura), ciclo/año, plazo con hora y zona, importes, qué no cubre, elegibilidad y pasos. Citas en `sources.md` con hora de consulta.
+Si WebFetch responde `ENOTFOUND` o "outside the session's allowed network domains" para fuentes oficiales, es un bloqueo de RED DEL ENTORNO, no de la fuente: no verifiques con memoria ni sólo con extractos de WebSearch; registra `skipped` con el motivo "red de la nube sin acceso a <dominio>" y termina.
 **Si la candidata no se puede verificar** (página caída, datos sin año, contradicciones): descártala, anótalo en `sources.md` y pasa a la SIGUIENTE de la lista. Máximo 3 candidatas. Si ninguna pasa: registrar `skipped` ("ninguna candidata verificable: …") y terminar. Nunca publicar información dudosa.
 
 ## 4. Producción
