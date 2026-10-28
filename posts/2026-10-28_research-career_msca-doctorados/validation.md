@@ -1,6 +1,6 @@
 # Validación — 2026-10-28_research-career_msca-doctorados
 
-Ejecutado: 2026-10-28T11:05:10+01:00
+Ejecutado: 2026-10-28T11:12:18+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
@@ -18,5 +18,4 @@ Decisión: **APROBADA para publicar**
 | PASS | Estilo compacto (v2) | imagen con bloque 'Lo que pocos explican' y dato práctico en el texto |
 | PASS | Sin URLs en la imagen | sólo dominio de la fuente |
 | PASS | Duplicados | sin coincidencias en 1 filas (URL canónica y topic_key) |
-| PASS | Enlace accesible | 200 https://euraxess.ec.europa.eu/jobs/search |
-| PASS | Enlace accesible | 200 https://marie-sklodowska-curie-actions.ec.europa.eu/actions/doctoral-networks |
+| WARN | Enlaces accesibles | omitido (--skip-network) |

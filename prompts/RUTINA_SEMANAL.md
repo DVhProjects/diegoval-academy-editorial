@@ -13,12 +13,12 @@ Procedimiento que ejecuta la rutina en la nube (o una sesión local equivalente)
 1. `get_channel` con `channel_id` de `config/buffer_channel.json`. Debe coincidir: nombre `diegovalacademy`, servicio `linkedin`, `isDisconnected=false`, `isLocked=false`. Si no: OMITIR (motivo: canal no disponible).
 2. `list_posts` (organizationId de la config, channelIds=[canal], status `scheduled` y `sent`, últimos 60 días).
    - Si ya hay una publicación de este sistema programada o enviada hoy: terminar (idempotencia).
-   - Anti-ruido: si en las últimas 72 h ya se publicó o programó una publicación del MISMO tipo que toca hoy (`oportunidad` el miércoles, `research_career` el viernes; ver `data/publication_history.csv` y Buffer), terminar y registrarlo en el resumen (no es un fallo).
+   - Las publicaciones extra del propietario no cancelan el día programado (sólo la idempotencia de "ya hay una hoy").
    - Para filas del historial con `status=scheduled` cuyo `buffer_post_id` ya figure como `sent`: `get_post` y actualizar con `python scripts/history.py add <carpeta> --status published --buffer-post-id … --linkedin-url <externalLink> --image-url …`.
 3. Nunca tocar otros canales. Nunca `addToQueue`.
 
 ## 2. Selección del tema (modelo: Sonnet; extracción mecánica: subagente `extractor-fuentes`)
-- **Miércoles (`oportunidad`)**: revisa 10+ candidatas en páginas oficiales (EURAXESS, catálogo Erasmus Mundus, MSCA, universidades, agencias nacionales). Excluye vencidas, con < 7 días de margen, sin año/ciclo explícito, con beneficios vagos o sólo con fuente secundaria. Elige 1 y anota 2 alternativas.
+- **Miércoles (`oportunidad`)**: primero `python scripts/radar.py due` y revisa esas entradas (actualiza con `radar.py upsert`). Elige según el orden de `CLAUDE.md` (popularidad → relevancia → horizonte 12 meses → financiación → plazo). En `metadata.json` añade `call_status` (abierta|proxima_confirmada|recurrente_pendiente), `popularity_evidence` (lista de {criterio, evidencia, url}; urls también en sources.md), `audience_fit`, y `opens_on` si es próxima. El caption incluye la línea "Por qué es conocida:". Tras publicar: `radar.py upsert "<programa>" publicado_en=AAAA-MM-DD`. Además: revisa 10+ candidatas en páginas oficiales (EURAXESS, catálogo Erasmus Mundus, MSCA, universidades, agencias nacionales). Excluye vencidas, con < 7 días de margen, sin año/ciclo explícito, con beneficios vagos o sólo con fuente secundaria. Elige 1 y anota 2 alternativas.
 - **Viernes (`research_career`)**: elige una categoría distinta a la del viernes anterior (`data/publication_history.csv`): `tendencia_europea`, `idea_tesis`, `carrera_phd`, `programa_red`. Cada afirmación material con fuente original.
 - Duplicados: `python scripts/history.py check <url_oficial> <topic_key>` debe responder `SIN DUPLICADOS`, y el tema no debe coincidir con publicaciones recientes de Buffer.
 

@@ -1,6 +1,6 @@
 # Validación — 2026-10-28_oportunidad_euroculture
 
-Ejecutado: 2026-10-28T11:09:16+01:00
+Ejecutado: 2026-10-28T11:12:18+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
@@ -19,5 +19,4 @@ Decisión: **APROBADA para publicar**
 | PASS | Sin URLs en la imagen | sólo dominio de la fuente |
 | PASS | Plazo | 2027-01-15T00:00:00+01:00 (quedan 78 días) |
 | PASS | Duplicados | sin coincidencias en 1 filas (URL canónica y topic_key) |
-| PASS | Enlace accesible | 200 https://www.euroculturemaster.eu/application-procedure |
-| PASS | Enlace accesible | 200 https://www.euroculturemaster.eu/erasmus-mundus-scholarship |
+| WARN | Enlaces accesibles | omitido (--skip-network) |

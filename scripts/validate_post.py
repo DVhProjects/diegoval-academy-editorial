@@ -151,8 +151,34 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
     else:
         ok("Sin URLs en la imagen", "sólo dominio de la fuente")
 
-    # 7. Plazo vigente con margen
-    if meta.get("type") == "oportunidad":
+    # 7. Política de selección (oportunidades publicadas desde 2026-10-29)
+    status = meta.get("call_status", "abierta")
+    if meta.get("type") == "oportunidad" and meta.get("date", "") >= "2026-10-29":
+        if status not in ("abierta", "proxima_confirmada", "recurrente_pendiente"):
+            fail("Estado de la convocatoria", f"call_status inválido: {status!r}")
+        ev = meta.get("popularity_evidence") or []
+        if not ev or any(not e.get("url") or e["url"] not in sources for e in ev):
+            fail("Evidencia de popularidad", "falta popularity_evidence con URL documentada en sources.md")
+        else:
+            ok("Evidencia de popularidad", f"{len(ev)} señales documentadas")
+        if not meta.get("audience_fit"):
+            fail("Relevancia para la audiencia", "falta audience_fit")
+        if "Por qué es conocida" not in caption:
+            fail("Por qué es conocida", "el caption debe explicar por qué es conocida")
+        if status == "proxima_confirmada":
+            opens = meta.get("opens_on")
+            if not opens or datetime.fromisoformat(opens).date() <= now.date():
+                fail("Próxima apertura", "opens_on ausente o no futura")
+            if not re.search(r"aún no está abierta|abre el", caption, re.IGNORECASE):
+                fail("Convocatoria futura visible", "el caption debe decir que aún no está abierta")
+        if status == "recurrente_pendiente":
+            if meta.get("deadline"):
+                fail("Convocatoria recurrente", "no se puede afirmar plazo si está pendiente de confirmación")
+            if "pendiente de confirmación" not in caption.lower():
+                fail("Convocatoria recurrente", "el caption debe decir 'pendiente de confirmación'")
+
+    # 8. Plazo vigente con margen (sólo convocatorias abiertas)
+    if meta.get("type") == "oportunidad" and status == "abierta":
         dl = meta.get("deadline")
         if not dl:
             fail("Plazo", "oportunidad sin deadline verificado")
@@ -164,7 +190,7 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
             else:
                 fail("Plazo", f"{dl}: menos de {margin.days} días o vencido")
 
-    # 8. Duplicados
+    # 9. Duplicados
     hist = read_history()
     cu, tk = canonical_url(meta.get("primary_url", "")), meta.get("topic_key")
     dups = [r for r in hist if r.get("status") in ("published", "scheduled")
@@ -175,7 +201,7 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
     else:
         ok("Duplicados", f"sin coincidencias en {len(hist)} filas (URL canónica y topic_key)")
 
-    # 9. Enlaces accesibles
+    # 10. Enlaces accesibles
     if skip_network:
         warn("Enlaces accesibles", "omitido (--skip-network)")
     else:

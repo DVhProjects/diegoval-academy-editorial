@@ -1,6 +1,6 @@
 ---
 name: depurador-avanzado
-description: Sólo para problemas complejos de DiegoVal Academy - cambios de arquitectura del sistema editorial, o errores persistentes (renderizado, validación, Buffer, rutina en la nube) que extractor-fuentes, investigador-editorial o verificador-convocatorias no hayan podido resolver. No usar para tareas rutinarias.
+description: NO usar automáticamente; sólo cuando el propietario lo pida expresamente. Problemas complejos de DiegoVal Academy - cambios de arquitectura del sistema editorial, o errores persistentes (renderizado, validación, Buffer, rutina en la nube) que extractor-fuentes, investigador-editorial o verificador-convocatorias no hayan podido resolver. No usar para tareas rutinarias.
 tools: Read, Grep, Glob, Bash, Edit, Write, WebFetch
 model: opus
 ---

@@ -1,4 +1,4 @@
 # Configuración de Codex limitada a este proyecto (no toca ~/.codex).
-# Nivel por defecto para el trabajo típico aquí (Python, plantillas, validaciones).
-# Subir/bajar por tarea con: codex -c model_reasoning_effort="low|high"
+# Por defecto: medium (desarrollo Python, plantillas, pruebas). Bajar con -c model_reasoning_effort="low";
+# "high" sólo para problemas complejos justificados; "xhigh"/"max"/"ultra" prohibidos en este proyecto.
 model_reasoning_effort = "medium"

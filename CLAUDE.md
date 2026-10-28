@@ -24,6 +24,7 @@ Trabaja únicamente dentro de este directorio y sus subcarpetas. No leas, modifi
 - Debes elegir temas de manera autónoma, no pedir al propietario que los escoja. La selección necesita evidencia y revisión de noticias/calls realmente actuales. Verifica páginas de convocatoria específicas, no sólo portales generales.
 
 ### Miércoles — Oportunidad real
+**Orden de selección (política 2026-10-28):** 1) popularidad y reconocimiento internacional; 2) relevancia y accesibilidad para estudiantes internacionales hispanohablantes; 3) horizonte de 12 meses (abierta, próxima apertura confirmada o recurrente pendiente de confirmación); 4) financiación: se explica, no decide; 5) fecha límite: sirve para planificar, no para elegir. La popularidad se justifica con señales verificables (respaldo gubernamental/UE o institucional, ediciones previas documentadas, presencia en portales oficiales de estudio); nunca inventar cifras, rankings ni volúmenes de búsqueda. Mantener `data/radar_becas.csv` (`scripts/radar.py`) para detectar aperturas y evitar repeticiones. Cada post explica qué es y por qué es conocida, para quién encaja, beneficios y requisitos, si está ABIERTA o es FUTURA, cómo postular o prepararse y un consejo práctico con fuente oficial.
 Buscar oportunidades financiadas de becas, másteres, posiciones doctorales, programas académicos e investigación. Elegir UNA claramente relevante, vigente y verificable, con al menos 7 días de margen hasta el plazo. Extraer: institución/país, qué ofrece y qué NO está incluido, requisitos, nacionalidad/elegibilidad, plazo exacto (con zona horaria si importa), pasos concretos de solicitud, consejo práctico y URL oficial exacta. Registrar 2 alternativas descartadas en `sources.md`. Si no hay una candidata suficientemente verificada, usar un post educativo sobre búsqueda de oportunidades, sin atribuir becas inexistentes.
 
 ### Viernes — Research & Career
@@ -36,7 +37,7 @@ Seleccionar autónomamente UN tema de cuatro familias (`metadata.category`): `te
 - Jerarquía de `post.json` (v2): `kicker`, `issue`, `headline` (≤ 55 caracteres, ideal 2 líneas), `dek` (≤ 110 caracteres), `highlight` (plazo o idea clave), **2-3** `facts` (≤ 48 caracteres cada uno), `tip` ("Lo que pocos explican": un dato práctico verificado que otras cuentas no suelen explicar), `source` (sólo dominio), `verified`. Si el renderizador reduce la letra, acortar el texto.
 - `series`: `miercoles` (acento terracota) o `viernes` (acento azul petróleo).
 - Caption (`caption.md`, texto plano, **≤ 1300 caracteres**, ideal ~1000): 1 frase gancho · "En corto:" 3-4 viñetas (qué, quién, cuánto, plazo) · "Lo que pocos explican:" 1-2 frases · "Cómo empezar:" 2-3 pasos concretos · 1-2 enlaces oficiales exactos · `Verificado el: AAAA-MM-DD` · 2-3 hashtags.
-- Anti-ruido: no más de una publicación por día salvo petición del propietario, y no dos del mismo tipo en menos de 72 h.
+- Anti-ruido: la rutina publica como máximo una vez al día; las publicaciones extra pedidas por el propietario no desplazan el calendario de miércoles y viernes.
 
 ## Verificación y seguridad
 1. Nunca inventar convocatoria, beneficiarios, sueldo, cifras, financiación, fecha, deadline, elegibilidad ni URL.
@@ -58,10 +59,12 @@ Seleccionar autónomamente UN tema de cuatro familias (`metadata.category`): `te
 - `docs/AUTOMATIZACION.md`: estado de la nube, alojamiento de imágenes y bloqueos.
 - `docs/MODELOS.md`: política de modelos (Claude y Codex) y registro de uso.
 
-## Selección de modelos (resumen; detalle en `docs/MODELOS.md`)
-- Usar el modelo más económico que haga bien la tarea; nunca rebajar la calidad de la verificación de becas, fechas, requisitos, enlaces ni de la imagen.
-- Subagentes del proyecto (`.claude/agents/`): `extractor-fuentes` (Haiku: clasificar/extraer/ordenar), `investigador-editorial` (Sonnet: investigar, comparar, redactar), `verificador-convocatorias` (Sonnet: verificación independiente antes de publicar), `depurador-avanzado` (Opus: sólo arquitectura o errores que los anteriores no resuelvan).
-- Rutina semanal en la nube: modelo `claude-sonnet-5-5`. Registrar en `metadata.json` (`models_used`) qué modelos intervinieron.
+## Responsabilidades y modelos (detalle en `docs/MODELOS.md`)
+- **Claude = agente editorial**: investiga, evalúa popularidad/relevancia/elegibilidad, verifica fuentes, elige temas de miércoles y viernes, redacta, ejecuta `render_post.py`/validaciones, publica con Buffer MCP y registra el historial.
+  - Haiku (`extractor-fuentes`): extracción sencilla. Sonnet, esfuerzo medio (`investigador-editorial`, `verificador-convocatorias`, rutina en la nube): investigación, verificación y redacción.
+  - **Opus no se usa automáticamente**: `depurador-avanzado` sólo si el propietario lo pide expresamente.
+- **Codex = especialista técnico** (scripts Python, plantilla 1080×1350, validaciones, pruebas, errores de código, reproducibilidad). No busca becas, no elige temas, no redacta captions habituales, no publica y no repite verificaciones ya hechas. Esfuerzo: `low` mantenimiento · `medium` desarrollo habitual · `high` sólo problemas complejos justificados · `xhigh` prohibido.
+- No ejecutar Codex porque sí; reutilizar las herramientas Python y la plantilla existentes; no repetir el mismo trabajo con dos modelos. La rutina en la nube NO depende de Codex ni del ordenador del propietario.
 
 ## Modo de operación
 1. Explicar brevemente el plan de acción antes de escribir scripts o conectar servicios.
