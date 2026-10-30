@@ -1,0 +1,17 @@
+{
+  "channelId": "6ae0bdf22f1f5ed648eb92f9",
+  "schedulingType": "automatic",
+  "text": "¿Buscas un doctorado en Europa y no sabes por dónde empezar? Hay un portal oficial de la Unión Europea para eso.\n\nEn corto:\n• EURAXESS (\"Researchers in motion\") reúne ofertas de empleo, financiación y puestos de acogida para investigadores.\n• El filtro \"First Stage Researcher (R1)\" cubre a quien investiga bajo supervisión \"hasta el punto del PhD\" (doctorado).\n• Puedes afinar por campo de investigación, país y programa de financiación, como \"Horizon Europe - MSCA\" (acciones Marie Skłodowska-Curie).\n\nLo que pocos explican: EURAXESS reconoce que algunas instituciones publican en R1 puestos de otro nivel profesional. El requisito real está en el texto de cada oferta.\n\nCómo empezar:\n1. Abre la búsqueda de empleos y marca R1 en \"Researcher Profile\".\n2. Elige tu campo y 2-3 países; lee las ofertas una a una.\n3. Confirma requisitos, contrato y plazo con la institución.\n\nFuentes oficiales:\nhttps://euraxess.ec.europa.eu/jobs/search\nhttps://euraxess.ec.europa.eu/europe/career-development/training-researchers/research-profiles-descriptors\n\nVerificado el: 2026-10-30.\n\n#PhD #Europa #EURAXESS",
+  "assets": [
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/d6b90211197de5b64853c4bbff3ce08687ee0406/posts/2026-10-30_viernes_euraxess-r1/post.png",
+        "metadata": {
+          "altText": "Ficha editorial de DiegoVal Academy, serie Research & Career. Cómo buscar doctorados en EURAXESS, portal oficial de la UE con ofertas de investigación. Idea clave: el filtro R1 (investigador en etapa inicial) muestra puestos previos al doctorado. Dónde: sección de empleos de EURAXESS. Filtro: Researcher Profile, First Stage (R1). Después: afina por campo, país o programa. Lo que pocos explican: algunas instituciones publican en R1 puestos de otro nivel, así que lee los requisitos de cada oferta. Fuente: euraxess.ec.europa.eu, verificado el 2026-10-30."
+        }
+      }
+    }
+  ],
+  "mode": "customScheduled",
+  "dueAt": "2026-10-30T12:30:00+01:00"
+}

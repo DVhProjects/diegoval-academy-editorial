@@ -14,6 +14,7 @@
     "investigacion_redaccion": "claude-sonnet-5-5 (rutina en la nube)"
   },
   "style_version": 2,
-  "status": "draft",
-  "buffer_post_id": null
+  "status": "scheduled",
+  "buffer_post_id": "6ae435bd56e01b97638d66fc",
+  "scheduled_for": "2026-10-30T12:30:00+01:00"
 }
