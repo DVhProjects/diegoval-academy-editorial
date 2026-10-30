@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-30",
+  "weekday": "viernes",
+  "type": "research_career",
+  "category": "programa_red",
+  "topic": "Cómo buscar doctorados en EURAXESS con el filtro R1",
+  "topic_key": "euraxess-r1-buscar-doctorados",
+  "primary_url": "https://euraxess.ec.europa.eu/jobs/search",
+  "deadline": null,
+  "verified_date": "2026-10-30",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Cómo buscar doctorados en EURAXESS, portal oficial de la UE con ofertas de investigación. Idea clave: el filtro R1 (investigador en etapa inicial) muestra puestos previos al doctorado. Dónde: sección de empleos de EURAXESS. Filtro: Researcher Profile, First Stage (R1). Después: afina por campo, país o programa. Lo que pocos explican: algunas instituciones publican en R1 puestos de otro nivel, así que lee los requisitos de cada oferta. Fuente: euraxess.ec.europa.eu, verificado el 2026-10-30.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina en la nube)"
+  },
+  "style_version": 2,
+  "status": "draft",
+  "buffer_post_id": null
+}
