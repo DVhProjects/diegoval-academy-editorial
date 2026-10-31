@@ -4,7 +4,7 @@
 
 ## Arquitectura
 ```
-Rutina en la nube (Claude Code, claude.ai/code/routines)  ── mié y vie, cron 0 6 * * 3,5 (UTC)
+Rutina en la nube (Claude Code, claude.ai/code/routines)  ── mié, vie y sáb, cron 0 6 * * 3,5,6 (UTC)
   │                                                          = 07:00 CET (invierno) / 08:00 CEST (verano)
   ├─ clona github.com/DVhProjects/diegoval-academy-editorial (público)
   ├─ sigue prompts/RUTINA_SEMANAL.md (modelo claude-sonnet-5-5)
@@ -23,7 +23,7 @@ Rutina en la nube (Claude Code, claude.ai/code/routines)  ── mié y vie, cro
 | Imagen pública para Buffer | OK | URL raw por SHA aceptada por Buffer y LinkedIn (1080×1350) |
 | Primera publicación | OK | 2026-10-28 10:08 CET, https://www.linkedin.com/feed/update/urn:li:share:7521135820360146947 |
 | Conector Buffer en claude.ai | OK | `connector_uuid e6f83204-f84f-4e43-86a3-ec272a29e783` (adjuntado por el servidor al crear la rutina) |
-| Rutina semanal | **ACTIVA** desde 2026-10-28 10:28 CET | `trig_01Np3DtdUEyuYobQKkbePAox` · cron `0 6 * * 3,5` UTC · Sonnet · sólo conector Buffer · primera ejecución 2026-10-30 07:05 CET · https://claude.ai/code/routines/trig_01Np3DtdUEyuYobQKkbePAox |
+| Rutina semanal | **ACTIVA** desde 2026-10-28 10:28 CET | `trig_01Np3DtdUEyuYobQKkbePAox` · cron `0 6 * * 3,5,6` UTC (sábado añadido 2026-10-31) · Sonnet · sólo conector Buffer · primera ejecución 2026-10-30 07:05 CET · https://claude.ai/code/routines/trig_01Np3DtdUEyuYobQKkbePAox |
 | Prueba en la nube (borrador) | **Parcial** (2026-10-28 10:14 CET) | Python 3.11 OK · render 1080×1350 OK (tras reinstalar Pillow) · Buffer get_channel OK · **git push 403: falta la app Claude de GitHub en DVhProjects** · borrador Buffer no ejecutado. `trig_0126GEUFSjqZUAHgDYq9YZCT` |
 | App Claude en GitHub (DVhProjects) | OK | Instalada 2026-10-28; push desde la nube verificado |
 | Prueba en la nube, 2.ª ejecución | **OK** (2026-10-28 10:25 CET) | Python 3.11 + Pillow OK · render 1080×1350 · push a `claude/prueba-nube` · URL raw 200 image/png · Buffer: borrador con imagen creado, verificado y borrado. Única incidencia: la nube no puede borrar ramas remotas (se borró desde local) |
@@ -72,3 +72,9 @@ Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwz
 | Buffer en la nube | OK con el conector `mcp__Buffer__*` |
 | Rutina semanal | Activa; primera ejecución programada 2026-10-30 06:05 UTC |
 | **No verificado** | Ejecución real programada por el planificador con publicación real; elección autónoma entre vídeo e imagen sin vídeo sugerido; push a `main` desde la nube; aspecto final de la tarjeta de vídeo en LinkedIn |
+
+## Cambios 2026-10-31
+- Sábado añadido: guía práctica (`educativo`) a las 11:00 Europe/Stockholm (`config/publishing.json` → `calendar.sabado`; `prepare_publish.py --slot` usa la hora de cada día). Rutina `trig_01Np3DtdUEyuYobQKkbePAox` actualizada a `0 6 * * 3,5,6` UTC, mismo modelo (Sonnet), mismo conector Buffer.
+- Lenguaje sencillo obligatorio en `validate_post.py`: siglas sin explicar, palabras burocráticas o calcos, frases > 32 palabras y `metadata.plain_language_check` (respuesta «sí» del verificador sobre el texto exacto, con hash) bloquean la publicación. 65 pruebas OK en local.
+- Buffer comprobado: sin publicaciones programadas, en envío, en borrador ni con error en el canal (sin conflictos).
+- **No verificado**: primera ejecución real de un sábado (2026-11-07).
