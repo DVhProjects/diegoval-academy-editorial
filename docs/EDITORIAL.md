@@ -17,11 +17,17 @@ Examinar documentos/regulaciones recientes, programas de financiación y recurso
 - PhD career → acción concreta + requisitos reales + ejemplo general.
 - Research opportunity → programa o red + mecanismo real de participación.
 
+## Sábado (desde 2026-10-31)
+Guía práctica para quien empieza: cómo conseguir becas, buscar doctorados, preparar solicitudes, entender requisitos, encontrar oportunidades y entrevistas útiles. Debe dejar al lector con UNA acción concreta para esa semana (p. ej. "abre este buscador, marca este filtro y guarda tres ofertas"). Alternar categorías (`config/publishing.json` → `saturday_categories`).
+
+## Lenguaje sencillo (obligatorio, desde 2026-10-31)
+Reglas completas en `CLAUDE.md`. Resumen: escribir para alguien que nunca ha pedido una beca; ninguna sigla sin explicar; sin burocracia ni calcos del inglés; ejemplos concretos; mismo rigor. Prueba final del verificador: «¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?» Si no, se reescribe.
+
 ## Estilo (v2, desde 2026-10-28)
-- Compacto y para principiantes: frases cortas, sin jerga; si hace falta una sigla, explicarla la primera vez.
+- Compacto y para principiantes: frases cortas, sin jerga; toda sigla explicada la primera vez.
 - La imagen muestra sólo lo esencial (titular, plazo o idea clave, 2-3 datos, "Lo que pocos explican").
 - El caption complementa la imagen: gancho, lo esencial, el dato práctico que otras cuentas no explican, cómo empezar y 1-2 enlaces oficiales.
-- Cada publicación incluye un dato práctico verificado que otras cuentas normalmente no explican.
+- "Lo que pocos explican": sólo si hay un consejo verificado, útil y entendible; si no, se omite.
 
 ## Formato vídeo (desde 2026-10-28)
 Cuando exista un vídeo oficial o de procedencia verificable (entrevista a becados, investigadores, responsables, explicación de una institución europea) que aporte más que una infografía, el vídeo es el contenido principal (enlace con vista previa). La elección es automática por calidad, utilidad y relevancia; si no hay vídeo adecuado se usa la ficha v2. Reglas completas en `CLAUDE.md`.

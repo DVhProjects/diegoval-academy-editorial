@@ -10,6 +10,7 @@ documentarse en sources.md antes de publicar.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -155,6 +156,139 @@ def _validate_video(meta, caption, sources, now, skip_network, ok, fail, warn):
         ok("Vídeo en vivo", f"coincide con lo declarado ({live['subtitles']})")
 
 
+# Lenguaje sencillo (obligatorio desde 2026-10-31): el lector nunca ha pedido una beca ni un doctorado.
+PLAIN_QUESTION = ("¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto "
+                  "sin buscar explicaciones adicionales?")
+# Siglas o códigos: 2+ mayúsculas seguidas (MSCA, UE), mayúscula + cifra (R1) o PhD.
+ACRONYM_RE = re.compile(r"(?<![\w#@/.-])(?:[A-ZÁÉÍÓÚÑ]{2,}[0-9]*|[A-Z][0-9]+|PhD)(?![\w-])")
+# Siglas que cualquier lector hispanohablante entiende sin explicación.
+# CC: botón de subtítulos de YouTube, ya explicado en la línea obligatoria "Subtítulos:".
+ACRONYMS_OK = {"CV", "PDF", "DNI", "TV", "CC"}
+# Lenguaje burocrático o calcos del inglés que confunden a un principiante (sustituir por la sugerencia).
+JARGON = {
+    "elegibilidad": "explica quién puede pedirla ('pueden pedirla…')",
+    "elegible": "di 'puedes pedirla si…'",
+    "estancia de movilidad": "di 'tiempo viviendo en otro país'",
+    "regla de movilidad": "explica la regla con palabras simples",
+    "investigador en etapa inicial": "di 'persona que empieza a investigar (antes del doctorado)'",
+    "aplicar a": "di 'solicitar' o 'pedir' (calco de 'apply')",
+    "aplicar para": "di 'solicitar'",
+    "aplica a": "di 'solicita' o 'pide'",
+    "postulante": "di 'quien la solicita'",
+    "a tal efecto": "frase burocrática",
+    "en virtud de": "frase burocrática",
+    "dicha convocatoria": "frase burocrática",
+    "con carácter": "frase burocrática",
+    "acreditar": "di 'demostrar' o 'presentar un documento'",
+    "partenariado": "di 'grupo de universidades'",
+    "consorcio": "explica 'grupo de universidades o centros'",
+    "full-time": "di 'a tiempo completo'",
+    "deadline": "di 'plazo' o 'fecha límite'",
+    "networking": "explica qué hay que hacer",
+    "track record": "explica qué se pide",
+    "puestos de acogida": "explica con palabras simples",
+}
+
+
+def _strip_noise(text: str) -> str:
+    """Quita URLs, hashtags y la línea 'Verificado el' antes de analizar el lenguaje."""
+    text = URL_RE.sub(" ", text)
+    text = re.sub(r"#\w+", " ", text)
+    return re.sub(r"Verificado el:.*", " ", text)
+
+
+def unexplained_acronyms(text: str) -> list[str]:
+    """Siglas sin explicar. Cuenta como explicada si alguna aparición lleva la explicación entre paréntesis
+    ('MSCA (becas Marie Curie)') o va entre paréntesis tras ella ('becas Marie Curie (MSCA)')."""
+    clean = _strip_noise(text)
+    bad = []
+    for acr in dict.fromkeys(ACRONYM_RE.findall(clean)):
+        if acr in ACRONYMS_OK:
+            continue
+        a = re.escape(acr)
+        explained = (re.search(rf"(?<!\w){a}\s*\(\s*[^)]*[a-záéíóúñ]{{3}}[^)]*\)", clean)
+                     or re.search(rf"[a-záéíóúñ]{{3}}[^()\n]*\(\s*{a}\s*\)", clean))
+        if not explained:
+            bad.append(acr)
+    return bad
+
+
+def jargon_found(text: str) -> list[str]:
+    low = _strip_noise(text).lower()
+    return [f"'{k}' → {v}" for k, v in JARGON.items() if re.search(rf"(?<!\w){re.escape(k)}(?!\w)", low)]
+
+
+def long_sentences(text: str, limit: int = 32) -> list[str]:
+    out = []
+    for s in re.split(r"(?<=[.!?:])\s+|\n+", _strip_noise(text)):
+        n = len(re.findall(r"\w+", s))
+        if n > limit:
+            out.append(f"{n} palabras: «{s.strip()[:60]}…»")
+    return out
+
+
+def _spec_texts(spec) -> list[str]:
+    """Textos visibles de la imagen (sin 'source', 'verified', 'series' ni 'issue')."""
+    out = []
+
+    def walk(v, key=""):
+        if key in ("source", "verified", "series", "issue"):
+            return
+        if isinstance(v, dict):
+            for k, x in v.items():
+                walk(x, k)
+        elif isinstance(v, list):
+            for x in v:
+                walk(x, key)
+        elif isinstance(v, str):
+            out.append(v)
+    walk(spec)
+    return out
+
+
+def _plain_digest(caption: str, spec) -> str:
+    return hashlib.sha256((caption + "\n" + "\n".join(_spec_texts(spec))).encode("utf-8")).hexdigest()
+
+
+def plain_hash(folder: Path) -> str:
+    spec = load_json(folder / "post.json") if (folder / "post.json").exists() else {}
+    return _plain_digest((folder / "caption.md").read_text(encoding="utf-8"), spec)
+
+
+def _validate_plain_language(meta, caption, spec, ok, fail):
+    image_text = "\n".join(_spec_texts(spec))
+    for where, text in (("texto", caption), ("imagen", image_text)):
+        if not text.strip():
+            continue
+        acr = unexplained_acronyms(text)
+        if acr:
+            fail(f"Lenguaje sencillo: siglas ({where})",
+                 f"sin explicar: {acr}. Explícalas la primera vez, p. ej. 'MSCA (becas Marie Curie de la UE)', o quítalas")
+        else:
+            ok(f"Lenguaje sencillo: siglas ({where})", "todas explicadas o ninguna")
+        jar = jargon_found(text)
+        if jar:
+            fail(f"Lenguaje sencillo: palabras difíciles ({where})", "; ".join(jar))
+        else:
+            ok(f"Lenguaje sencillo: palabras difíciles ({where})", "sin burocracia ni calcos detectados")
+    longs = long_sentences(caption)
+    if longs:
+        fail("Lenguaje sencillo: frases largas", "parte estas frases (máx. 32 palabras): " + " | ".join(longs[:3]))
+    else:
+        ok("Lenguaje sencillo: frases largas", "todas ≤ 32 palabras")
+    chk = meta.get("plain_language_check") or {}
+    if not (chk.get("question") == PLAIN_QUESTION and str(chk.get("answer", "")).strip().lower() in ("sí", "si")
+            and chk.get("reviewer") and chk.get("checked_text_sha256")):
+        fail("Lenguaje sencillo: revisión del verificador",
+             "falta metadata.plain_language_check con la pregunta exacta, answer 'sí', reviewer y "
+             "checked_text_sha256 (python3 scripts/validate_post.py <carpeta> --plain-hash)")
+    elif chk["checked_text_sha256"] != _plain_digest(caption, spec):
+        fail("Lenguaje sencillo: revisión del verificador",
+             "el texto cambió después de la revisión: el verificador debe revisarlo otra vez")
+    else:
+        ok("Lenguaje sencillo: revisión del verificador", f"respuesta 'sí' de {chk['reviewer']}")
+
+
 def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, bool]:
     pub = load_json(ROOT / "config" / "publishing.json")
     chan = load_json(ROOT / "config" / "buffer_channel.json")
@@ -257,14 +391,25 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
     if is_video:
         _validate_video(meta, caption, sources, now, skip_network, ok, fail, warn)
     else:
-        if "tip" in spec and "Lo que pocos explican" in caption:
-            ok("Estilo compacto (v2)", "imagen con bloque 'Lo que pocos explican' y dato práctico en el texto")
+        # "Lo que pocos explican" es opcional (sólo si hay un consejo realmente útil), pero coherente.
+        if ("tip" in spec) == ("Lo que pocos explican" in caption):
+            ok("Lo que pocos explican", "presente en imagen y texto" if "tip" in spec else "omitido (sin consejo útil)")
         else:
-            fail("Estilo compacto (v2)", "falta 'tip' en post.json o la línea 'Lo que pocos explican' en caption.md")
+            fail("Lo que pocos explican", "debe estar en post.json ('tip') y en caption.md a la vez, o en ninguno")
         if URL_RE.search(json.dumps(spec, ensure_ascii=False)):
             fail("Sin URLs en la imagen", "post.json contiene una URL completa")
         else:
             ok("Sin URLs en la imagen", "sólo dominio de la fuente")
+
+    # 6b. Lenguaje sencillo (todos los formatos y días)
+    _validate_plain_language(meta, caption, spec, ok, fail)
+
+    # 6c. Tipo coherente con el calendario
+    types = {c["type"] for c in pub.get("calendar", {}).values()}
+    if meta.get("type") not in types:
+        fail("Tipo de publicación", f"type {meta.get('type')!r} no está en el calendario {sorted(types)}")
+    elif meta.get("type") == "educativo" and meta.get("category") not in pub["rules"].get("saturday_categories", []):
+        fail("Categoría del sábado", f"category {meta.get('category')!r} no está en {pub['rules'].get('saturday_categories')}")
 
     # 7. Política de selección (oportunidades publicadas desde 2026-10-29)
     status = meta.get("call_status", "abierta")
@@ -343,9 +488,14 @@ def main() -> int:
     ap.add_argument("folder", type=Path)
     ap.add_argument("--now", help="ISO 8601 con zona; por defecto, ahora")
     ap.add_argument("--skip-network", action="store_true")
+    ap.add_argument("--plain-hash", action="store_true",
+                    help="imprime el hash del texto revisado (caption + imagen) para metadata.plain_language_check")
     a = ap.parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
     folder = a.folder.resolve()
+    if a.plain_hash:
+        print(plain_hash(folder))
+        return 0
     now = datetime.fromisoformat(a.now) if a.now else datetime.now(ZoneInfo("Europe/Stockholm"))
     results, passed = validate(folder, now, a.skip_network)
     decision = "APROBADA para publicar" if passed else "BLOQUEADA: no publicar"

@@ -1,13 +1,13 @@
 # Entregable por publicación
 
-Carpeta `posts/AAAA-MM-DD_<miercoles|viernes|lanzamiento>_<slug>/` con:
+Carpeta `posts/AAAA-MM-DD_<miercoles|viernes|sabado|lanzamiento>_<slug>/` con:
 
 1. `post.json`: contenido de la imagen (esquema abajo).
 2. `post.png`: generado por `scripts/render_post.py` (1080×1350, texto real, fuentes OFL).
 3. `caption.md`: texto plano listo para LinkedIn (≤ 1300 caracteres, estilo v2), enlaces oficiales directos y `Verificado el: AAAA-MM-DD`.
 4. `sources.md`: URLs específicas, citas literales de los campos verificados, fecha/hora de consulta y alternativas descartadas.
 5. `validation.md`: generado por `scripts/validate_post.py` (decisión APROBADA/BLOQUEADA).
-6. `metadata.json`: `date`, `weekday`, `type` (`oportunidad`|`research_career`), `category`, `topic`, `topic_key`, `primary_url`, `deadline` (ISO con zona o `null`), `verified_date`, `buffer_channel_id`, `alt_text`, `models_used`, `status` (`draft`|`scheduled`|`published`|`skipped`), `buffer_post_id`.
+6. `metadata.json`: `date`, `weekday`, `type` (`oportunidad`|`research_career`|`educativo`), `category`, `topic`, `topic_key`, `primary_url`, `deadline` (ISO con zona o `null`), `verified_date`, `buffer_channel_id`, `alt_text`, `models_used`, `status` (`draft`|`scheduled`|`published`|`skipped`), `buffer_post_id`, `plain_language_check` (obligatorio, ver abajo).
 7. `buffer_payload.json`: generado por `scripts/prepare_publish.py`.
 
 No escribir fechas de cierre si el programa no publica un plazo único. Ninguna URL completa dentro de la imagen: las URLs clicables van en el caption.
@@ -15,7 +15,7 @@ No escribir fechas de cierre si el programa no publica un plazo único. Ninguna 
 ## Esquema de `post.json` (v2, compacto)
 ```json
 {
-  "series": "miercoles | viernes",
+  "series": "miercoles | viernes | sabado",
   "kicker": "Oportunidad verificada · Máster con beca",
   "issue": "N.º 004 · 4 de noviembre de 2026",
   "headline": "Máx. 55 caracteres, lenguaje sencillo",
@@ -27,12 +27,24 @@ No escribir fechas de cierre si el programa no publica un plazo único. Ninguna 
   "verified": "AAAA-MM-DD"
 }
 ```
-- 2-3 `facts` (no más). Viernes: `highlight` = idea clave (p. ej. `{"label": "La idea clave", "value": "…"}`).
+- `tip` es opcional: sólo si hay un consejo realmente útil (si se omite, el caption tampoco lleva "Lo que pocos explican").
+- 2-3 `facts` (no más). Viernes y sábado: `highlight` = idea clave (p. ej. `{"label": "La idea clave", "value": "…"}`).
 - Caption ≤ 1300 caracteres: gancho · "En corto:" · "Lo que pocos explican:" · "Cómo empezar:" · enlace(s) oficial(es) · `Verificado el:` · 2-3 hashtags.
-- `validate_post.py` bloquea si falta `tip` o la línea "Lo que pocos explican" en el caption.
+- `validate_post.py` bloquea si `tip` y la línea "Lo que pocos explican" no van juntos.
+
+## Lenguaje sencillo: `metadata.plain_language_check` (todos los formatos)
+```json
+"plain_language_check": {
+  "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+  "answer": "sí",
+  "reviewer": "verificador-convocatorias",
+  "checked_text_sha256": "<salida de python3 scripts/validate_post.py posts/<carpeta> --plain-hash>"
+}
+```
+Se rellena DESPUÉS de la revisión del verificador. Si se cambia el texto o la imagen, el hash deja de coincidir y hay que revisar otra vez. Siglas: explicación entre paréntesis la primera vez, en el texto y en la imagen (p. ej. `R1 (quien empieza a investigar, antes del doctorado)`).
 
 ## Formato vídeo (`metadata.format = "video"`)
-Carpeta `posts/AAAA-MM-DD_<miercoles|viernes>_<slug>/` con `caption.md`, `sources.md`, `metadata.json`, `validation.md`, `buffer_payload.json`. **Sin `post.json` ni PNG.**
+Carpeta `posts/AAAA-MM-DD_<miercoles|viernes|sabado>_<slug>/` con `caption.md`, `sources.md`, `metadata.json`, `validation.md`, `buffer_payload.json`. **Sin `post.json` ni PNG.**
 
 `metadata.json` (además de los campos comunes):
 ```json

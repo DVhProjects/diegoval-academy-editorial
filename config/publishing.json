@@ -9,6 +9,11 @@
     "viernes": {
       "type": "research_career",
       "publish_time": "12:30"
+    },
+    "sabado": {
+      "type": "educativo",
+      "publish_time": "11:00",
+      "share_now_after": "10:45"
     }
   },
   "rules": {
@@ -24,7 +29,16 @@
       "carrera_phd",
       "programa_red"
     ],
-    "style_version": 2
+    "style_version": 3,
+    "saturday_categories": [
+      "becas_paso_a_paso",
+      "buscar_doctorado",
+      "preparar_solicitud",
+      "entender_requisitos",
+      "encontrar_oportunidades",
+      "entrevista_util"
+    ],
+    "plain_language": true
   },
   "media": {
     "_nota": "Buffer exige una URL pública y permanente para la imagen. Se usa un repositorio GitHub público; la URL se fija al SHA del commit (inmutable).",

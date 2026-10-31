@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import history  # noqa: E402
 import validate_post  # noqa: E402
+from test_sistema import stamp_plain  # noqa: E402
 import video  # noqa: E402
 
 TZ = ZoneInfo("Europe/Stockholm")
@@ -117,6 +118,7 @@ class TestValidadorVideo(unittest.TestCase):
         (f / "caption.md").write_text(cap if cap is not None else caption(state), encoding="utf-8")
         (f / "metadata.json").write_text(json.dumps(m or meta(state)), encoding="utf-8")
         (f / "sources.md").write_text(sources if sources is not None else f"{URL}\n{OFFICIAL}\n", encoding="utf-8")
+        stamp_plain(f)
         return f
 
     def fails(self, f: Path) -> list[str]:

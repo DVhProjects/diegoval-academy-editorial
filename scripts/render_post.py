@@ -36,6 +36,7 @@ PALETTE = {
 ACCENTS = {
     "miercoles": (171, 66, 40),   # terracota: oportunidades
     "viernes": (36, 92, 108),     # azul petróleo: research & career
+    "sabado": (84, 104, 58),      # verde oliva: guías prácticas
 }
 
 # Tamaños: (inicial, mínimo legible) en px sobre el lienzo de 1080 px.

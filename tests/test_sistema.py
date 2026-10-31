@@ -28,6 +28,14 @@ BASE_OP = ROOT / "posts" / "2026-10-28_oportunidad_euroculture"
 NOW_OK = datetime(2026, 10, 28, 9, 0, tzinfo=TZ)
 
 
+def stamp_plain(folder: Path) -> None:
+    """Simula la revisión de lenguaje sencillo del verificador sobre el texto actual."""
+    m = json.loads((folder / "metadata.json").read_text(encoding="utf-8"))
+    m["plain_language_check"] = {"question": validate_post.PLAIN_QUESTION, "answer": "sí", "reviewer": "prueba",
+                                 "checked_text_sha256": validate_post.plain_hash(folder)}
+    (folder / "metadata.json").write_text(json.dumps(m, ensure_ascii=False), encoding="utf-8")
+
+
 class Sandbox(unittest.TestCase):
     """Copia una carpeta de post y un historial vacío a un directorio temporal."""
 
@@ -44,6 +52,7 @@ class Sandbox(unittest.TestCase):
     def copy(self, base: Path, name: str | None = None) -> Path:
         dst = self.tmp / (name or base.name)
         shutil.copytree(base, dst)
+        stamp_plain(dst)
         return dst
 
     def failures(self, folder: Path, now: datetime = NOW_OK) -> list[str]:
@@ -51,9 +60,70 @@ class Sandbox(unittest.TestCase):
         return [n for s, n, _ in results if s == "FAIL"]
 
 
+def explain_acronyms(folder: Path) -> None:
+    """Explica entre paréntesis la primera aparición de cada sigla (los posts de octubre son anteriores a la regla)."""
+    for name in ("caption.md", "post.json"):
+        p = folder / name
+        text = p.read_text(encoding="utf-8")
+        body = text if name == "caption.md" else "\n".join(validate_post._spec_texts(json.loads(text)))
+        for acr in validate_post.unexplained_acronyms(body):
+            text = text.replace(acr, f"{acr} (programa)", 1)
+        p.write_text(text, encoding="utf-8")
+    stamp_plain(folder)
+
+
 class TestValidacion(Sandbox):
     def test_post_valido_aprueba(self):
-        self.assertEqual(self.failures(self.copy(BASE_RC)), [])
+        f = self.copy(BASE_RC)
+        explain_acronyms(f)
+        self.assertEqual(self.failures(f), [])
+
+    def test_post_antiguo_con_siglas_bloquea(self):
+        fails = self.failures(self.copy(BASE_RC))
+        self.assertIn("Lenguaje sencillo: siglas (texto)", fails)
+        self.assertIn("Lenguaje sencillo: siglas (imagen)", fails)
+
+
+class TestLenguajeSencillo(Sandbox):
+    def test_siglas_explicadas_y_sin_explicar(self):
+        u = validate_post.unexplained_acronyms
+        self.assertEqual(u("Busca el filtro R1 en EURAXESS."), ["R1", "EURAXESS"])
+        self.assertEqual(u("Marca R1 (persona que empieza a investigar, antes del doctorado)."), [])
+        self.assertEqual(u("Las becas Marie Curie de la Unión Europea (MSCA) pagan un sueldo."), [])
+        self.assertEqual(u("Envía tu CV en PDF. https://euraxess.ec.europa.eu #PhD"), [])
+
+    def test_burocracia_y_calcos(self):
+        j = validate_post.jargon_found("Requisitos de elegibilidad: aplicar a la beca antes del deadline.")
+        self.assertEqual(len(j), 3)
+        self.assertEqual(validate_post.jargon_found("Puedes pedirla si terminas el grado antes de junio."), [])
+
+    def test_frase_larga_bloquea(self):
+        self.assertEqual(len(validate_post.long_sentences("palabra " * 40 + ".")), 1)
+
+    def test_texto_cambiado_tras_revision_bloquea(self):
+        f = self.copy(BASE_RC)
+        explain_acronyms(f)
+        (f / "caption.md").write_text((f / "caption.md").read_text(encoding="utf-8") + "\nUna frase nueva.", encoding="utf-8")
+        self.assertIn("Lenguaje sencillo: revisión del verificador", self.failures(f))
+
+    def test_sin_revision_bloquea(self):
+        f = self.copy(BASE_RC)
+        explain_acronyms(f)
+        m = json.loads((f / "metadata.json").read_text(encoding="utf-8"))
+        m["plain_language_check"]["answer"] = "no"
+        (f / "metadata.json").write_text(json.dumps(m, ensure_ascii=False), encoding="utf-8")
+        self.assertIn("Lenguaje sencillo: revisión del verificador", self.failures(f))
+
+    def test_sabado_a_las_11(self):
+        pub = json.loads((ROOT / "config" / "publishing.json").read_text(encoding="utf-8"))
+        sab = datetime(2026, 11, 7, 7, 5, tzinfo=TZ)
+        self.assertEqual(prepare_publish.slot_payload(sab, prepare_publish.slot_config(sab, pub)),
+                         {"mode": "customScheduled", "dueAt": "2026-11-07T11:00:00+01:00"})
+        vie = datetime(2026, 11, 6, 7, 5, tzinfo=TZ)
+        self.assertEqual(prepare_publish.slot_payload(vie, prepare_publish.slot_config(vie, pub))["dueAt"],
+                         "2026-11-06T12:30:00+01:00")
+        tarde = datetime(2026, 11, 7, 10, 50, tzinfo=TZ)
+        self.assertEqual(prepare_publish.slot_payload(tarde, prepare_publish.slot_config(tarde, pub)), {"mode": "shareNow"})
 
     def test_convocatoria_caducada_bloquea(self):
         f = self.copy(BASE_OP)
@@ -76,7 +146,8 @@ class TestValidacion(Sandbox):
         spec = json.loads((f / "post.json").read_text(encoding="utf-8"))
         spec.pop("tip")
         (f / "post.json").write_text(json.dumps(spec, ensure_ascii=False), encoding="utf-8")
-        self.assertIn("Estilo compacto (v2)", self.failures(f))
+        stamp_plain(f)
+        self.assertIn("Lo que pocos explican", self.failures(f))
 
     def test_caption_largo_bloquea(self):
         f = self.copy(BASE_RC)

@@ -6,7 +6,7 @@ Uso:
     python3 scripts/prepare_publish.py posts/<carpeta> --image-url URL \
         [--mode customScheduled --due 2026-10-28T12:30:00+01:00 | --mode shareNow | --draft]
 
---slot: hoy a la hora de config/publishing.json (12:30 Europe/Stockholm, con el desfase
+--slot: hoy a la hora de config/publishing.json según el día (12:30 mié/vie, 11:00 sáb; Europe/Stockholm, con el desfase
 CET/CEST correcto); si ya pasó la hora límite (12:15) usa shareNow.
 
 Comprueba que la URL de la imagen es pública y que sus bytes son idénticos a post.png
@@ -59,6 +59,17 @@ def slot_payload(now: datetime, pub: dict) -> dict:
         return {"mode": "shareNow"}
     due = datetime.combine(now.date(), dtime(hh, mm), tzinfo=tz)
     return {"mode": "customScheduled", "dueAt": due.isoformat(timespec="seconds")}
+
+
+DIAS = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
+
+
+def slot_config(now: datetime, pub: dict) -> dict:
+    """Hora del calendario para el día de hoy: calendar.<día> sobrescribe calendar_defaults."""
+    tz = ZoneInfo(pub["timezone"])
+    dia = pub.get("calendar", {}).get(DIAS[now.astimezone(tz).weekday()], {})
+    extra = {k: dia[k] for k in ("publish_time", "share_now_after") if k in dia}
+    return pub["calendar_defaults"] | {"timezone": pub["timezone"]} | extra
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -135,7 +146,7 @@ def main(argv: list[str] | None = None) -> int:
     if a.draft:
         payload["saveToDraft"] = True
     elif a.slot:
-        payload.update(slot_payload(now, pub["calendar_defaults"] | {"timezone": pub["timezone"]}))
+        payload.update(slot_payload(now, slot_config(now, pub)))
     else:
         payload["mode"] = a.mode
         if a.mode == "customScheduled":
