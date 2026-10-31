@@ -1,4 +1,4 @@
-# Rutina semanal DiegoVal Academy (miércoles, viernes y sábado) — MODO PRODUCCIÓN
+# Rutina semanal DiegoVal Academy (lunes, miércoles, viernes y sábado) — MODO PRODUCCIÓN
 
 Procedimiento que ejecuta la rutina en la nube (Linux, `python3`). Está escrito para un agente sin contexto.
 **Es producción**: si todo pasa, se programa una publicación real. No hace falta ninguna aprobación más (autorización del propietario, 2026-10-28). Las instrucciones de "modo pruebas" de documentos antiguos no aplican aquí.
@@ -7,7 +7,7 @@ Regla general: si una comprobación bloqueante falla, no publicar, registrar el 
 ## 0. Arranque
 1. Lee `CLAUDE.md`, `docs/EDITORIAL.md`, `docs/FUENTES.md`, `docs/MODELOS.md`, `templates/POST_SPEC.md`, `config/buffer_channel.json`, `config/publishing.json`.
 2. Fecha y hora: `python3 -c "from datetime import datetime; from zoneinfo import ZoneInfo; print(datetime.now(ZoneInfo('Europe/Stockholm')).strftime('%Y-%m-%d %A %H:%M %z'))"`.
-   Si no es miércoles (Wednesday), viernes (Friday) ni sábado (Saturday): terminar sin hacer nada.
+   Si no es lunes (Monday), miércoles (Wednesday), viernes (Friday) ni sábado (Saturday): terminar sin hacer nada.
 3. Dependencias: `python3 -m pip install -q --ignore-installed -r requirements.txt` (el Pillow del sistema en la nube está roto; `--ignore-installed` es obligatorio). Comprueba: `python3 -c "from PIL import Image; import fontTools, zoneinfo; zoneinfo.ZoneInfo('Europe/Stockholm')"`. Si falla: registrar `skipped` y terminar.
 4. Git: `git config user.name "DVhProjects"`, `git config user.email "332783668+DVhProjects@users.noreply.github.com"`, `git fetch origin`. Si existe `origin/claude/publicaciones`, `git merge --no-edit origin/claude/publicaciones` (si hay conflicto en `data/*.csv`, conserva la unión de filas y no borres ninguna).
 
@@ -23,6 +23,7 @@ Usa las herramientas `mcp__Buffer__*` (conector de claude.ai). El servidor `buff
 5. Nunca tocar otros canales. Nunca `addToQueue`. No cambiar la cola ni los horarios de Buffer.
 
 ## 2. Selección del tema (Sonnet; extracción mecánica: subagente `extractor-fuentes` si está disponible)
+- **Lunes (variado)**: elige UNO de los tipos `oportunidad`, `research_career` o `educativo` según `CLAUDE.md` ("Lunes — Variado": el que lleve más tiempo sin publicarse; sin repetir tema, URL ni categoría del post anterior) y sigue la sección de ese día. `weekday: "lunes"`, carpeta `posts/AAAA-MM-DD_lunes_<slug>/`.
 - **Miércoles (`oportunidad`)**: `python3 scripts/radar.py due`; revisa esas entradas y actualiza con `radar.py upsert`. Orden de `CLAUDE.md`: popularidad → relevancia → horizonte 12 meses → financiación → plazo. Revisa 10+ candidatas en páginas oficiales. Excluye vencidas, con < 7 días de margen, sin año/ciclo explícito, con beneficios vagos o sólo fuente secundaria. Prepara una LISTA ORDENADA de al menos 3 candidatas.
   En `metadata.json`: `call_status` (abierta|proxima_confirmada|recurrente_pendiente), `popularity_evidence` (lista de {criterio, evidencia, url}; urls también en sources.md), `audience_fit`, `opens_on` si es próxima. Caption con la línea "Por qué es conocida:".
 - **Viernes (`research_career`)**: categoría distinta de la del último `research_career` registrado (`tendencia_europea`, `idea_tesis`, `carrera_phd`, `programa_red`); prepara una lista ordenada de al menos 3 temas. Cada afirmación material con fuente original.
@@ -43,7 +44,7 @@ Con el tema ya elegido y verificado, busca un vídeo según el apartado "Formato
 ## 4. Producción
 **Formato vídeo:** crea `caption.md` (estructura de `templates/POST_SPEC.md`, con la línea `Subtítulos:` fiel al estado detectado) y `metadata.json` con `format: "video"` y el bloque `video` (salida de `video.py inspect` + `official_evidence_url`); NO generes post.json ni PNG. Valida con `python3 scripts/validate_post.py posts/<carpeta>` (comprueba el vídeo en vivo) y salta el paso 5.2 y 5.3 de imagen: en el paso 5 usa `prepare_publish.py posts/<carpeta> --slot` SIN `--image-url`; en `create_post` envía `text` y `metadata` (linkAttachment) del payload y ningún `assets`; en la confirmación `get_post` debe mostrar `metadata.linkAttachment.title` y `thumbnail` (si falta la vista previa, anótalo en el resumen y mantén el enlace en el texto).
 **Formato imagen:**
-Carpeta `posts/AAAA-MM-DD_<miercoles|viernes|sabado>_<slug>/`:
+Carpeta `posts/AAAA-MM-DD_<lunes|miercoles|viernes|sabado>_<slug>/`:
 1. `post.json` (esquema v2 de `templates/POST_SPEC.md`; 2-3 datos + `tip` "Lo que pocos explican" sólo si es útil; espacios duros U+00A0 entre cifras y unidades).
 2. `python3 scripts/render_post.py posts/<carpeta>/post.json`. Si reduce la letra (titular < 84 px), acorta textos y repite.
 3. Lee `post.png` (revisión visual): nada cortado, jerarquía clara.
@@ -53,7 +54,7 @@ Carpeta `posts/AAAA-MM-DD_<miercoles|viernes|sabado>_<slug>/`:
 ## 5. Publicación (sólo con validación APROBADA)
 1. `git add posts/<carpeta> && git commit -m "<carpeta>: preparada"`; `git push origin HEAD:main`. Si se rechaza: `git push origin HEAD:claude/publicaciones`. Si ambos fallan: `skipped` ("push imposible") y terminar. `SHA=$(git rev-parse HEAD)`.
 2. URL: `https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/$SHA/posts/<carpeta>/post.png`.
-3. `python3 scripts/prepare_publish.py posts/<carpeta> --image-url <URL> --slot` → OK. Calcula solo la hora del día (12:30 mié/vie, 11:00 sáb; Europe/Stockholm, CET o CEST) o `shareNow` si ya pasó la hora límite (12:15 / 10:45), reintenta la descarga de la imagen y se niega si la carpeta ya figura como publicada/programada.
+3. `python3 scripts/prepare_publish.py posts/<carpeta> --image-url <URL> --slot` → OK. Calcula solo la hora del día (12:30 lun/mié/vie, 11:00 sáb; Europe/Stockholm, CET o CEST) o `shareNow` si ya pasó la hora límite (12:15 / 10:45), reintenta la descarga de la imagen y se niega si la carpeta ya figura como publicada/programada.
 4. Comprueba OTRA VEZ con `list_posts` que no existe ya un post de hoy (idempotencia justo antes de crear).
 5. `create_post` con EXACTAMENTE los campos de `buffer_payload.json`. Si la llamada falla o da error: NO reintentar a ciegas; `list_posts` para ver si se creó; si no se creó, un único reintento; si vuelve a fallar, `skipped`.
 6. Confirmación: `get_post` del id: canal correcto, 1 imagen 1080×1350, texto íntegro, `status` `scheduled`/`sending`/`sent`, sin `error`. **Sólo entonces** registrar:

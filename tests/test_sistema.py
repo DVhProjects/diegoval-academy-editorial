@@ -122,6 +122,9 @@ class TestLenguajeSencillo(Sandbox):
         vie = datetime(2026, 11, 6, 7, 5, tzinfo=TZ)
         self.assertEqual(prepare_publish.slot_payload(vie, prepare_publish.slot_config(vie, pub))["dueAt"],
                          "2026-11-06T12:30:00+01:00")
+        lun = datetime(2026, 11, 2, 7, 5, tzinfo=TZ)
+        self.assertEqual(prepare_publish.slot_payload(lun, prepare_publish.slot_config(lun, pub))["dueAt"],
+                         "2026-11-02T12:30:00+01:00")
         tarde = datetime(2026, 11, 7, 10, 50, tzinfo=TZ)
         self.assertEqual(prepare_publish.slot_payload(tarde, prepare_publish.slot_config(tarde, pub)), {"mode": "shareNow"})
 

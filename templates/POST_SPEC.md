@@ -1,6 +1,6 @@
 # Entregable por publicación
 
-Carpeta `posts/AAAA-MM-DD_<miercoles|viernes|sabado|lanzamiento>_<slug>/` con:
+Carpeta `posts/AAAA-MM-DD_<lunes|miercoles|viernes|sabado|lanzamiento>_<slug>/` con:
 
 1. `post.json`: contenido de la imagen (esquema abajo).
 2. `post.png`: generado por `scripts/render_post.py` (1080×1350, texto real, fuentes OFL).

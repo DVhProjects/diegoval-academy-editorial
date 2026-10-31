@@ -2,6 +2,15 @@
   "timezone": "Europe/Stockholm",
   "language": "es",
   "calendar": {
+    "lunes": {
+      "type": "variado",
+      "publish_time": "12:30",
+      "allowed_types": [
+        "oportunidad",
+        "research_career",
+        "educativo"
+      ]
+    },
     "miercoles": {
       "type": "oportunidad",
       "publish_time": "12:30"

@@ -17,6 +17,9 @@ Examinar documentos/regulaciones recientes, programas de financiación y recurso
 - PhD career → acción concreta + requisitos reales + ejemplo general.
 - Research opportunity → programa o red + mecanismo real de participación.
 
+## Lunes (desde 2026-10-31)
+Variado: una oportunidad, un tema de research & career o una guía práctica, alternando para que la semana no se repita. Reglas en `CLAUDE.md`.
+
 ## Sábado (desde 2026-10-31)
 Guía práctica para quien empieza: cómo conseguir becas, buscar doctorados, preparar solicitudes, entender requisitos, encontrar oportunidades y entrevistas útiles. Debe dejar al lector con UNA acción concreta para esa semana (p. ej. "abre este buscador, marca este filtro y guarda tres ofertas"). Alternar categorías (`config/publishing.json` → `saturday_categories`).
 

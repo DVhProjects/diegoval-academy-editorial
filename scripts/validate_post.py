@@ -405,7 +405,8 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
     _validate_plain_language(meta, caption, spec, ok, fail)
 
     # 6c. Tipo coherente con el calendario
-    types = {c["type"] for c in pub.get("calendar", {}).values()}
+    # "variado" (lunes) no es un tipo: el post usa uno de los tipos de los demás días.
+    types = {c["type"] for c in pub.get("calendar", {}).values() if c["type"] != "variado"}
     if meta.get("type") not in types:
         fail("Tipo de publicación", f"type {meta.get('type')!r} no está en el calendario {sorted(types)}")
     elif meta.get("type") == "educativo" and meta.get("category") not in pub["rules"].get("saturday_categories", []):
