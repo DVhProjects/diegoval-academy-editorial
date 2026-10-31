@@ -15,11 +15,13 @@
   },
   "style_version": 3,
   "format": "image",
-  "status": "draft",
+  "status": "scheduled",
   "plain_language_check": {
     "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
     "answer": "sí",
     "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-10-31; correcciones aplicadas: sin «gratis», ejemplo Bachelor",
     "checked_text_sha256": "7bdb2121af54257fd7cbab94e579a538cbfcff66d21fecc88936071d98bb96dd"
-  }
+  },
+  "buffer_post_id": "6ae5cce11891472093cb8009",
+  "shared_now_at": "2026-10-31T12:11:29+01:00"
 }
