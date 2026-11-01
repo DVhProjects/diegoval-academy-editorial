@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-02",
+  "weekday": "lunes",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Beca de excelencia ESOP de ETH Zúrich para máster (ventana nov 2026, inicio otoño 2027)",
+  "topic_key": "eth-esop-2027",
+  "primary_url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html",
+  "deadline": "2026-11-30T11:59:00+01:00",
+  "verified_date": "2026-11-01",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "call_status": "abierta",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo institucional",
+      "evidencia": "Programa oficial de ETH Zúrich (universidad pública suiza), con ventana de solicitud publicada en su web oficial",
+      "url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html"
+    }
+  ],
+  "audience_fit": "Sin restricción de nacionalidad indicada en la página; exige notas del 10 % mejor del grado y solicitar admisión a un máster de ETH.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca para estudiar un máster en ETH Zúrich, universidad técnica de Suiza, con unas 60 becas previstas para empezar en otoño de 2027. Plazo: 30 de noviembre de 2026, 11:59 h, hora de Europa Central. Dinero: 13 500 francos suizos por semestre. Además: sin pagar matrícula durante el máster. Quién: entre el 10 % con mejores notas de la carrera, que calculas tú. Lo que pocos explican: la beca va dentro de la solicitud para entrar al máster, solo del 1 al 30 de noviembre. Fuente: ethz.ch, verificado el 2026-11-01.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (sesión local, borrador pedido por el propietario)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; 2 vueltas con correcciones aplicadas",
+    "checked_text_sha256": "48b1d53c85aed9c4f04580d0ceb0d6f62f9411ca7edce502a4c3c23b6855370c"
+  }
+}

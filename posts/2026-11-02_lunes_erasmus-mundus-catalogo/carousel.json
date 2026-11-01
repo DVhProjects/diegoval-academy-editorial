@@ -1,0 +1,27 @@
+{
+  "series": "sabado",
+  "kicker": "Guía práctica · Encontrar becas",
+  "cover": {"title": "¿Quieres un máster en Europa con beca?", "highlight": "beca",
+            "subtitle": "Conoce el catálogo Erasmus Mundus: los másteres que apoya la Unión Europea."},
+  "slides": [
+    {"type": "points", "title": "¿Qué es Erasmus Mundus?", "items": [
+      {"icon": "globe", "text": "Son másteres internacionales que organizan varias universidades juntas."},
+      {"icon": "euro", "text": "La Unión Europea ofrece becas para estudiantes sobresalientes."},
+      {"icon": "doc", "text": "Hay un catálogo oficial con los másteres que la Unión Europea apoya."}]},
+    {"type": "steps", "title": "¿Cómo buscar tu máster?", "items": [
+      {"text": "Abre el catálogo oficial de másteres Erasmus Mundus."},
+      {"text": "Filtra por área de estudio, país o universidad."},
+      {"text": "Entra en la web de cada máster que te interese."},
+      {"text": "Allí verás los requisitos, el plazo y cómo solicitar."}]},
+    {"type": "tip", "title": "Un consejo importante", "items": [
+      {"icon": "calendar", "text": "La mayoría de los másteres piden la solicitud entre octubre y enero."},
+      {"icon": "info", "text": "Algunos no dan beca Erasmus Mundus: míralo en la web de cada máster."}]},
+    {"type": "summary", "title": "En resumen", "items": [
+      {"text": "El catálogo reúne los másteres Erasmus Mundus oficiales."},
+      {"text": "Cada máster recibe las solicitudes por su cuenta."},
+      {"text": "Empieza ya: la mayoría pide la solicitud entre octubre y enero."}],
+     "cta": "Búscalo en eacea.ec.europa.eu"}
+  ],
+  "source": "eacea.ec.europa.eu",
+  "verified": "2026-11-01"
+}
