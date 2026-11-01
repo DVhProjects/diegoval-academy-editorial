@@ -1,0 +1,18 @@
+{
+  "_nota": "Canal de Instagram autorizado (sólo para el carrusel). Verificado en lectura con list_channels/get_channel. Sin secretos (OAuth gestionado por Buffer). El canal de LinkedIn sigue en buffer_channel.json y no se toca.",
+  "organization_id": "6ae0bcca4506237963927a1f",
+  "organization_name": "My organization",
+  "channel_id": "6ae71fe8e29c69a17126342a",
+  "channel_name": "diegovalacademy",
+  "display_name": "diegovalacademy",
+  "service": "instagram",
+  "type": "business",
+  "external_link": "https://instagram.com/diegovalacademy",
+  "timezone": "Europe/Stockholm",
+  "verified_at": "2026-11-01T12:19:00+01:00",
+  "verified_status": {
+    "isDisconnected": false,
+    "isLocked": false
+  },
+  "buffer_queue_note": "Buffer tiene horarios propios para este canal; el sistema NO usa addToQueue: siempre customScheduled con la hora del calendario o shareNow."
+}

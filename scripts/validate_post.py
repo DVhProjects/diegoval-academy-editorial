@@ -24,7 +24,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from history import canonical_url, read_history  # noqa: E402
+from history import canonical_url, rows_for  # noqa: E402
 import video as videomod  # noqa: E402
 
 REQUIRED_FILES = ["post.json", "post.png", "caption.md", "sources.md", "metadata.json"]
@@ -452,7 +452,7 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
                 fail("Plazo", f"{dl}: menos de {margin.days} días o vencido")
 
     # 9. Duplicados
-    hist = read_history()
+    hist = rows_for("linkedin")  # la deduplicación de LinkedIn sólo mira filas de LinkedIn
     cu, tk = canonical_url(meta.get("primary_url", "")), meta.get("topic_key")
     vid = videomod.video_id((meta.get("video") or {}).get("url", "")) if is_video else None
     dups = [r for r in hist if r.get("status") in ("published", "scheduled")

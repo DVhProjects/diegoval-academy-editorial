@@ -29,7 +29,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from history import read_history  # noqa: E402
+from history import rows_for  # noqa: E402
 import video as videomod  # noqa: E402
 
 
@@ -97,7 +97,7 @@ def main(argv: list[str] | None = None) -> int:
     if sum(bool(x) for x in (a.slot, a.mode, a.draft)) != 1:
         return error("usa exactamente una opción: --slot, --mode o --draft.")
 
-    ya = [r for r in read_history() if r.get("folder") == folder.name and r.get("status") in ("published", "scheduled")]
+    ya = [r for r in rows_for("linkedin") if r.get("folder") == folder.name and r.get("status") in ("published", "scheduled")]
     if ya and not a.draft:
         return error(f"esta carpeta ya figura como {ya[0]['status']} (Buffer {ya[0].get('buffer_post_id') or '?'}); no se repite.")
 
