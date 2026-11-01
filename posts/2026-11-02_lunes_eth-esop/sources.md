@@ -28,4 +28,4 @@ ABIERTA (ventana 2026-11-01 a 2026-11-30). Margen desde la publicación prevista
 
 ## Vídeo
 No se evaluó vídeo oficial; formato imagen.
-- Plazo: la fuente dice literalmente '11.59h, MEZ' (sin AM/PM); se usa 11:59 h por prudencia (si fuera 23:59, no perjudica). Reconfirmar el día de publicación (2026-11-02).
+- Plazo: la fuente dice literalmente '11.59h, MEZ'. El propietario confirma (2026-11-01) que es el 30 de noviembre de 2026 a las 11:59 AM CET (+01:00); se mantiene 11:59 h en texto, imagen y metadata. Reconfirmar en la página el día de publicación.
