@@ -107,6 +107,10 @@ def main(argv: list[str] | None = None) -> int:
     text = (folder / "caption.md").read_text(encoding="utf-8").strip()
     tz = ZoneInfo(pub["timezone"])
     now = datetime.fromisoformat(a.now) if a.now else datetime.now(tz)
+    if meta.get("do_not_publish") and not a.draft:
+        return error("la carpeta está marcada do_not_publish (borrador de revisión): sólo se permite --draft.")
+    if a.slot and DIAS[now.astimezone(tz).weekday()] not in pub.get("calendar", {}):
+        return error("hoy no es día de publicación de LinkedIn (config/publishing.json: calendar).")
 
     is_video = meta.get("format") == "video"
     if is_video:

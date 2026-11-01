@@ -31,5 +31,7 @@
     "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; 2 vueltas con correcciones aplicadas",
     "checked_text_sha256": "48b1d53c85aed9c4f04580d0ceb0d6f62f9411ca7edce502a4c3c23b6855370c"
   },
-  "buffer_draft_id": "6ae728f2f0984eef33624a55"
+  "buffer_draft_id": "6ae728f2f0984eef33624a55",
+  "do_not_publish": true,
+  "do_not_publish_reason": "Borrador de revisión pedido por el propietario (2026-11-01). No seleccionar ni programar automáticamente; no hay publicación del lunes 2026-11-02."
 }

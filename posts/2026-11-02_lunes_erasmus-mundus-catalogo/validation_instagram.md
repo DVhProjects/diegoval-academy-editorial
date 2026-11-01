@@ -1,6 +1,6 @@
 # Validación Instagram — 2026-11-02_lunes_erasmus-mundus-catalogo
 
-Ejecutado: 2026-11-01T12:56:51+01:00
+Ejecutado: 2026-11-01T13:11:25+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |

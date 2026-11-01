@@ -27,7 +27,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from history import rows_for  # noqa: E402
-from prepare_publish import fetch_bytes, slot_config, slot_payload  # noqa: E402
+from prepare_publish import DIAS, fetch_bytes, slot_config, slot_payload  # noqa: E402
 from render_carousel import N_SLIDES, texts_of  # noqa: E402
 
 PAYLOAD = "buffer_payload_instagram.json"
@@ -104,6 +104,13 @@ def main(argv: list[str] | None = None) -> int:
 
     tz = ZoneInfo(pub["timezone"])
     now = datetime.fromisoformat(a.now) if a.now else datetime.now(tz)
+    meta_p = folder / "metadata.json"
+    meta = json.loads(meta_p.read_text(encoding="utf-8")) if meta_p.exists() else {}
+    if meta.get("do_not_publish") and not a.draft:
+        return error("la carpeta está marcada do_not_publish (borrador de revisión): sólo se permite --draft.")
+    dias = pub["instagram"].get("days", ["miercoles", "viernes", "sabado"])
+    if a.slot and DIAS[now.astimezone(tz).weekday()] not in dias:
+        return error(f"hoy no es día de publicación de Instagram ({', '.join(dias)}).")
     mode: dict = {}
     if a.slot:
         mode = slot_payload(now, slot_config(now, pub))

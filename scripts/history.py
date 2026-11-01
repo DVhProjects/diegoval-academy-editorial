@@ -101,6 +101,8 @@ def add(folder: Path, status: str, platform: str = "linkedin", **extra) -> dict:
     meta = json.loads(mpath.read_text(encoding="utf-8")) if mpath.exists() else {}
     if not meta and status not in ("skipped", "draft-test"):
         raise HistoryError(f"falta {mpath}")
+    if meta.get("do_not_publish") and status in ("scheduled", "published"):
+        raise HistoryError(f"{folder.name} está marcada do_not_publish (borrador de revisión): no puede figurar como {status}.")
     row = {
         "publication_date": meta.get("date", folder.name[:10]), "weekday": meta.get("weekday", ""),
         "type": meta.get("type", ""), "category": meta.get("category", ""), "topic": meta.get("topic", folder.name),

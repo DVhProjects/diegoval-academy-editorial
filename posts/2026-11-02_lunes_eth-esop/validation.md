@@ -1,6 +1,6 @@
 # Validación — 2026-11-02_lunes_eth-esop
 
-Ejecutado: 2026-11-01T13:03:53+01:00
+Ejecutado: 2026-11-01T13:11:25+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
