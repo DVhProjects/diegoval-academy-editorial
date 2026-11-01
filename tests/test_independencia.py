@@ -23,6 +23,8 @@ TZ = ZoneInfo("Europe/Stockholm")
 PUB = json.loads((ROOT / "config" / "publishing.json").read_text(encoding="utf-8"))
 PUB_ON = json.loads(json.dumps(PUB))
 PUB_ON["instagram"]["enabled"] = True
+PUB_OFF = json.loads(json.dumps(PUB))
+PUB_OFF["instagram"]["enabled"] = False
 MIE = datetime(2026, 11, 4, 8, 0, tzinfo=TZ)   # miércoles
 LUN = datetime(2026, 11, 2, 8, 0, tzinfo=TZ)   # lunes
 MAR = datetime(2026, 11, 3, 8, 0, tzinfo=TZ)   # martes
@@ -93,7 +95,7 @@ class TestPlanIndependiente(unittest.TestCase):
         self.assertFalse(p["linkedin"]["due"] or p["instagram"]["due"])
 
     def test_instagram_desactivado_no_toca_aunque_sea_miercoles(self):
-        p = plan_day.plan(MIE, PUB, [], no_block)
+        p = plan_day.plan(MIE, PUB_OFF, [], no_block)
         self.assertFalse(p["instagram"]["due"])
         self.assertTrue(p["linkedin"]["due"])
 
