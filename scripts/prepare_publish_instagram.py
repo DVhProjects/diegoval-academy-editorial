@@ -108,7 +108,7 @@ def main(argv: list[str] | None = None) -> int:
     meta = json.loads(meta_p.read_text(encoding="utf-8")) if meta_p.exists() else {}
     if meta.get("do_not_publish") and not a.draft:
         return error("la carpeta está marcada do_not_publish (borrador de revisión): sólo se permite --draft.")
-    dias = pub["instagram"].get("days", ["miercoles", "viernes", "sabado"])
+    dias = pub["instagram"].get("days", ["lunes", "miercoles", "viernes", "sabado"])
     if a.slot and DIAS[now.astimezone(tz).weekday()] not in dias:
         return error(f"hoy no es día de publicación de Instagram ({', '.join(dias)}).")
     mode: dict = {}

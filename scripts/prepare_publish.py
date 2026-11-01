@@ -109,6 +109,8 @@ def main(argv: list[str] | None = None) -> int:
     now = datetime.fromisoformat(a.now) if a.now else datetime.now(tz)
     if meta.get("do_not_publish") and not a.draft:
         return error("la carpeta está marcada do_not_publish (borrador de revisión): sólo se permite --draft.")
+    if "linkedin" not in meta.get("platforms", ["linkedin", "instagram"]) and not a.draft:
+        return error("la carpeta es sólo de Instagram (metadata.platforms): no se publica en LinkedIn.")
     if a.slot and DIAS[now.astimezone(tz).weekday()] not in pub.get("calendar", {}):
         return error("hoy no es día de publicación de LinkedIn (config/publishing.json: calendar).")
 

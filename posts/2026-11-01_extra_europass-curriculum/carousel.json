@@ -1,0 +1,79 @@
+{
+  "series": "sabado",
+  "kicker": "Guía práctica · Tu solicitud",
+  "cover": {
+    "title": "¿Necesitas un currículum para pedir una beca?",
+    "highlight": "currículum",
+    "subtitle": "Europass es una web oficial y gratuita de la Unión Europea para crearlo."
+  },
+  "slides": [
+    {
+      "type": "points",
+      "title": "¿Qué es Europass?",
+      "items": [
+        {
+          "icon": "globe",
+          "text": "Es una web oficial de la Unión Europea para crear tu currículum y tu carta de presentación."
+        },
+        {
+          "icon": "euro",
+          "text": "Es gratis: la Comisión Europea ofrece el servicio sin ningún coste."
+        },
+        {
+          "icon": "doc",
+          "text": "Puedes guardar y compartir tu currículum en 31 idiomas."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "title": "¿Cómo se usa?",
+      "items": [
+        {
+          "text": "Entra en europass.europa.eu, elige tu idioma e inicia sesión."
+        },
+        {
+          "text": "Crea tu perfil: escribe tu formación, tu experiencia y tus habilidades."
+        },
+        {
+          "text": "Elige una plantilla y crea tu currículum con los datos de tu perfil."
+        },
+        {
+          "text": "Guárdalo y compártelo desde la web de Europass."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Un consejo importante",
+      "items": [
+        {
+          "icon": "star",
+          "text": "Con un solo perfil puedes crear tantos currículums como quieras."
+        },
+        {
+          "icon": "info",
+          "text": "Antes de enviarlo, mira si la beca pide un formato concreto."
+        }
+      ]
+    },
+    {
+      "type": "summary",
+      "title": "En resumen",
+      "items": [
+        {
+          "text": "Europass es una web oficial y gratuita de la Unión Europea."
+        },
+        {
+          "text": "Primero creas tu perfil; después, tus currículums."
+        },
+        {
+          "text": "Esta semana: crea tu perfil y guarda tu primer currículum."
+        }
+      ],
+      "cta": "Búscalo en europass.europa.eu"
+    }
+  ],
+  "source": "europass.europa.eu",
+  "verified": "2026-11-01"
+}

@@ -7,7 +7,7 @@ Imprime un JSON con, para cada plataforma, `due` (¿toca publicar hoy?), `reason
 (carpeta de LinkedIn de hoy cuya investigación puede reutilizarse; None => investigación propia).
 
 Reglas:
-- Días: LinkedIn = claves de `calendar`; Instagram = `instagram.days` (miércoles, viernes y sábado).
+- Días: LinkedIn = claves de `calendar`; Instagram = `instagram.days` (los mismos días que LinkedIn: lunes, miércoles, viernes y sábado).
 - Instagram sólo si `instagram.enabled` es true.
 - La deduplicación es POR CANAL: sólo cuentan las filas (scheduled/published) de la propia plataforma con fecha de hoy.
   Que LinkedIn ya haya publicado, haya fallado (skipped) o no tenga contenido NO cambia `due` de Instagram, ni al revés.
@@ -64,7 +64,7 @@ def plan(now: datetime, pub: dict, rows: list[dict], blocked: Callable[[str], bo
     ig = pub.get("instagram", {})
     if not ig.get("enabled"):
         out["instagram"] = {"due": False, "reason": "instagram.enabled=false", "reuse_folder": None}
-    elif dia not in ig.get("days", ["miercoles", "viernes", "sabado"]):
+    elif dia not in ig.get("days", ["lunes", "miercoles", "viernes", "sabado"]):
         out["instagram"] = {"due": False, "reason": "hoy no es día de publicación de Instagram", "reuse_folder": None}
     elif done_today("instagram"):
         out["instagram"] = {"due": False, "reason": "Instagram ya tiene una publicación de hoy", "reuse_folder": None}

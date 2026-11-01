@@ -75,10 +75,18 @@ class TestPlanIndependiente(unittest.TestCase):
         p = plan_day.plan(MIE, PUB_ON, rows, no_block)
         self.assertTrue(p["linkedin"]["due"] and p["instagram"]["due"])
 
-    def test_lunes_solo_linkedin(self):
+    def test_lunes_ambas_plataformas(self):
         p = plan_day.plan(LUN, PUB_ON, [], no_block)
         self.assertTrue(p["linkedin"]["due"])
-        self.assertFalse(p["instagram"]["due"])
+        self.assertTrue(p["instagram"]["due"])
+
+    def test_publicacion_extra_de_hoy_no_bloquea_el_dia_siguiente(self):
+        # dos publicaciones extra de Instagram un domingo no cuentan para el lunes ni para ningún otro día
+        rows = [row("instagram", "published", date="2026-11-01", folder="2026-11-01_extra_a"),
+                row("instagram", "published", date="2026-11-01", folder="2026-11-01_extra_b")]
+        p = plan_day.plan(LUN, PUB_ON, rows, no_block)
+        self.assertTrue(p["instagram"]["due"])
+        self.assertTrue(p["linkedin"]["due"])
 
     def test_dias_sin_publicacion(self):
         p = plan_day.plan(MAR, PUB_ON, [], no_block)
@@ -104,11 +112,10 @@ class TestCalendarioAcordado(unittest.TestCase):
         self.assertEqual(cal["sabado"]["share_now_after"], "10:45")
         self.assertEqual(PUB["calendar_defaults"], {"publish_time": "12:30", "share_now_after": "12:15"})
 
-    def test_instagram_solo_miercoles_viernes_sabado(self):
-        self.assertEqual(PUB["instagram"]["days"], ["miercoles", "viernes", "sabado"])
+    def test_instagram_mismos_dias_que_linkedin(self):
+        self.assertEqual(PUB["instagram"]["days"], ["lunes", "miercoles", "viernes", "sabado"])
+        self.assertEqual(set(PUB["instagram"]["days"]), set(PUB["calendar"]))
 
-    def test_instagram_sigue_desactivado(self):
-        self.assertFalse(PUB["instagram"]["enabled"])
 
 
 class TestCompuertas(ti.Base):
@@ -129,11 +136,18 @@ class TestCompuertas(ti.Base):
         with mock.patch.object(ppi, "fetch_bytes", ti.TestPayload.fake_fetch(f)), mock.patch.object(Path, "read_text", rt):
             return ppi.main([str(f), "--base-url", ti.IMG_BASE, *args])
 
-    def test_instagram_slot_rechaza_lunes_y_acepta_miercoles(self):
+    def test_instagram_slot_mismos_dias_y_horas_que_linkedin(self):
         f = self.approved()
-        self.assertEqual(self.run_ig(f, "--slot", "--now", "2026-11-02T08:00:00+01:00"), 1)   # lunes
         self.assertEqual(self.run_ig(f, "--slot", "--now", "2026-11-03T08:00:00+01:00"), 1)   # martes
-        self.assertEqual(self.run_ig(f, "--slot", "--now", "2026-11-04T08:00:00+01:00"), 0)   # miércoles
+        self.assertEqual(self.run_ig(f, "--slot", "--now", "2026-11-08T08:00:00+01:00"), 1)   # domingo
+        for now, due in (("2026-11-02T08:00:00+01:00", "2026-11-02T12:30:00+01:00"),   # lunes
+                         ("2026-11-04T08:00:00+01:00", "2026-11-04T12:30:00+01:00"),   # miércoles
+                         ("2026-11-06T08:00:00+01:00", "2026-11-06T12:30:00+01:00"),   # viernes
+                         ("2026-11-07T08:00:00+01:00", "2026-11-07T11:00:00+01:00")):  # sábado
+            self.assertEqual(self.run_ig(f, "--slot", "--now", now), 0, now)
+            p = json.loads((f / ppi.PAYLOAD).read_text(encoding="utf-8"))
+            self.assertEqual(p["dueAt"], due)
+            (f / ppi.PAYLOAD).unlink()
 
     def test_instagram_no_depende_de_linkedin_aunque_este_publicado(self):
         f = self.approved()
@@ -162,6 +176,15 @@ class TestCompuertas(ti.Base):
         with mock.patch.object(pp, "fetch_bytes", return_value=(200, "image/png", b"x", "")):
             rc = pp.main([str(f), "--image-url", "https://x/p.png", "--slot", "--now", "2026-11-03T08:00:00+01:00"])
         self.assertEqual(rc, 1)  # martes
+
+    def test_carpeta_solo_instagram_no_se_publica_en_linkedin(self):
+        f = self.approved(platforms=["instagram"])
+        (f / "post.png").write_bytes(b"x")
+        (f / "caption.md").write_text("Texto", encoding="utf-8")
+        with mock.patch.object(pp, "fetch_bytes", return_value=(200, "image/png", b"x", "")):
+            rc = pp.main([str(f), "--image-url", "https://x/p.png", "--slot", "--now", "2026-11-04T08:00:00+01:00"])
+        self.assertEqual(rc, 1)
+        self.assertEqual(self.run_ig(f, "--slot", "--now", "2026-11-04T08:00:00+01:00"), 0)
 
     def test_historial_rechaza_borrador_de_revision(self):
         f = self.approved(do_not_publish=True)

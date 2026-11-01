@@ -63,7 +63,7 @@
   "_modo": "La rutina semanal publica de verdad. Las pruebas usan rutinas aparte con --draft, rama claude/prueba-* y status draft-test; nunca main ni el historial de producción.",
   "instagram": {
     "enabled": false,
-    "days": ["miercoles", "viernes", "sabado"],
+    "days": ["lunes", "miercoles", "viernes", "sabado"],
     "_nota": "Instagram se publica en las mismas ejecuciones y a las mismas horas que LinkedIn (calendar.*). enabled=false: sólo borradores (--draft); prepare_publish_instagram.py rechaza --slot/--mode mientras sea false.",
     "slides": 5,
     "image_size": [
