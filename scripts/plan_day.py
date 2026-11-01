@@ -32,13 +32,15 @@ DONE = ("scheduled", "published")
 
 
 def folder_blocked(folder: str) -> bool:
-    meta = ROOT / "posts" / folder / "metadata.json"
-    if not meta.exists():
-        return False
-    try:
-        return bool(json.loads(meta.read_text(encoding="utf-8")).get("do_not_publish"))
-    except ValueError:
-        return True
+    """True si la carpeta (en posts/ o en borradores/) está marcada do_not_publish. Ilegible => bloqueada."""
+    for base in ("posts", "borradores"):
+        meta = ROOT / base / folder / "metadata.json"
+        if meta.exists():
+            try:
+                return bool(json.loads(meta.read_text(encoding="utf-8")).get("do_not_publish"))
+            except ValueError:
+                return True
+    return False
 
 
 def plan(now: datetime, pub: dict, rows: list[dict], blocked: Callable[[str], bool] = folder_blocked) -> dict:

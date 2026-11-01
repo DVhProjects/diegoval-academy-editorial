@@ -197,7 +197,7 @@ class TestCompuertas(ti.Base):
 
     def test_los_dos_borradores_reales_estan_protegidos(self):
         for n in ("eth-esop", "erasmus-mundus-catalogo"):
-            meta = json.loads((ROOT / "posts" / f"2026-11-02_lunes_{n}" / "metadata.json").read_text(encoding="utf-8"))
+            meta = json.loads((ROOT / "borradores" / f"2026-11-02_lunes_{n}" / "metadata.json").read_text(encoding="utf-8"))
             self.assertTrue(meta.get("do_not_publish"), n)
             self.assertTrue(plan_day.folder_blocked(f"2026-11-02_lunes_{n}"), n)
 
