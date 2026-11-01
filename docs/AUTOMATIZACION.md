@@ -80,3 +80,9 @@ Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwz
 - Lunes añadido (variado, 12:30): uno de los tres tipos, alternando. Rutina a `0 6 * * 1,3,5,6` UTC.
 - Primera guía de sábado publicada a mano el 2026-10-31 (DAAD, shareNow).
 - **No verificado**: primeras ejecuciones automáticas de lunes (2026-11-02) y sábado (2026-11-07).
+
+## Instagram (2026-11-01)
+- Canal: `config/instagram_channel.json` (diegovalacademy, Buffer). Publicación en modo automático (`schedulingType: automatic`; nunca «Notify Me»), mismos días y horas que LinkedIn (lunes 12:30, miércoles 12:30, viernes 12:30, sábado 11:00; Europe/Stockholm).
+- Estado: `instagram.enabled=false` en `config/publishing.json` hasta validar el diseño y la integración con `main`; después, comprobar la rutina completa en la nube y activar con autorización del propietario.
+- Reels: sólo originales o con licencia adecuada; sin descargar vídeos de terceros.
+- Borradores de revisión (no publicados): LinkedIn `6ae728f2f0984eef33624a55` (ETH ESOP) e Instagram `6ae728fd21c807e9d5b7e5b7` (carrusel Erasmus Mundus). No se programa nada para el lunes 2026-11-02.

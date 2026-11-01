@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-01",
+  "weekday": "extra",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Beca Eiffel (gobierno de Francia) para máster y doctorado, campaña 2027",
+  "topic_key": "eiffel-excellence-2027",
+  "primary_url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
+  "deadline": "2027-01-06T23:59:00+01:00",
+  "verified_date": "2026-11-01",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+  "platforms": [
+    "instagram"
+  ],
+  "call_status": "abierta",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo gubernamental y ediciones previas",
+      "evidencia": "Programa del gobierno francés gestionado por Campus France, con resultados anuales publicados",
+      "url": "https://www.campusfrance.org/en/actu/results-france-excellence-eiffel-scholarships-program"
+    }
+  ],
+  "audience_fit": "Para estudiantes extranjeros de máster y doctorado; la solicitud la envía una universidad francesa.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca Eiffel para estudiar en Francia: beca del gobierno francés para máster y doctorado de estudiantes extranjeros. Plazo final: 6 de enero de 2027, lo envía la universidad francesa. Máster: 1 200 euros al mes. Doctorado: 2 000 euros al mes. Edad máxima: 29 años en máster y 35 en doctorado. Lo que pocos explican: no la pides tú, la solicitud la envía una universidad francesa. Fuente: campusfrance.org, verificado el 2026-11-01.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (sesión local, publicación pedida por el propietario)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "published",
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; varias vueltas con correcciones aplicadas",
+    "checked_text_sha256": "d6b74001a18de3cd31b58b70355b139ef75b4787f8afa7879071a5a2fcd299d3"
+  },
+  "instagram": {
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; varias vueltas con correcciones aplicadas; carrusel y caption_instagram.md; ajuste posterior: sólo espacios duros en importes",
+      "checked_text_sha256": "b93c3b49d0a5345f00280e5bd42aed8938fc8dc8f1b387b47478b0d1b4384bc4"
+    },
+    "buffer_post_id": "6ae732e21ee172cd6df82c30",
+    "instagram_url": "https://www.instagram.com/p/DfMwHu-nKJn/",
+    "published_at": "2026-11-01T13:40+01:00"
+  }
+}

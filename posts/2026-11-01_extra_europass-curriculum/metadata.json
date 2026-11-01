@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-01",
+  "weekday": "extra",
+  "type": "educativo",
+  "category": "preparar_solicitud",
+  "topic": "Cómo crear tu currículum gratis con Europass para pedir una beca",
+  "topic_key": "europass-curriculum-guia",
+  "primary_url": "https://europass.europa.eu/en/create-europass-cv",
+  "deadline": null,
+  "verified_date": "2026-11-01",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+  "platforms": [
+    "instagram"
+  ],
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Crea tu currículum gratis con Europass, web oficial de la Unión Europea. Idea clave: primero tu perfil, después los currículums que quieras. Dónde: europass.europa.eu. Precio: gratis, sin ningún coste. Idiomas: guarda y comparte en 31 idiomas. Lo que pocos explican: con un solo perfil puedes crear tantos currículums como quieras, uno para cada beca. Fuente: europass.europa.eu, verificado el 2026-11-01.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (sesión local, publicación pedida por el propietario)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "published",
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; varias vueltas con correcciones aplicadas",
+    "checked_text_sha256": "d98012179348e6cbb0a4f6e3cbd0c3bd86e328996a5235bcbdee2cc9ded0895c"
+  },
+  "instagram": {
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; varias vueltas con correcciones aplicadas; carrusel y caption_instagram.md",
+      "checked_text_sha256": "5f2dc505694d71679d0a582e24f9b2aeae4cfa76c935257500f33a5443f2dbdb"
+    },
+    "buffer_post_id": "6ae7332c1ee172cd6df84017",
+    "instagram_url": "https://www.instagram.com/p/DfMwSQSFVRI/",
+    "published_at": "2026-11-01T13:40+01:00"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "series": "viernes",
+  "kicker": "Guía práctica · Doctorado",
+  "cover": {"title": "¿Buscas un doctorado en Europa?", "highlight": "doctorado",
+            "subtitle": "Conoce EURAXESS (el portal oficial de la Unión Europea con ofertas para investigadores)."},
+  "slides": [
+    {"type": "points", "title": "¿Qué es EURAXESS?", "items": [
+      {"icon": "search", "text": "Un portal de la Unión Europea con ofertas de empleo y financiación para investigar."},
+      {"icon": "doc", "text": "Publica puestos de universidades y centros de investigación de toda Europa."},
+      {"icon": "globe", "text": "Es gratis y puedes entrar desde cualquier país."}]},
+    {"type": "steps", "title": "¿Cómo buscar un doctorado?", "items": [
+      {"text": "Abre la búsqueda de empleos de EURAXESS."},
+      {"text": "En «Researcher Profile» (perfil de investigador) elige «First Stage Researcher (R1)»: quien empieza a investigar."},
+      {"text": "Filtra por tu campo de estudio y por 2 o 3 países."},
+      {"text": "Lee cada oferta completa antes de decidir."}]},
+    {"type": "tip", "title": "Un consejo importante", "items": [
+      {"icon": "info", "text": "No todas las ofertas del filtro son doctorados: algunas son de otro nivel."},
+      {"icon": "check", "text": "Revisa en cada oferta los requisitos, el contrato y el plazo para solicitar."}]},
+    {"type": "summary", "title": "En resumen", "items": [
+      {"text": "EURAXESS reúne ofertas oficiales para investigar en Europa."},
+      {"text": "Usa el filtro de perfil R1 para encontrar puestos de inicio."},
+      {"text": "Lee los requisitos de cada oferta antes de solicitar."}],
+     "cta": "Búscalo en euraxess.ec.europa.eu"}
+  ],
+  "source": "euraxess.ec.europa.eu",
+  "verified": "2026-10-30"
+}

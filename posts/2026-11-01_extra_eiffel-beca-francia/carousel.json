@@ -1,0 +1,79 @@
+{
+  "series": "miercoles",
+  "kicker": "Oportunidad · Francia",
+  "cover": {
+    "title": "Beca Eiffel para estudiar en Francia",
+    "highlight": "Eiffel",
+    "subtitle": "Beca del gobierno francés para máster y doctorado. Plazo final: 6 de enero de 2027."
+  },
+  "slides": [
+    {
+      "type": "points",
+      "title": "¿Qué es la beca Eiffel?",
+      "items": [
+        {
+          "icon": "globe",
+          "text": "Es una beca del gobierno de Francia para estudiantes extranjeros de máster y doctorado."
+        },
+        {
+          "icon": "euro",
+          "text": "Paga 1 200 € al mes en máster y 2 000 € al mes en doctorado."
+        },
+        {
+          "icon": "doc",
+          "text": "En universidades públicas no pagas matrícula. Otros gastos no están cubiertos."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "title": "¿Cómo se solicita?",
+      "items": [
+        {
+          "text": "Tú no envías la solicitud: la envía una universidad francesa."
+        },
+        {
+          "text": "Elige un máster o doctorado en Francia y escribe a esa universidad."
+        },
+        {
+          "text": "Pregunta si presentará tu candidatura y cuál es su plazo interno."
+        },
+        {
+          "text": "La universidad tiene hasta el 6 de enero de 2027 para enviarla."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Un consejo importante",
+      "items": [
+        {
+          "icon": "info",
+          "text": "Hay una edad máxima: 29 años en máster y 35 años en doctorado."
+        },
+        {
+          "icon": "calendar",
+          "text": "Pregunta a tu universidad cuál es su plazo: puede ser anterior al 6 de enero."
+        }
+      ]
+    },
+    {
+      "type": "summary",
+      "title": "En resumen",
+      "items": [
+        {
+          "text": "La beca Eiffel es del gobierno francés, para máster y doctorado."
+        },
+        {
+          "text": "No la pides tú: la pide la universidad francesa."
+        },
+        {
+          "text": "Habla ya con esa universidad: el plazo final es el 6 de enero de 2027."
+        }
+      ],
+      "cta": "Búscalo en campusfrance.org"
+    }
+  ],
+  "source": "campusfrance.org",
+  "verified": "2026-11-01"
+}

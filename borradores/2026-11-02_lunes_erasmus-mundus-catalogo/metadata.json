@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-02",
+  "weekday": "lunes",
+  "type": "educativo",
+  "category": "encontrar_oportunidades",
+  "topic": "Cómo buscar un máster con beca en el catálogo oficial Erasmus Mundus",
+  "topic_key": "erasmus-mundus-catalogo-guia",
+  "primary_url": "https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en",
+  "deadline": null,
+  "verified_date": "2026-11-01",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo buscar másteres europeos con posible beca en el catálogo oficial Erasmus Mundus. Dónde: catálogo Erasmus Mundus. Primer paso: filtra por área de estudio y país. Después: lee la web de cada máster. Lo que pocos explican: la mayoría de los másteres piden la solicitud entre octubre y enero. Fuente: eacea.ec.europa.eu, verificado el 2026-11-01.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (sesión local, borrador pedido por el propietario)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; 2 vueltas con correcciones aplicadas",
+    "checked_text_sha256": "5bbf8e7aed1d7fff8281f9b460d3eb231a9d30a2539dc24409fa46247d5ccf1f"
+  },
+  "instagram": {
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; carrusel y caption_instagram.md",
+      "checked_text_sha256": "4cee8c675118aea9910f55539f4a32be1d6d0b8cc315958d51b20d5dd6350b60"
+    },
+    "buffer_draft_id": "6ae728fd21c807e9d5b7e5b7"
+  },
+  "do_not_publish": true,
+  "do_not_publish_reason": "Borrador de revisión pedido por el propietario (2026-11-01). No seleccionar ni programar automáticamente; no hay publicación del lunes 2026-11-02."
+}
