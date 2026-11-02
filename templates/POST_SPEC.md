@@ -66,10 +66,12 @@ Se rellena con la salida de `python3 scripts/video.py inspect <url>` (campos `ti
 `caption.md` (≤ 1300 caracteres): gancho · `Qué aprenderás:` · `Por qué es útil:` · `Cómo aprovecharlo:` · línea `Subtítulos:` · `Vídeo: <url>` · `Fuente oficial: <url>` (y plazo/financiación verificados si es una oportunidad) · `Verificado el:` · 2-3 hashtags.
 
 Líneas `Subtítulos:` permitidas (según `video.subtitles`):
-- `es_oficial`: "Subtítulos: el vídeo tiene subtítulos en español; actívalos con el icono CC."
-- `es_automatico`: "Subtítulos: YouTube ofrece subtítulos automáticos en español (pueden tener errores); actívalos con el icono CC."
+- `es_oficial`: "Subtítulos: el vídeo tiene subtítulos en español; actívalos con el icono CC." (opcional: añadir «No olvides activar los subtítulos en español.»)
+- `es_automatico`: "Subtítulos: YouTube ofrece subtítulos automáticos en español (pueden tener errores); actívalos con el icono CC." (opcional: añadir «No olvides activar los subtítulos en español.»)
 - `traducible`: "Subtítulos: el vídeo está en <idioma>; YouTube puede ofrecer traducción automática al español (Ajustes > Subtítulos), pero no está garantizada."
 - `no_verificado`: "Subtítulos: no verificados; comprueba con el icono CC si hay subtítulos en español."
+
+«No olvides activar los subtítulos en español» SOLO con `es_oficial` o `es_automatico` (comprobados). Con `traducible` o `no_verificado` el validador lo bloquea: nunca se promete lo que no se ha comprobado.
 
 Publicación: `python3 scripts/prepare_publish.py posts/<carpeta> --slot` (sin `--image-url`) genera un payload con `metadata.linkedin.linkAttachment` y sin `assets`. Tras `create_post`, `get_post` debe devolver `metadata.linkAttachment` con `title` y `thumbnail`.
 

@@ -134,6 +134,15 @@ class TestValidadorVideo(unittest.TestCase):
                                                "el vídeo tiene subtítulos en español.")
         self.assertIn("Subtítulos en el texto", self.fails(self.folder("no_verificado", cap=cap)))
 
+    def test_recordatorio_de_subtitulos_solo_si_estan_comprobados(self):
+        frase = " No olvides activar los subtítulos en español."
+        for state in ("es_oficial", "es_automatico"):
+            cap = caption(state).replace(SUBTITLE_LINES[state], SUBTITLE_LINES[state] + frase)
+            self.assertEqual(self.fails(self.folder(state, cap=cap)), [], state)
+        for state in ("traducible", "no_verificado"):
+            cap = caption(state).replace(SUBTITLE_LINES[state], SUBTITLE_LINES[state] + frase)
+            self.assertIn("Subtítulos en el texto", self.fails(self.folder(state, cap=cap)), state)
+
     def test_sin_subtitulos_y_sin_espanol_no_vale(self):
         m = meta("no_verificado"); m["video"].pop("language")
         self.assertIn("Utilidad para la audiencia", self.fails(self.folder("no_verificado", m=m)))

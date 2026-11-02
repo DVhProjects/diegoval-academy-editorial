@@ -66,7 +66,9 @@ SUBTITLE_PHRASES = {
     "no_verificado": ["no verificados"],
 }
 FORBIDDEN_PROMISES = ["tiene subtítulos en español", "con subtítulos en español", "subtitulado al español",
-                      "subtitulado en español"]
+                      "subtitulado en español", "activar los subtítulos en español"]
+# «No olvides activar los subtítulos en español» solo se admite con es_oficial o es_automatico (comprobados);
+# con traducible o no_verificado cuenta como promesa indebida (FORBIDDEN_PROMISES).
 
 
 def _validate_video(meta, caption, sources, now, skip_network, ok, fail, warn):

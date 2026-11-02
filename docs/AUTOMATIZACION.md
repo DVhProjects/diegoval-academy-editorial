@@ -92,3 +92,16 @@ Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwz
 - Corregido: `history.find_repeats` única; mismo día en dos redes permitido; temas de días anteriores bloqueados en cualquier plataforma (salvo `repeat_justification`); `validate_post.py --platform`; `plan_day.py` devuelve `reuse_rejected`; `history.py check --date` y `recent`; la rutina exige buscar de nuevo (≥ 3 rondas) antes de omitir; reconciliación de Buffer también para Instagram.
 - Pruebas: `tests/test_repeticion.py` (reproduce el caso real) y ajustes en `tests/test_instagram.py`; 124 pruebas OK en local.
 - Verificación en la nube: ver el apartado siguiente (se completa tras la ejecución).
+
+## Vídeos, entrevistas y Reels — estado (2026-11-02)
+**Ya existía (LinkedIn, vídeo-enlace "opción B"):** `video.py inspect/feed`, validación en vivo en `validate_post.py` (procedencia, 90-1200 s, ≤ 24 meses, subtítulos sin promesas falsas), `prepare_publish.py` con `linkAttachment`, paso 3b de la rutina y `tests/test_video.py`. No se tocó salvo la frase opcional «No olvides activar los subtítulos en español», solo con subtítulos comprobados (`es_oficial`/`es_automatico`).
+**Añadido (solo lo que faltaba):**
+| Pieza | Qué hace |
+|---|---|
+| `scripts/render_reel.py` | Reel original 1080×1920 (9:16), 30 fps, H.264 + AAC en silencio, desde el MISMO `carousel.json` (mismos textos ya revisados). Texto que aparece poco a poco, fundido entre escenas, barra de progreso, zona segura de Instagram. Falla en vez de recortar si el texto no cabe (entonces: carrusel). |
+| `scripts/validate_reel.py` | Exige el carrusel aprobado; huellas del MP4; formato real leído con FFmpeg; duración 15-90 s; letra ≥ 38 px; **fotogramas decodificados** sin contenido en las zonas que tapa Instagram; sin textos fuera de `carousel.json`; el caption no promete audio ni subtítulos; decisión de formato registrada. |
+| `scripts/prepare_publish_reel.py` | Payload de Buffer (`metadata.instagram.type=reel`, vídeo, miniatura); URL pública idéntica byte a byte; un tema una sola vez en Instagram; **solo `--draft` mientras `instagram.reels.enabled=false`**. |
+| `requirements-video.txt` | `imageio-ffmpeg` (FFmpeg gratuito dentro de un paquete de Python; no hace falta instalar nada en el sistema). |
+| `validate_post.py` | Arreglo: las diapositivas `slide-N.png` del carrusel ya no cuentan como «más de una imagen» de LinkedIn. |
+**Prueba en borrador (2026-11-02, equipo local):** Reel de 61,3 s / 1,4 MB renderizado en 22 s; `validate_reel.py` APROBADA (12 comprobaciones); borrador en el canal de Instagram de Buffer aceptado como `reel`, vídeo `video/mp4` de 61 300 ms, miniatura generada y legible; borrador borrado y rama de pruebas eliminada. No se publicó nada.
+**Sin verificar todavía (por eso la publicación automática de Reels sigue APAGADA):** que el renderizado con FFmpeg funcione en el entorno de la nube; que Instagram acepte el primer Reel real publicado (Buffer solo valida el borrador); cómo se ve y se comporta en un móvil real (retención, recorte de interfaz). Antes de activar: ejecución de prueba en la nube con `requirements-video.txt` y revisión de un borrador por el propietario.
