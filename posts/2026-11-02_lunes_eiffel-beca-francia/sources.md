@@ -35,7 +35,7 @@ ABIERTA (convocatoria abierta desde octubre de 2026; plazo final 2027-01-06). Ma
 No se evaluó vídeo; imagen única.
 
 ## Notas de la verificación del 2026-11-02
-- La página no da hora ni zona para el plazo: "January 6, 2027 included". El texto público no afirma ninguna hora; `deadline` se guarda solo como fecha.
+- La página no da hora ni zona para el plazo: "January 6, 2027 included". El texto público no afirma ninguna hora; `deadline` usa 23:59+01:00 solo como convención interna.
 - Importes publicados desde enero de 2026; pueden cambiar en la campaña 2027.
 - Billete de avión y seguro: la página tiene reglas propias (vuelo en clase más barata; seguro temporal); el texto sólo remite a la página oficial.
 - Formato: imagen única (no carrusel).

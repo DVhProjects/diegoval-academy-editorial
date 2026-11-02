@@ -6,7 +6,7 @@
   "topic": "Beca Eiffel (gobierno de Francia) para máster y doctorado, campaña 2027",
   "topic_key": "eiffel-excellence-2027",
   "primary_url": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
-  "deadline": "2027-01-06",
+  "deadline": "2027-01-06T23:59:00+01:00",
   "verified_date": "2026-11-02",
   "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
   "platforms": [
@@ -31,8 +31,8 @@
   "plain_language_check": {
     "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
     "answer": "sí",
-    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-01; varias vueltas con correcciones aplicadas",
-    "checked_text_sha256": "d6b74001a18de3cd31b58b70355b139ef75b4787f8afa7879071a5a2fcd299d3"
+    "reviewer": "verificador-convocatorias (subagente), 2026-11-02; plazo sin hora en el texto público (23:59 es convención interna)",
+    "checked_text_sha256": "040364d7a2dfffc1cd6e70dbe37fb4acfe89dacb4fdd1164b83998fcc037c011"
   },
   "series": "miercoles"
 }
