@@ -1,0 +1,79 @@
+{
+  "series": "sabado",
+  "kicker": "Guía práctica · Becas paso a paso",
+  "cover": {
+    "title": "¿Quieres una beca para estudiar en Alemania?",
+    "highlight": "beca",
+    "subtitle": "Hay un buscador oficial de becas del DAAD, el servicio alemán de intercambio académico."
+  },
+  "slides": [
+    {
+      "type": "points",
+      "title": "¿Qué es este buscador?",
+      "items": [
+        {
+          "icon": "search",
+          "text": "Es una base de datos de becas del DAAD para estudiantes e investigadores de otros países."
+        },
+        {
+          "icon": "globe",
+          "text": "También muestra becas de otras organizaciones elegidas por el DAAD."
+        },
+        {
+          "icon": "doc",
+          "text": "Puedes filtrar por país, nivel de estudios, motivo de la beca y área."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "title": "¿Cómo se usa?",
+      "items": [
+        {
+          "text": "Abre el buscador oficial del DAAD (daad.de)."
+        },
+        {
+          "text": "En «Country» elige el país donde vives hoy."
+        },
+        {
+          "text": "Elige tu nivel de estudios y tu área."
+        },
+        {
+          "text": "Abre cada beca y lee requisitos y plazo."
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Un consejo importante",
+      "items": [
+        {
+          "icon": "info",
+          "text": "En «Country» no va tu nacionalidad, sino el país desde el que solicitas."
+        },
+        {
+          "icon": "star",
+          "text": "Si ya tienes un grado universitario (por ejemplo, un Bachelor), cuentas como «graduate»."
+        }
+      ]
+    },
+    {
+      "type": "summary",
+      "title": "En resumen",
+      "items": [
+        {
+          "text": "El DAAD tiene un buscador oficial de becas para estudiar en Alemania."
+        },
+        {
+          "text": "En «Country» pones el país donde vives, no tu nacionalidad."
+        },
+        {
+          "text": "Antes de solicitar, escribe a la persona de contacto de la beca."
+        }
+      ],
+      "cta": "Búscalo en daad.de"
+    }
+  ],
+  "source": "daad.de",
+  "verified": "2026-11-02"
+}

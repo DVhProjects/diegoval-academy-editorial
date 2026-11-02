@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-02",
+  "weekday": "lunes",
+  "type": "educativo",
+  "category": "becas_paso_a_paso",
+  "topic": "Cómo usar el buscador de becas del DAAD para estudiar en Alemania",
+  "topic_key": "daad-buscador-becas",
+  "primary_url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/",
+  "deadline": null,
+  "verified_date": "2026-11-02",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo encontrar becas para estudiar en Alemania: buscador del DAAD, el servicio alemán de intercambio académico, con becas para extranjeros. Idea clave: un buscador oficial de becas con becas del DAAD y de otras organizaciones. Dónde: base de datos de becas del DAAD. Primer paso: elige el país donde vives. Después: lee requisitos y plazo de cada beca. Lo que pocos explican: en Country no va tu nacionalidad, sino el país donde vives y desde el que solicitas. Fuente: daad.de, verificado el 2026-10-31.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube; reutiliza guía DAAD reverificada 2026-11-02)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "platforms": [
+    "instagram"
+  ],
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a"
+}
