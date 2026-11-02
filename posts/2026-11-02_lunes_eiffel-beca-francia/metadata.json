@@ -27,12 +27,13 @@
   },
   "style_version": 3,
   "format": "image",
-  "status": "draft",
+  "status": "scheduled",
   "plain_language_check": {
     "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
     "answer": "sí",
     "reviewer": "verificador-convocatorias (subagente), 2026-11-02; plazo sin hora en el texto público (23:59 es convención interna)",
     "checked_text_sha256": "040364d7a2dfffc1cd6e70dbe37fb4acfe89dacb4fdd1164b83998fcc037c011"
   },
-  "series": "miercoles"
+  "series": "miercoles",
+  "buffer_post_id": "6ae82b01c60bdbcc33db9185"
 }
