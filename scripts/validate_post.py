@@ -290,6 +290,19 @@ def _validate_plain_language(meta, caption, spec, ok, fail):
         ok("Lenguaje sencillo: revisión del verificador", f"respuesta 'sí' de {chk['reviewer']}")
 
 
+SLIDE_RE = re.compile(r"^slide-\d+\.png$")
+
+
+def slide_pngs(folder: Path) -> list[Path]:
+    """Diapositivas del carrusel de Instagram (slide-1.png … slide-5.png)."""
+    return [p for p in folder.glob("*.png") if SLIDE_RE.match(p.name)]
+
+
+def own_pngs(folder: Path) -> list[Path]:
+    """PNG de la carpeta que cuentan como imagen de LinkedIn: todos los de nivel superior salvo las diapositivas."""
+    return [p for p in folder.glob("*.png") if not SLIDE_RE.match(p.name)]
+
+
 def validate(folder: Path, now: datetime, skip_network: bool, platform: str = "linkedin") -> tuple[list, bool]:
     pub = load_json(ROOT / "config" / "publishing.json")
     chan = load_json(ROOT / "config" / "buffer_channel.json")
@@ -329,21 +342,26 @@ def validate(folder: Path, now: datetime, skip_network: bool, platform: str = "l
     else:
         ok("Metadatos", "campos obligatorios presentes")
 
-    # 3. Imagen: exactamente una, 1080x1350 PNG (el formato vídeo no lleva imagen propia)
+    # 3. Imagen: exactamente una, 1080x1350 PNG (el formato vídeo no lleva imagen propia).
+    # Las diapositivas del carrusel de Instagram (slide-N.png) conviven en la carpeta y NO cuentan como imagen de LinkedIn.
+    pngs = own_pngs(folder)
     if is_video:
-        if list(folder.glob("*.png")):
+        if pngs:
             fail("Sin imagen propia", "el formato vídeo no debe incluir PNG (la miniatura la pone el enlace)")
         else:
             ok("Sin imagen propia", "formato vídeo: la vista previa la genera el enlace")
+    elif not (folder / "post.png").exists():
+        fail("Imagen", "falta post.png")
     else:
-        pngs = list(folder.glob("*.png"))
         with Image.open(folder / "post.png") as im:
             size, fmt = im.size, im.format
         exp = tuple(pub["rules"]["image_size"])
         if size == exp and fmt == "PNG" and len(pngs) == 1:
-            ok("Imagen", f"{size[0]}x{size[1]} {fmt}, 1 archivo")
+            slides = len(slide_pngs(folder))
+            ok("Imagen", f"{size[0]}x{size[1]} {fmt}, 1 archivo" + (f" (+{slides} diapositivas de carrusel, ignoradas)" if slides else ""))
         else:
-            fail("Imagen", f"tamaño={size} formato={fmt} pngs={len(pngs)} (se espera 1 PNG {exp})")
+            fail("Imagen", f"tamaño={size} formato={fmt} pngs={len(pngs)} (se espera 1 PNG {exp}; "
+                           "las diapositivas slide-N.png del carrusel no cuentan)")
 
     # 4. Canal autorizado
     if meta.get("buffer_channel_id") == chan["channel_id"]:
