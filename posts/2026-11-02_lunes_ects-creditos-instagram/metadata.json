@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-02",
+  "weekday": "lunes",
+  "type": "educativo",
+  "category": "entender_requisitos",
+  "topic": "Qué son los créditos ECTS de un máster en Europa",
+  "topic_key": "ects-creditos-explicados",
+  "primary_url": "https://education.ec.europa.eu/education-levels/higher-education/inclusive-and-connected-higher-education/european-credit-transfer-and-accumulation-system",
+  "deadline": null,
+  "verified_date": "2026-11-02",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+  "platforms": [
+    "instagram"
+  ],
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Qué son los créditos europeos (ECTS), el sistema europeo de créditos de estudio. Idea clave: 60 créditos equivalen a un año de estudio. Mide lo que aprendes y el trabajo que supone. Sirve para reconocer estudios hechos en otro país. Lo que pocos explican: 120 créditos son dos años de estudio (2 × 60). Fuente: education.ec.europa.eu, verificado el 2026-11-02.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft"
+}

@@ -1,0 +1,19 @@
+{"series": "sabado", "kicker": "Guía práctica · Requisitos", "cover": {"title": "¿Qué son los créditos europeos (ECTS) de un máster?", "highlight": "ECTS", "subtitle": "Es la forma europea de medir cuánto estudias. 60 créditos equivalen a un año de estudio."},
+"slides": [
+{"type": "points", "title": "¿Qué son los créditos ECTS?", "items": [
+{"icon": "info", "text": "Es el sistema europeo de créditos de estudio. Un crédito mide lo que aprendes y el trabajo que supone."},
+{"icon": "calendar", "text": "60 créditos equivalen a un año completo de estudio."},
+{"icon": "globe", "text": "La mayoría de los países del espacio europeo de educación superior lo usan."}]},
+{"type": "steps", "title": "¿Cómo sacarle partido?", "items": [
+{"text": "Mira cuántos créditos tiene el programa que te interesa."},
+{"text": "Calcula los años: 60 créditos son un año; 120, dos años."},
+{"text": "Si estudiarás fuera, pide el acuerdo de estudios (Learning Agreement): ayuda a reconocer tus créditos."},
+{"text": "Al volver, pide tu certificado de notas (Transcript of Records): también ayuda."}]},
+{"type": "tip", "title": "Un consejo importante", "items": [
+{"icon": "star", "text": "Haz la cuenta: 120 créditos son dos años de estudio (2 × 60)."},
+{"icon": "info", "text": "Antes de irte, pregunta a tu universidad cómo se reconocerán tus créditos."}]},
+{"type": "summary", "title": "En resumen", "items": [
+{"text": "Los créditos europeos (ECTS) son un sistema de créditos de estudio."},
+{"text": "60 créditos son un año de estudio."},
+{"text": "Esta semana: mira los créditos de un programa que te guste y calcula cuántos años dura."}], "cta": "Más información: education.ec.europa.eu"}],
+"source": "education.ec.europa.eu", "verified": "2026-11-02"}
