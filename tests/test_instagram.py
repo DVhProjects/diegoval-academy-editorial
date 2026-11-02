@@ -73,15 +73,18 @@ class Base(unittest.TestCase):
 class TestDedupPorPlataforma(Base):
     def test_fila_antigua_sin_plataforma_es_linkedin(self):
         history.write_history([{"folder": "a", "status": "published", "topic_key": "t",
-                                "official_url": "https://x.org/a"}])
-        self.assertEqual(len(history.check("https://x.org/a", "t")), 1)
-        self.assertEqual(history.check("https://x.org/a", "t", "instagram"), [])
+                                "official_url": "https://x.org/a", "publication_date": "2026-10-30"}])
+        self.assertEqual(len(history.check("https://x.org/a", "t", on_date="2026-10-30")), 1)  # misma plataforma
+        self.assertEqual(history.check("https://x.org/a", "t", "instagram", "2026-10-30"), [])  # mismo día, otra red
+        self.assertEqual(len(history.check("https://x.org/a", "t", "instagram", "2026-10-31")), 1)  # día posterior
 
     def test_instagram_no_bloquea_linkedin_ni_al_reves(self):
         f = make_folder(self.tmp)
         history.add(f, "scheduled", platform="instagram", buffer_post_id="ig1")
-        self.assertEqual(history.check("https://euraxess.ec.europa.eu/jobs/search", "tema-x"), [])
-        self.assertEqual(len(history.check("https://euraxess.ec.europa.eu/jobs/search", "tema-x", "instagram")), 1)
+        url = "https://euraxess.ec.europa.eu/jobs/search"
+        # mismo día en la otra red: permitido (dos presentaciones de la misma investigación)
+        self.assertEqual(history.check(url, "tema-x", on_date="2026-10-30"), [])
+        self.assertEqual(len(history.check(url, "tema-x", "instagram", "2026-10-30")), 1)
         history.add(f, "scheduled", platform="linkedin", buffer_post_id="li1")  # misma carpeta, otra plataforma
         rows = history.read_history()
         self.assertEqual(sorted(history.row_platform(r) for r in rows), ["instagram", "linkedin"])
@@ -164,16 +167,36 @@ class TestCarrusel(Base):
         f = make_folder(self.tmp, caption=CAPTION.replace("R1 (quien empieza a investigar)", "MSCA"))
         self.assertIn("Lenguaje sencillo: siglas (texto)", self.fails(f))
 
-    def test_duplicado_solo_en_instagram(self):
+    def test_duplicado_politica_2026_11_02(self):
+        f = make_folder(self.tmp)  # publica el 2026-10-30
+        other = self.tmp / "otra"
+        other.mkdir()
+        (other / "metadata.json").write_text(json.dumps({"topic_key": "tema-x", "topic": "T", "date": "2026-10-30"}),
+                                             encoding="utf-8")
+        history.add(other, "scheduled", platform="linkedin", buffer_post_id="li9")  # mismo día en LinkedIn: permitido
+        self.assertNotIn("Duplicados (Instagram)", self.fails(f))
+        history.write_history([])
+        (other / "metadata.json").write_text(json.dumps({"topic_key": "tema-x", "topic": "T", "date": "2026-10-28"}),
+                                             encoding="utf-8")
+        history.add(other, "scheduled", platform="linkedin", buffer_post_id="li9")  # LinkedIn de un día anterior
+        self.assertIn("Duplicados (Instagram)", self.fails(f))
+        history.write_history([])
+        history.add(other, "scheduled", platform="instagram", buffer_post_id="ig9")  # Instagram anterior
+        self.assertIn("Duplicados (Instagram)", self.fails(f))
+
+    def test_repeticion_justificada_pasa_con_aviso(self):
         f = make_folder(self.tmp)
         other = self.tmp / "otra"
         other.mkdir()
         (other / "metadata.json").write_text(json.dumps({"topic_key": "tema-x", "topic": "T", "date": "2026-10-28"}),
                                              encoding="utf-8")
-        history.add(other, "scheduled", platform="linkedin", buffer_post_id="li9")  # LinkedIn no cuenta
-        self.assertNotIn("Duplicados (Instagram)", self.fails(f))
-        history.add(other, "scheduled", platform="instagram", buffer_post_id="ig9")
-        self.assertIn("Duplicados (Instagram)", self.fails(f))
+        history.add(other, "scheduled", platform="linkedin", buffer_post_id="li9")
+        m = json.loads((f / "metadata.json").read_text(encoding="utf-8"))
+        m["repeat_justification"] = "La convocatoria cambió de plazo el 2026-10-29 y abrió una nueva fase de solicitud."
+        (f / "metadata.json").write_text(json.dumps(m, ensure_ascii=False), encoding="utf-8")
+        res, _ = validate_carousel.validate(f, NOW, check_linkedin=False)
+        self.assertNotIn("Duplicados (Instagram)", [n for s, n, _ in res if s == "FAIL"])
+        self.assertIn("WARN", [s for s, n, _ in res if n == "Duplicados (Instagram)"])
 
 
 class TestPayload(Base):

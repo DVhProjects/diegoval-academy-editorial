@@ -21,7 +21,8 @@ from zoneinfo import ZoneInfo
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from history import canonical_url, rows_for  # noqa: E402
+from history import (canonical_url, describe_repeats, find_repeats, repeat_justified,  # noqa: E402
+                     rows_for)
 from render_carousel import N_SLIDES, texts_of  # noqa: E402
 from validate_post import (PLAIN_QUESTION, URL_RE, jargon_found, long_sentences, unexplained_acronyms)  # noqa: E402
 
@@ -149,18 +150,25 @@ def validate(folder: Path, now: datetime, check_linkedin: bool = True) -> tuple[
     else:
         ok("Lenguaje sencillo: revisión del verificador", f"respuesta 'sí' de {chk['reviewer']}")
 
-    # Duplicados: SÓLO en el historial de Instagram (el mismo tema ya está en LinkedIn por diseño)
-    cu, tk = canonical_url(meta.get("primary_url", "")), meta.get("topic_key")
-    dups = [r for r in rows_for("instagram") if r.get("status") in ("published", "scheduled")
-            and r.get("folder") != folder.name
-            and (canonical_url(r.get("official_url", "")) == cu or r.get("topic_key") == tk)]
+    # Duplicados (política 2026-11-02): el mismo día en LinkedIn es la misma investigación (permitido);
+    # un tema publicado en cualquier plataforma en un día anterior es una repetición.
+    pdate = meta.get("date") or folder.name[:10]
+    args = (meta.get("primary_url", ""), meta.get("topic_key"), "instagram", pdate)
+    dups = find_repeats(*args, folder=folder.name)
     mine = [r for r in rows_for("instagram") if r.get("folder") == folder.name and r.get("status") in ("published", "scheduled")]
-    if dups:
-        fail("Duplicados (Instagram)", f"ya publicado en Instagram: {[(r['publication_date'], r['topic']) for r in dups]}")
+    if dups and repeat_justified(meta):
+        hard = find_repeats(*args, folder=folder.name, justified=True)
+        if hard:
+            fail("Duplicados (Instagram)", f"repetición no permitida aunque haya justificación: {describe_repeats(hard)}")
+        else:
+            warn("Duplicados (Instagram)", f"repetición JUSTIFICADA ({meta['repeat_justification'][:80]}): {describe_repeats(dups)}")
+    elif dups:
+        fail("Duplicados (Instagram)", f"tema ya publicado antes: {describe_repeats(dups)}. Elige otro tema o documenta "
+                                       "información nueva en metadata.repeat_justification")
     elif mine:
         fail("Duplicados (Instagram)", f"esta carpeta ya figura como {mine[0]['status']} en Instagram")
     else:
-        ok("Duplicados (Instagram)", f"sin coincidencias en {len(rows_for('instagram'))} filas de Instagram")
+        ok("Duplicados (Instagram)", "sin repeticiones en ninguna plataforma (mismo día en LinkedIn permitido)")
 
     # Verificación de hoy
     tz = ZoneInfo(pub["timezone"])

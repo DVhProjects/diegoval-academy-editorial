@@ -72,3 +72,7 @@ Líneas `Subtítulos:` permitidas (según `video.subtitles`):
 - `no_verificado`: "Subtítulos: no verificados; comprueba con el icono CC si hay subtítulos en español."
 
 Publicación: `python3 scripts/prepare_publish.py posts/<carpeta> --slot` (sin `--image-url`) genera un payload con `metadata.linkedin.linkAttachment` y sin `assets`. Tras `create_post`, `get_post` debe devolver `metadata.linkAttachment` con `title` y `thumbnail`.
+
+
+## `repeat_justification` (opcional)
+Texto (≥ 40 caracteres) que explica la información nueva y relevante que justifica repetir un tema publicado en un día anterior (p. ej. «El plazo oficial cambió el 2026-11-05 y se abrió una segunda fase»). Sin él, `validate_post.py` y `validate_carousel.py` bloquean cualquier tema ya publicado antes en cualquier plataforma. El mismo día en la otra red no es repetición y no lo necesita. Nunca se usa para completar el calendario.

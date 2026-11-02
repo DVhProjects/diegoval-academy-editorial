@@ -24,7 +24,8 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from history import canonical_url, rows_for  # noqa: E402
+from history import (canonical_url, describe_repeats, find_repeats, read_history,  # noqa: E402
+                     repeat_justified)
 import video as videomod  # noqa: E402
 
 REQUIRED_FILES = ["post.json", "post.png", "caption.md", "sources.md", "metadata.json"]
@@ -289,7 +290,7 @@ def _validate_plain_language(meta, caption, spec, ok, fail):
         ok("Lenguaje sencillo: revisión del verificador", f"respuesta 'sí' de {chk['reviewer']}")
 
 
-def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, bool]:
+def validate(folder: Path, now: datetime, skip_network: bool, platform: str = "linkedin") -> tuple[list, bool]:
     pub = load_json(ROOT / "config" / "publishing.json")
     chan = load_json(ROOT / "config" / "buffer_channel.json")
     tz = ZoneInfo(pub["timezone"])
@@ -451,18 +452,25 @@ def validate(folder: Path, now: datetime, skip_network: bool) -> tuple[list, boo
             else:
                 fail("Plazo", f"{dl}: menos de {margin.days} días o vencido")
 
-    # 9. Duplicados
-    hist = rows_for("linkedin")  # la deduplicación de LinkedIn sólo mira filas de LinkedIn
-    cu, tk = canonical_url(meta.get("primary_url", "")), meta.get("topic_key")
-    vid = videomod.video_id((meta.get("video") or {}).get("url", "")) if is_video else None
-    dups = [r for r in hist if r.get("status") in ("published", "scheduled")
-            and r.get("folder") != folder.name
-            and (canonical_url(r.get("official_url", "")) == cu or r.get("topic_key") == tk
-                 or (vid and videomod.video_id(r.get("video_url", "")) == vid))]
-    if dups:
-        fail("Duplicados", f"ya publicado: {[(r['publication_date'], r['topic']) for r in dups]}")
+    # 9. Duplicados (política 2026-11-02: mismo día en dos plataformas = permitido; días anteriores = repetición)
+    vurl = (meta.get("video") or {}).get("url", "") if is_video else ""
+    justified = repeat_justified(meta)
+    dups = find_repeats(meta.get("primary_url", ""), meta.get("topic_key"), platform,
+                        meta.get("date") or folder.name[:10], folder=folder.name, video_url=vurl)
+    if dups and justified:
+        dups_unjust = find_repeats(meta.get("primary_url", ""), meta.get("topic_key"), platform,
+                                   meta.get("date") or folder.name[:10], folder=folder.name, video_url=vurl,
+                                   justified=True)
+        if dups_unjust:
+            fail("Duplicados", f"repetición no permitida aunque haya justificación: {describe_repeats(dups_unjust)}")
+        else:
+            warn("Duplicados", f"repetición JUSTIFICADA ({meta['repeat_justification'][:80]}): {describe_repeats(dups)}")
+    elif dups:
+        fail("Duplicados", f"tema ya publicado antes ({platform}): {describe_repeats(dups)}. Elige otro tema o documenta "
+                           "información nueva en metadata.repeat_justification")
     else:
-        ok("Duplicados", f"sin coincidencias en {len(hist)} filas (URL canónica y topic_key)")
+        ok("Duplicados", f"sin repeticiones en {len(read_history())} filas de todas las plataformas "
+                         f"(URL canónica, topic_key y vídeo; mismo día en otra red permitido)")
 
     # 10. Enlaces accesibles
     if skip_network:
@@ -489,6 +497,8 @@ def main() -> int:
     ap.add_argument("folder", type=Path)
     ap.add_argument("--now", help="ISO 8601 con zona; por defecto, ahora")
     ap.add_argument("--skip-network", action="store_true")
+    ap.add_argument("--platform", choices=["linkedin", "instagram"], default="linkedin",
+                    help="plataforma en la que se publicará esta carpeta (afecta a la comprobación de duplicados)")
     ap.add_argument("--plain-hash", action="store_true",
                     help="imprime el hash del texto revisado (caption + imagen) para metadata.plain_language_check")
     a = ap.parse_args()
@@ -498,7 +508,7 @@ def main() -> int:
         print(plain_hash(folder))
         return 0
     now = datetime.fromisoformat(a.now) if a.now else datetime.now(ZoneInfo("Europe/Stockholm"))
-    results, passed = validate(folder, now, a.skip_network)
+    results, passed = validate(folder, now, a.skip_network, a.platform)
     decision = "APROBADA para publicar" if passed else "BLOQUEADA: no publicar"
     lines = [f"# Validación — {folder.name}", "",
              f"Ejecutado: {now.isoformat(timespec='seconds')}", f"Decisión: **{decision}**", "",

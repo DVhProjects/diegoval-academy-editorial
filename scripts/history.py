@@ -1,7 +1,8 @@
 """Historial de publicaciones y deduplicación (data/publication_history.csv).
 
 Uso:
-    python3 scripts/history.py check <url> [<topic_key>] [--platform linkedin|instagram]
+    python3 scripts/history.py check <url> [<topic_key>] [--platform linkedin|instagram] [--date AAAA-MM-DD] [--folder NOMBRE]
+    python3 scripts/history.py recent [--days N]   # temas usados (todas las plataformas) para descartar candidatos
     python3 scripts/history.py add posts/<carpeta> --status published|scheduled|skipped|draft-test|deleted \
         [--platform linkedin|instagram] [--buffer-post-id ID] [--linkedin-url URL] [--external-url URL] \
         [--image-url URL] [--reason TEXTO]
@@ -9,9 +10,13 @@ Uso:
         [--linkedin-url URL] [--external-url URL] [--date AAAA-MM-DD] [--topic TEXTO]
     python3 scripts/history.py pending [--platform linkedin|instagram]
 
-Deduplicación POR PLATAFORMA (columna `platform`; vacía = linkedin, para las filas anteriores a Instagram):
-`check`, `pending` y `add` sólo miran la plataforma indicada (por defecto linkedin, como siempre). El mismo tema
-puede (y debe) aparecer una vez en cada plataforma. Una fila por (carpeta, plataforma).
+Política de repetición (2026-11-02; columna `platform`; vacía = linkedin, filas anteriores a Instagram):
+- LinkedIn e Instagram pueden publicar el MISMO tema el MISMO día (dos presentaciones de una investigación).
+- Un tema ya publicado/programado en CUALQUIER plataforma en un día ANTERIOR no se repite, salvo información nueva
+  y relevante (`metadata.repeat_justification`, ≥ 40 caracteres).
+- En la misma plataforma un tema no se repite nunca el mismo día ni después (sin justificación, tampoco antes).
+`find_repeats` es la única función que decide; `check`, los validadores y `plan_day.py` la usan.
+Una fila por (carpeta, plataforma).
 
 Reglas: `published` exige buffer_post_id y linkedin_url (confirmados con get_post);
 `scheduled` exige buffer_post_id. Así nada cuenta como publicado sin confirmación de Buffer.
@@ -24,8 +29,10 @@ import argparse
 import csv
 import json
 import sys
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import urlsplit
+from zoneinfo import ZoneInfo
 
 import video as videomod
 
@@ -74,12 +81,68 @@ def rows_for(platform: str = "linkedin") -> list[dict]:
     return [r for r in read_history() if row_platform(r) == platform]
 
 
-def check(url: str, topic_key: str | None, platform: str = "linkedin") -> list[dict]:
+MIN_JUSTIFICATION = 40
+
+
+def repeat_justified(meta: dict) -> bool:
+    """True si el metadata justifica repetir un tema de un día anterior con información nueva y relevante."""
+    return len(str((meta or {}).get("repeat_justification", "")).strip()) >= MIN_JUSTIFICATION
+
+
+def today_stockholm() -> str:
+    return datetime.now(ZoneInfo("Europe/Stockholm")).date().isoformat()
+
+
+def find_repeats(url: str, topic_key: str | None, platform: str = "linkedin", on_date: str | None = None,
+                 folder: str | None = None, video_url: str | None = None, justified: bool = False,
+                 rows: list[dict] | None = None) -> list[dict]:
+    """Filas del historial que BLOQUEAN publicar este tema en `platform` con fecha `on_date`.
+
+    Coincide por URL canónica, topic_key o vídeo. Bloquea (solo filas published/scheduled de otra carpeta):
+    - misma plataforma: cualquier fecha (el mismo día también es repetición);
+    - otra plataforma: solo si su fecha es ANTERIOR a `on_date` (o desconocida). El mismo día, o posterior, es
+      la publicación simultánea de la misma investigación y se permite.
+    Con `justified=True` (información nueva documentada) se permiten las filas de días anteriores, pero nunca una
+    repetición en la misma plataforma el mismo día.
+    """
+    on_date = on_date or today_stockholm()
     cu = canonical_url(url)
-    vid = videomod.video_id(url)
-    return [r for r in rows_for(platform) if r.get("status") in ("published", "scheduled")
-            and (canonical_url(r.get("official_url", "")) == cu or (topic_key and r.get("topic_key") == topic_key)
-                 or (vid and videomod.video_id(r.get("video_url", "")) == vid))]
+    vid = videomod.video_id(video_url or "") or videomod.video_id(url or "")
+    out = []
+    for r in (read_history() if rows is None else rows):
+        if r.get("status") not in ("published", "scheduled") or (folder and r.get("folder") == folder):
+            continue
+        if not (cu and canonical_url(r.get("official_url", "")) == cu
+                or (topic_key and r.get("topic_key") == topic_key)
+                or (vid and videomod.video_id(r.get("video_url", "")) == vid)):
+            continue
+        rdate = (r.get("publication_date") or "").strip()
+        earlier = not rdate or rdate < on_date
+        if row_platform(r) == platform:
+            if justified and earlier:
+                continue
+            out.append(r)
+        elif earlier and not justified:
+            out.append(r)
+    return out
+
+
+def describe_repeats(rows: list[dict]) -> str:
+    return "; ".join(f"{r.get('publication_date') or 'sin fecha'} {row_platform(r)}: {r.get('topic') or r.get('folder')}"
+                     for r in rows)
+
+
+def check(url: str, topic_key: str | None, platform: str = "linkedin", on_date: str | None = None,
+          folder: str | None = None, justified: bool = False) -> list[dict]:
+    return find_repeats(url, topic_key, platform, on_date, folder, justified=justified)
+
+
+def recent(days: int = 90) -> list[dict]:
+    """Temas publicados/programados en cualquier plataforma en los últimos `days` días (para descartar candidatos)."""
+    since = (datetime.now(ZoneInfo("Europe/Stockholm")).date() - timedelta(days=days)).isoformat()
+    return sorted((r for r in read_history() if r.get("status") in ("published", "scheduled")
+                   and (r.get("publication_date") or "") >= since),
+                  key=lambda r: r.get("publication_date", ""))
 
 
 def require_confirmation(status: str, buffer_post_id: str | None, linkedin_url: str | None,
@@ -149,6 +212,11 @@ def main() -> int:
     c.add_argument("url")
     c.add_argument("topic_key", nargs="?")
     c.add_argument("--platform", choices=PLATFORMS, default="linkedin")
+    c.add_argument("--date", help="fecha de publicación AAAA-MM-DD (por defecto hoy, Europe/Stockholm)")
+    c.add_argument("--folder", help="carpeta propia (se ignora al buscar coincidencias)")
+    c.add_argument("--justified", action="store_true", help="hay información nueva documentada (repeat_justification)")
+    rc = sub.add_parser("recent")
+    rc.add_argument("--days", type=int, default=90)
     a = sub.add_parser("add")
     a.add_argument("--platform", choices=PLATFORMS, default="linkedin")
     a.add_argument("--external-url", dest="external_url")
@@ -172,9 +240,13 @@ def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
     try:
         if args.cmd == "check":
-            dups = check(args.url, args.topic_key, args.platform)
+            dups = check(args.url, args.topic_key, args.platform, args.date, args.folder, args.justified)
             print(json.dumps(dups, ensure_ascii=False, indent=2) if dups else "SIN DUPLICADOS")
             return 1 if dups else 0
+        if args.cmd == "recent":
+            for r in recent(args.days):
+                print(f"{r.get('publication_date')} {row_platform(r):9} {r.get('topic_key') or '-':40} {r.get('official_url')}")
+            return 0
         if args.cmd == "pending":
             for row in rows_for(args.platform):
                 if row.get("status") == "scheduled":

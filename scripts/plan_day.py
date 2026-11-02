@@ -12,6 +12,10 @@ Reglas:
 - La deduplicación es POR CANAL: sólo cuentan las filas (scheduled/published) de la propia plataforma con fecha de hoy.
   Que LinkedIn ya haya publicado, haya fallado (skipped) o no tenga contenido NO cambia `due` de Instagram, ni al revés.
 - Las carpetas marcadas `do_not_publish` (borradores de revisión) nunca se proponen para reutilizar.
+- Política de repetición (2026-11-02): Instagram reutiliza el tema de LinkedIn de hoy (mismo día = permitido) SALVO que ese
+  tema ya se haya publicado antes en cualquier plataforma (p. ej. como extra en Instagram ayer). Entonces `reuse_folder`
+  es null, `reuse_rejected` explica el motivo e Instagram NO debe reutilizar: necesita un tema nuevo (con LinkedIn,
+  si LinkedIn aún no ha publicado hoy, o investigación propia).
 """
 from __future__ import annotations
 
@@ -25,7 +29,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from history import read_history, row_platform  # noqa: E402
+from history import describe_repeats, find_repeats, read_history, row_platform  # noqa: E402
 
 DIAS = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
 DONE = ("scheduled", "published")
@@ -71,10 +75,22 @@ def plan(now: datetime, pub: dict, rows: list[dict], blocked: Callable[[str], bo
     elif done_today("instagram"):
         out["instagram"] = {"due": False, "reason": "Instagram ya tiene una publicación de hoy", "reuse_folder": None}
     else:
-        reuse = next((r["folder"] for r in done_today("linkedin") if r.get("folder") and not blocked(r["folder"])), None)
-        out["instagram"] = {"due": True, "reuse_folder": reuse,
+        reuse, rejected = None, []
+        for r in done_today("linkedin"):
+            if not r.get("folder") or blocked(r["folder"]):
+                continue
+            reps = find_repeats(r.get("official_url", ""), r.get("topic_key"), "instagram", today, folder=r["folder"],
+                               rows=rows)
+            if reps:
+                rejected.append(f"{r['folder']}: tema ya publicado antes ({describe_repeats(reps)})")
+            else:
+                reuse = r["folder"]
+                break
+        out["instagram"] = {"due": True, "reuse_folder": reuse, "reuse_rejected": rejected,
                             "reason": ("toca Instagram; reutiliza la investigación de " + reuse) if reuse
-                            else "toca Instagram; investigación propia (LinkedIn no aportó contenido hoy)"}
+                            else ("toca Instagram; el tema de LinkedIn de hoy no se puede reutilizar (repetido): "
+                                  "investigación nueva con búsqueda web" if rejected
+                                  else "toca Instagram; investigación propia (LinkedIn no aportó contenido hoy)")}
     return out
 
 

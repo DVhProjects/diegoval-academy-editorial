@@ -86,3 +86,9 @@ Rutina de prueba `trig_0165UxSq6qprhzmMMsJxiPd3`, sesión `cse_01HRCw35yLdCamTwz
 - Estado: `instagram.enabled=false` en `config/publishing.json` hasta validar el diseño y la integración con `main`; después, comprobar la rutina completa en la nube y activar con autorización del propietario.
 - Reels: sólo originales o con licencia adecuada; sin descargar vídeos de terceros.
 - Borradores de revisión (no publicados): LinkedIn `6ae728f2f0984eef33624a55` (ETH ESOP) e Instagram `6ae728fd21c807e9d5b7e5b7` (carrusel Erasmus Mundus). No se programa nada para el lunes 2026-11-02.
+
+## Cambios 2026-11-02 — política de repetición LinkedIn/Instagram
+- Incidente: el lunes 2026-11-02 LinkedIn preparó Eiffel (ya publicado en Instagram el 11-01 como extra) e Instagram intentó DAAD (publicado en LinkedIn el 10-31), `validate_post.py` lo bloqueó comparándolo con el historial de LinkedIn y la rutina omitió Instagram sin buscar otro tema.
+- Corregido: `history.find_repeats` única; mismo día en dos redes permitido; temas de días anteriores bloqueados en cualquier plataforma (salvo `repeat_justification`); `validate_post.py --platform`; `plan_day.py` devuelve `reuse_rejected`; `history.py check --date` y `recent`; la rutina exige buscar de nuevo (≥ 3 rondas) antes de omitir; reconciliación de Buffer también para Instagram.
+- Pruebas: `tests/test_repeticion.py` (reproduce el caso real) y ajustes en `tests/test_instagram.py`; 124 pruebas OK en local.
+- Verificación en la nube: ver el apartado siguiente (se completa tras la ejecución).
