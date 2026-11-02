@@ -19,5 +19,19 @@
   },
   "style_version": 3,
   "format": "image",
-  "status": "draft"
+  "status": "draft",
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-02",
+    "checked_text_sha256": "da640082887e0d219dc441c569c97ab518fd93092b6644bebe91482269f20e60"
+  },
+  "instagram": {
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-02; carrusel y caption_instagram.md",
+      "checked_text_sha256": "c7979dd5aa359fd4bfcac965d55ed07f2d22fbd44d2fc48590f0ad83f201a2f0"
+    }
+  }
 }

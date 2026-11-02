@@ -1,7 +1,7 @@
 # Validación — 2026-11-02_lunes_ects-creditos-instagram
 
-Ejecutado: 2026-11-02T16:10:16+01:00
-Decisión: **BLOQUEADA: no publicar**
+Ejecutado: 2026-11-02T16:11:05+01:00
+Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
 |---|---|---|
@@ -22,6 +22,6 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Lenguaje sencillo: siglas (imagen) | todas explicadas o ninguna |
 | PASS | Lenguaje sencillo: palabras difíciles (imagen) | sin burocracia ni calcos detectados |
 | PASS | Lenguaje sencillo: frases largas | todas ≤ 32 palabras |
-| FAIL | Lenguaje sencillo: revisión del verificador | falta metadata.plain_language_check con la pregunta exacta, answer 'sí', reviewer y checked_text_sha256 (python3 scripts/validate_post.py <carpeta> --plain-hash) |
+| PASS | Lenguaje sencillo: revisión del verificador | respuesta 'sí' de verificador-convocatorias (subagente Sonnet), 2026-11-02 |
 | PASS | Duplicados | sin repeticiones en 11 filas de todas las plataformas (URL canónica, topic_key y vídeo; mismo día en otra red permitido) |
 | PASS | Enlace accesible | 200 https://education.ec.europa.eu/education-levels/higher-education/inclusive-and-connected-higher-education/european-credit-transfer-and-accumulation-system |
