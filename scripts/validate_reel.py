@@ -70,7 +70,8 @@ def ui_zone_violations(img: Image.Image) -> list[str]:
 
     def dirty(box) -> int:
         reg = img.crop(box)
-        px = reg.getdata()
+        # Pillow ≥ 13 retira getdata(); get_flattened_data() existe desde Pillow 12.1
+        px = reg.get_flattened_data() if hasattr(reg, "get_flattened_data") else reg.getdata()
         return sum(1 for p in px if max(abs(p[i] - paper[i]) for i in range(3)) > 24)
 
     top = dirty((0, 24, RW, 240))          # por debajo de la franja de color de 14 px
