@@ -1,0 +1,18 @@
+{"series": "sabado", "kicker": "Guía práctica · Solicitar", "cover": {"title": "Cómo pedir plaza en un máster de Suecia", "highlight": "Suecia", "subtitle": "Una web oficial."},
+"slides": [
+{"type": "points", "title": "La web oficial", "items": [
+{"icon": "globe", "text": "universityadmissions.se"},
+{"icon": "search", "text": "Buscas y solicitas allí."},
+{"icon": "calendar", "text": "Plazo: 15 enero 2027."}]},
+{"type": "steps", "title": "Cómo empezar", "items": [
+{"text": "Crea tu cuenta."},
+{"text": "Elige tu máster."},
+{"text": "Sube tus documentos."}]},
+{"type": "tip", "title": "Un consejo", "items": [
+{"icon": "star", "text": "Sube documentos pronto."},
+{"icon": "info", "text": "Si falta algo, no revisan."}]},
+{"type": "summary", "title": "En resumen", "items": [
+{"text": "Web oficial."},
+{"text": "Plazo: 15 enero 2027."},
+{"text": "Crea tu cuenta."}], "cta": "universityadmissions.se"}],
+"source": "universityadmissions.se", "verified": "2026-11-03"}

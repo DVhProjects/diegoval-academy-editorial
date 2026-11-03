@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-03",
+  "weekday": "martes",
+  "type": "educativo",
+  "category": "preparar_solicitud",
+  "topic": "Cómo solicitar un máster en Suecia con la web oficial universityadmissions.se",
+  "topic_key": "universityadmissions-suecia-solicitar",
+  "primary_url": "https://www.universityadmissions.se/en/apply-to-masters/short-overview-masters/",
+  "deadline": null,
+  "verified_date": "2026-11-03",
+  "do_not_publish": true,
+  "platforms": [
+    "instagram"
+  ],
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+  "status": "draft",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (prueba reel nube)"
+  },
+  "instagram": {
+    "format": "reel",
+    "format_reason": "Prueba única de Reel original: pasos cortos que se entienden viendo cómo aparecen uno a uno.",
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-03; carousel.json y caption_instagram.md",
+      "checked_text_sha256": "6e3a28a129255cf5c7087caf964e4285791f62920bc2600bda68d8ec3c1a3a4f"
+    }
+  }
+}

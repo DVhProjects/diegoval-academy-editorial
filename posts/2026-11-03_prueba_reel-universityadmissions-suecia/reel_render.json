@@ -1,0 +1,69 @@
+{
+  "fps": 30,
+  "size": [
+    1080,
+    1920
+  ],
+  "duration_s": 29.9,
+  "frames": 897,
+  "scenes": [
+    {
+      "kind": "cover",
+      "start_s": 0.0,
+      "duration_s": 5.0
+    },
+    {
+      "kind": "points",
+      "start_s": 5.0,
+      "duration_s": 6.23
+    },
+    {
+      "kind": "steps",
+      "start_s": 11.23,
+      "duration_s": 6.23
+    },
+    {
+      "kind": "tip",
+      "start_s": 17.45,
+      "duration_s": 5.62
+    },
+    {
+      "kind": "summary",
+      "start_s": 23.08,
+      "duration_s": 6.83
+    }
+  ],
+  "min_font_px": 38,
+  "safe_area": {
+    "top_px": 250,
+    "bottom_px": 440,
+    "right_px": 100
+  },
+  "audio": "silencio (sin música ni voz)",
+  "text_burned_in": "es",
+  "texts": [
+    "Guía práctica · Solicitar",
+    "Cómo pedir plaza en un máster de Suecia",
+    "Una web oficial.",
+    "Guárdala para después",
+    "La web oficial",
+    "universityadmissions.se",
+    "Buscas y solicitas allí.",
+    "Plazo: 15 enero 2027.",
+    "Cómo empezar",
+    "Crea tu cuenta.",
+    "Elige tu máster.",
+    "Sube tus documentos.",
+    "Un consejo",
+    "Sube documentos pronto.",
+    "Si falta algo, no revisan.",
+    "En resumen",
+    "Web oficial.",
+    "Plazo: 15 enero 2027.",
+    "Crea tu cuenta.",
+    "universityadmissions.se"
+  ],
+  "carousel_sha256": "4b52021d7bc450cf9c909a082b944c8dc41289c556cd0bee14f15875a559cc02",
+  "mp4_sha256": "726fbad58ab3d3f8c5fa3241fad80308b22fe06326cccd346b048dc9046f7356",
+  "mp4_bytes": 585452
+}
