@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-04",
+  "weekday": "miercoles",
+  "type": "oportunidad",
+  "category": "beca_doctorado",
+  "topic": "Becas de Excelencia del Gobierno suizo (Swiss Government Excellence Scholarships) 2027-2028 para doctorado e investigación",
+  "topic_key": "swiss-government-excellence-2027",
+  "primary_url": "https://www.sbfi.admin.ch/scholarships_en",
+  "deadline": "2026-11-30T23:59:00+01:00",
+  "verified_date": "2026-11-04",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "platforms": [
+    "linkedin",
+    "instagram"
+  ],
+  "call_status": "abierta",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo gubernamental y ediciones anuales",
+      "evidencia": "Programa del gobierno suizo abierto a 183 países; ya anuncia el ciclo 2028-2029 para agosto de 2027",
+      "url": "https://www.sbfi.admin.ch/scholarships_en"
+    },
+    {
+      "criterio": "lista oficial por país",
+      "evidencia": "Lista oficial A-Z con plazos de México, Colombia, Perú y otros países de América Latina",
+      "url": "https://www.sbfi.admin.ch/dam/en/sd-web/yBYiu8PC4jzg/2026-10-26_A_Z_List_of_countries_and_territories_complete.pdf"
+    }
+  ],
+  "audience_fit": "Para personas hispanohablantes con máster terminado que quieren un doctorado o una estancia de investigación en Suiza; plazos propios en México, Colombia, Perú, Chile y otros países.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca del gobierno de Suiza para hacer un doctorado o investigar, para quien ya tiene un máster. Plazo en México y Colombia: 30 de noviembre de 2026; cada país tiene su propio plazo. Da 2 450 francos suizos al mes. Pide máster hecho y haber nacido en 1992 o después. No cubre matrícula ni tasas de estudio. Lo que pocos explican: sin carta de apoyo de un profesor suizo, la solicitud no se estudia. Fuente: sbfi.admin.ch, verificado el 2026-11-04.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "series": "miercoles"
+}
