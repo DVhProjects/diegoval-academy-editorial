@@ -33,7 +33,7 @@
   },
   "style_version": 3,
   "format": "image",
-  "status": "draft",
+  "status": "scheduled",
   "series": "miercoles",
   "plain_language_check": {
     "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
@@ -49,7 +49,9 @@
       "answer": "sí",
       "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-04; carrusel y caption_instagram.md",
       "checked_text_sha256": "b6f8a2bab352effb39361e94af1a363f21e4425af67e5a9893ad41a24345d022"
-    }
+    },
+    "buffer_post_id": "6aeacce9c63bd995bd12bcef"
   },
-  "instagram_channel_id": "6ae71fe8e29c69a17126342a"
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+  "buffer_post_id": "6aeaccd62b43f8ba7d6ebed2"
 }

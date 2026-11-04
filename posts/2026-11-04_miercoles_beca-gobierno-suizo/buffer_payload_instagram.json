@@ -1,0 +1,55 @@
+{
+  "channelId": "6ae71fe8e29c69a17126342a",
+  "schedulingType": "automatic",
+  "text": "¿Tienes un máster y quieres hacer un doctorado o investigar en Suiza? 🇨🇭\n\nEl gobierno suizo ofrece una beca y su convocatoria está abierta.\n\n✅ Da 2 450 francos suizos al mes para vivir (sin matrícula ni tasas)\n✅ Cada país tiene su plazo: México y Colombia, 30 de noviembre de 2026; Perú, 13 de noviembre\n✅ Necesitas una carta de apoyo de un profesor suizo\n\nEsta semana: busca tu plazo y escribe a un profesor. Información oficial en sbfi.admin.ch\n\nVerificado el: 2026-11-04\n\n#Becas #Doctorado #Suiza #DiegoValAcademy",
+  "assets": [
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/3a72cdc328921885d84e8255f5aae7aa588b650c/posts/2026-11-04_miercoles_beca-gobierno-suizo/slide-1.png",
+        "metadata": {
+          "altText": "Portada: Beca suiza para un doctorado o investigar Plazo en México y Colombia: 30 de noviembre de 2026. Cada país tiene el suyo."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/3a72cdc328921885d84e8255f5aae7aa588b650c/posts/2026-11-04_miercoles_beca-gobierno-suizo/slide-2.png",
+        "metadata": {
+          "altText": "¿Qué es esta beca?. Es una beca del gobierno suizo para quien ya tiene un máster y quiere hacer un doctorado o investigar en Suiza. Da 2 450 francos suizos al mes para vivir. No incluye la matrícula ni las tasas de estudio. Pueden pedirla personas de 183 países."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/3a72cdc328921885d84e8255f5aae7aa588b650c/posts/2026-11-04_miercoles_beca-gobierno-suizo/slide-3.png",
+        "metadata": {
+          "altText": "¿Cómo se pide?. Busca tu país en la lista oficial y apunta tu plazo. Escribe a un profesor de una universidad suiza y pídele una carta de apoyo. Prepara tu currículum, una carta de motivación y un texto con lo que quieres investigar. Envía la solicitud por internet, no por correo."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/3a72cdc328921885d84e8255f5aae7aa588b650c/posts/2026-11-04_miercoles_beca-gobierno-suizo/slide-4.png",
+        "metadata": {
+          "altText": "Un consejo importante. Plazos: México y Colombia, 30 de noviembre de 2026. Perú, 13 de noviembre. Sin la carta de apoyo de un profesor suizo, tu solicitud no se estudia. Escríbele pronto."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/3a72cdc328921885d84e8255f5aae7aa588b650c/posts/2026-11-04_miercoles_beca-gobierno-suizo/slide-5.png",
+        "metadata": {
+          "altText": "En resumen. Beca del gobierno suizo para doctorado e investigación. Necesitas un máster listo en julio de 2027 y haber nacido desde 1992. Esta semana: busca tu plazo y escribe a un profesor suizo. Más información: sbfi.admin.ch"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instagram": {
+      "type": "post",
+      "shouldShareToFeed": true
+    }
+  },
+  "mode": "customScheduled",
+  "dueAt": "2026-11-04T12:30:00+01:00"
+}
