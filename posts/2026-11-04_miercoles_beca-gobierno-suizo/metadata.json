@@ -34,5 +34,22 @@
   "style_version": 3,
   "format": "image",
   "status": "draft",
-  "series": "miercoles"
+  "series": "miercoles",
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-04",
+    "checked_text_sha256": "6ef4e6e6515cc97293733e3ae21ad87bcd71f9c4923701ca4fcdeb169a58277a"
+  },
+  "instagram": {
+    "format": "carrusel",
+    "format_reason": "Carrusel de 5 imágenes: es el formato por defecto y explica la beca paso a paso; no hay vídeo oficial verificado.",
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-04; carrusel y caption_instagram.md",
+      "checked_text_sha256": "b6f8a2bab352effb39361e94af1a363f21e4425af67e5a9893ad41a24345d022"
+    }
+  },
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a"
 }
