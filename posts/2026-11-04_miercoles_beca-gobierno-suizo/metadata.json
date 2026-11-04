@@ -27,7 +27,7 @@
     }
   ],
   "audience_fit": "Para personas hispanohablantes con máster terminado que quieren un doctorado o una estancia de investigación en Suiza; plazos propios en México, Colombia, Perú, Chile y otros países.",
-  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca del gobierno de Suiza para hacer un doctorado o investigar, para quien ya tiene un máster. Plazo en México y Colombia: 30 de noviembre de 2026; cada país tiene su propio plazo. Da 2 450 francos suizos al mes. Pide máster hecho y haber nacido en 1992 o después. No cubre matrícula ni tasas de estudio. Lo que pocos explican: sin carta de apoyo de un profesor suizo, la solicitud no se estudia. Fuente: sbfi.admin.ch, verificado el 2026-11-04.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca del gobierno de Suiza para hacer un doctorado o investigar, para quien ya tiene un máster. Plazo en México y Colombia: 30 de noviembre de 2026; cada país tiene su propio plazo. Da 2 450 francos suizos al mes. Pide máster listo en julio de 2027 y haber nacido desde 1992. No cubre matrícula ni tasas de estudio. Lo que pocos explican: sin carta de apoyo de un profesor suizo, la solicitud no se estudia. Fuente: sbfi.admin.ch, verificado el 2026-11-04.",
   "models_used": {
     "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
   },

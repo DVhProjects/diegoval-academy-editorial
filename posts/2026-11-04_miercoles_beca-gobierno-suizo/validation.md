@@ -1,6 +1,6 @@
 # Validación — 2026-11-04_miercoles_beca-gobierno-suizo
 
-Ejecutado: 2026-11-04T07:11:12+01:00
+Ejecutado: 2026-11-04T07:12:00+01:00
 Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |
@@ -10,7 +10,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Imagen | 1080x1350 PNG, 1 archivo (+5 diapositivas de carrusel, ignoradas) |
 | PASS | Canal Buffer | DiegoVal Academy (6ae0bdf22f1f5ed648eb92f9) |
 | PASS | Verificación del día | 2026-11-04 |
-| PASS | Longitud del texto | 1270/1300 caracteres |
+| PASS | Longitud del texto | 1266/1300 caracteres |
 | PASS | Fecha visible en el texto | Verificado el: 2026-11-04 |
 | PASS | Marcadores pendientes | ninguno |
 | PASS | Enlaces documentados en sources.md | 2 enlaces |
