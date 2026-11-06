@@ -16,11 +16,11 @@
  "format": "image",
  "series": "viernes",
  "style_version": 3,
- "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Europa prepara una ley para investigadores: la Unión Europea prepara una ley para mejorar las carreras de investigación y la movilidad. Idea clave: todavía es un plan, no una ley; la Comisión Europea planea adoptarla en 2026. Busca carreras más previsibles y más previsibles, y moverse entre países y tipos de empleo. 735 aportes de 50 países hasta el 23 de enero de 2026. Lo que pocos explican: la página oficial aún no muestra el texto, solo se conocen sus objetivos. Fuente: research-and-innovation.ec.europa.eu, verificado el 2026-11-06.",
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Europa prepara una ley para investigadores: la Unión Europea prepara una ley para mejorar las carreras de investigación y la movilidad. Idea clave: todavía es un plan, no una ley; la Comisión Europea planea adoptarla en 2026. Busca carreras más previsibles, y moverse entre países y tipos de empleo. 735 aportes de 50 países hasta el 23 de enero de 2026. Lo que pocos explican: la página oficial aún no muestra el texto, solo se conocen sus objetivos. Fuente: research-and-innovation.ec.europa.eu, verificado el 2026-11-06.",
  "models_used": {
   "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
  },
- "status": "draft",
+ "status": "scheduled",
  "instagram": {
   "format": "carrusel",
   "format_reason": "Carrusel de 5 imágenes: es el formato por defecto y explica el tema paso a paso; no hay vídeo oficial verificado.",
@@ -29,12 +29,15 @@
    "answer": "sí",
    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-06; correcciones menores del verificador aplicadas",
    "checked_text_sha256": "8be804590de611896d01c461195ece8a28d50fb7c4a3e1422890a810bb06d654"
-  }
+  },
+  "buffer_post_id": "6aed7009c1e74b84e5cdf10b"
  },
  "plain_language_check": {
   "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
   "answer": "sí",
   "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-06; correcciones menores del verificador aplicadas",
   "checked_text_sha256": "b3887b9b0756d3262338cda2634336950a67b084dc4021ac13c329c08a05576e"
- }
+ },
+ "buffer_post_id": "6aed6ff1c1e74b84e5cdec9e",
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a"
 }
