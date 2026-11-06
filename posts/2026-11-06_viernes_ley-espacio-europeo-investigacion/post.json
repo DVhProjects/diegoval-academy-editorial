@@ -1,0 +1,32 @@
+{
+ "series": "viernes",
+ "kicker": "Research & Career · Tendencia europea",
+ "issue": "N.º 012 · 6 de noviembre de 2026",
+ "headline": "Europa prepara una ley para investigadores",
+ "dek": "La Unión Europea prepara una ley para mejorar las carreras de investigación y la movilidad.",
+ "highlight": {
+  "label": "La idea clave",
+  "value": "Todavía es un plan, no una ley",
+  "note": "La prepara la Comisión Europea; planea adoptarla en 2026"
+ },
+ "facts": [
+  {
+   "label": "Qué busca",
+   "value": "Carreras de investigación más previsibles"
+  },
+  {
+   "label": "Movilidad",
+   "value": "Moverse entre países y tipos de empleo"
+  },
+  {
+   "label": "Ya opinaron",
+   "value": "735 aportes de 50 países (hasta 23 ene 2026)"
+  }
+ ],
+ "tip": {
+  "label": "Lo que pocos explican",
+  "text": "La página oficial aún no muestra el texto. Hoy solo se conocen sus objetivos, no las reglas concretas."
+ },
+ "source": "research-and-innovation.ec.europa.eu",
+ "verified": "2026-11-06"
+}
