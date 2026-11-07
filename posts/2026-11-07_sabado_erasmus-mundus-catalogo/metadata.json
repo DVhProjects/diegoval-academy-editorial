@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-07",
+ "weekday": "sabado",
+ "type": "educativo",
+ "category": "encontrar_oportunidades",
+ "topic": "Cómo encontrar másteres europeos con beca en el catálogo oficial Erasmus Mundus",
+ "topic_key": "erasmus-mundus-catalogo-buscar",
+ "primary_url": "https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en",
+ "deadline": null,
+ "verified_date": "2026-11-07",
+ "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+ "platforms": [
+  "linkedin",
+  "instagram"
+ ],
+ "format": "image",
+ "series": "sabado",
+ "style_version": 3,
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo encontrar másteres europeos con beca: catálogo oficial de la Unión Europea con másteres de varias universidades, algunos con beca. Dónde: catálogo Erasmus Mundus. Filtra por área, país y duración. Después entra en la web de cada máster. Lo que pocos explican: unos dan beca y otros no; se pide en la web de cada máster, no en el catálogo. Fuente: eacea.ec.europa.eu, verificado el 2026-11-07.",
+ "models_used": {
+  "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+ },
+ "status": "draft",
+ "instagram": {
+  "format": "carrusel",
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto, explica el uso del catálogo paso a paso; no hay vídeo oficial verificado."
+ }
+}

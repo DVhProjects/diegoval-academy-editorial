@@ -1,0 +1,20 @@
+{"series": "sabado", "kicker": "Guía práctica · Encontrar oportunidades",
+ "cover": {"title": "Cómo encontrar másteres europeos con beca", "highlight": "con beca", "subtitle": "Un catálogo oficial de la Unión Europea los reúne. Algunos dan beca."},
+ "slides": [
+  {"type": "points", "title": "¿Qué es el catálogo?", "items": [
+   {"icon": "info", "text": "Es una lista oficial de la Unión Europea con másteres Erasmus Mundus."},
+   {"icon": "star", "text": "Cada máster lo imparten juntas varias universidades de al menos tres países."},
+   {"icon": "calendar", "text": "Puedes filtrar por área de estudio, país, duración y año."}]},
+  {"type": "steps", "title": "¿Cómo se usa?", "items": [
+   {"text": "Abre el catálogo oficial y elige tu área de estudio."},
+   {"text": "Anota 3 másteres que te gusten y entra en la web de cada uno."},
+   {"text": "Mira si ofrecen beca, cuál es el plazo y qué documentos piden."}]},
+  {"type": "tip", "title": "Un consejo importante", "items": [
+   {"icon": "star", "text": "Muchos másteres ofrecen beca, pero otros no. Compruébalo en cada uno."},
+   {"icon": "info", "text": "No hay un formulario único: solicitas en la web de cada máster. La mayoría acepta solicitudes entre octubre y enero."}]},
+  {"type": "summary", "title": "En resumen", "items": [
+   {"text": "Un catálogo oficial reúne másteres europeos de varias universidades."},
+   {"text": "Algunos ofrecen beca; otros no."},
+   {"text": "Esta semana: anota 3 másteres y mira su beca y su plazo."}],
+   "cta": "Más información: eacea.ec.europa.eu"}],
+ "source": "eacea.ec.europa.eu", "verified": "2026-11-07"}
