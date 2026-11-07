@@ -1,7 +1,7 @@
 # Validación — 2026-11-07_sabado_erasmus-mundus-catalogo
 
-Ejecutado: 2026-11-07T07:08:08+01:00
-Decisión: **BLOQUEADA: no publicar**
+Ejecutado: 2026-11-07T07:08:37+01:00
+Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
 |---|---|---|
@@ -22,7 +22,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Lenguaje sencillo: siglas (imagen) | todas explicadas o ninguna |
 | PASS | Lenguaje sencillo: palabras difíciles (imagen) | sin burocracia ni calcos detectados |
 | PASS | Lenguaje sencillo: frases largas | todas ≤ 32 palabras |
-| FAIL | Lenguaje sencillo: revisión del verificador | falta metadata.plain_language_check con la pregunta exacta, answer 'sí', reviewer y checked_text_sha256 (python3 scripts/validate_post.py <carpeta> --plain-hash) |
+| PASS | Lenguaje sencillo: revisión del verificador | respuesta 'sí' de verificador-convocatorias (subagente Sonnet), 2026-11-07; segunda revisión tras reescribir (máster y Erasmus Mundus explicados) |
 | PASS | Duplicados | sin repeticiones en 16 filas de todas las plataformas (URL canónica, topic_key y vídeo; mismo día en otra red permitido) |
 | PASS | Enlace accesible | 200 https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters |
 | PASS | Enlace accesible | 200 https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en |
