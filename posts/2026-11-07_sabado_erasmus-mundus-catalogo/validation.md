@@ -1,6 +1,6 @@
 # Validación — 2026-11-07_sabado_erasmus-mundus-catalogo
 
-Ejecutado: 2026-11-07T07:08:37+01:00
+Ejecutado: 2026-11-07T07:08:54+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
