@@ -1,17 +1,17 @@
 {"series": "sabado", "kicker": "Guía práctica · Encontrar oportunidades",
- "cover": {"title": "Cómo encontrar másteres europeos con beca", "highlight": "con beca", "subtitle": "Un catálogo oficial de la Unión Europea los reúne. Algunos dan beca."},
+ "cover": {"title": "Cómo encontrar másteres europeos con beca", "highlight": "con beca", "subtitle": "Un catálogo oficial de la Unión Europea reúne másteres de varias universidades. Algunos dan beca."},
  "slides": [
   {"type": "points", "title": "¿Qué es el catálogo?", "items": [
-   {"icon": "info", "text": "Es una lista oficial de la Unión Europea con másteres Erasmus Mundus."},
-   {"icon": "star", "text": "Cada máster lo imparten juntas varias universidades de al menos tres países."},
-   {"icon": "calendar", "text": "Puedes filtrar por área de estudio, país, duración y año."}]},
+   {"icon": "info", "text": "Es una lista oficial de la Unión Europea con másteres Erasmus Mundus. Un máster son estudios después de la carrera."},
+   {"icon": "star", "text": "Cada máster lo dan juntas varias universidades de al menos tres países."},
+   {"icon": "calendar", "text": "Puedes buscar por área de estudio, país y duración."}]},
   {"type": "steps", "title": "¿Cómo se usa?", "items": [
    {"text": "Abre el catálogo oficial y elige tu área de estudio."},
    {"text": "Anota 3 másteres que te gusten y entra en la web de cada uno."},
    {"text": "Mira si ofrecen beca, cuál es el plazo y qué documentos piden."}]},
   {"type": "tip", "title": "Un consejo importante", "items": [
    {"icon": "star", "text": "Muchos másteres ofrecen beca, pero otros no. Compruébalo en cada uno."},
-   {"icon": "info", "text": "No hay un formulario único: solicitas en la web de cada máster. La mayoría acepta solicitudes entre octubre y enero."}]},
+   {"icon": "info", "text": "La plaza y la beca se piden en la web de cada máster, no en el catálogo."}]},
   {"type": "summary", "title": "En resumen", "items": [
    {"text": "Un catálogo oficial reúne másteres europeos de varias universidades."},
    {"text": "Algunos ofrecen beca; otros no."},

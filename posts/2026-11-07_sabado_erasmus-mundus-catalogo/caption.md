@@ -1,11 +1,11 @@
-¿Quieres estudiar un máster en Europa con beca y no sabes dónde mirar? Hay un catálogo oficial de la Unión Europea.
+¿Quieres hacer un máster en Europa con beca y no sabes dónde mirar? Un máster son estudios que se hacen después de la carrera universitaria. Hay un catálogo oficial de la Unión Europea.
 
 En corto:
-• El catálogo Erasmus Mundus lista másteres que imparten juntas varias universidades de al menos tres países.
-• Puedes filtrar por palabra clave, país, duración, universidad, área de estudio y año.
-• Pueden pedirlo personas con título de grado (o en su último año) que lo terminen antes de que empiece el máster.
+• Erasmus Mundus es el nombre de unos másteres que dan juntas varias universidades de al menos tres países.
+• En el catálogo puedes buscar por palabra clave, país, duración, universidad y área de estudio.
+• Puedes solicitarlo si ya terminaste la carrera universitaria, o la terminas antes de que empiece el máster.
 
-Lo que pocos explican: muchos másteres ofrecen beca, pero otros no. Y no hay un formulario único: se solicita en la web de cada máster. La mayoría acepta solicitudes entre octubre y enero para el curso siguiente.
+Lo que pocos explican: muchos másteres ofrecen beca, pero otros no. No hay una solicitud única en el catálogo: la plaza y la beca se piden en la web de cada máster. La mayoría acepta solicitudes entre octubre y enero para el curso siguiente.
 
 Cómo empezar:
 1. Abre el catálogo y elige tu área de estudio.
