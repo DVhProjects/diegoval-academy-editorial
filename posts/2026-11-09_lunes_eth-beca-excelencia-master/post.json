@@ -2,8 +2,8 @@
  "series": "miercoles",
  "kicker": "Oportunidad · Máster en Suiza",
  "issue": "N.º 013 · 9 de noviembre de 2026",
- "headline": "Beca para un máster en una universidad suiza",
- "dek": "La Escuela Politécnica Federal de Zúrich (ETH) da beca a unos 60 estudiantes de máster.",
+ "headline": "Beca para un máster en Suiza",
+ "dek": "La Escuela Politécnica Federal de Zúrich (ETH) da beca a unos 60 estudiantes.",
  "highlight": {
   "label": "Plazo para solicitar",
   "value": "30 nov 2026",
@@ -16,16 +16,16 @@
   },
   {
    "label": "Incluye",
-   "value": "Sin matrícula hasta acabar el máster"
+   "value": "Sin matrícula hasta acabar"
   },
   {
    "label": "Quién",
-   "value": "Notas del grado entre el 10 % mejor"
+   "value": "Notas de tu carrera entre el 10 % mejor"
   }
  ],
  "tip": {
   "label": "Lo que pocos explican",
-  "text": "Se pide dentro de la solicitud al máster y solo del 1 al 30 de noviembre. Prepara un borrador de tu proyecto final."
+  "text": "Se pide dentro de la solicitud al máster, solo en noviembre. Prepara un borrador del trabajo final largo del máster."
  },
  "source": "ethz.ch",
  "verified": "2026-11-09"

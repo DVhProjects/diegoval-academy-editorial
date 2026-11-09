@@ -1,11 +1,11 @@
-¿Quieres hacer un máster en Suiza con beca? La Escuela Politécnica Federal de Zúrich (ETH) abre su beca de excelencia hasta el 30 de noviembre.
+¿Máster en Suiza con beca? La Escuela Politécnica Federal de Zúrich (ETH) abre su beca de excelencia hasta el 30 de noviembre.
 
 En corto:
 • Qué da: 13 500 francos suizos por semestre (medio año) y no pagas matrícula hasta acabar el máster (3 o 4 semestres).
-• Quién: quien empiece un máster allí en otoño de 2027 con notas del grado entre el 10 % mejor (lo estimas tú). No pueden pedirla quienes ya tienen un máster. La página oficial no menciona límites de nacionalidad.
-• Plazo: del 1 al 30 de noviembre de 2026, hasta las 23:59 (hora de Suiza). Hay unas 60 becas, según los fondos; resultados a finales de marzo.
+• Quién: quien empiece un máster allí en otoño de 2027 con notas de tu carrera universitaria entre el 10 % mejor (lo estimas tú). No pueden pedirla quienes ya tienen un máster.
+• Plazo: del 1 al 30 de noviembre de 2026, hasta las 23:59 (hora de Suiza). Unas 60 becas; resultados a finales de marzo.
 
-Por qué es conocida: es el programa oficial de becas de máster de esta universidad, cada año.
+Por qué es conocida: es el programa oficial de becas de máster de esta universidad suiza, con ediciones documentadas desde 2021.
 
 Lo que pocos explican: la beca no se pide aparte. Va dentro de la solicitud al máster y solo en ese mes. Te piden un borrador de tu proyecto final de máster (el trabajo largo con el que terminas), escrito por ti.
 

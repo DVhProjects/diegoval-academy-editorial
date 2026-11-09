@@ -25,3 +25,6 @@ ABIERTA (1-30 nov 2026). Margen: 21 días.
 
 ## Vídeo
 No se evaluó un vídeo oficial verificable en español; imagen única / carrusel.
+
+## Ediciones previas (popularidad)
+Noticias de departamentos ethz.ch sobre el programa: https://eaps.ethz.ch/en/news/archive/2021/11/excellence-scholarship-opportunity-programme-esop.html (2021), https://ee.ethz.ch/news-and-events/d-itet-news-channel/2025/10/esop-scholarships-2025-awarded.html (2025).

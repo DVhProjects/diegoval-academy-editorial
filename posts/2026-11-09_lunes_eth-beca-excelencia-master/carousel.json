@@ -21,7 +21,7 @@
     },
     {
      "icon": "globe",
-     "text": "La página oficial no pone límites de nacionalidad. Piden notas del grado entre el 10 % mejor (lo estimas tú)."
+     "text": "Sin límite de nacionalidad en la web oficial. Piden notas de tu carrera entre el 10 % mejor (lo estimas tú)."
     }
    ]
   },
@@ -45,11 +45,11 @@
   },
   {
    "type": "tip",
-   "title": "Un consejo importante",
+   "title": "Antes de empezar",
    "items": [
     {
      "icon": "calendar",
-     "text": "Esta es la fecha para empezar en otoño de 2027: del 1 al 30 de noviembre de 2026."
+     "text": "Para estudiar desde otoño de 2027, la pides ahora: del 1 al 30 de noviembre de 2026."
     },
     {
      "icon": "star",

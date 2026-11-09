@@ -1,6 +1,6 @@
 # Validación Instagram — 2026-11-09_lunes_eth-beca-excelencia-master
 
-Ejecutado: 2026-11-09T07:14:03+01:00
+Ejecutado: 2026-11-09T07:14:59+01:00
 Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |

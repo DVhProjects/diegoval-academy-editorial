@@ -1,6 +1,6 @@
 # Validación — 2026-11-09_lunes_eth-beca-excelencia-master
 
-Ejecutado: 2026-11-09T07:14:16+01:00
+Ejecutado: 2026-11-09T07:15:33+01:00
 Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |
@@ -10,7 +10,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Imagen | 1080x1350 PNG, 1 archivo (+5 diapositivas de carrusel, ignoradas) |
 | PASS | Canal Buffer | DiegoVal Academy (6ae0bdf22f1f5ed648eb92f9) |
 | PASS | Verificación del día | 2026-11-09 |
-| PASS | Longitud del texto | 1299/1300 caracteres |
+| PASS | Longitud del texto | 1258/1300 caracteres |
 | PASS | Fecha visible en el texto | Verificado el: 2026-11-09 |
 | PASS | Marcadores pendientes | ninguno |
 | PASS | Enlaces documentados en sources.md | 1 enlaces |
