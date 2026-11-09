@@ -2,8 +2,8 @@
  "series": "miercoles",
  "kicker": "Oportunidad · Máster en Suiza",
  "cover": {
-  "title": "Beca para un máster en ETH Zurich",
-  "highlight": "ETH Zurich",
+  "title": "Beca para un máster en una universidad suiza",
+  "highlight": "universidad suiza",
   "subtitle": "Plazo: 30 de noviembre de 2026, hasta las 23:59 (hora de Suiza)."
  },
  "slides": [
@@ -13,15 +13,15 @@
    "items": [
     {
      "icon": "info",
-     "text": "ETH Zurich es una universidad técnica de Suiza. Da una beca a unos 60 estudiantes de máster."
+     "text": "La da la Escuela Politécnica Federal de Zúrich (ETH), en Suiza, a unos 60 estudiantes de máster."
     },
     {
      "icon": "star",
-     "text": "Paga 13 500 francos suizos por semestre (medio año) y no pagas matrícula. Dura todo el máster."
+     "text": "Paga 13 500 francos suizos por semestre (medio año) y no pagas matrícula, hasta acabar el máster."
     },
     {
      "icon": "globe",
-     "text": "La página oficial no pone límites de nacionalidad. Sí piden una carrera con notas entre el 10 % mejor."
+     "text": "La página oficial no pone límites de nacionalidad. Piden notas del grado entre el 10 % mejor (lo estimas tú)."
     }
    ]
   },
@@ -33,13 +33,13 @@
      "text": "Elige un máster de ETH Zurich y empieza su solicitud por internet."
     },
     {
-     "text": "Entre el 1 y el 30 de noviembre, marca que quieres la beca."
+     "text": "Pide la beca dentro de esa solicitud, entre el 1 y el 30 de noviembre."
     },
     {
-     "text": "Escribe un borrador de tu proyecto de tesis, de tu mano."
+     "text": "Escribe tú un borrador de tu proyecto final de máster (el trabajo largo con el que terminas)."
     },
     {
-     "text": "Si el máster no pide cartas, nombra a 2 profesores que escriban una."
+     "text": "Si el máster no pide cartas de recomendación, nombra a 2 profesores que las escriban."
     }
    ]
   },
@@ -49,11 +49,11 @@
    "items": [
     {
      "icon": "calendar",
-     "text": "Solo hay una ventana: del 1 al 30 de noviembre de 2026. Después no se puede pedir."
+     "text": "Esta es la fecha para empezar en otoño de 2027: del 1 al 30 de noviembre de 2026."
     },
     {
      "icon": "star",
-     "text": "No puedes pedirla si ya estudias un máster en ETH Zurich o ya tienes un máster."
+     "text": "No puedes pedirla si ya tienes un máster o ya estudias uno en ETH Zurich."
     }
    ]
   },
@@ -68,7 +68,7 @@
      "text": "Plazo: 30 de noviembre de 2026. Resultados a finales de marzo."
     },
     {
-     "text": "Esta semana: elige tu máster y escribe el borrador de tesis."
+     "text": "Esta semana: elige tu máster y escribe el borrador."
     }
    ],
    "cta": "Más información: ethz.ch"
