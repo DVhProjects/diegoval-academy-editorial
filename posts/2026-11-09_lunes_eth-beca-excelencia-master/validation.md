@@ -1,6 +1,6 @@
 # Validación — 2026-11-09_lunes_eth-beca-excelencia-master
 
-Ejecutado: 2026-11-09T07:14:02+01:00
+Ejecutado: 2026-11-09T07:14:16+01:00
 Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |
