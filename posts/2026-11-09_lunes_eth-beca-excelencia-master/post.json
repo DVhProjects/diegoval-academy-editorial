@@ -1,0 +1,32 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Suiza",
+ "issue": "N.º 013 · 9 de noviembre de 2026",
+ "headline": "Beca para un máster en ETH Zurich",
+ "dek": "ETH Zurich es una universidad técnica de Suiza. Da beca a unos 60 estudiantes de máster.",
+ "highlight": {
+  "label": "Plazo para solicitar",
+  "value": "30 nov 2026",
+  "note": "Hasta las 23:59, hora de Suiza"
+ },
+ "facts": [
+  {
+   "label": "Cuánto",
+   "value": "13 500 francos suizos por semestre"
+  },
+  {
+   "label": "Incluye",
+   "value": "Sin matrícula; dura todo el máster"
+  },
+  {
+   "label": "Quién",
+   "value": "Carrera entre el 10 % mejor"
+  }
+ ],
+ "tip": {
+  "label": "Lo que pocos explican",
+  "text": "Se pide junto con la solicitud al máster, y solo del 1 al 30 de noviembre. Prepara un borrador de tu proyecto de tesis."
+ },
+ "source": "ethz.ch",
+ "verified": "2026-11-09"
+}

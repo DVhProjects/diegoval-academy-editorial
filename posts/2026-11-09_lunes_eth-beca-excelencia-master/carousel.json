@@ -1,0 +1,79 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Suiza",
+ "cover": {
+  "title": "Beca para un máster en ETH Zurich",
+  "highlight": "ETH Zurich",
+  "subtitle": "Plazo: 30 de noviembre de 2026, hasta las 23:59 (hora de Suiza)."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es esta beca?",
+   "items": [
+    {
+     "icon": "info",
+     "text": "ETH Zurich es una universidad técnica de Suiza. Da una beca a unos 60 estudiantes de máster."
+    },
+    {
+     "icon": "star",
+     "text": "Paga 13 500 francos suizos por semestre (medio año) y no pagas matrícula. Dura todo el máster."
+    },
+    {
+     "icon": "globe",
+     "text": "La página oficial no pone límites de nacionalidad. Sí piden una carrera con notas entre el 10 % mejor."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo se pide?",
+   "items": [
+    {
+     "text": "Elige un máster de ETH Zurich y empieza su solicitud por internet."
+    },
+    {
+     "text": "Entre el 1 y el 30 de noviembre, marca que quieres la beca."
+    },
+    {
+     "text": "Escribe un borrador de tu proyecto de tesis, de tu mano."
+    },
+    {
+     "text": "Si el máster no pide cartas, nombra a 2 profesores que escriban una."
+    }
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {
+     "icon": "calendar",
+     "text": "Solo hay una ventana: del 1 al 30 de noviembre de 2026. Después no se puede pedir."
+    },
+    {
+     "icon": "star",
+     "text": "No puedes pedirla si ya estudias un máster en ETH Zurich o ya tienes un máster."
+    }
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {
+     "text": "Beca de ETH Zurich para empezar un máster en otoño de 2027."
+    },
+    {
+     "text": "Plazo: 30 de noviembre de 2026. Resultados a finales de marzo."
+    },
+    {
+     "text": "Esta semana: elige tu máster y escribe el borrador de tesis."
+    }
+   ],
+   "cta": "Más información: ethz.ch"
+  }
+ ],
+ "source": "ethz.ch",
+ "verified": "2026-11-09"
+}

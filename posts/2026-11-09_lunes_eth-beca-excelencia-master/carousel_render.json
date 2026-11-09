@@ -1,0 +1,14 @@
+{
+  "carousel_json_sha256": "e3ce2666c7dc9a65db399dece2859906b88ade5794a0203e964a0cb17f212bfc",
+  "size": [
+    1080,
+    1350
+  ],
+  "slides": {
+    "slide-1.png": "4affbeecaf814c7845ecadfaf815a6fd85055e58ad347648bd03b02afe737782",
+    "slide-2.png": "3d8e983957e59d1aa5f351df047dc7b08be67ad81a1045992940da7304c55e67",
+    "slide-3.png": "0e05f7b6f5b9455e96ae53136227088c335980ede0cd03b17e08048f361af19e",
+    "slide-4.png": "783ecfe445c331d72cd87ca00d4a133eeda937c9e97339f642f4d3b7d93b5c3d",
+    "slide-5.png": "0b773f3ef3c71026bc54235bcbbee416dcf719d0508fc636f5b8a267e92785a3"
+  }
+}

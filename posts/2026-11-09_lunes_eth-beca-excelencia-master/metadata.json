@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-09",
+  "weekday": "lunes",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Beca de Excelencia de ETH Zurich (ESOP) para máster, otoño 2027",
+  "topic_key": "eth-zurich-esop-2027",
+  "primary_url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html",
+  "deadline": "2026-11-30T23:59:00+01:00",
+  "verified_date": "2026-11-09",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "platforms": [
+    "linkedin",
+    "instagram"
+  ],
+  "call_status": "abierta",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo institucional y ediciones previas",
+      "evidencia": "Programa oficial de ETH Zurich con ediciones anuales documentadas (2021-2025) y unas 60 becas en 2027/28",
+      "url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html"
+    }
+  ],
+  "audience_fit": "Estudiantes con carrera terminada y notas muy buenas que buscan un máster en Suiza; la página oficial no menciona límites de nacionalidad.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca para un máster en ETH Zurich, universidad técnica de Suiza. Plazo: 30 de noviembre de 2026. Paga 13 500 francos suizos por semestre, sin matrícula. Pide una carrera entre el 10 % mejor. Lo que pocos explican: se pide dentro de la solicitud al máster, solo del 1 al 30 de noviembre. Fuente: ethz.ch, verificado el 2026-11-09.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "series": "miercoles",
+  "instagram": {
+    "format": "carrusel",
+    "format_reason": "Carrusel de 5 imágenes: formato por defecto, explica la beca paso a paso; no hay vídeo oficial verificado."
+  }
+}
