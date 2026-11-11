@@ -43,7 +43,7 @@
       "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
       "answer": "sí",
       "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-11, 2.ª ronda; carrusel y caption_instagram.md",
-      "checked_text_sha256": "fbf67dac0d7aa9b07709d129188beb8277f51f95e9c65da1f4e3fcf09eb0ba5c"
+      "checked_text_sha256": "d60d6d6526e72483dd9e8134f81b875be24781c4d25a3de17f4ed74ad82aff5a"
     }
   },
   "plain_language_check": {

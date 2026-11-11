@@ -1,6 +1,6 @@
 # Validación — 2026-11-11_miercoles_beca-suecia-profesionales
 
-Ejecutado: 2026-11-11T07:11:29+01:00
+Ejecutado: 2026-11-11T07:12:01+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
