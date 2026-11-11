@@ -1,0 +1,79 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Suecia",
+ "cover": {
+  "title": "Beca de Suecia para un máster",
+  "highlight": "Suecia",
+  "subtitle": "Primero pides el máster, hasta el 15 de enero de 2027. La beca, en febrero."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es esta beca?",
+   "items": [
+    {
+     "icon": "info",
+     "text": "Es una beca del Instituto Sueco, un organismo del gobierno de Suecia, para estudiar un máster allí."
+    },
+    {
+     "icon": "star",
+     "text": "Paga la matrícula y 12 000 coronas suecas al mes para vivir. No incluye el seguro."
+    },
+    {
+     "icon": "globe",
+     "text": "Pueden pedirla ciudadanos de 34 países, como Bolivia, Colombia, Ecuador, Guatemala, México y Perú."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo se pide?",
+   "items": [
+    {
+     "text": "El 13 de noviembre la web oficial publica la lista de másteres con beca. Elige uno."
+    },
+    {
+     "text": "Pide ese máster en universityadmissions.se hasta el 15 de enero de 2027."
+    },
+    {
+     "text": "Guarda tu número de solicitud, de 8 cifras. Lo necesitas para la beca."
+    },
+    {
+     "text": "Pide la beca del 8 al 24 de febrero de 2027, hasta las 14:59 (hora de Suecia)."
+    }
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {
+     "icon": "calendar",
+     "text": "Son dos solicitudes. Si no pides el máster a tiempo, no puedes pedir la beca."
+    },
+    {
+     "icon": "star",
+     "text": "Piden al menos 3 000 horas de trabajo antes de febrero de 2027. Empieza a reunir los comprobantes."
+    }
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {
+     "text": "Beca del gobierno sueco para un máster que empieza en otoño de 2027."
+    },
+    {
+     "text": "Primer plazo: 15 de enero de 2027. Resultados: 22 de abril de 2027."
+    },
+    {
+     "text": "Esta semana: mira si tu país está en la lista y revisa tus horas de trabajo."
+    }
+   ],
+   "cta": "Más información: si.se"
+  }
+ ],
+ "source": "si.se",
+ "verified": "2026-11-11"
+}

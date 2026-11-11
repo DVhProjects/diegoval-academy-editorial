@@ -1,0 +1,32 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Suecia",
+ "issue": "N.º 014 · 11 de noviembre de 2026",
+ "headline": "Beca de Suecia para un máster",
+ "dek": "Para profesionales de Colombia, México, Perú y otros países que quieren estudiar un máster en Suecia.",
+ "highlight": {
+  "label": "Primer plazo: pedir el máster",
+  "value": "15 ene 2027",
+  "note": "La beca se pide después: 8-24 de febrero"
+ },
+ "facts": [
+  {
+   "label": "Cubre",
+   "value": "Matrícula y 12 000 coronas suecas al mes"
+  },
+  {
+   "label": "Pide",
+   "value": "3 000 horas de trabajo y liderazgo"
+  },
+  {
+   "label": "No cubre",
+   "value": "Seguro ni la tasa de solicitud"
+  }
+ ],
+ "tip": {
+  "label": "Lo que pocos explican",
+  "text": "Son dos solicitudes: primero el máster y después la beca. Sin la primera, no hay beca."
+ },
+ "source": "si.se",
+ "verified": "2026-11-11"
+}

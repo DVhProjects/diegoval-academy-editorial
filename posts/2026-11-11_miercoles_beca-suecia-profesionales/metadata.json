@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-11",
+  "weekday": "miercoles",
+  "type": "oportunidad",
+  "category": "beca_master_gobierno",
+  "topic": "Beca del Instituto Sueco para profesionales globales (SI Scholarship for Global Professionals) 2027-2028, máster en Suecia",
+  "topic_key": "si-scholarship-global-professionals-2027",
+  "primary_url": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/",
+  "deadline": "2027-01-15T23:59:00+01:00",
+  "verified_date": "2026-11-11",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "platforms": [
+    "linkedin",
+    "instagram"
+  ],
+  "call_status": "proxima_confirmada",
+  "opens_on": "2027-02-08",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo gubernamental y ediciones anuales",
+      "evidencia": "Programa del Instituto Sueco (gobierno de Suecia), convocatoria anual, 34 países, estadísticas por país de 2026 publicadas",
+      "url": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/"
+    },
+    {
+      "criterio": "portal oficial de estudio",
+      "evidencia": "universityadmissions.se (portal oficial de admisión) menciona las becas del Instituto Sueco para estudiantes internacionales",
+      "url": "https://www.universityadmissions.se/en/"
+    }
+  ],
+  "audience_fit": "Profesionales de Bolivia, Colombia, Ecuador, Guatemala, México y Perú (y Brasil) con 3 000 horas de trabajo y experiencia de liderazgo que quieren un máster en Suecia.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca del gobierno de Suecia para un máster, para profesionales de 34 países, entre ellos Colombia, México y Perú. Primer plazo: pedir el máster hasta el 15 de enero de 2027; la beca se pide del 8 al 24 de febrero. Paga la matrícula y 12 000 coronas suecas al mes. Pide 3 000 horas de trabajo y liderazgo. No cubre el seguro ni la tasa de solicitud. Lo que pocos explican: son dos solicitudes; sin la primera no hay beca. Fuente: si.se, verificado el 2026-11-11.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "series": "miercoles",
+  "instagram": {
+    "format": "carrusel",
+    "format_reason": "Carrusel de 5 imágenes: explica los dos pasos de la solicitud; no hay vídeo oficial verificado."
+  }
+}
