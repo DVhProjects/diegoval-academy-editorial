@@ -34,7 +34,7 @@
   },
   "style_version": 3,
   "format": "image",
-  "status": "draft",
+  "status": "scheduled",
   "series": "miercoles",
   "instagram": {
     "format": "carrusel",
@@ -44,12 +44,14 @@
       "answer": "sí",
       "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-11, 2.ª ronda; carrusel y caption_instagram.md",
       "checked_text_sha256": "d60d6d6526e72483dd9e8134f81b875be24781c4d25a3de17f4ed74ad82aff5a"
-    }
+    },
+    "buffer_post_id": "6af4074ea9d779009b8a4a3c"
   },
   "plain_language_check": {
     "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
     "answer": "sí",
     "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-11, 2.ª ronda; correcciones aplicadas",
     "checked_text_sha256": "de202906938863c5c423e1ceedb33f7d10809911fb7e8be9ef2a1d17dfc73092"
-  }
+  },
+  "buffer_post_id": "6af40741095081ea08bbf648"
 }
