@@ -38,6 +38,18 @@
   "series": "miercoles",
   "instagram": {
     "format": "carrusel",
-    "format_reason": "Carrusel de 5 imágenes: explica los dos pasos de la solicitud; no hay vídeo oficial verificado."
+    "format_reason": "Carrusel de 5 imágenes: explica los dos pasos de la solicitud; no hay vídeo oficial verificado.",
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-11, 2.ª ronda; carrusel y caption_instagram.md",
+      "checked_text_sha256": "fbf67dac0d7aa9b07709d129188beb8277f51f95e9c65da1f4e3fcf09eb0ba5c"
+    }
+  },
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-11, 2.ª ronda; correcciones aplicadas",
+    "checked_text_sha256": "de202906938863c5c423e1ceedb33f7d10809911fb7e8be9ef2a1d17dfc73092"
   }
 }

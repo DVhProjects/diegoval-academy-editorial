@@ -2,7 +2,7 @@
 
 En corto:
 • Qué da: matrícula pagada, 12 000 coronas suecas al mes. No cubre el seguro médico ni la tasa de solicitud (lo que cobra la universidad por tramitar).
-• Quién: ciudadanos de 34 países, como Bolivia, Brasil, Colombia, Ecuador, Guatemala, México y Perú. Piden 3 000 horas de trabajo y haber dirigido personas o proyectos. No pueden pedirla quienes llevan 2 años o más en Suecia.
+• Quién: ciudadanos de 34 países. Si eres de Bolivia, Brasil, Colombia, Ecuador, Guatemala, México o Perú, piden 3 000 horas de trabajo y haber dirigido personas o proyectos. No pueden pedirla quienes llevan 2 años o más en Suecia.
 • Plazos: primero el máster, en universityadmissions.se (portal oficial de Suecia), hasta el 15 de enero de 2027. La beca abre el 8 de febrero: del 8 al 24, hasta las 14:59 (hora de Suecia).
 
 Por qué es conocida: es el programa oficial de Suecia para másteres y se repite cada año.

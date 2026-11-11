@@ -6,7 +6,7 @@ El Instituto Sueco, del gobierno de Suecia, da una beca para estudiar un máster
 ✅ Primero pides el máster: hasta el 15 de enero de 2027
 ✅ La beca abre el 8 de febrero (se pide del 8 al 24)
 
-Esta semana: mira si tu país está en la lista y cuenta tus horas de trabajo (piden 3 000). Web oficial, en inglés: si.se
+Esta semana: mira si tu país está en la lista de la web oficial y cuenta tus horas de trabajo (piden 3 000). Web oficial, en inglés: si.se
 
 Verificado el: 2026-11-11
 
