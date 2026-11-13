@@ -16,7 +16,7 @@
  "format": "image",
  "series": "viernes",
  "style_version": 3,
- "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Doctorado en Suecia: suele ser un empleo. Dos universidades suecas contratan a sus doctorandos: hay sueldo y no hay matrícula. Idea clave: doctorando = estudiante y empleado; se pide una plaza, como un empleo. Algunos doctorados son con beca, no contrato: mira cuál es y qué cubre. Fuente: lunduniversity.lu.se, verificado el 2026-11-13.",
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Doctorado en Suecia: suele ser un empleo. Quien hace un doctorado en dos universidades suecas es también empleado y suele cobrar sueldo. Idea clave: el doctorando también trabaja. No pagas matrícula. Algunos doctorados son con beca, no con contrato: pregunta si incluye sueldo, seguro y vacaciones. Fuente: lunduniversity.lu.se, verificado el 2026-11-13.",
  "models_used": {
   "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
  },
