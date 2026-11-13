@@ -1,0 +1,32 @@
+{
+ "series": "viernes",
+ "kicker": "Research & Career · Carrera de doctorado",
+ "cover": {
+  "title": "En Suecia, un doctorado suele ser un trabajo",
+  "highlight": "un trabajo",
+  "subtitle": "Dos universidades suecas explican que sus doctorandos son empleados y reciben sueldo."
+ },
+ "slides": [
+  {"type": "points", "title": "¿Qué significa?", "items": [
+   {"icon": "info", "text": "Un doctorado es el estudio más alto: se dedica años a investigar un tema y se escribe una tesis."},
+   {"icon": "star", "text": "La Universidad de Lund dice: «eres a la vez empleado y estudiante», con sueldo y beneficios."},
+   {"icon": "check", "text": "La Universidad de Estocolmo dice que no hay matrícula para el doctorado en Suecia."}
+  ]},
+  {"type": "steps", "title": "¿Cómo se pide?", "items": [
+   {"text": "Busca plazas de doctorado en las webs de las universidades: salen junto a otros empleos."},
+   {"text": "Pide una plaza concreta, con su tema y su plazo. En Lund se hace en un sistema de empleo llamado Varbi."},
+   {"text": "En Estocolmo suele haber plazas en otoño y en primavera."}
+  ]},
+  {"type": "tip", "title": "Un consejo importante", "items": [
+   {"icon": "star", "text": "Algunos doctorados se pagan con una beca (scholarship), no con un contrato. Lund lo usa en especial con otros países."},
+   {"icon": "info", "text": "En cada oferta, busca si habla de «employment» (contrato) o de «scholarship» (beca), y pregunta qué cubre."}
+  ]},
+  {"type": "summary", "title": "En resumen", "items": [
+   {"text": "En Suecia, el doctorado suele ser un empleo con sueldo y sin matrícula."},
+   {"text": "Cada universidad decide sus plazas: lee bien cada oferta."},
+   {"text": "Esta semana: abre la web de una universidad sueca y busca sus plazas de doctorado."}
+  ], "cta": "Más información: lunduniversity.lu.se"}
+ ],
+ "source": "lunduniversity.lu.se",
+ "verified": "2026-11-13"
+}

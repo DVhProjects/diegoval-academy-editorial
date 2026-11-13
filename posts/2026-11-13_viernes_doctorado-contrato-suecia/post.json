@@ -1,0 +1,23 @@
+{
+ "series": "viernes",
+ "kicker": "Research & Career · Carrera de doctorado",
+ "issue": "N.º 014 · 13 de noviembre de 2026",
+ "headline": "Doctorado en Suecia: suele ser un empleo",
+ "dek": "Dos universidades suecas contratan a sus doctorandos: hay sueldo y no hay matrícula.",
+ "highlight": {
+  "label": "La idea clave",
+  "value": "Doctorando = estudiante y empleado",
+  "note": "Se pide una plaza, como un empleo"
+ },
+ "facts": [
+  {"label": "Sueldo", "value": "Sueldo y beneficios de empleado"},
+  {"label": "Matrícula", "value": "No se paga en estudios de doctorado"},
+  {"label": "Cómo", "value": "Se pide cada plaza publicada"}
+ ],
+ "tip": {
+  "label": "Lo que pocos explican",
+  "text": "Algunos doctorados son con beca, no contrato. Mira cuál es y qué cubre."
+ },
+ "source": "lunduniversity.lu.se",
+ "verified": "2026-11-13"
+}

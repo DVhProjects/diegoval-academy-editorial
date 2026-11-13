@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-13",
+ "weekday": "viernes",
+ "type": "research_career",
+ "category": "carrera_phd",
+ "topic": "En Suecia el doctorado suele ser un empleo con sueldo y sin matrícula (Lund y Estocolmo)",
+ "topic_key": "doctorado-empleo-suecia",
+ "primary_url": "https://www.lunduniversity.lu.se/about-university/work-us/careers-lund-university/employment-doctoral-student",
+ "deadline": null,
+ "verified_date": "2026-11-13",
+ "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+ "platforms": [
+  "linkedin",
+  "instagram"
+ ],
+ "format": "image",
+ "series": "viernes",
+ "style_version": 3,
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Doctorado en Suecia: suele ser un empleo. Dos universidades suecas contratan a sus doctorandos: hay sueldo y no hay matrícula. Idea clave: doctorando = estudiante y empleado; se pide una plaza, como un empleo. Algunos doctorados son con beca, no contrato: mira cuál es y qué cubre. Fuente: lunduniversity.lu.se, verificado el 2026-11-13.",
+ "models_used": {
+  "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+ },
+ "status": "draft",
+ "instagram": {
+  "format": "carrusel",
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto, explica el tema paso a paso; no hay vídeo oficial verificado."
+ },
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a"
+}
