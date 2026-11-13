@@ -20,7 +20,7 @@
  "models_used": {
   "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
  },
- "status": "draft",
+ "status": "scheduled",
  "instagram": {
   "format": "carrusel",
   "format_reason": "Carrusel de 5 imágenes: formato por defecto, explica el tema paso a paso; no hay vídeo oficial verificado.",
@@ -29,7 +29,8 @@
    "answer": "sí",
    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-13, 2.ª revisión",
    "checked_text_sha256": "9bff0f95c7a1feea4319d725567a6cbf1b02526a2eb2f6d2971bc4e99d29c9f4"
-  }
+  },
+  "buffer_post_id": "6af6aa08da25c4db3e9b8e40"
  },
  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
  "plain_language_check": {
@@ -37,5 +38,6 @@
   "answer": "sí",
   "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-13, 2.ª revisión",
   "checked_text_sha256": "394980d826d04d915f2bb5cc667058819137946d43f078cab8511833f714b573"
- }
+ },
+ "buffer_post_id": "6af6a9fde1d8eff610a4af5e"
 }
