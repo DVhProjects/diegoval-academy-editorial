@@ -1,7 +1,7 @@
 # Validación — 2026-11-13_viernes_doctorado-contrato-suecia
 
-Ejecutado: 2026-11-13T07:10:06+01:00
-Decisión: **BLOQUEADA: no publicar**
+Ejecutado: 2026-11-13T07:10:54+01:00
+Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
 |---|---|---|
@@ -22,7 +22,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Lenguaje sencillo: siglas (imagen) | todas explicadas o ninguna |
 | PASS | Lenguaje sencillo: palabras difíciles (imagen) | sin burocracia ni calcos detectados |
 | PASS | Lenguaje sencillo: frases largas | todas ≤ 32 palabras |
-| FAIL | Lenguaje sencillo: revisión del verificador | falta metadata.plain_language_check con la pregunta exacta, answer 'sí', reviewer y checked_text_sha256 (python3 scripts/validate_post.py <carpeta> --plain-hash) |
+| PASS | Lenguaje sencillo: revisión del verificador | respuesta 'sí' de verificador-convocatorias (subagente Sonnet), 2026-11-13, 2.ª revisión |
 | PASS | Duplicados | sin repeticiones en 22 filas de todas las plataformas (URL canónica, topic_key y vídeo; mismo día en otra red permitido) |
 | PASS | Enlace accesible | 200 https://su.se/english/education/top-reasons-to-choose-su/our-courses-and-programmes/phd-studies-at-stockholm-university-1.690164 |
 | PASS | Enlace accesible | 200 https://www.lunduniversity.lu.se/about-university/work-us/careers-lund-university/employment-doctoral-student |
