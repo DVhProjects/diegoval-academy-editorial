@@ -10,9 +10,18 @@
   "note": "Confirma que es auténtico en otro país"
  },
  "facts": [
-  {"label": "Quién", "value": "La autoridad que designa tu país"},
-  {"label": "Dónde mirar", "value": "Lista oficial de 130 países"},
-  {"label": "Antes", "value": "Pregunta a la universidad"}
+  {
+   "label": "Quién",
+   "value": "La oficina oficial de tu país"
+  },
+  {
+   "label": "Dónde mirar",
+   "value": "Lista oficial de 130 países"
+  },
+  {
+   "label": "Antes",
+   "value": "Pregunta a la universidad"
+  }
  ],
  "tip": {
   "label": "Lo que pocos explican",
