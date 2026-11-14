@@ -1,7 +1,7 @@
 ¿Te piden un documento «apostillado» y no sabes qué es? Es un sello oficial que confirma que un documento de tu país es auténtico en otro país.
 
 En corto:
-• Qué es: sustituye al trámite largo de «legalizar» (confirmar que un documento es auténtico), que el convenio de la Apostilla (un acuerdo entre países) describe como largo y costoso.
+• Qué es: sustituye al trámite largo de «legalizar» (confirmar que un documento es auténtico), que según el convenio de la Apostilla (un acuerdo entre países) suele ser largo y costoso.
 • Quién la pone: la oficina que tu país designa.
 • Dónde sirve: entre los 130 países del convenio; tu país y el de destino deben estar en la lista (México, Colombia, Perú, Argentina, Chile, España o Ecuador lo están).
 
