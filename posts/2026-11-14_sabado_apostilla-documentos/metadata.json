@@ -1,0 +1,24 @@
+{
+ "date": "2026-11-14",
+ "weekday": "sabado",
+ "type": "educativo",
+ "category": "entender_requisitos",
+ "topic": "Qué es una apostilla y cuándo te piden tus documentos apostillados para estudiar en Europa",
+ "topic_key": "apostilla-documentos-legalizar",
+ "primary_url": "https://www.hcch.net/en/instruments/conventions/specialised-sections/apostille",
+ "deadline": null,
+ "verified_date": "2026-11-14",
+ "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+ "platforms": ["linkedin", "instagram"],
+ "format": "image",
+ "series": "sabado",
+ "style_version": 3,
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Apostilla: el sello que valida tus documentos. Es un sello oficial que confirma que un documento de tu país es auténtico en otro país. La pone la autoridad que designa tu país; hay una lista oficial de 130 países. Algunas universidades la piden para tu título. Lo que pocos explican: no todas la piden, pregunta antes de pagar. Fuente: hcch.net, verificado el 2026-11-14.",
+ "models_used": {"investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"},
+ "status": "draft",
+ "instagram": {
+  "format": "carrusel",
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica paso a paso; no hay vídeo oficial verificado."
+ }
+}

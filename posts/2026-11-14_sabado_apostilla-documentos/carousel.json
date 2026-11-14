@@ -1,0 +1,76 @@
+{
+ "series": "sabado",
+ "kicker": "Guía práctica · Entender requisitos",
+ "cover": {
+  "title": "Apostilla: el sello que valida tus documentos",
+  "highlight": "el sello",
+  "subtitle": "Algunas universidades la piden para tu título. Pídela solo si te la piden."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es una apostilla?",
+   "items": [
+    {
+     "icon": "info",
+     "text": "Es un sello oficial que confirma que un documento de tu país es auténtico."
+    },
+    {
+     "icon": "star",
+     "text": "Sustituye al trámite largo de legalizar (confirmar que un documento es auténtico)."
+    },
+    {
+     "icon": "calendar",
+     "text": "Lo usan 130 países, entre ellos México, Colombia, Perú, Argentina, Chile y España."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo saber si la necesitas?",
+   "items": [
+    {
+     "text": "Mira si tu país está en la lista oficial de países."
+    },
+    {
+     "text": "Busca qué autoridad de tu país pone la apostilla."
+    },
+    {
+     "text": "Pregunta a la universidad si la pide y para qué documentos."
+    }
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {
+     "icon": "star",
+     "text": "No todas la piden. Amberes (Bélgica) sí, para títulos de fuera del Espacio Económico Europeo."
+    },
+    {
+     "icon": "info",
+     "text": "Pregunta antes de pagar: cada universidad decide."
+    }
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {
+     "text": "La apostilla es un sello oficial que valida un documento en otro país."
+    },
+    {
+     "text": "La pone la autoridad que designa tu país."
+    },
+    {
+     "text": "Esta semana: mira si tu país está en la lista oficial."
+    }
+   ],
+   "cta": "Más información: hcch.net"
+  }
+ ],
+ "source": "hcch.net",
+ "verified": "2026-11-14"
+}
