@@ -17,11 +17,11 @@
  "format": "image",
  "series": "sabado",
  "style_version": 3,
- "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Apostilla: el sello que valida tus documentos. Es un sello oficial que confirma que un documento de tu país es auténtico en otro país. La pone la autoridad que designa tu país; hay una lista oficial de 130 países. Algunas universidades la piden para tu título. Lo que pocos explican: no todas la piden, pregunta antes de pagar. Fuente: hcch.net, verificado el 2026-11-14.",
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Apostilla: el sello que valida tus documentos. Es un sello oficial que confirma que un documento de tu país es auténtico en otro país. La pone una oficina oficial de tu país; hay una lista oficial de 130 países. Algunas universidades la piden para tu título. Lo que pocos explican: no todas la piden, pregunta antes de pagar. Fuente: hcch.net, verificado el 2026-11-14.",
  "models_used": {
   "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
  },
- "status": "draft",
+ "status": "scheduled",
  "instagram": {
   "format": "carrusel",
   "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica paso a paso; no hay vídeo oficial verificado.",
@@ -30,12 +30,14 @@
    "answer": "sí",
    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-14; segunda revisión tras reescribir (oficina de tu país, convenio y Amberes explicados)",
    "checked_text_sha256": "876955b87ad2276eb4b0f0af8b6248b09c799be0a6e0ad55df47e319d35cbfbd"
-  }
+  },
+  "buffer_post_id": "6af7fb38d16af15d4df702f2"
  },
  "plain_language_check": {
   "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
   "answer": "sí",
   "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-14; segunda revisión tras reescribir (oficina de tu país, convenio y Amberes explicados)",
   "checked_text_sha256": "01fd697751c2279ce3de2e2605cbf03b93f0dd0a113918a209679acdbda87d7d"
- }
+ },
+ "buffer_post_id": "6af7fb30bb36d00909ef7efe"
 }

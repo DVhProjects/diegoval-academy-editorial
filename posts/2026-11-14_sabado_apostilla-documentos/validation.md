@@ -1,6 +1,6 @@
 # Validación — 2026-11-14_sabado_apostilla-documentos
 
-Ejecutado: 2026-11-14T07:09:29+01:00
+Ejecutado: 2026-11-14T07:09:43+01:00
 Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
