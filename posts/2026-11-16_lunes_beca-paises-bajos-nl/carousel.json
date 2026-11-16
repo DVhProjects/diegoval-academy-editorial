@@ -1,0 +1,50 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Países Bajos",
+ "cover": {
+  "title": "Beca para un máster en Países Bajos",
+  "highlight": "Países Bajos",
+  "subtitle": "5 000 euros para quien no tiene pasaporte europeo. Los plazos empiezan el 31 de enero de 2027."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es esta beca?",
+   "items": [
+    {"icon": "info", "text": "Se llama NL Scholarship. Es una ayuda para estudiar un máster en una universidad de Países Bajos."},
+    {"icon": "star", "text": "Da 5 000 euros, una sola vez, en el primer año. No paga toda la matrícula ni la vida diaria."},
+    {"icon": "globe", "text": "La pueden pedir quienes no tienen pasaporte de la Unión Europea, Noruega, Islandia ni Liechtenstein."}
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo se pide?",
+   "items": [
+    {"text": "Entra en la web oficial (en inglés) y elige una universidad de la lista."},
+    {"text": "Mira qué másteres participan y pide plaza en ese máster."},
+    {"text": "Pide la beca en la misma universidad. Radboud: hasta el 31 de enero de 2027."},
+    {"text": "Groningen: hasta el 1 de febrero de 2027, a las 23:59 (hora de Países Bajos)."}
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {"icon": "calendar", "text": "Cada universidad pone su fecha. Mira la de la tuya antes de empezar."},
+    {"icon": "star", "text": "No hay una solicitud única, y no todos los másteres participan. Compruébalo en cada uno."}
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {"text": "Beca de 5 000 euros para un máster en Países Bajos, curso 2027-2028."},
+    {"text": "Primeros plazos: 31 de enero y 1 de febrero de 2027, según la universidad."},
+    {"text": "Esta semana: elige tu universidad en la web oficial y apunta su plazo."}
+   ],
+   "cta": "Más información: studyinnl.org"
+  }
+ ],
+ "source": "studyinnl.org",
+ "verified": "2026-11-16"
+}

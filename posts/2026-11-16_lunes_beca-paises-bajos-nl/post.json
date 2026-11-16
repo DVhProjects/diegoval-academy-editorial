@@ -1,0 +1,32 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Países Bajos",
+ "issue": "N.º 016 · 16 de noviembre de 2026",
+ "headline": "Beca de 5 000 euros para un máster en Países Bajos",
+ "dek": "Para quien no tiene pasaporte de la Unión Europea y quiere hacer un máster en una universidad neerlandesa.",
+ "highlight": {
+  "label": "Plazos desde",
+  "value": "31 ene 2027",
+  "note": "Cada universidad pone su fecha"
+ },
+ "facts": [
+  {
+   "label": "Cubre",
+   "value": "5 000 euros, una sola vez"
+  },
+  {
+   "label": "Pide",
+   "value": "No tener pasaporte europeo"
+  },
+  {
+   "label": "No cubre",
+   "value": "Matrícula completa ni gastos diarios"
+  }
+ ],
+ "tip": {
+  "label": "Lo que pocos explican",
+  "text": "No hay una solicitud única: la pides en la universidad elegida, y no todos los másteres participan."
+ },
+ "source": "studyinnl.org",
+ "verified": "2026-11-16"
+}
