@@ -32,6 +32,18 @@
   "series": "miercoles",
   "instagram": {
     "format": "carrusel",
-    "format_reason": "Carrusel de 5 imágenes: explica los pasos por universidad; no hay vídeo oficial verificado."
+    "format_reason": "Carrusel de 5 imágenes: explica los pasos por universidad; no hay vídeo oficial verificado.",
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-16, 2.ª ronda; carrusel y caption_instagram.md",
+      "checked_text_sha256": "5af3b52817b9af71bfbabde5ce769088561d20fd456ae2cd39299d54ecd14dd3"
+    }
+  },
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-16, 2.ª ronda",
+    "checked_text_sha256": "140f95b599680e0feeb8eccc0e58aa328747c7e38e0b0b7d83a62ec0f062f5e8"
   }
 }

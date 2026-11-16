@@ -22,7 +22,7 @@ Nota: el texto publicado usa solo Groningen (año explícito). Radboud (31 ene =
 Beca listada en la web oficial de estudio en Países Bajos (studyinnl.org) con 33 instituciones participantes en 2027-2028 (misma URL principal). No se citan cifras de búsquedas.
 
 ## Estado y margen
-ABIERTA para 2027-2028. Primer plazo citado: 31 ene 2027 (76 días de margen).
+ABIERTA para 2027-2028. Plazo citado: 1 feb 2027 (Groningen, 23:59 CET; 77 días de margen).
 
 ## Alternativas descartadas
 - Stipendium Hungaricum (stipendiumhungaricum.hu/apply): la página muestra el ciclo 2026/27 (plazo 15 ene 2026); no hay convocatoria 2027/28 verificable.
