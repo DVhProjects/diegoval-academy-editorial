@@ -16,6 +16,8 @@ Lista con enlaces: https://www.studyinnl.org/scholarships/highlighted-scholarshi
 - Radboud https://www.ru.nl/en/education/scholarships/nl-scholarship — "31 January 2027 23:59 CET" (solicitud enviada) y "14 February 2027 23:59 CET" (completa). Aviso: la página mezcla datos de 2026-27; no se usa ningún otro dato de Radboud.
 - Utrecht https://www.uu.nl/en/masters/general-information/application-and-admission/scholarships-and-grants/nl-scholarship — "before 1 February 23:59 CET" (sin año junto a la fecha; ligado a inicio 1 sept 2027). Importe 5 000, 10 000 o 15 000 euros. NO usada en el texto por la falta de año explícito.
 
+Nota: el texto publicado usa solo Groningen (año explícito). Radboud (31 ene = solicitud inicial, 14 feb = completa; exige además el Radboud Scholarship Programme y excluye Erasmus Mundus y titulaciones conjuntas) y Utrecht quedan fuera por datos incoherentes o sin año.
+
 ## Popularidad (criterio 1)
 Beca listada en la web oficial de estudio en Países Bajos (studyinnl.org) con 33 instituciones participantes en 2027-2028 (misma URL principal). No se citan cifras de búsquedas.
 

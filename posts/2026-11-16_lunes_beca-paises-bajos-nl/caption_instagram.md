@@ -1,10 +1,10 @@
 ¿Quieres un máster en Países Bajos con ayuda? 🇳🇱
 
-Hay una beca llamada NL Scholarship, abierta para el curso 2027-2028.
+Hay una beca llamada NL (Países Bajos) Scholarship, abierta para el curso 2027-2028.
 
-✅ Da 5 000 euros, una sola vez (no paga toda la matrícula)
+✅ Da 5 000 euros, una sola vez (no paga toda la matrícula, lo que pagas por estudiar)
 ✅ Para quien no tiene pasaporte de la Unión Europea
-✅ Plazos desde el 31 de enero de 2027, según la universidad
+✅ Ejemplo de plazo: 1 de febrero de 2027, Universidad de Groningen
 
 Esta semana: elige tu universidad en la web oficial y apunta su plazo. Web oficial, en inglés: studyinnl.org
 

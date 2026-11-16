@@ -6,7 +6,7 @@
   "topic": "NL Scholarship (beca de 5 000 euros) para un máster en Países Bajos, curso 2027-2028",
   "topic_key": "nl-scholarship-2027-2028",
   "primary_url": "https://www.studyinnl.org/finances/nl-scholarship",
-  "deadline": "2027-01-31T23:59:00+01:00",
+  "deadline": "2027-02-01T23:59:00+01:00",
   "verified_date": "2026-11-16",
   "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
   "platforms": [
@@ -22,7 +22,7 @@
     }
   ],
   "audience_fit": "Estudiantes hispanohablantes de fuera de la Unión Europea (América Latina) que quieren un máster en Países Bajos.",
-  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca NL Scholarship de 5 000 euros para un máster en Países Bajos, para quien no tiene pasaporte europeo. Plazos desde el 31 de enero de 2027; cada universidad pone su fecha. No paga toda la matrícula. Lo que pocos explican: no hay solicitud única; se pide en la universidad elegida y no todos los másteres participan. Fuente: studyinnl.org, verificado el 2026-11-16.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Beca NL Scholarship de 5 000 euros para un máster en Países Bajos, para quien no tiene pasaporte de la Unión Europea. Ejemplo de plazo: 1 de febrero de 2027 en la Universidad de Groningen; cada universidad pone el suyo. No cubre la matrícula completa. Lo que pocos explican: no hay solicitud única; se pide en la universidad elegida y algunos másteres no participan. Fuente: studyinnl.org, verificado el 2026-11-16.",
   "models_used": {
     "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
   },
