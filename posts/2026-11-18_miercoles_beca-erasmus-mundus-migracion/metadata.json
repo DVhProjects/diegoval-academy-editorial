@@ -27,13 +27,13 @@
     }
   ],
   "audience_fit": "Personas de cualquier país con título de carrera en un área relacionada e inglés; la web oficial no fija límite de nacionalidad.",
-  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de dos años en migración y relaciones entre culturas, con beca de 1 400 euros al mes durante 24 meses. Plazo para la beca: 20 de diciembre de 2026, hasta las 23:59 (hora de Europa central). Piden título de carrera e inglés. No cubre viaje, visado ni vacunas. Lo que pocos explican: la beca tiene pocas plazas; pagando tú, puedes pedirlo hasta julio de 2027. Fuente: emmir.org, verificado el 2026-11-18.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de dos años en migración y relaciones entre culturas, con beca de 1 400 euros al mes durante 24 meses. Plazo para la beca: 20 de diciembre de 2026, hasta las 23:59 (hora de Europa central). Piden carrera terminada antes del 20 de diciembre de 2026 e inglés. No cubre viaje, visado ni vacunas. Lo que pocos explican: hay pocas becas; si pagas tú, puedes pedir plaza hasta julio de 2027 como máximo. Fuente: emmir.org, verificado el 2026-11-18.",
   "models_used": {
     "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
   },
   "style_version": 3,
   "format": "image",
-  "status": "draft",
+  "status": "scheduled",
   "series": "miercoles",
   "instagram": {
     "format": "carrusel",
@@ -43,12 +43,14 @@
       "answer": "sí",
       "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-18, 3.ª ronda; carrusel y caption_instagram.md",
       "checked_text_sha256": "eaa7df4a2e0516205009f8afc8e3a5959bcd9b5306b382b3c22b8a884ef70c0b"
-    }
+    },
+    "buffer_post_id": "6afd4204b116b81c9933afe4"
   },
   "plain_language_check": {
     "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
     "answer": "sí",
     "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-18, 3.ª ronda",
     "checked_text_sha256": "ed3c2dbbe620fe41f1c2f2562bcecf11a8389750f37721857ad70c9426f9177c"
-  }
+  },
+  "buffer_post_id": "6afd41fa6032c1a98f197075"
 }
