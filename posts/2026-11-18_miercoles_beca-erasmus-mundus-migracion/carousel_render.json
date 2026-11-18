@@ -1,5 +1,5 @@
 {
-  "carousel_json_sha256": "a7ba27e73c2d5c550dd8c25eac600b56f3f11862288ab464eb3685eded4c86c5",
+  "carousel_json_sha256": "7bc49ffecfd4e0c4317e77942437948b00703ddc29237bf7cce6fb105f03123e",
   "size": [
     1080,
     1350
@@ -7,8 +7,8 @@
   "slides": {
     "slide-1.png": "6ec84db3349c7db818a9a0ad37c5896ea9dfd541f4c7ffd102d182baa49182ac",
     "slide-2.png": "1cb2e2b06751f718856775a0462e894bd49d1fe633c33551a5498d32509aa48d",
-    "slide-3.png": "53fddcb74d9ce721d433f2b9a460034767fb60e7930fc569f749efa5b302457f",
-    "slide-4.png": "b158a3953b85f0ccefe08ec1451e5e1eb82d473c87e3b908d10e539d146e4f7f",
-    "slide-5.png": "5433ea0bb754c9ef6f8fbd3d4d7a2be91ebf2ab324a796383988fba03d9c17eb"
+    "slide-3.png": "44b3ddbe4d37c1919dfd42fcdd29849509dae2331b0eff28d85302ddafb003cc",
+    "slide-4.png": "45302af9523539a28e0fcae849a3470eb2bfb43cc1ad2bfe0ea5f1b10cac68bd",
+    "slide-5.png": "dbb3e865424c5273e484f0921d26c549b462cb90307b05ac1cba3e71dc88246d"
   }
 }

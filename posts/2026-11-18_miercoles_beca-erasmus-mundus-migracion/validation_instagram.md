@@ -1,6 +1,6 @@
 # Validación Instagram — 2026-11-18_miercoles_beca-erasmus-mundus-migracion
 
-Ejecutado: 2026-11-18T07:10:44+01:00
+Ejecutado: 2026-11-18T07:11:42+01:00
 Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |
@@ -11,7 +11,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Imágenes actualizadas | generadas desde el carousel.json actual |
 | PASS | Imágenes sin URL completa | sólo dominios |
 | PASS | Fecha de verificación | 2026-11-18 |
-| PASS | Caption breve | 450 caracteres (máx. 1000) |
+| PASS | Caption breve | 579 caracteres (máx. 1000) |
 | PASS | Hashtags | 4 (rango 3-8) |
 | PASS | Verificado el | 2026-11-18 |
 | PASS | Lenguaje sencillo: siglas (texto) | todas explicadas o ninguna |
