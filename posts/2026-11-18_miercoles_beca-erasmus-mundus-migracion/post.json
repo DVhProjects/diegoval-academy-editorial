@@ -16,7 +16,7 @@
   },
   {
    "label": "Pide",
-   "value": "Título de carrera e inglés"
+   "value": "Carrera terminada antes del plazo e inglés"
   },
   {
    "label": "No cubre",
@@ -25,7 +25,7 @@
  ],
  "tip": {
   "label": "Lo que pocos explican",
-  "text": "La beca tiene pocas plazas y plazo en diciembre. Pagando tú, puedes pedirlo hasta julio de 2027."
+  "text": "Hay pocas becas. Si pagas tú, puedes pedir plaza hasta julio de 2027 como máximo, pero sin beca."
  },
  "source": "emmir.org",
  "verified": "2026-11-18"

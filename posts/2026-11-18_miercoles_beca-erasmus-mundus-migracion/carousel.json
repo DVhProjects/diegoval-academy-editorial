@@ -30,16 +30,16 @@
    "title": "¿Cómo se pide?",
    "items": [
     {
-     "text": "Entra en la web oficial (en inglés) y lee los requisitos: título de carrera en un área parecida e inglés."
+     "text": "Entra en la web oficial (en inglés). Piden carrera terminada antes del 20 de diciembre e inglés."
     },
     {
-     "text": "Prepara tu CV, una carta de motivación, tus notas y una prueba de inglés."
+     "text": "Prepara tu currículum (CV), una carta de motivación, tus notas y una prueba de inglés."
     },
     {
      "text": "Algunos documentos pueden necesitar una traducción oficial. Empieza pronto."
     },
     {
-     "text": "Envía todo por internet antes del 20 de diciembre de 2026, a las 23:59 (hora de Europa central)."
+     "text": "Envía tu solicitud por internet antes del 20 de diciembre de 2026, a las 23:59 (hora de Europa central)."
     }
    ]
   },
@@ -49,11 +49,11 @@
    "items": [
     {
      "icon": "calendar",
-     "text": "La beca tiene muy pocas plazas. Si pagas tú (4 500 euros por semestre), puedes pedirlo hasta el 15 de julio de 2027."
+     "text": "Hay pocas becas. Pagando tú (4 500 euros por semestre), puedes pedir plaza hasta julio de 2027 como máximo."
     },
     {
      "icon": "euro",
-     "text": "La beca no cubre viaje, visado, vacunas ni permiso de residencia. Cuenta con ese gasto."
+     "text": "No cubre viaje, visado ni vacunas. Y no puede pedirla quien ya tuvo una beca Erasmus+ antes."
     }
    ]
   },
