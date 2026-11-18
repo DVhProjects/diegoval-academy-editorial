@@ -1,0 +1,79 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Europa",
+ "cover": {
+  "title": "Máster europeo en migración, con beca",
+  "highlight": "beca",
+  "subtitle": "Dos años en varios países. Plazo para la beca: 20 de diciembre de 2026."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es este máster?",
+   "items": [
+    {
+     "icon": "info",
+     "text": "Es un máster Erasmus Mundus (un programa de la Unión Europea donde estudias en varios países)."
+    },
+    {
+     "icon": "globe",
+     "text": "Dura 2 años. Estudias en Oldenburg (Alemania), en Stavanger (Noruega) y en otro país a elegir."
+    },
+    {
+     "icon": "euro",
+     "text": "La beca da 1 400 euros al mes durante 24 meses, más seguro médico y matrícula."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo se pide?",
+   "items": [
+    {
+     "text": "Entra en la web oficial (en inglés) y lee los requisitos: título de carrera en un área parecida e inglés."
+    },
+    {
+     "text": "Prepara tu CV, una carta de motivación, tus notas y una prueba de inglés."
+    },
+    {
+     "text": "Algunos documentos pueden necesitar una traducción oficial. Empieza pronto."
+    },
+    {
+     "text": "Envía todo por internet antes del 20 de diciembre de 2026, a las 23:59 (hora de Europa central)."
+    }
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {
+     "icon": "calendar",
+     "text": "La beca tiene muy pocas plazas. Si pagas tú (4 500 euros por semestre), puedes pedirlo hasta el 15 de julio de 2027."
+    },
+    {
+     "icon": "euro",
+     "text": "La beca no cubre viaje, visado, vacunas ni permiso de residencia. Cuenta con ese gasto."
+    }
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {
+     "text": "Máster europeo de 2 años en migración y relaciones entre culturas."
+    },
+    {
+     "text": "Plazo para la beca: 20 de diciembre de 2026. Piden título de carrera e inglés."
+    },
+    {
+     "text": "Esta semana: lee los requisitos en la web oficial y revisa tus documentos."
+    }
+   ],
+   "cta": "Más información: emmir.org"
+  }
+ ],
+ "source": "emmir.org",
+ "verified": "2026-11-18"
+}

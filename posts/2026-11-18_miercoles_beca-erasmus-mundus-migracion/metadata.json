@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-18",
+  "weekday": "miercoles",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Máster Erasmus Mundus en Migración y Relaciones Interculturales (EMMIR) 2027-2029, con beca de 1 400 euros al mes",
+  "topic_key": "emmir-migracion-2027-2029",
+  "primary_url": "https://www.emmir.org/applications",
+  "deadline": "2026-12-20T23:59:00+01:00",
+  "verified_date": "2026-11-18",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "platforms": [
+    "linkedin",
+    "instagram"
+  ],
+  "call_status": "abierta",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo UE y ediciones previas",
+      "evidencia": "Máster Erasmus Mundus (programa de la UE), edición 14, financiación de la UE de unos 4,6 millones de euros para otros cinco años",
+      "url": "https://www.emmir.org/"
+    },
+    {
+      "criterio": "portal oficial de estudio",
+      "evidencia": "Erasmus+ lista los másteres conjuntos Erasmus Mundus como oportunidad para estudiantes de todo el mundo",
+      "url": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters"
+    }
+  ],
+  "audience_fit": "Personas de cualquier país con título de carrera en un área relacionada e inglés; la web oficial no fija límite de nacionalidad.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de dos años en migración y relaciones entre culturas, con beca de 1 400 euros al mes durante 24 meses. Plazo para la beca: 20 de diciembre de 2026, hasta las 23:59 (hora de Europa central). Piden título de carrera e inglés. No cubre viaje, visado ni vacunas. Lo que pocos explican: la beca tiene pocas plazas; pagando tú, puedes pedirlo hasta julio de 2027. Fuente: emmir.org, verificado el 2026-11-18.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "series": "miercoles",
+  "instagram": {
+    "format": "carrusel",
+    "format_reason": "Carrusel de 5 imágenes: explica los pasos de la solicitud; no hay vídeo oficial verificado."
+  }
+}
