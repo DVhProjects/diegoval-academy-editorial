@@ -34,3 +34,8 @@ ABIERTA. Plazo beca: 20 dic 2026 23:59 CET (32 días de margen).
 
 ## Vídeo
 Búsqueda de vídeo oficial/testimonio de EMMIR: solo testimonios escritos (ung.si, uol.de); sin vídeo verificable. Imagen (LinkedIn) y carrusel (Instagram).
+
+## Citas adicionales (consulta 2026-11-18, /cost-and-funding)
+- "you can only apply for a scholarship if you have completed a first degree" by "the application deadline in 20 December 2026" ("No exceptions can be made from this rule").
+- Exclusión: se puede pedir "except if they have benefitted from such a scholarship before" (beca Erasmus+ previa).
+- Plazas de pago: "closes at latest on 15 July 2027" (según disponibilidad de plazas).
