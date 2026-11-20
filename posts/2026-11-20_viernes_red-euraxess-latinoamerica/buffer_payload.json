@@ -1,0 +1,17 @@
+{
+  "channelId": "6ae0bdf22f1f5ed648eb92f9",
+  "schedulingType": "automatic",
+  "text": "¿Vives en Latinoamérica y quieres investigar en Europa, pero no sabes a quién preguntar? Hay un portal oficial de la Unión Europea que puede orientarte.\n\nEn corto:\n• Qué es: EURAXESS (portal oficial de la Unión Europea, con dominio europa.eu) para investigadores. Tiene una oficina para América Latina y el Caribe.\n• Qué ofrece: información y eventos gratuitos sobre financiación de investigación, carreras de investigación y colaboración. También charlas por internet y un boletín por correo.\n• Quién: según su web, atiende a «investigadores de todas las nacionalidades, disciplinas y etapas».\n\nLo que pocos explican: la web principal está en inglés y algunas charlas son para universidades e instituciones. Algunas son en español. Lee a quién va dirigida cada una antes de apuntarte.\n\nCómo empezar:\n1. Abre la página oficial de EURAXESS para América Latina y el Caribe (en inglés).\n2. Entra en la sección de eventos y busca una charla en español.\n3. Si tienes una duda, escribe a lac@euraxess.net.\n\nPágina oficial: https://euraxess.ec.europa.eu/worldwide/lac\nEventos: https://euraxess.ec.europa.eu/worldwide/lac/events\n\nVerificado el: 2026-11-20\n\n#Investigación #Doctorado #Europa",
+  "assets": [
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/6d284d4c08a579a5b5c0855b5d9ddbdc98f4eac5/posts/2026-11-20_viernes_red-euraxess-latinoamerica/post.png",
+        "metadata": {
+          "altText": "Ficha editorial de DiegoVal Academy, serie Research & Career. Red europea para investigadores de Latinoamérica. EURAXESS, portal oficial de la Unión Europea, da información y eventos gratuitos sobre financiación y carreras. Para investigadores de cualquier país. Web en inglés; algunas charlas en español. Lo que pocos explican: algunas charlas son para universidades e instituciones; lee a quién va dirigida cada una. Fuente: euraxess.ec.europa.eu, verificado el 2026-11-20."
+        }
+      }
+    }
+  ],
+  "mode": "customScheduled",
+  "dueAt": "2026-11-20T12:30:00+01:00"
+}

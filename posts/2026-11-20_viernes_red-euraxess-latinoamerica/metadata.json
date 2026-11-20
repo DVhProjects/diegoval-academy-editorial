@@ -20,7 +20,7 @@
  "models_used": {
   "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
  },
- "status": "draft",
+ "status": "scheduled",
  "instagram": {
   "format": "carrusel",
   "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica la red paso a paso; no hay vídeo oficial en español verificado.",
@@ -29,7 +29,8 @@
    "answer": "sí",
    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-20, 2.ª revisión (diapositiva 3 corregida según su indicación)",
    "checked_text_sha256": "89f867b8d420b4eda4b26446eb63f2502772d738103c2c5ce8be9d4a1f0fb747"
-  }
+  },
+  "buffer_post_id": "6affe4bf4c1afd05def8ce7e"
  },
  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
  "plain_language_check": {
@@ -37,5 +38,6 @@
   "answer": "sí",
   "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-20, 2.ª revisión",
   "checked_text_sha256": "4f885419ff4746384251787cae6bf691212a8a487b763f34ae775650d14eff5e"
- }
+ },
+ "buffer_post_id": "6affe4a34c1afd05def8c89e"
 }

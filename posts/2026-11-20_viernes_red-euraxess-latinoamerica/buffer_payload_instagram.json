@@ -1,0 +1,55 @@
+{
+  "channelId": "6ae71fe8e29c69a17126342a",
+  "schedulingType": "automatic",
+  "text": "¿Quieres investigar en Europa y no sabes a quién preguntar? 🇪🇺\n\nEURAXESS (portal oficial de la Unión Europea, con dominio europa.eu) tiene una oficina para América Latina y el Caribe.\n\n✅ Ofrece información y eventos gratuitos sobre financiación, carreras de investigación y colaboración\n✅ Atiende a investigadores de todas las nacionalidades y etapas\n✅ Algunas charlas son para universidades: lee a quién va dirigida cada una\n\nEsta semana: abre su sección de eventos y busca una charla en español. Información oficial en euraxess.ec.europa.eu\n\nVerificado el: 2026-11-20\n\n#Investigación #Doctorado #Europa #DiegoValAcademy",
+  "assets": [
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/6d284d4c08a579a5b5c0855b5d9ddbdc98f4eac5/posts/2026-11-20_viernes_red-euraxess-latinoamerica/slide-1.png",
+        "metadata": {
+          "altText": "Portada: Red europea para investigadores de Latinoamérica EURAXESS (portal oficial de la Unión Europea) ofrece información y eventos gratuitos."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/6d284d4c08a579a5b5c0855b5d9ddbdc98f4eac5/posts/2026-11-20_viernes_red-euraxess-latinoamerica/slide-2.png",
+        "metadata": {
+          "altText": "¿Qué es EURAXESS?. Es un portal oficial de la Unión Europea (dominio europa.eu) para investigadores. Tiene una oficina para América Latina y el Caribe. Atiende a investigadores de todas las nacionalidades. Ofrece información y eventos gratuitos sobre financiación, carreras de investigación y colaboración."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/6d284d4c08a579a5b5c0855b5d9ddbdc98f4eac5/posts/2026-11-20_viernes_red-euraxess-latinoamerica/slide-3.png",
+        "metadata": {
+          "altText": "¿Cómo la usas?. Abre la página de EURAXESS para América Latina y el Caribe (está en inglés). Entra en la sección de eventos. Hay charlas por internet y presenciales; algunas son en español. Si tienes una duda, escribe a lac@euraxess.net."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/6d284d4c08a579a5b5c0855b5d9ddbdc98f4eac5/posts/2026-11-20_viernes_red-euraxess-latinoamerica/slide-4.png",
+        "metadata": {
+          "altText": "Un consejo importante. Algunas charlas son para universidades e instituciones. Mira a quién va dirigida cada una antes de apuntarte."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/6d284d4c08a579a5b5c0855b5d9ddbdc98f4eac5/posts/2026-11-20_viernes_red-euraxess-latinoamerica/slide-5.png",
+        "metadata": {
+          "altText": "En resumen. EURAXESS es una red europea con oficina para América Latina y el Caribe. Ofrece información y eventos gratuitos para investigadores. Esta semana: abre su sección de eventos y busca una charla en español. Más información: euraxess.ec.europa.eu"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instagram": {
+      "type": "post",
+      "shouldShareToFeed": true
+    }
+  },
+  "mode": "customScheduled",
+  "dueAt": "2026-11-20T12:30:00+01:00"
+}
