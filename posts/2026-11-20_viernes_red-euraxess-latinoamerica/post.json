@@ -2,8 +2,8 @@
  "series": "viernes",
  "kicker": "Research & Career · Programa o red",
  "issue": "N.º 018 · 20 de noviembre de 2026",
- "headline": "Red europea para investigadores latinos",
- "dek": "EURAXESS (red de la Comisión Europea) da información y eventos gratuitos sobre becas y carreras.",
+ "headline": "Red europea para investigadores de Latinoamérica",
+ "dek": "EURAXESS (portal oficial de la Unión Europea) da información y eventos gratuitos sobre financiación y carreras.",
  "highlight": {
   "label": "La idea clave",
   "value": "Información gratuita para orientarte",
@@ -25,7 +25,7 @@
  ],
  "tip": {
   "label": "Lo que pocos explican",
-  "text": "Muchas charlas son para quien ya tiene el doctorado. Mira a quién va dirigida cada una antes de apuntarte."
+  "text": "Algunas charlas son para universidades e instituciones. Lee a quién va dirigida cada una antes de apuntarte."
  },
  "source": "euraxess.ec.europa.eu",
  "verified": "2026-11-20"

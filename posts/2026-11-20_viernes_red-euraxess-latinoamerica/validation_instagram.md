@@ -1,6 +1,6 @@
 # Validación Instagram — 2026-11-20_viernes_red-euraxess-latinoamerica
 
-Ejecutado: 2026-11-20T07:09:01+01:00
+Ejecutado: 2026-11-20T07:10:40+01:00
 Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |
@@ -8,10 +8,10 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Archivos obligatorios | 5 imágenes + caption + carousel.json |
 | FAIL | Base verificada (LinkedIn) | falta validation.md APROBADA: el carrusel reutiliza esa investigación |
 | PASS | Imágenes 1080×1350 PNG | 5 imágenes correctas |
-| PASS | Imágenes actualizadas | generadas desde el carousel.json actual |
+| FAIL | Imágenes actualizadas | carousel.json cambió después de renderizar: ejecuta render_carousel.py |
 | PASS | Imágenes sin URL completa | sólo dominios |
 | PASS | Fecha de verificación | 2026-11-20 |
-| PASS | Caption breve | 655 caracteres (máx. 1000) |
+| PASS | Caption breve | 621 caracteres (máx. 1000) |
 | PASS | Hashtags | 4 (rango 3-8) |
 | PASS | Verificado el | 2026-11-20 |
 | PASS | Lenguaje sencillo: siglas (texto) | todas explicadas o ninguna |

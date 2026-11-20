@@ -16,7 +16,7 @@
  "format": "image",
  "series": "viernes",
  "style_version": 3,
- "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Una red europea ayuda a investigadores de Latinoamérica. EURAXESS, de la Comisión Europea, da información y eventos gratuitos sobre becas, carreras y colaboración. Para investigadores de cualquier país. Web en inglés; algunas charlas en español. Lo que pocos explican: muchas charlas son para quien ya tiene el doctorado; mira a quién va dirigida cada una. Fuente: euraxess.ec.europa.eu, verificado el 2026-11-20.",
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Red europea para investigadores de Latinoamérica. EURAXESS, portal oficial de la Unión Europea, da información y eventos gratuitos sobre financiación y carreras. Para investigadores de cualquier país. Web en inglés; algunas charlas en español. Lo que pocos explican: algunas charlas son para universidades e instituciones; lee a quién va dirigida cada una. Fuente: euraxess.ec.europa.eu, verificado el 2026-11-20.",
  "models_used": {
   "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
  },

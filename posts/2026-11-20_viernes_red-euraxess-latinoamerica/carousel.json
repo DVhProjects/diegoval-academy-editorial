@@ -2,9 +2,9 @@
  "series": "viernes",
  "kicker": "Research & Career · Programa o red",
  "cover": {
-  "title": "Una red europea ayuda a investigadores latinos",
-  "highlight": "red europea",
-  "subtitle": "EURAXESS (red de la Comisión Europea) ofrece información y eventos gratuitos."
+  "title": "Red europea para investigadores de Latinoamérica",
+  "highlight": "Red europea",
+  "subtitle": "EURAXESS (portal oficial de la Unión Europea) ofrece información y eventos gratuitos."
  },
  "slides": [
   {
@@ -13,7 +13,7 @@
    "items": [
     {
      "icon": "info",
-     "text": "Es una red de la Comisión Europea (la que propone las leyes de la Unión Europea) para investigadores."
+     "text": "Es un portal oficial de la Unión Europea (dominio europa.eu) para investigadores."
     },
     {
      "icon": "star",
@@ -46,7 +46,7 @@
    "items": [
     {
      "icon": "star",
-     "text": "Muchas charlas son para quien ya tiene el doctorado, o para universidades."
+     "text": "Algunas charlas son para universidades e instituciones, no para estudiantes."
     },
     {
      "icon": "info",

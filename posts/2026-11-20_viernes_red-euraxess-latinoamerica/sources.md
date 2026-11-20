@@ -12,8 +12,8 @@ Categoría: programa_red (red + mecanismo real de uso). Último viernes: carrera
 | https://euraxess.ec.europa.eu/worldwide/lac/events | Eventos | Próximo: "Do not miss our thematic sessions at Cilac foro, Brasilia", 24-25 nov 2026 (inglés). Pasados: "Webinar Horizon Europe for LAC: last calls in the WP 26/27" 28 sep 2026 (español, investigadores, universidades e instituciones); "Webinar: increasing Paraguay's international scientific visibility with EURAXESS" 1 oct 2026 (español); "Postdoc in Europe: information day..." 19-20 oct 2026 (portugués, para candidatos postdoc); "MSCA GLOPOL 2nd Regional Event for LAC" 25 sep 2026 (inglés, instituciones) |
 
 Notas:
-- "Muchas charlas son para quien ya tiene el doctorado o para universidades" se apoya en los eventos listados (postdoc, instituciones).
-- "Comisión Europea": EURAXESS es iniciativa de la Comisión Europea (descripción de EURAXESS en la web oficial y búsqueda 2026-11-20).
+- Tip: sólo se afirma que "algunas charlas son para universidades e instituciones": /events dice del seminario del 28 sep 2026 "researchers, universities and institutions of Latin America and the Caribbean"; el MSCA GLOPOL se dirige a instituciones. No se afirma público postdoctoral (no declarado).
+- No se afirma "Comisión Europea" para LAC (sin cita literal en la página LAC). Se dice "portal oficial de la Unión Europea (dominio europa.eu)": el sitio está en euraxess.ec.europa.eu. Referencia: https://euraxess.ec.europa.eu/worldwide/africa dice "EURAXESS Africa is an initiative of the European Commission" (otra oficina; no se usa en el texto).
 - No se afirma que haya beca propia ni plazo; no hay plazo (deadline null).
 - No verificable: número de investigadores atendidos ni cobertura de países concreta.
 
