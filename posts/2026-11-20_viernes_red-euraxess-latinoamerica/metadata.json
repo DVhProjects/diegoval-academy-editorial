@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-20",
+ "weekday": "viernes",
+ "type": "research_career",
+ "category": "programa_red",
+ "topic": "EURAXESS América Latina y el Caribe: una red europea gratuita de información para investigadores",
+ "topic_key": "euraxess-lac-red",
+ "primary_url": "https://euraxess.ec.europa.eu/worldwide/lac",
+ "deadline": null,
+ "verified_date": "2026-11-20",
+ "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+ "platforms": [
+  "linkedin",
+  "instagram"
+ ],
+ "format": "image",
+ "series": "viernes",
+ "style_version": 3,
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Una red europea ayuda a investigadores de Latinoamérica. EURAXESS, de la Comisión Europea, da información y eventos gratuitos sobre becas, carreras y colaboración. Para investigadores de cualquier país. Web en inglés; algunas charlas en español. Lo que pocos explican: muchas charlas son para quien ya tiene el doctorado; mira a quién va dirigida cada una. Fuente: euraxess.ec.europa.eu, verificado el 2026-11-20.",
+ "models_used": {
+  "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+ },
+ "status": "draft",
+ "instagram": {
+  "format": "carrusel",
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica la red paso a paso; no hay vídeo oficial en español verificado."
+ },
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a"
+}

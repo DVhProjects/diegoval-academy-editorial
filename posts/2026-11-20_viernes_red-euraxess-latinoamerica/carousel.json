@@ -1,0 +1,76 @@
+{
+ "series": "viernes",
+ "kicker": "Research & Career · Programa o red",
+ "cover": {
+  "title": "Una red europea ayuda a investigadores latinos",
+  "highlight": "red europea",
+  "subtitle": "EURAXESS (red de la Comisión Europea) ofrece información y eventos gratuitos."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es EURAXESS?",
+   "items": [
+    {
+     "icon": "info",
+     "text": "Es una red de la Comisión Europea (la que propone las leyes de la Unión Europea) para investigadores."
+    },
+    {
+     "icon": "star",
+     "text": "Tiene una oficina para América Latina y el Caribe. Atiende a investigadores de todas las nacionalidades."
+    },
+    {
+     "icon": "check",
+     "text": "Ofrece información y eventos gratuitos sobre financiación, carreras de investigación y colaboración."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo la usas?",
+   "items": [
+    {
+     "text": "Abre la página de EURAXESS para América Latina y el Caribe (está en inglés)."
+    },
+    {
+     "text": "Entra en la sección de eventos. Hay charlas por internet y presenciales; algunas son en español."
+    },
+    {
+     "text": "Si tienes una duda, escribe a lac@euraxess.net."
+    }
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {
+     "icon": "star",
+     "text": "Muchas charlas son para quien ya tiene el doctorado, o para universidades."
+    },
+    {
+     "icon": "info",
+     "text": "Mira a quién va dirigida cada una antes de apuntarte."
+    }
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {
+     "text": "EURAXESS es una red europea con oficina para América Latina y el Caribe."
+    },
+    {
+     "text": "Ofrece información y eventos gratuitos para investigadores."
+    },
+    {
+     "text": "Esta semana: abre su sección de eventos y busca una charla en español."
+    }
+   ],
+   "cta": "Más información: euraxess.ec.europa.eu"
+  }
+ ],
+ "source": "euraxess.ec.europa.eu",
+ "verified": "2026-11-20"
+}
