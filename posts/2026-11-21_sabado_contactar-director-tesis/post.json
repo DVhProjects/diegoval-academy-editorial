@@ -1,0 +1,23 @@
+{
+ "series": "sabado",
+ "kicker": "Guía práctica · Buscar doctorado",
+ "issue": "N.º 019 · 21 de noviembre de 2026",
+ "headline": "Cómo escribir a un posible director de tesis",
+ "dek": "En muchas universidades europeas necesitas su apoyo antes de pedir plaza.",
+ "highlight": {
+  "label": "La idea clave",
+  "value": "Escribe antes de solicitar",
+  "note": "Persona que guía tu doctorado y tu tesis"
+ },
+ "facts": [
+  {"label": "Cuándo", "value": "A veces es obligatorio"},
+  {"label": "Qué incluir", "value": "Tu tema, por qué él o ella y tu CV"},
+  {"label": "Cuántos", "value": "Un correo distinto para cada persona"}
+ ],
+ "tip": {
+  "label": "Lo que pocos explican",
+  "text": "Si un correo es igual para varios profesores, se ve. Personalízalo."
+ },
+ "source": "education.ec.europa.eu",
+ "verified": "2026-11-21"
+}

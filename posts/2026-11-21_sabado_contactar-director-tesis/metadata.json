@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-21",
+ "weekday": "sabado",
+ "type": "educativo",
+ "category": "buscar_doctorado",
+ "topic": "Cómo escribir a un posible director de tesis antes de solicitar un doctorado en Europa",
+ "topic_key": "contactar-director-tesis-doctorado",
+ "primary_url": "https://education.ec.europa.eu/news/how-to-apply-for-doctoral-studies-in-europe",
+ "deadline": null,
+ "verified_date": "2026-11-21",
+ "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+ "platforms": [
+  "linkedin",
+  "instagram"
+ ],
+ "format": "image",
+ "series": "sabado",
+ "style_version": 3,
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo escribir a un posible director de tesis, la persona que te guía en el doctorado. En muchas universidades europeas necesitas su apoyo antes de pedir plaza. Incluye tu tema, por qué esa persona y tu currículum; un correo distinto para cada profesor. Lo que pocos explican: si un correo es igual para varios profesores, se nota. Fuente: education.ec.europa.eu, verificado el 2026-11-21.",
+ "models_used": {
+  "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+ },
+ "status": "draft",
+ "instagram": {
+  "format": "carrusel",
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica paso a paso; no hay vídeo oficial verificado."
+ }
+}
