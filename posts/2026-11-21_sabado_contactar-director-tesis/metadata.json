@@ -17,11 +17,11 @@
  "format": "image",
  "series": "sabado",
  "style_version": 3,
- "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo escribir a un posible director de tesis, la persona que te guía en el doctorado. En muchas universidades europeas necesitas su apoyo antes de pedir plaza. Incluye tu tema, por qué esa persona y tu currículum; un correo distinto para cada profesor. Lo que pocos explican: si un correo es igual para varios profesores, se nota. Fuente: education.ec.europa.eu, verificado el 2026-11-21.",
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo escribir a un posible director de tesis, la persona que te guía en el doctorado. En unas universidades es obligatorio tener su apoyo antes de pedir plaza; en otras, conviene. Incluye tu tema, por qué esa persona y tu currículum. Lo que pocos explican: no envíes el mismo correo a varios profesores. Fuente: education.ec.europa.eu, verificado el 2026-11-21.",
  "models_used": {
   "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
  },
- "status": "draft",
+ "status": "scheduled",
  "instagram": {
   "format": "carrusel",
   "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica paso a paso; no hay vídeo oficial verificado.",
@@ -30,12 +30,14 @@
    "answer": "sí",
    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-21; respuesta «sí» en la 2.ª revisión; después solo se ajustaron 3 frases por fidelidad a las fuentes, sin añadir términos nuevos",
    "checked_text_sha256": "65a179896259f89a36207333f179f5f6503a11113f14906acd9f6550e0494fd1"
-  }
+  },
+  "buffer_post_id": "6b01359720a2d09a0ad9a172"
  },
  "plain_language_check": {
   "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
   "answer": "sí",
   "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-21; respuesta «sí» en la 2.ª revisión; después solo se ajustaron 3 frases por fidelidad a las fuentes, sin añadir términos nuevos",
   "checked_text_sha256": "7c320ff402b7297f9d47ce4bccd73d93c50f5d49296e2897094452fe5f512d62"
- }
+ },
+ "buffer_post_id": "6b01358e20a2d09a0ad9a03c"
 }
