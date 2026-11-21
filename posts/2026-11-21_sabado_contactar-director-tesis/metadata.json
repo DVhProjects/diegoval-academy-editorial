@@ -24,6 +24,18 @@
  "status": "draft",
  "instagram": {
   "format": "carrusel",
-  "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica paso a paso; no hay vídeo oficial verificado."
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica paso a paso; no hay vídeo oficial verificado.",
+  "plain_language_check": {
+   "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+   "answer": "sí",
+   "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-21; respuesta «sí» en la 2.ª revisión; después solo se ajustaron 3 frases por fidelidad a las fuentes, sin añadir términos nuevos",
+   "checked_text_sha256": "65a179896259f89a36207333f179f5f6503a11113f14906acd9f6550e0494fd1"
+  }
+ },
+ "plain_language_check": {
+  "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+  "answer": "sí",
+  "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-21; respuesta «sí» en la 2.ª revisión; después solo se ajustaron 3 frases por fidelidad a las fuentes, sin añadir términos nuevos",
+  "checked_text_sha256": "7c320ff402b7297f9d47ce4bccd73d93c50f5d49296e2897094452fe5f512d62"
  }
 }

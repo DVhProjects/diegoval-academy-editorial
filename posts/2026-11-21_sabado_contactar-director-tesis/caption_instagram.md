@@ -2,7 +2,7 @@
 
 Es la persona que te guía en el doctorado y en tu trabajo final.
 
-✅ A veces es obligatorio tener su apoyo antes de solicitar
+✅ En algunas universidades es obligatorio su apoyo antes de solicitar
 ✅ Cuenta tu tema, por qué esa persona y adjunta tu currículum
 ✅ No envíes el mismo correo a varios profesores
 

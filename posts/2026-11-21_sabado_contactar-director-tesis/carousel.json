@@ -4,7 +4,7 @@
  "cover": {
   "title": "Cómo escribir a un posible director de tesis",
   "highlight": "director de tesis",
-  "subtitle": "Es la persona que te guía en el doctorado. Muchas universidades piden su apoyo antes de solicitar."
+  "subtitle": "Es la persona que te guía en el doctorado. Algunas universidades piden su apoyo antes de solicitar."
  },
  "slides": [
   {
@@ -13,7 +13,7 @@
    "items": [
     {"icon": "info", "text": "El director de tesis es la persona que te guía en el doctorado y en tu trabajo final."},
     {"icon": "star", "text": "Según la Unión Europea, encontrarlo antes de solicitar a veces es obligatorio y a veces solo conviene."},
-    {"icon": "calendar", "text": "Cada universidad pone sus reglas. Groningen (Países Bajos) no acepta solicitudes sin ese apoyo."}
+    {"icon": "calendar", "text": "Cada universidad decide. La escuela de ciencias de Groningen (Países Bajos) no acepta solicitudes sin ese apoyo."}
    ]
   },
   {
@@ -29,15 +29,15 @@
    "type": "tip",
    "title": "Un consejo importante",
    "items": [
-    {"icon": "info", "text": "No envíes el mismo correo a varios profesores. La Universidad de Mánchester lo llama «un gran no»."},
-    {"icon": "star", "text": "Los profesores reciben muchos correos. Puede tardar en llegar la respuesta."}
+    {"icon": "info", "text": "No envíes el mismo correo a varios profesores. Una facultad de Mánchester (Reino Unido) lo desaconseja."},
+    {"icon": "star", "text": "Los profesores reciben muchos correos. Sé breve y claro."}
    ]
   },
   {
    "type": "summary",
    "title": "En resumen",
    "items": [
-    {"text": "Mira si la universidad pide el apoyo de un director antes de solicitar."},
+    {"text": "Mira si la universidad que te interesa pide un director antes de solicitar."},
     {"text": "Escribe un correo distinto para cada profesor."},
     {"text": "Esta semana: lee 2 trabajos de un profesor y escríbele."}
    ],
