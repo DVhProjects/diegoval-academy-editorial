@@ -1,0 +1,79 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Europa",
+ "cover": {
+  "title": "Máster europeo de economía, con beca",
+  "highlight": "beca",
+  "subtitle": "Dos años en Europa. Plazo: 27 de enero de 2027."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es este máster?",
+   "items": [
+    {
+     "icon": "info",
+     "text": "Se llama EPOG. Es un máster Erasmus Mundus (programa de la Unión Europea) de economía."
+    },
+    {
+     "icon": "globe",
+     "text": "Dura 2 años. Estudias en varios países: el primero en una o dos universidades y el segundo en París."
+    },
+    {
+     "icon": "euro",
+     "text": "La beca da 1 400 euros al mes los dos años, y paga matrícula y seguro médico."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo se pide?",
+   "items": [
+    {
+     "text": "Pide plaza por internet en application.epog.eu. Piden una carrera de economía, o con cursos de economía y estadística."
+    },
+    {
+     "text": "Sube tu currículum, notas, copia de tu título y una carta de motivación de máximo 500 palabras."
+    },
+    {
+     "text": "Sube una prueba de inglés avanzado (examen IELTS, 7.0). Si estudiaste en inglés, no hace falta."
+    },
+    {
+     "text": "Plazo: 27 de enero de 2027, hasta las 13:00 (hora de París)."
+    }
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {
+     "icon": "calendar",
+     "text": "Piden dos cartas de recomendación de profesores o jefes. Tardan en llegar: pídelas ya."
+    },
+    {
+     "icon": "info",
+     "text": "No pueden pedir la beca quienes ya tuvieron una beca de máster Erasmus Mundus."
+    }
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {
+     "text": "Máster europeo de economía de 2 años, con beca de 1 400 euros al mes."
+    },
+    {
+     "text": "Plazo: 27 de enero de 2027, hasta las 13:00 (hora de París)."
+    },
+    {
+     "text": "Esta semana: pide tus dos cartas de recomendación y mira si tienes prueba de inglés."
+    }
+   ],
+   "cta": "Más información: epog.eu"
+  }
+ ],
+ "source": "epog.eu",
+ "verified": "2026-11-23"
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-23",
+  "weekday": "lunes",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Máster Erasmus Mundus EPOG de economía 2027-2029, con beca de 1 400 euros al mes",
+  "topic_key": "epog-economia-2027-2029",
+  "primary_url": "https://www.epog.eu/admission-and-scholarships/admission/",
+  "deadline": "2027-01-27T13:00:00+01:00",
+  "verified_date": "2026-11-23",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+  "platforms": ["linkedin", "instagram"],
+  "call_status": "abierta",
+  "popularity_evidence": [
+    {"criterio": "respaldo UE", "evidencia": "Máster conjunto Erasmus Mundus apoyado por la Unión Europea, con 11 universidades socias y más de 40 socios", "url": "https://www.epog.eu/"},
+    {"criterio": "portal oficial de estudio", "evidencia": "Erasmus+ presenta los másteres conjuntos Erasmus Mundus como oportunidad para estudiantes de todo el mundo", "url": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters"}
+  ],
+  "audience_fit": "Personas de cualquier país con carrera de economía (o con cursos de economía y estadística) e inglés avanzado; la web oficial no fija límite de nacionalidad.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de economía de dos años, con beca de 1 400 euros al mes, matrícula y seguro. Plazo: 27 de enero de 2027, hasta las 13:00 (hora de París). Piden carrera de economía o con cursos de economía e inglés avanzado. Lo que pocos explican: piden dos cartas de recomendación que tardan en llegar; pídelas ya. Fuente: epog.eu, verificado el 2026-11-23.",
+  "models_used": {"investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"},
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "series": "miercoles",
+  "instagram": {
+    "format": "carrusel",
+    "format_reason": "Carrusel de 5 imágenes: explica los pasos de la solicitud; no hay vídeo oficial verificado."
+  }
+}
