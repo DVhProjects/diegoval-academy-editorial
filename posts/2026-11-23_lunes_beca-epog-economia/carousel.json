@@ -13,15 +13,15 @@
    "items": [
     {
      "icon": "info",
-     "text": "Se llama EPOG. Es un máster Erasmus Mundus (programa de la Unión Europea) de economía."
+     "text": "Se llama EPOG (así se llama el máster). Es un máster Erasmus Mundus (programa de la Unión Europea) de economía."
     },
     {
      "icon": "globe",
-     "text": "Dura 2 años. Estudias en varios países: el primero en una o dos universidades y el segundo en París."
+     "text": "Dura 2 años. El primero, en una o dos universidades socias; el segundo, en París."
     },
     {
      "icon": "euro",
-     "text": "La beca da 1 400 euros al mes los dos años, y paga matrícula y seguro médico."
+     "text": "La beca da 1 400 euros al mes, y paga la matrícula (lo que cuesta estudiar) y el seguro médico."
     }
    ]
   },
@@ -30,13 +30,13 @@
    "title": "¿Cómo se pide?",
    "items": [
     {
-     "text": "Pide plaza por internet en application.epog.eu. Piden una carrera de economía, o con cursos de economía y estadística."
+     "text": "Solicita por internet en application.epog.eu. Piden carrera de economía, o con cursos de economía y estadística."
     },
     {
-     "text": "Sube tu currículum, notas, copia de tu título y una carta de motivación de máximo 500 palabras."
+     "text": "Sube currículum, notas, título y una carta de motivación (por qué quieres el máster), de 500 palabras como máximo."
     },
     {
-     "text": "Sube una prueba de inglés avanzado (examen IELTS, 7.0). Si estudiaste en inglés, no hace falta."
+     "text": "Sube inglés avanzado: IELTS (examen de inglés) con 7.0. Si tu carrera fue en inglés, no hace falta."
     },
     {
      "text": "Plazo: 27 de enero de 2027, hasta las 13:00 (hora de París)."
@@ -49,11 +49,11 @@
    "items": [
     {
      "icon": "calendar",
-     "text": "Piden dos cartas de recomendación de profesores o jefes. Tardan en llegar: pídelas ya."
+     "text": "Piden dos cartas de recomendación: un profesor o jefe cuenta cómo eres. Tardan en llegar: pídelas ya."
     },
     {
      "icon": "info",
-     "text": "No pueden pedir la beca quienes ya tuvieron una beca de máster Erasmus Mundus."
+     "text": "No pueden pedirla quienes ya tuvieron una beca de máster Erasmus Mundus."
     }
    ]
   },

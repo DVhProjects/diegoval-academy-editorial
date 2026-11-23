@@ -10,21 +10,46 @@
   "verified_date": "2026-11-23",
   "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
   "instagram_channel_id": "6ae71fe8e29c69a17126342a",
-  "platforms": ["linkedin", "instagram"],
+  "platforms": [
+    "linkedin",
+    "instagram"
+  ],
   "call_status": "abierta",
   "popularity_evidence": [
-    {"criterio": "respaldo UE", "evidencia": "Máster conjunto Erasmus Mundus apoyado por la Unión Europea, con 11 universidades socias y más de 40 socios", "url": "https://www.epog.eu/"},
-    {"criterio": "portal oficial de estudio", "evidencia": "Erasmus+ presenta los másteres conjuntos Erasmus Mundus como oportunidad para estudiantes de todo el mundo", "url": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters"}
+    {
+      "criterio": "respaldo UE",
+      "evidencia": "Máster conjunto Erasmus Mundus apoyado por la Unión Europea, con 11 universidades socias y más de 40 socios",
+      "url": "https://www.epog.eu/"
+    },
+    {
+      "criterio": "portal oficial de estudio",
+      "evidencia": "Erasmus+ presenta los másteres conjuntos Erasmus Mundus como oportunidad para estudiantes de todo el mundo",
+      "url": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters"
+    }
   ],
   "audience_fit": "Personas de cualquier país con carrera de economía (o con cursos de economía y estadística) e inglés avanzado; la web oficial no fija límite de nacionalidad.",
   "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de economía de dos años, con beca de 1 400 euros al mes, matrícula y seguro. Plazo: 27 de enero de 2027, hasta las 13:00 (hora de París). Piden carrera de economía o con cursos de economía e inglés avanzado. Lo que pocos explican: piden dos cartas de recomendación que tardan en llegar; pídelas ya. Fuente: epog.eu, verificado el 2026-11-23.",
-  "models_used": {"investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"},
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+  },
   "style_version": 3,
   "format": "image",
   "status": "draft",
   "series": "miercoles",
   "instagram": {
     "format": "carrusel",
-    "format_reason": "Carrusel de 5 imágenes: explica los pasos de la solicitud; no hay vídeo oficial verificado."
+    "format_reason": "Carrusel de 5 imágenes: explica los pasos de la solicitud; no hay vídeo oficial verificado.",
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-23, 2.ª revisión (la 1.ª fue «no»; se corrigieron siglas, términos y respaldo de fuentes)",
+      "checked_text_sha256": "1c8ef05e9f58eaeede610981a2743430ac1df5ce03ca64a13aab9a092cc4e9e5"
+    }
+  },
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-23, 2.ª revisión (la 1.ª fue «no»; se corrigieron siglas, términos y respaldo de fuentes)",
+    "checked_text_sha256": "6898d942b83a9d12f9744e9d29a868b16b4855cd68902dc73142757599581165"
   }
 }

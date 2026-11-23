@@ -3,7 +3,7 @@
  "kicker": "Oportunidad · Máster en Europa",
  "issue": "N.º 020 · 23 de noviembre de 2026",
  "headline": "Máster de economía en Europa, con beca",
- "dek": "Dos años en varias universidades. Beca de 1 400 euros al mes.",
+ "dek": "Dos años en universidades europeas. Beca de 1 400 euros al mes.",
  "highlight": {
   "label": "Plazo para solicitar",
   "value": "27 ene 2027",
@@ -12,7 +12,7 @@
  "facts": [
   {
    "label": "Cubre",
-   "value": "1 400 € al mes, matrícula, seguro"
+   "value": "1 400 € al mes, estudios y seguro pagados"
   },
   {
    "label": "Pide",
@@ -20,12 +20,12 @@
   },
   {
    "label": "Idioma",
-   "value": "Inglés avanzado (examen IELTS, 7.0)"
+   "value": "IELTS (examen de inglés) con 7.0"
   }
  ],
  "tip": {
   "label": "Lo que pocos explican",
-  "text": "Piden dos cartas de recomendación de profesores o jefes. Tardan en llegar: pídelas ya."
+  "text": "Piden dos cartas de recomendación (un profesor o jefe cuenta cómo eres). Tardan: pídelas ya."
  },
  "source": "epog.eu",
  "verified": "2026-11-23"
