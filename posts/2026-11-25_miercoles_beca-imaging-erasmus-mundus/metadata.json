@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-25",
+  "weekday": "miercoles",
+  "type": "oportunidad",
+  "category": "beca_master",
+  "topic": "Máster Erasmus Mundus en Imaging 2027-2029, con beca de 1 400 euros al mes",
+  "topic_key": "emjm-imaging-2027-2029",
+  "primary_url": "https://www.emjm-imaging.eu/application-and-admission/",
+  "deadline": "2027-01-12T15:00:00+02:00",
+  "verified_date": "2026-11-25",
+  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+  "platforms": [
+    "linkedin",
+    "instagram"
+  ],
+  "call_status": "abierta",
+  "popularity_evidence": [
+    {
+      "criterio": "respaldo UE",
+      "evidencia": "Máster conjunto Erasmus Mundus, programa de la Unión Europea, con tres universidades de tres países (Politecnico di Milano, Mid Sweden University, Tampere University)",
+      "url": "https://www.emjm-imaging.eu/about-the-programme/"
+    },
+    {
+      "criterio": "portal oficial de estudio",
+      "evidencia": "Erasmus+ presenta los másteres conjuntos Erasmus Mundus como másteres de prestigio con becas para los mejores estudiantes del mundo",
+      "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters"
+    }
+  ],
+  "audience_fit": "Personas de cualquier país con carrera de informática, electrónica o parecida e inglés demostrado; la primera ronda admite ciudadanos de la UE y de fuera.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de imagen digital de dos años en Italia, Suecia y Finlandia, con beca de 1 400 euros al mes y sin pagar matrícula. Plazo: 12 de enero de 2027, hasta las 15:00 (dos horas más que en Londres). Piden carrera de informática, electrónica o parecida e IELTS (examen de inglés) con nota 6. Lo que pocos explican: estudiar en inglés no te libra del examen de inglés. Fuente: emjm-imaging.eu, verificado el 2026-11-25.",
+  "models_used": {
+    "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+  },
+  "style_version": 3,
+  "format": "image",
+  "status": "draft",
+  "series": "miercoles",
+  "instagram": {
+    "format": "carrusel",
+    "format_reason": "Carrusel de 5 imágenes: explica los pasos de la solicitud; no hay vídeo oficial en español verificable."
+  }
+}

@@ -1,0 +1,50 @@
+{
+ "series": "miercoles",
+ "kicker": "Oportunidad · Máster en Europa",
+ "cover": {
+  "title": "Máster europeo de imagen digital, con beca",
+  "highlight": "beca",
+  "subtitle": "Dos años en Europa. Plazo: 12 de enero de 2027."
+ },
+ "slides": [
+  {
+   "type": "points",
+   "title": "¿Qué es este máster?",
+   "items": [
+    {"icon": "info", "text": "Es un máster Erasmus Mundus (programa de la Unión Europea para estudiar en varios países) sobre imagen y vídeo digital."},
+    {"icon": "globe", "text": "Dura 2 años. Se estudia en Italia, Suecia y Finlandia."},
+    {"icon": "euro", "text": "La beca da 1 400 euros al mes, hasta 24 meses. No pagas la matrícula (lo que cuesta estudiar)."}
+   ]
+  },
+  {
+   "type": "steps",
+   "title": "¿Cómo se pide?",
+   "items": [
+    {"text": "Solicita por internet en la web oficial. Piden carrera de informática, electrónica o parecida."},
+    {"text": "Sube currículum, notas, título, una carta de motivación (por qué quieres el máster) y una carta de recomendación."},
+    {"text": "Sube un examen de inglés, por ejemplo IELTS (examen de inglés) con nota 6."},
+    {"text": "Plazo: 12 de enero de 2027, a las 15:00 (dos horas más que en Londres)."}
+   ]
+  },
+  {
+   "type": "tip",
+   "title": "Un consejo importante",
+   "items": [
+    {"icon": "calendar", "text": "Haber estudiado en inglés no te libra del examen de inglés. Mira si el tuyo sigue vigente."},
+    {"icon": "info", "text": "La beca no cubre todo: habrá gastos de viaje y visado. No la puede pedir quien ya tuvo otra beca Erasmus Mundus."}
+   ]
+  },
+  {
+   "type": "summary",
+   "title": "En resumen",
+   "items": [
+    {"text": "Máster europeo de imagen digital, de 2 años, con beca de 1 400 euros al mes."},
+    {"text": "Plazo: 12 de enero de 2027, a las 15:00 (dos horas más que en Londres)."},
+    {"text": "Esta semana: mira tu examen de inglés y pide tu carta de recomendación."}
+   ],
+   "cta": "Más información: emjm-imaging.eu"
+  }
+ ],
+ "source": "emjm-imaging.eu",
+ "verified": "2026-11-25"
+}
