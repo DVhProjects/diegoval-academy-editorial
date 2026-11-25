@@ -28,7 +28,7 @@
     }
   ],
   "audience_fit": "Personas de cualquier país con carrera de informática, electrónica o parecida e inglés demostrado; la primera ronda admite ciudadanos de la UE y de fuera.",
-  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de imagen digital de dos años en Italia, Suecia y Finlandia, con beca de 1 400 euros al mes y sin pagar matrícula. Plazo: 12 de enero de 2027, hasta las 15:00 (dos horas más que en Londres). Piden carrera de informática, electrónica o parecida e IELTS (examen de inglés) con nota 6. Lo que pocos explican: estudiar en inglés no te libra del examen de inglés. Fuente: emjm-imaging.eu, verificado el 2026-11-25.",
+  "alt_text": "Ficha editorial de DiegoVal Academy, serie Oportunidad. Máster europeo de imagen digital de dos años en Italia, Suecia y Finlandia, con beca de 1 400 euros al mes y sin pagar matrícula. Plazo: 12 de enero de 2027, hasta las 15:00 (dos horas más que en Londres). Piden carrera de informática con mucha matemática e IELTS (examen de inglés) con nota global 6. Lo que pocos explican: estudiar en inglés en Latinoamérica no te libra del examen. Fuente: emjm-imaging.eu, verificado el 2026-11-25.",
   "models_used": {
     "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
   },

@@ -37,3 +37,8 @@ ABIERTA (portal abierto desde 2026-11-23). Plazo 2027-01-12 15:00 (UTC+2): 48 d�
 
 ## Tipo del miércoles
 oportunidad. Categoría beca_master (la del miércoles anterior, 18-nov, fue también beca_master pero con otro tema/URL; el criterio de repetición es por tema y URL).
+
+## Corrección tras verificación independiente
+- Exención de inglés (cita literal): «if you have completed an upper secondary degree or a university degree with English as the language of instruction … in an EU/EEA country, Switzerland, the USA, Canada, the UK, Ireland, Australia, or New Zealand»; «Completion of a B.Sc. degree or other previous studies in English in countries other than those mentioned above does not grant exemption from the language test requirements». «Expired language test scores are not accepted».
+- Créditos: «At least 30 ECTS in Mathematics/Applied Mathematics, including … probability theory and statistics and linear algebra» y «60 ECTS in Computer Engineering … object-oriented programming and … databases or signal and image processing».
+- Primera ronda abierta a ciudadanos UE/EEE y de fuera; máx. 10 % de becas por nacionalidad (2023-2029).
