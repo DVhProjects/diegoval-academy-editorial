@@ -38,6 +38,18 @@
   "series": "miercoles",
   "instagram": {
     "format": "carrusel",
-    "format_reason": "Carrusel de 5 imágenes: explica los pasos de la solicitud; no hay vídeo oficial en español verificable."
+    "format_reason": "Carrusel de 5 imágenes: explica los pasos de la solicitud; no hay vídeo oficial en español verificable.",
+    "plain_language_check": {
+      "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+      "answer": "sí",
+      "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-25, 2.ª revisión (la 1.ª fue «no»: consejo de inglés incompleto y créditos ausentes; corregido)",
+      "checked_text_sha256": "cda5b1d0150f1b49249383a0e472e2283e60b0cf3d58cf97c9e61addaeca4866"
+    }
+  },
+  "plain_language_check": {
+    "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+    "answer": "sí",
+    "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-25, 2.ª revisión (la 1.ª fue «no»: consejo de inglés incompleto y créditos ausentes; corregido)",
+    "checked_text_sha256": "dd09aac1418309bc3513295a8cd56129f0138860f9776d1f4312fe108a00e313"
   }
 }

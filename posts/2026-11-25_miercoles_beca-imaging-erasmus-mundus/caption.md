@@ -3,10 +3,10 @@
 En corto:
 • Qué es: máster Erasmus Mundus (programa de la Unión Europea para estudiar en varios países) sobre imagen y vídeo digital, en Italia, Suecia y Finlandia.
 • Beca: 1 400 euros al mes, hasta 24 meses, sin pagar matrícula (lo que cuesta estudiar). Incluye seguro y ayuda para viaje e instalación (sin importe publicado). Habrá gastos de viaje y visado.
-• Quién: carrera de informática o parecida, con 30 créditos universitarios de matemáticas y 60 de informática, e inglés demostrado. La primera ronda es para cualquier país. No pueden pedirla quienes ya tuvieron otra beca Erasmus Mundus.
+• Quién: carrera de informática o parecida, con 30 créditos (puntos por asignatura) de matemáticas y 60 de informática, e inglés demostrado. La primera ronda es para cualquier país. No pueden pedirla quienes ya tuvieron otra beca Erasmus Mundus.
 • Plazo: 12 de enero de 2027, a las 15:00 (dos horas más que en Londres).
 
-Por qué es conocida: respaldada por la Unión Europea; tres universidades socias.
+Por qué es conocida: respaldada por la Unión Europea.
 
 Lo que pocos explican: estudiar en inglés en Latinoamérica no te libra del examen de inglés. La nota debe seguir vigente.
 

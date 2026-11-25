@@ -1,7 +1,7 @@
 # Validación — 2026-11-25_miercoles_beca-imaging-erasmus-mundus
 
-Ejecutado: 2026-11-25T07:11:04+01:00
-Decisión: **BLOQUEADA: no publicar**
+Ejecutado: 2026-11-25T07:12:12+01:00
+Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
 |---|---|---|
@@ -10,7 +10,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Imagen | 1080x1350 PNG, 1 archivo (+5 diapositivas de carrusel, ignoradas) |
 | PASS | Canal Buffer | DiegoVal Academy (6ae0bdf22f1f5ed648eb92f9) |
 | PASS | Verificación del día | 2026-11-25 |
-| PASS | Longitud del texto | 1292/1300 caracteres |
+| PASS | Longitud del texto | 1274/1300 caracteres |
 | PASS | Fecha visible en el texto | Verificado el: 2026-11-25 |
 | PASS | Marcadores pendientes | ninguno |
 | PASS | Enlaces documentados en sources.md | 1 enlaces |
@@ -22,7 +22,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Lenguaje sencillo: siglas (imagen) | todas explicadas o ninguna |
 | PASS | Lenguaje sencillo: palabras difíciles (imagen) | sin burocracia ni calcos detectados |
 | PASS | Lenguaje sencillo: frases largas | todas ≤ 32 palabras |
-| FAIL | Lenguaje sencillo: revisión del verificador | falta metadata.plain_language_check con la pregunta exacta, answer 'sí', reviewer y checked_text_sha256 (python3 scripts/validate_post.py <carpeta> --plain-hash) |
+| PASS | Lenguaje sencillo: revisión del verificador | respuesta 'sí' de verificador-convocatorias (subagente Sonnet), 2026-11-25, 2.ª revisión (la 1.ª fue «no»: consejo de inglés incompleto y créditos ausentes; corregido) |
 | PASS | Evidencia de popularidad | 2 señales documentadas |
 | PASS | Plazo | 2027-01-12T15:00:00+02:00 (quedan 48 días) |
 | PASS | Duplicados | sin repeticiones en 36 filas de todas las plataformas (URL canónica, topic_key y vídeo; mismo día en otra red permitido) |
