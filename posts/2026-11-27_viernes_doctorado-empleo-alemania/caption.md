@@ -1,16 +1,16 @@
-¿Crees que un doctorado en Europa siempre es una beca? En Alemania muchas veces es un trabajo con contrato.
+¿Crees que un doctorado en Europa siempre es una beca? En Alemania, a veces es un trabajo con contrato.
 
 En corto:
-• Qué es: la Universidad Técnica de Múnich (TUM) explica que la mayoría de sus doctorandos están contratados como asistentes de investigación y reciben un sueldo cada mes.
-• Jornada: las ofertas suelen ser de jornada entera (100%) o parcial (50-75%).
-• Qué haces: además de tu tesis, haces tareas de investigación y de docencia (dar clases o ayudar en ellas).
-• Fuera de la Unión Europea: necesitas un permiso de residencia que te deje trabajar en Alemania.
+• Qué es: la Universidad Técnica de Múnich (TUM) explica que la mayoría de sus doctorandos (personas que hacen un doctorado) están contratados como ayudantes de investigación y reciben un sueldo cada mes.
+• Jornada: las ofertas suelen ser de jornada completa (100%) o parcial (50-75%).
+• Qué haces: además de tu tesis (el trabajo final del doctorado), investigas y das clases.
+• Si vienes de fuera de la Unión Europea: necesitas un permiso de residencia que te deje trabajar en Alemania.
 
-Lo que pocos explican: la Universidad de Maguncia dice que el contrato debe dejar tiempo para tu propio trabajo académico (tu tesis). Antes de aceptar, pregunta cuánto tiempo es para ella y deja el acuerdo claro con tu director o directora.
+Lo que pocos explican: la Universidad de Maguncia dice que el contrato debe dejar tiempo para tu propia tesis. Antes de aceptar, pregunta cuánto tiempo es.
 
 Cómo empezar:
-1. Abre el portal de empleo de una universidad alemana y busca la palabra "doctoral" (doctorando).
-2. Mira el porcentaje del puesto (100%, 75%, 50%) antes de leer lo demás.
+1. Abre el portal de empleo de una universidad alemana y busca la palabra "doctoral" (de doctorado).
+2. Mira cuánto de la jornada completa trabajarás (100%, 75%, 50%).
 3. Esta semana: guarda tres ofertas y compara qué pide cada una.
 
 Página oficial: https://www.gs.tum.de/en/gs/path-to-a-doctorate/funding/tum-employment-contract/

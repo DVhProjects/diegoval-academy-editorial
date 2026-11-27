@@ -1,6 +1,6 @@
 # Fuentes - Research & Career (viernes) 2026-11-27
 Categoría: carrera_phd. Último viernes: programa_red (2026-11-20). Consulta: 2026-11-27, ~07:30 Europe/Stockholm (WebFetch).
-Tema: cómo es un doctorado en Alemania con contrato de trabajo (ejemplo de una universidad; no se generaliza a todo el país).
+Tema: cómo es un doctorado en Alemania con contrato de trabajo (ejemplo de TUM; la regla del tiempo para la tesis es de Maguncia; no se generaliza a todo el país).
 
 | URL | Campo | Cita literal |
 |---|---|---|

@@ -2,8 +2,8 @@
  "series": "viernes",
  "kicker": "Research & Career · Carrera de doctorado",
  "issue": "N.º 022 · 27 de noviembre de 2026",
- "headline": "Doctorado en Alemania: a menudo, un empleo",
- "dek": "Una universidad alemana dice que la mayoría de sus doctorandos tiene contrato y sueldo.",
+ "headline": "Un doctorado en Alemania puede ser un empleo",
+ "dek": "En la Universidad Técnica de Múnich, la mayoría de quienes hacen un doctorado tiene contrato y sueldo.",
  "highlight": {
   "label": "La idea clave",
   "value": "Contrato de trabajo con sueldo",
@@ -12,21 +12,21 @@
  "facts": [
   {
    "label": "Qué",
-   "value": "Contrato y sueldo mensual"
+   "value": "Contrato y sueldo cada mes"
   },
   {
    "label": "Jornada",
-   "value": "Entera (100%) o parcial (50-75%)"
+   "value": "Completa (100%) o parcial (50-75%)"
   },
   {
    "label": "Requisito",
-   "value": "Permiso de residencia (fuera de la Unión Europea)"
+   "value": "Fuera de la Unión Europea: permiso de residencia"
   }
  ],
  "tip": {
   "label": "Lo que pocos explican",
-  "text": "Pregunta cuánto tiempo del contrato es para tu tesis: debe dejar tiempo para ella."
+  "text": "La Universidad de Maguncia exige tiempo en el contrato para tu tesis (el trabajo final del doctorado)."
  },
- "source": "gs.tum.de",
+ "source": "gs.tum.de · uni-mainz.de",
  "verified": "2026-11-27"
 }
