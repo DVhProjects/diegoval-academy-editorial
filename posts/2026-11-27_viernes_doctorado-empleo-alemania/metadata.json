@@ -9,18 +9,33 @@
  "deadline": null,
  "verified_date": "2026-11-27",
  "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
- "platforms": ["linkedin", "instagram"],
+ "platforms": [
+  "linkedin",
+  "instagram"
+ ],
  "format": "image",
  "series": "viernes",
  "style_version": 3,
  "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Doctorado en Alemania: a menudo, un empleo. Una universidad alemana dice que la mayoría de sus doctorandos tiene contrato y sueldo. Jornada entera o parcial (50-75%). Si vienes de fuera de la Unión Europea, necesitas permiso de residencia. Fuente: gs.tum.de, verificado el 2026-11-27.",
- "models_used": {"investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"},
+ "models_used": {
+  "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+ },
  "status": "draft",
  "instagram": {
   "format": "carrusel",
   "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica el tema paso a paso; no hay vídeo oficial verificado.",
-  "plain_language_check": {}
+  "plain_language_check": {
+   "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+   "answer": "sí",
+   "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-27, 3.ª revisión",
+   "checked_text_sha256": "6526582c943114fbd2833bd39cef4b4bdcfb0b25be31570dc57bcfbed177d40a"
+  }
  },
  "instagram_channel_id": "6ae71fe8e29c69a17126342a",
- "plain_language_check": {}
+ "plain_language_check": {
+  "question": "¿Una persona que nunca ha solicitado una beca ni un doctorado entendería este texto sin buscar explicaciones adicionales?",
+  "answer": "sí",
+  "reviewer": "verificador-convocatorias (subagente Sonnet), 2026-11-27, 3.ª revisión",
+  "checked_text_sha256": "3d775764fbd8df57498359c93ee93c9b16f588d85811075779c7a79b54ecde96"
+ }
 }
