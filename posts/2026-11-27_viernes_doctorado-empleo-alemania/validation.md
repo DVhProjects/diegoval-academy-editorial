@@ -1,6 +1,6 @@
 # Validación — 2026-11-27_viernes_doctorado-empleo-alemania
 
-Ejecutado: 2026-11-27T07:10:29+01:00
+Ejecutado: 2026-11-27T07:11:07+01:00
 Decisión: **BLOQUEADA: no publicar**
 
 | Estado | Comprobación | Detalle |
@@ -10,7 +10,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Imagen | 1080x1350 PNG, 1 archivo (+5 diapositivas de carrusel, ignoradas) |
 | PASS | Canal Buffer | DiegoVal Academy (6ae0bdf22f1f5ed648eb92f9) |
 | PASS | Verificación del día | 2026-11-27 |
-| PASS | Longitud del texto | 1218/1300 caracteres |
+| PASS | Longitud del texto | 1223/1300 caracteres |
 | PASS | Fecha visible en el texto | Verificado el: 2026-11-27 |
 | PASS | Marcadores pendientes | ninguno |
 | PASS | Enlaces documentados en sources.md | 2 enlaces |

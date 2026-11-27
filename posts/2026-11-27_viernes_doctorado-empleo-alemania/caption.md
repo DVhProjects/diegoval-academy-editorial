@@ -10,7 +10,7 @@ Lo que pocos explican: la Universidad de Maguncia dice que el contrato debe deja
 
 Cómo empezar:
 1. Abre el portal de empleo de una universidad alemana y busca la palabra "doctoral" (de doctorado).
-2. Mira cuánto de la jornada completa trabajarás (100%, 75%, 50%).
+2. Mira si el trabajo es de jornada completa (100%) o parcial (50-75%).
 3. Esta semana: guarda tres ofertas y compara qué pide cada una.
 
 Página oficial: https://www.gs.tum.de/en/gs/path-to-a-doctorate/funding/tum-employment-contract/
