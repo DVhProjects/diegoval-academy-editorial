@@ -1,0 +1,32 @@
+{
+ "series": "viernes",
+ "kicker": "Research & Career · Carrera de doctorado",
+ "issue": "N.º 022 · 27 de noviembre de 2026",
+ "headline": "Doctorado en Alemania: a menudo, un empleo",
+ "dek": "Una universidad alemana dice que la mayoría de sus doctorandos tiene contrato y sueldo.",
+ "highlight": {
+  "label": "La idea clave",
+  "value": "Contrato de trabajo con sueldo",
+  "note": "Ejemplo: Universidad Técnica de Múnich"
+ },
+ "facts": [
+  {
+   "label": "Qué",
+   "value": "Contrato y sueldo mensual"
+  },
+  {
+   "label": "Jornada",
+   "value": "Entera (100%) o parcial (50-75%)"
+  },
+  {
+   "label": "Requisito",
+   "value": "Permiso de residencia (fuera de la Unión Europea)"
+  }
+ ],
+ "tip": {
+  "label": "Lo que pocos explican",
+  "text": "Pregunta cuánto tiempo del contrato es para tu tesis: debe dejar tiempo para ella."
+ },
+ "source": "gs.tum.de",
+ "verified": "2026-11-27"
+}

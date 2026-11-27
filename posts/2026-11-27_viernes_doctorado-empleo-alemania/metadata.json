@@ -1,0 +1,26 @@
+{
+ "date": "2026-11-27",
+ "weekday": "viernes",
+ "type": "research_career",
+ "category": "carrera_phd",
+ "topic": "En Alemania, muchos doctorados son un empleo con contrato y sueldo (ejemplo: Universidad Técnica de Múnich)",
+ "topic_key": "doctorado-empleo-alemania",
+ "primary_url": "https://www.gs.tum.de/en/gs/path-to-a-doctorate/funding/tum-employment-contract/",
+ "deadline": null,
+ "verified_date": "2026-11-27",
+ "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+ "platforms": ["linkedin", "instagram"],
+ "format": "image",
+ "series": "viernes",
+ "style_version": 3,
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Research & Career. Doctorado en Alemania: a menudo, un empleo. Una universidad alemana dice que la mayoría de sus doctorandos tiene contrato y sueldo. Jornada entera o parcial (50-75%). Si vienes de fuera de la Unión Europea, necesitas permiso de residencia. Fuente: gs.tum.de, verificado el 2026-11-27.",
+ "models_used": {"investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"},
+ "status": "draft",
+ "instagram": {
+  "format": "carrusel",
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica el tema paso a paso; no hay vídeo oficial verificado.",
+  "plain_language_check": {}
+ },
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+ "plain_language_check": {}
+}

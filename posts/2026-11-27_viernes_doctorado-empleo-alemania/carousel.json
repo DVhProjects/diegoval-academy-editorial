@@ -1,0 +1,32 @@
+{
+ "series": "viernes",
+ "kicker": "Research & Career · Carrera de doctorado",
+ "cover": {
+  "title": "En Alemania, muchos doctorados son un empleo",
+  "highlight": "un empleo",
+  "subtitle": "Una universidad alemana explica que sus doctorandos suelen tener contrato y sueldo."
+ },
+ "slides": [
+  {"type": "points", "title": "¿Cómo funciona?", "items": [
+   {"icon": "info", "text": "La Universidad Técnica de Múnich (TUM) dice que la mayoría de sus doctorandos son asistentes de investigación."},
+   {"icon": "check", "text": "Tienen contrato de trabajo y reciben un sueldo cada mes."},
+   {"icon": "star", "text": "Además de la tesis, hacen tareas de investigación y de docencia."}
+  ]},
+  {"type": "steps", "title": "¿Cómo lo aprovechas?", "items": [
+   {"text": "Abre el portal de empleo de una universidad alemana y busca la palabra \"doctoral\" (doctorando)."},
+   {"text": "Mira el porcentaje del puesto: entero (100%) o parcial (50-75%)."},
+   {"text": "Si vives fuera de la Unión Europea, necesitas un permiso de residencia que te deje trabajar."}
+  ]},
+  {"type": "tip", "title": "Un consejo importante", "items": [
+   {"icon": "star", "text": "El contrato debe dejar tiempo para tu propia tesis, dice la Universidad de Maguncia."},
+   {"icon": "info", "text": "Pregunta cuánto tiempo es y deja el acuerdo claro con tu director o directora."}
+  ]},
+  {"type": "summary", "title": "En resumen", "items": [
+   {"text": "En Alemania, un doctorado puede ser un trabajo con sueldo."},
+   {"text": "Mira el porcentaje del puesto y el permiso de residencia."},
+   {"text": "Esta semana: guarda tres ofertas y compáralas."}
+  ], "cta": "Más información: gs.tum.de"}
+ ],
+ "source": "gs.tum.de",
+ "verified": "2026-11-27"
+}
