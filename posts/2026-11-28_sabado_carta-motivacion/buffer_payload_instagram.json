@@ -1,0 +1,55 @@
+{
+  "channelId": "6ae71fe8e29c69a17126342a",
+  "schedulingType": "automatic",
+  "text": "¿Vas a solicitar una beca o un doctorado? Prepara tu carta de motivación ✉️\n\nEs el texto donde cuentas por qué quieres esa plaza.\n\n✅ Tres párrafos cortos, en una página como máximo\n✅ No repitas tu currículum: da ejemplos concretos\n✅ No pegues un texto de inteligencia artificial (IA) tal cual\n\nEsta semana: escribe el primer párrafo y pide a alguien que lo lea. Guía oficial de la Unión Europea en youth.europa.eu\n\nVerificado el: 2026-11-28\n\n#Becas #Doctorado #Solicitud #DiegoValAcademy",
+  "assets": [
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/8272cb1d3b220952c60b12d6552403d428cad888/posts/2026-11-28_sabado_carta-motivacion/slide-1.png",
+        "metadata": {
+          "altText": "Portada: Cómo escribir una carta de motivación Es el texto donde cuentas por qué quieres esa plaza. Una página y tres párrafos, según guías europeas."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/8272cb1d3b220952c60b12d6552403d428cad888/posts/2026-11-28_sabado_carta-motivacion/slide-2.png",
+        "metadata": {
+          "altText": "¿Qué es y qué extensión tiene?. Es una carta corta donde explicas por qué quieres una plaza o un puesto. Una guía de la Unión Europea para jóvenes recomienda tres párrafos. Habla de empleos. El portal europeo de currículum Europass pide que no pase de una página."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/8272cb1d3b220952c60b12d6552403d428cad888/posts/2026-11-28_sabado_carta-motivacion/slide-3.png",
+        "metadata": {
+          "altText": "¿Qué escribir en cada párrafo?. Primero: quién eres, qué estudias o estudiaste y por qué quieres esa plaza. Segundo: tu experiencia más útil, con ejemplos concretos. Tercero: por qué encajas y qué aportas. Cierra con un resumen."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/8272cb1d3b220952c60b12d6552403d428cad888/posts/2026-11-28_sabado_carta-motivacion/slide-4.png",
+        "metadata": {
+          "altText": "Un consejo importante. No repitas tu currículum: quien lo lee ya lo conoce. Explica con más detalle algunas experiencias. No pegues un texto hecho con inteligencia artificial (IA): reescríbelo con tus palabras."
+        }
+      }
+    },
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/8272cb1d3b220952c60b12d6552403d428cad888/posts/2026-11-28_sabado_carta-motivacion/slide-5.png",
+        "metadata": {
+          "altText": "En resumen. Lee las reglas de la beca o plaza (la convocatoria): límite de caracteres o de páginas. Escribe una carta distinta para cada plaza y revisa que no queden marcas como [Nombre]. Esta semana: escribe el primer párrafo y pide a alguien que lo lea. Más información: youth.europa.eu"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instagram": {
+      "type": "post",
+      "shouldShareToFeed": true
+    }
+  },
+  "mode": "customScheduled",
+  "dueAt": "2026-11-28T11:00:00+01:00"
+}

@@ -1,0 +1,17 @@
+{
+  "channelId": "6ae0bdf22f1f5ed648eb92f9",
+  "schedulingType": "automatic",
+  "text": "¿Vas a solicitar una beca o un doctorado? Prepara tu carta de motivación (el texto donde cuentas por qué quieres esa plaza).\n\nEn corto:\n• Extensión: una guía oficial de la Unión Europea recomienda escribirla en tres párrafos. Habla de empleos, pero sirve como guía general. Europass, el portal europeo de currículum y cartas, pide una página como máximo.\nUna forma de organizarla:\n• Párrafo 1: quién eres, qué estudias y por qué quieres esa plaza.\n• Párrafo 2: tu experiencia más útil, explicada con ejemplos.\n• Párrafo 3: por qué encajas y qué aportas.\n\nLo que pocos explican: no repitas tu currículum, porque quien lo lee ya lo conoce. Y no pegues un texto hecho con inteligencia artificial (IA) tal cual. La guía pide reescribirlo con tus palabras.\n\nCómo empezar esta semana:\n1. Lee las reglas de la beca o plaza (la convocatoria): algunas ponen límite de caracteres o de páginas.\n2. Escribe el primer párrafo y pide a alguien que lo lea.\n3. Revisa que no queden marcas como [Nombre] de un modelo anterior.\n\nGuía de la Unión Europea (en inglés): https://youth.europa.eu/go-abroad/working/how-write-good-cv-and-motivation-letter_en\nEuropass (en inglés): https://europass.europa.eu/en/create-europass-cover-letter\n\nVerificado el: 2026-11-28\n\n#Becas #Doctorado #Solicitud",
+  "assets": [
+    {
+      "image": {
+        "url": "https://raw.githubusercontent.com/DVhProjects/diegoval-academy-editorial/8272cb1d3b220952c60b12d6552403d428cad888/posts/2026-11-28_sabado_carta-motivacion/post.png",
+        "metadata": {
+          "altText": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo escribir una carta de motivación: máximo una página y tres párrafos cortos. No repitas tu currículum. Lo que pocos explican: no pegues un texto hecho con IA tal cual; reescríbelo con tus palabras. Fuente: youth.europa.eu, verificado el 2026-11-28."
+        }
+      }
+    }
+  ],
+  "mode": "customScheduled",
+  "dueAt": "2026-11-28T11:00:00+01:00"
+}
