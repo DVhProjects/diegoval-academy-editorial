@@ -1,7 +1,7 @@
 ¿Vas a solicitar una beca o un doctorado? Prepara tu carta de motivación (el texto donde cuentas por qué quieres esa plaza).
 
 En corto:
-• Extensión: una guía oficial de la Unión Europea recomienda escribirla en tres párrafos. Habla de empleos y prácticas, pero sirve como guía general. Europass, el portal europeo de currículum y cartas, pide una página como máximo.
+• Extensión: una guía oficial de la Unión Europea recomienda escribirla en tres párrafos. Habla de empleos, pero sirve como guía general. Europass, el portal europeo de currículum y cartas, pide una página como máximo.
 Una forma de organizarla:
 • Párrafo 1: quién eres, qué estudias y por qué quieres esa plaza.
 • Párrafo 2: tu experiencia más útil, explicada con ejemplos.

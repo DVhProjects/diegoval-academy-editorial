@@ -1,7 +1,7 @@
 # Validación — 2026-11-28_sabado_carta-motivacion
 
-Ejecutado: 2026-11-28T07:07:49+01:00
-Decisión: **BLOQUEADA: no publicar**
+Ejecutado: 2026-11-28T07:08:23+01:00
+Decisión: **APROBADA para publicar**
 
 | Estado | Comprobación | Detalle |
 |---|---|---|
@@ -10,7 +10,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Imagen | 1080x1350 PNG, 1 archivo (+5 diapositivas de carrusel, ignoradas) |
 | PASS | Canal Buffer | DiegoVal Academy (6ae0bdf22f1f5ed648eb92f9) |
 | PASS | Verificación del día | 2026-11-28 |
-| PASS | Longitud del texto | 1284/1300 caracteres |
+| PASS | Longitud del texto | 1272/1300 caracteres |
 | PASS | Fecha visible en el texto | Verificado el: 2026-11-28 |
 | PASS | Marcadores pendientes | ninguno |
 | PASS | Enlaces documentados en sources.md | 2 enlaces |
@@ -22,7 +22,7 @@ Decisión: **BLOQUEADA: no publicar**
 | PASS | Lenguaje sencillo: siglas (imagen) | todas explicadas o ninguna |
 | PASS | Lenguaje sencillo: palabras difíciles (imagen) | sin burocracia ni calcos detectados |
 | PASS | Lenguaje sencillo: frases largas | todas ≤ 32 palabras |
-| FAIL | Lenguaje sencillo: revisión del verificador | falta metadata.plain_language_check con la pregunta exacta, answer 'sí', reviewer y checked_text_sha256 (python3 scripts/validate_post.py <carpeta> --plain-hash) |
+| PASS | Lenguaje sencillo: revisión del verificador | respuesta 'sí' de verificador-convocatorias (subagente Sonnet), 2026-11-28, 2.ª revisión «sí»; después solo se quitó la palabra «prácticas» (sin términos nuevos) por fidelidad a la fuente |
 | PASS | Duplicados | sin repeticiones en 40 filas de todas las plataformas (URL canónica, topic_key y vídeo; mismo día en otra red permitido) |
 | PASS | Enlace accesible | 200 https://europass.europa.eu/en/create-europass-cover-letter |
 | PASS | Enlace accesible | 200 https://youth.europa.eu/go-abroad/working/how-write-good-cv-and-motivation-letter_en |

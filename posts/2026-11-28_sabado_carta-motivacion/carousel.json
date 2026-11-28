@@ -12,7 +12,7 @@
    "title": "¿Qué es y qué extensión tiene?",
    "items": [
     {"icon": "info", "text": "Es una carta corta donde explicas por qué quieres una plaza o un puesto."},
-    {"icon": "star", "text": "Una guía de la Unión Europea para jóvenes recomienda tres párrafos. Habla de empleos y prácticas."},
+    {"icon": "star", "text": "Una guía de la Unión Europea para jóvenes recomienda tres párrafos. Habla de empleos."},
     {"icon": "calendar", "text": "El portal europeo de currículum Europass pide que no pase de una página."}
    ]
   },
