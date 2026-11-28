@@ -4,7 +4,7 @@ Es el texto donde cuentas por qué quieres esa plaza.
 
 ✅ Tres párrafos cortos, en una página como máximo
 ✅ No repitas tu currículum: da ejemplos concretos
-✅ No pegues un texto de inteligencia artificial tal cual
+✅ No pegues un texto de inteligencia artificial (IA) tal cual
 
 Esta semana: escribe el primer párrafo y pide a alguien que lo lea. Guía oficial de la Unión Europea en youth.europa.eu
 

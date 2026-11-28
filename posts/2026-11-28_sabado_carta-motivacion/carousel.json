@@ -4,7 +4,7 @@
  "cover": {
   "title": "Cómo escribir una carta de motivación",
   "highlight": "carta de motivación",
-  "subtitle": "Es el texto donde cuentas por qué quieres esa plaza. Una página y tres párrafos."
+  "subtitle": "Es el texto donde cuentas por qué quieres esa plaza. Una página y tres párrafos, según guías europeas."
  },
  "slides": [
   {
@@ -12,8 +12,8 @@
    "title": "¿Qué es y qué extensión tiene?",
    "items": [
     {"icon": "info", "text": "Es una carta corta donde explicas por qué quieres una plaza o un puesto."},
-    {"icon": "star", "text": "La guía de la Unión Europea para jóvenes la resume en tres párrafos."},
-    {"icon": "calendar", "text": "El portal europeo Europass pide que no pase de una página."}
+    {"icon": "star", "text": "Una guía de la Unión Europea para jóvenes recomienda tres párrafos. Habla de empleos y prácticas."},
+    {"icon": "calendar", "text": "El portal europeo de currículum Europass pide que no pase de una página."}
    ]
   },
   {
@@ -22,7 +22,7 @@
    "items": [
     {"text": "Primero: quién eres, qué estudias o estudiaste y por qué quieres esa plaza."},
     {"text": "Segundo: tu experiencia más útil, con ejemplos concretos."},
-    {"text": "Tercero: por qué encajas y qué aportas. Cierra con una frase amable."}
+    {"text": "Tercero: por qué encajas y qué aportas. Cierra con un resumen."}
    ]
   },
   {
@@ -30,14 +30,14 @@
    "title": "Un consejo importante",
    "items": [
     {"icon": "info", "text": "No repitas tu currículum: quien lo lee ya lo conoce. Explica con más detalle algunas experiencias."},
-    {"icon": "star", "text": "No pegues un texto hecho con inteligencia artificial tal cual: pueden reconocerlo. Reescríbelo con tus palabras."}
+    {"icon": "star", "text": "No pegues un texto hecho con inteligencia artificial (IA): reescríbelo con tus palabras."}
    ]
   },
   {
    "type": "summary",
    "title": "En resumen",
    "items": [
-    {"text": "Lee bien las reglas de tu convocatoria: límite de caracteres o de páginas."},
+    {"text": "Lee las reglas de la beca o plaza (la convocatoria): límite de caracteres o de páginas."},
     {"text": "Escribe una carta distinta para cada plaza y revisa que no queden marcas como [Nombre]."},
     {"text": "Esta semana: escribe el primer párrafo y pide a alguien que lo lea."}
    ],
