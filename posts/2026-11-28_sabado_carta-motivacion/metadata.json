@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-28",
+ "weekday": "sabado",
+ "type": "educativo",
+ "category": "preparar_solicitud",
+ "topic": "Cómo escribir una carta de motivación: una página, tres párrafos, sin repetir el currículum",
+ "topic_key": "carta-motivacion-solicitud",
+ "primary_url": "https://youth.europa.eu/go-abroad/working/how-write-good-cv-and-motivation-letter_en",
+ "deadline": null,
+ "verified_date": "2026-11-28",
+ "buffer_channel_id": "6ae0bdf22f1f5ed648eb92f9",
+ "instagram_channel_id": "6ae71fe8e29c69a17126342a",
+ "platforms": [
+  "linkedin",
+  "instagram"
+ ],
+ "format": "image",
+ "series": "sabado",
+ "style_version": 3,
+ "alt_text": "Ficha editorial de DiegoVal Academy, serie Guía práctica. Cómo escribir una carta de motivación: máximo una página y tres párrafos cortos. No repitas tu currículum. Lo que pocos explican: no pegues un texto hecho con IA tal cual; reescríbelo con tus palabras. Fuente: youth.europa.eu, verificado el 2026-11-28.",
+ "models_used": {
+  "investigacion_redaccion": "claude-sonnet-5-5 (rutina nube)"
+ },
+ "status": "draft",
+ "instagram": {
+  "format": "carrusel",
+  "format_reason": "Carrusel de 5 imágenes: formato por defecto; explica paso a paso; no hay vídeo oficial verificado."
+ }
+}
